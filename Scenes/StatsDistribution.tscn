@@ -15,10 +15,10 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Name" unique_id=1632820827]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 105.0
-offset_right = 501.0
-offset_bottom = 200.0
+offset_left = 417.0
+offset_top = 101.0
+offset_right = 893.0
+offset_bottom = 196.0
 theme = SubResource("Theme_yfv0x")
 text = "Придумайте имя персонажу"
 horizontal_alignment = 1
@@ -26,10 +26,10 @@ vertical_alignment = 1
 
 [node name="Entering" type="LineEdit" parent="Name" unique_id=101939310]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 178.0
-offset_right = 501.0
-offset_bottom = 273.0
+offset_left = 417.0
+offset_top = 174.0
+offset_right = 893.0
+offset_bottom = 269.0
 alignment = 1
 
 [node name="Stats" type="Control" parent="." unique_id=51045582]
@@ -45,18 +45,18 @@ offset_bottom = 40.0
 
 [node name="SpinBox" type="SpinBox" parent="Stats/Luck" unique_id=1272635318]
 layout_mode = 0
-offset_left = 274.0
-offset_top = 643.0
-offset_right = 360.5
-offset_bottom = 674.0
+offset_left = 666.0
+offset_top = 639.0
+offset_right = 752.5
+offset_bottom = 670.0
 max_value = 7.0
 
 [node name="Label8" type="Label" parent="Stats/Luck" unique_id=14879768]
 layout_mode = 0
-offset_left = 156.0
-offset_top = 643.0
-offset_right = 274.0
-offset_bottom = 675.0
+offset_left = 548.0
+offset_top = 639.0
+offset_right = 666.0
+offset_bottom = 671.0
 theme = SubResource("Theme_yfv0x")
 text = "УДАЧА"
 horizontal_alignment = 1
@@ -64,10 +64,10 @@ vertical_alignment = 1
 
 [node name="Label9" type="Label" parent="Stats/Luck" unique_id=618185063]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 655.0
-offset_right = 501.0
-offset_bottom = 750.0
+offset_left = 417.0
+offset_top = 651.0
+offset_right = 893.0
+offset_bottom = 746.0
 theme = SubResource("Theme_yfv0x")
 text = "От удачи зависит доступное количество перебросов
 кубика в день, а также бонусы к каждому из них"
@@ -81,18 +81,18 @@ offset_bottom = 40.0
 
 [node name="SpinBox" type="SpinBox" parent="Stats/Intelligence" unique_id=26901628]
 layout_mode = 0
-offset_left = 274.0
-offset_top = 528.0
-offset_right = 360.5
-offset_bottom = 559.0
+offset_left = 666.0
+offset_top = 524.0
+offset_right = 752.5
+offset_bottom = 555.0
 max_value = 7.0
 
 [node name="Label6" type="Label" parent="Stats/Intelligence" unique_id=1903139703]
 layout_mode = 0
-offset_left = 156.0
-offset_top = 528.0
-offset_right = 274.0
-offset_bottom = 560.0
+offset_left = 548.0
+offset_top = 524.0
+offset_right = 666.0
+offset_bottom = 556.0
 theme = SubResource("Theme_yfv0x")
 text = "ИНТЕЛЛЕКТ"
 horizontal_alignment = 1
@@ -100,10 +100,10 @@ vertical_alignment = 1
 
 [node name="Label7" type="Label" parent="Stats/Intelligence" unique_id=1440719939]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 549.0
-offset_right = 501.0
-offset_bottom = 644.0
+offset_left = 417.0
+offset_top = 545.0
+offset_right = 893.0
+offset_bottom = 640.0
 theme = SubResource("Theme_yfv0x")
 text = "От интеллекта зависит урон и лечение магических
 способностей персонажа, а также количество активных
@@ -118,18 +118,18 @@ offset_bottom = 40.0
 
 [node name="SpinBox" type="SpinBox" parent="Stats/Agility" unique_id=1100659762]
 layout_mode = 0
-offset_left = 274.0
-offset_top = 423.0
-offset_right = 360.5
-offset_bottom = 454.0
+offset_left = 666.0
+offset_top = 419.0
+offset_right = 752.5
+offset_bottom = 450.0
 max_value = 7.0
 
 [node name="Label4" type="Label" parent="Stats/Agility" unique_id=199310450]
 layout_mode = 0
-offset_left = 156.0
-offset_top = 423.0
-offset_right = 274.0
-offset_bottom = 455.0
+offset_left = 548.0
+offset_top = 419.0
+offset_right = 666.0
+offset_bottom = 451.0
 theme = SubResource("Theme_yfv0x")
 text = "ЛОВКОСТЬ"
 horizontal_alignment = 1
@@ -137,10 +137,10 @@ vertical_alignment = 1
 
 [node name="Label5" type="Label" parent="Stats/Agility" unique_id=1844605478]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 435.0
-offset_right = 501.0
-offset_bottom = 530.0
+offset_left = 417.0
+offset_top = 431.0
+offset_right = 893.0
+offset_bottom = 526.0
 theme = SubResource("Theme_yfv0x")
 text = "От ловкости зависит скорость персонажа, а также урон 
 лёгкого оружия ближнего боя и луков"
@@ -154,18 +154,18 @@ offset_bottom = 40.0
 
 [node name="SpinBox" type="SpinBox" parent="Stats/Strength" unique_id=1623057638]
 layout_mode = 0
-offset_left = 274.0
-offset_top = 318.0
-offset_right = 360.5
-offset_bottom = 349.0
+offset_left = 666.0
+offset_top = 314.0
+offset_right = 752.5
+offset_bottom = 345.0
 max_value = 7.0
 
 [node name="Label2" type="Label" parent="Stats/Strength" unique_id=600229691]
 layout_mode = 0
-offset_left = 156.0
-offset_top = 318.0
-offset_right = 274.0
-offset_bottom = 350.0
+offset_left = 548.0
+offset_top = 314.0
+offset_right = 666.0
+offset_bottom = 346.0
 theme = SubResource("Theme_yfv0x")
 text = "СИЛА"
 horizontal_alignment = 1
@@ -173,10 +173,10 @@ vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="Stats/Strength" unique_id=2073183951]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 330.0
-offset_right = 501.0
-offset_bottom = 425.0
+offset_left = 417.0
+offset_top = 326.0
+offset_right = 893.0
+offset_bottom = 421.0
 theme = SubResource("Theme_yfv0x")
 text = "От силы зависит здоровье персонажа, его защита,
 а также урон оружия ближнего боя"
@@ -185,10 +185,10 @@ vertical_alignment = 1
 
 [node name="RemainingLabel" type="Label" parent="Stats" unique_id=745237592]
 layout_mode = 0
-offset_left = 117.0
-offset_top = 747.0
-offset_right = 399.0
-offset_bottom = 854.0
+offset_left = 509.0
+offset_top = 743.0
+offset_right = 791.0
+offset_bottom = 850.0
 text = "Осталось очков: 7"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -196,10 +196,10 @@ vertical_alignment = 1
 [node name="History" type="Control" parent="." unique_id=1612367481]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 509.0
-offset_top = 2.0
-offset_right = 1015.0
-offset_bottom = 411.0
+offset_left = 1150.0
+offset_top = 41.0
+offset_right = 1656.0
+offset_bottom = 450.0
 
 [node name="Title" type="Label" parent="History" unique_id=805043722]
 layout_mode = 0
@@ -214,13 +214,12 @@ text = "Коротко опишите предысторию персонажа.
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text" type="LineEdit" parent="History" unique_id=1582226200]
+[node name="Text" type="TextEdit" parent="History" unique_id=223425852]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 104.0
 offset_right = 490.0
 offset_bottom = 329.0
-alignment = 1
 
 [node name="Traits" type="Control" parent="." unique_id=60339286]
 layout_mode = 3
@@ -230,10 +229,10 @@ offset_bottom = 40.0
 
 [node name="Title" type="Label" parent="Traits" unique_id=2053263951]
 layout_mode = 0
-offset_left = 521.0
-offset_top = 340.0
-offset_right = 1000.0
-offset_bottom = 441.0
+offset_left = 1162.0
+offset_top = 379.0
+offset_right = 1641.0
+offset_bottom = 480.0
 theme = SubResource("Theme_yfv0x")
 text = "Добавьте персонажу отличительные черты - например, 
 он быстро пьянеет или боится темноты, заикается или
@@ -244,10 +243,10 @@ vertical_alignment = 1
 
 [node name="Text" type="LineEdit" parent="Traits" unique_id=127092962]
 layout_mode = 0
-offset_left = 523.0
-offset_top = 448.0
-offset_right = 999.0
-offset_bottom = 525.0
+offset_left = 1164.0
+offset_top = 487.0
+offset_right = 1640.0
+offset_bottom = 564.0
 alignment = 1
 
 [node name="Back" type="Button" parent="." unique_id=556855773]
@@ -258,17 +257,17 @@ offset_bottom = 60.0
 text = "Назад"
 
 [node name="Save" type="Button" parent="." unique_id=1831437355]
-offset_left = 402.0
-offset_top = 959.0
-offset_right = 641.0
-offset_bottom = 1010.0
+offset_left = 825.0
+offset_top = 1002.0
+offset_right = 1064.0
+offset_bottom = 1053.0
 text = "Сохранить и продолжить"
 
 [node name="SublassSelected" type="Label" parent="." unique_id=1329106436]
-offset_left = 25.0
-offset_top = 276.0
-offset_right = 501.0
-offset_bottom = 313.0
+offset_left = 417.0
+offset_top = 272.0
+offset_right = 893.0
+offset_bottom = 309.0
 theme = SubResource("Theme_yfv0x")
 text = "Выбранный вами подкласс:"
 horizontal_alignment = 1
@@ -282,20 +281,20 @@ offset_bottom = 40.0
 
 [node name="Title" type="Label" parent="Derivatives" unique_id=920134722]
 layout_mode = 0
-offset_left = 620.0
-offset_top = 523.0
-offset_right = 902.0
-offset_bottom = 567.0
+offset_left = 1261.0
+offset_top = 562.0
+offset_right = 1543.0
+offset_bottom = 606.0
 text = "Производные характеристики"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Names" type="VBoxContainer" parent="Derivatives" unique_id=65994475]
 layout_mode = 0
-offset_left = 558.0
-offset_top = 568.0
-offset_right = 816.0
-offset_bottom = 861.0
+offset_left = 1199.0
+offset_top = 607.0
+offset_right = 1457.0
+offset_bottom = 927.0
 
 [node name="Health" type="Label" parent="Derivatives/Names" unique_id=87533651]
 layout_mode = 2
@@ -371,10 +370,10 @@ vertical_alignment = 1
 
 [node name="Numbers" type="VBoxContainer" parent="Derivatives" unique_id=1996885286]
 layout_mode = 0
-offset_left = 821.0
-offset_top = 568.0
-offset_right = 930.0
-offset_bottom = 861.0
+offset_left = 1462.0
+offset_top = 607.0
+offset_right = 1571.0
+offset_bottom = 927.0
 
 [node name="Health" type="Label" parent="Derivatives/Numbers" unique_id=1946175771]
 layout_mode = 2
@@ -449,10 +448,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Title" type="Label" parent="." unique_id=2091779139]
-offset_left = -47.0
-offset_top = 901.0
-offset_right = 1104.0
-offset_bottom = 950.0
+offset_left = 376.0
+offset_top = 944.0
+offset_right = 1527.0
+offset_bottom = 993.0
 text = "Подробно про каждую основную и производную характеристику можно 
 будет прочитать в справочнике после создания первого персонажа"
 horizontal_alignment = 1

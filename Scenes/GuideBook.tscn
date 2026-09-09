@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dyknauep5j4j2"]
 
 [ext_resource type="Script" uid="uid://bhrtr0o6smf26" path="res://Scripts/GuideBook.gd" id="1_xt61f"]
+[ext_resource type="Texture2D" uid="uid://cu0pqpjdejapg" path="res://Assets/GuideBook.png" id="2_ehpyh"]
 
 [node name="Node2D" type="Node2D" unique_id=2127895044]
 script = ExtResource("1_xt61f")
@@ -11,5 +12,25 @@ offset_top = 5.0
 offset_right = 115.0
 offset_bottom = 60.0
 text = "Назад"
+
+[node name="GuideBook" type="Sprite2D" parent="." unique_id=1096147439]
+position = Vector2(959.99994, 540)
+scale = Vector2(0.6976744, 0.70312506)
+texture = ExtResource("2_ehpyh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1795316182]
+offset_left = 318.0
+offset_top = 231.0
+offset_right = 976.0
+offset_bottom = 615.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=482401457]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1728343108]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=179369416]
+layout_mode = 2
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

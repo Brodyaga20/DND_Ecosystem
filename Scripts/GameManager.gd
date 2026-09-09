@@ -49,7 +49,8 @@ func add_character(name: String, class_id: String, subclass_id: String, stats: D
 		"starting_gear": starting_gear,
 		"hp_current": 40 + stats.get("strength", 0) * 4,  # начальное ХП
 		"hp_max": 40 + stats.get("strength", 0) * 4,
-		"created": Time.get_datetime_string_from_system()
+		"created": Time.get_datetime_string_from_system(),
+		"locked": false
 	}
 	if characters.size() >= MAX_CHARACTERS:
 		print("Достигнут лимит персонажей!")

@@ -54,10 +54,11 @@ func _on_entering_text_changed(_new_text: String) -> void:
 
 func _on_back_pressed() -> void:
 	var class_id = TempData.class_id
+	print(class_id)
 	match class_id:
 		"warrior":
 			get_tree().change_scene_to_file("res://Scenes/WarriorSubclassSelect.tscn")
-		"assassin":
+		"rogue":
 			get_tree().change_scene_to_file("res://Scenes/RogueSubclassSelect.tscn")
 		"mage":
 			get_tree().change_scene_to_file("res://Scenes/MageSubclassSelect.tscn")
