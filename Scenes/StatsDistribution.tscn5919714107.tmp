@@ -1,0 +1,222 @@
+[gd_scene format=3 uid="uid://c7u2m4hot1o8d"]
+
+[ext_resource type="Script" uid="uid://c20jlf0kx6fc3" path="res://Scripts/StatsDistribution.gd" id="1_sdqnk"]
+
+[sub_resource type="Theme" id="Theme_yfv0x"]
+
+[node name="StatsDistribution" type="Node2D" unique_id=222493670]
+script = ExtResource("1_sdqnk")
+
+[node name="Name" type="Control" parent="." unique_id=1674150220]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Name" unique_id=1632820827]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 21.0
+offset_right = 755.0
+offset_bottom = 116.0
+theme = SubResource("Theme_yfv0x")
+text = "Придумайте имя персонажу"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Entering" type="LineEdit" parent="Name" unique_id=101939310]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 94.0
+offset_right = 755.0
+offset_bottom = 189.0
+alignment = 1
+
+[node name="Strength" type="Control" parent="." unique_id=927799036]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SpinBox" type="SpinBox" parent="Strength" unique_id=1623057638]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 234.0
+offset_right = 614.5
+offset_bottom = 265.0
+max_value = 7.0
+
+[node name="Label2" type="Label" parent="Strength" unique_id=600229691]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 234.0
+offset_right = 528.0
+offset_bottom = 266.0
+theme = SubResource("Theme_yfv0x")
+text = "СИЛА"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Strength" unique_id=2073183951]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 246.0
+offset_right = 755.0
+offset_bottom = 341.0
+theme = SubResource("Theme_yfv0x")
+text = "От силы зависит здоровье персонажа, его защита,
+а также урон оружия ближнего боя"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Agility" type="Control" parent="." unique_id=289399936]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SpinBox" type="SpinBox" parent="Agility" unique_id=1100659762]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 339.0
+offset_right = 614.5
+offset_bottom = 370.0
+max_value = 7.0
+
+[node name="Label4" type="Label" parent="Agility" unique_id=199310450]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 339.0
+offset_right = 528.0
+offset_bottom = 371.0
+theme = SubResource("Theme_yfv0x")
+text = "ЛОВКОСТЬ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Agility" unique_id=1844605478]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 351.0
+offset_right = 755.0
+offset_bottom = 446.0
+theme = SubResource("Theme_yfv0x")
+text = "От ловкости зависит скорость персонажа, а также урон 
+лёгкого оружия ближнего боя и луков"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Intelligence" type="Control" parent="." unique_id=394991811]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SpinBox" type="SpinBox" parent="Intelligence" unique_id=26901628]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 444.0
+offset_right = 614.5
+offset_bottom = 475.0
+max_value = 7.0
+
+[node name="Label6" type="Label" parent="Intelligence" unique_id=1903139703]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 444.0
+offset_right = 528.0
+offset_bottom = 476.0
+theme = SubResource("Theme_yfv0x")
+text = "ИНТЕЛЛЕКТ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="Intelligence" unique_id=1440719939]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 465.0
+offset_right = 755.0
+offset_bottom = 560.0
+theme = SubResource("Theme_yfv0x")
+text = "От интеллекта зависит урон и лечение магических
+способностей персонажа, а также количество активных
+ способностей, которые персонаж может использовать"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Luck" type="Control" parent="." unique_id=1645917139]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SpinBox" type="SpinBox" parent="Luck" unique_id=1272635318]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 559.0
+offset_right = 614.5
+offset_bottom = 590.0
+max_value = 7.0
+
+[node name="Label8" type="Label" parent="Luck" unique_id=14879768]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 559.0
+offset_right = 528.0
+offset_bottom = 591.0
+theme = SubResource("Theme_yfv0x")
+text = "УДАЧА"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="Luck" unique_id=618185063]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 571.0
+offset_right = 755.0
+offset_bottom = 666.0
+theme = SubResource("Theme_yfv0x")
+text = "От удачи зависит доступное количество перебросов
+кубика в день, а также бонусы к каждому из них"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="." unique_id=556855773]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 115.0
+offset_bottom = 60.0
+text = "Назад"
+
+[node name="Save" type="Button" parent="." unique_id=1831437355]
+offset_left = 402.0
+offset_top = 959.0
+offset_right = 641.0
+offset_bottom = 1010.0
+text = "Сохранить и продолжить"
+
+[node name="RemainingLabel" type="Label" parent="." unique_id=745237592]
+offset_left = 371.0
+offset_top = 663.0
+offset_right = 653.0
+offset_bottom = 770.0
+text = "Осталось очков: 7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SublassSelected" type="Label" parent="." unique_id=1329106436]
+offset_left = 279.0
+offset_top = 192.0
+offset_right = 755.0
+offset_bottom = 229.0
+theme = SubResource("Theme_yfv0x")
+text = "Выбранный вами подкласс:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="text_changed" from="Name/Entering" to="." method="_on_entering_text_changed"]
+[connection signal="value_changed" from="Strength/SpinBox" to="." method="_on_spin_value_changed"]
+[connection signal="value_changed" from="Agility/SpinBox" to="." method="_on_spin_value_changed"]
+[connection signal="value_changed" from="Intelligence/SpinBox" to="." method="_on_spin_value_changed"]
+[connection signal="value_changed" from="Luck/SpinBox" to="." method="_on_spin_value_changed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

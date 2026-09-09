@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://c8r5akwxj6m1j"]
+
+[ext_resource type="Script" uid="uid://b0l3g2vkubi2c" path="res://Scripts/Menu.gd" id="1_4ds3p"]
+
+[node name="Node2D" type="Node2D" unique_id=439916551]
+script = ExtResource("1_4ds3p")
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1763017732]
+offset_left = 454.0
+offset_top = 81.0
+offset_right = 681.0
+offset_bottom = 147.0
+
+[node name="Host" type="Button" parent="." unique_id=804784558]
+offset_left = 509.0
+offset_top = 188.0
+offset_right = 612.0
+offset_bottom = 250.0
+text = "Create"
+
+[node name="Connect" type="Button" parent="." unique_id=592638924]
+offset_left = 488.0
+offset_top = 292.0
+offset_right = 635.0
+offset_bottom = 361.0
+text = "Connect"
+
+[node name="Label" type="Label" parent="." unique_id=144657126]
+offset_left = 123.0
+offset_top = 70.0
+offset_right = 192.0
+offset_bottom = 93.0
+
+[node name="SendData" type="Button" parent="." unique_id=250244862]
+offset_left = 458.0
+offset_top = 410.0
+offset_right = 650.0
+offset_bottom = 467.0
+text = "Отправить данные"
+
+[connection signal="button_down" from="Host" to="." method="_on_host_button_down"]
+[connection signal="pressed" from="Connect" to="." method="_on_connect_pressed"]
+[connection signal="pressed" from="SendData" to="." method="_on_send_data_pressed"]

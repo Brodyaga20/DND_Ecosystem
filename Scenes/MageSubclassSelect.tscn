@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://d0a4a0lmnn3ds"]
+
+[ext_resource type="Script" uid="uid://nnuxbo3c1uq0" path="res://Scripts/MageSubclassSelect.gd" id="1_m71r2"]
+[ext_resource type="Texture2D" uid="uid://c7oodx22tyo3u" path="res://Assets/MageSubclassSelect.png" id="2_m71r2"]
+
+[sub_resource type="Theme" id="Theme_m71r2"]
+
+[node name="Node2D" type="Control" unique_id=2044504923]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_m71r2")
+
+[node name="BackGround" type="Sprite2D" parent="." unique_id=1925766710]
+position = Vector2(960, 540)
+scale = Vector2(0.69767445, 0.703125)
+texture = ExtResource("2_m71r2")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=254741138]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 70.0
+offset_right = 815.0
+offset_bottom = 176.0
+
+[node name="Next" type="Button" parent="." unique_id=1762152387]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 1017.0
+offset_right = 1088.0
+offset_bottom = 1067.0
+text = "Далее"
+
+[node name="DescriptionLabel" type="Label" parent="." unique_id=1554280828]
+layout_mode = 0
+offset_left = 477.0
+offset_top = 964.0
+offset_right = 1478.0
+offset_bottom = 1009.0
+horizontal_alignment = 1
+
+[node name="NecromancerButton" type="Button" parent="." unique_id=151436317]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 508.0
+offset_right = 436.0
+offset_bottom = 548.0
+text = "Некромант"
+
+[node name="ElementalistButton" type="Button" parent="." unique_id=651705485]
+layout_mode = 0
+offset_left = 733.0
+offset_top = 510.0
+offset_right = 857.0
+offset_bottom = 550.0
+text = "Элементалист"
+
+[node name="MentalistButton" type="Button" parent="." unique_id=1106596992]
+layout_mode = 0
+offset_left = 1134.0
+offset_top = 476.0
+offset_right = 1234.0
+offset_bottom = 516.0
+text = "Менталист"
+
+[node name="SpiritualistButton" type="Button" parent="." unique_id=979310546]
+layout_mode = 0
+offset_left = 1522.0
+offset_top = 504.0
+offset_right = 1622.0
+offset_bottom = 544.0
+text = "Клирик"
+
+[node name="Back" type="Button" parent="." unique_id=677137858]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 115.0
+offset_bottom = 60.0
+text = "Назад"
+
+[node name="Label" type="Label" parent="Back" unique_id=2010987304]
+layout_mode = 0
+offset_left = 738.0
+offset_top = 38.0
+offset_right = 1214.0
+offset_bottom = 133.0
+theme = SubResource("Theme_m71r2")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Выберите подкласс персонажа. 
+Подкласс дополняет класс и определяет специализацию
+ внутри него."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="NecromancerButton" to="." method="_on_necromancer_button_pressed"]
+[connection signal="pressed" from="ElementalistButton" to="." method="_on_elementalist_button_pressed"]
+[connection signal="pressed" from="MentalistButton" to="." method="_on_mentalist_button_pressed"]
+[connection signal="pressed" from="SpiritualistButton" to="." method="_on_spiritualist_button_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

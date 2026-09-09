@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dh7tj2186ie4u"]
+
+[ext_resource type="Script" uid="uid://l5ude65veo6w" path="res://Scripts/StartScreen.gd" id="1_ko4ly"]
+[ext_resource type="Texture2D" uid="uid://c1ix8xrtvk045" path="res://Assets/StartMenuBack.png" id="2_0on6r"]
+
+[node name="Node2D" type="Node2D" unique_id=296039110]
+script = ExtResource("1_ko4ly")
+
+[node name="ClassSelectBack" type="Sprite2D" parent="." unique_id=1151962293]
+position = Vector2(960.0001, 539.99994)
+scale = Vector2(0.75000006, 0.7557731)
+texture = ExtResource("2_0on6r")
+
+[node name="PlayButton" type="Button" parent="." unique_id=434665691]
+offset_left = 363.0
+offset_top = 236.0
+offset_right = 663.0
+offset_bottom = 375.0
+text = "Играть"
+metadata/_edit_use_anchors_ = true
+
+[node name="GuideButton" type="Button" parent="." unique_id=365177393]
+offset_left = 410.0
+offset_top = 540.0
+offset_right = 589.0
+offset_bottom = 636.0
+text = "Справочник"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="." unique_id=517555725]
+offset_left = 269.0
+offset_top = 931.0
+offset_right = 707.0
+offset_bottom = 996.0
+text = "Очистить кеш(все данные из справочника удалятся)"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="GuideButton" to="." method="_on_guide_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

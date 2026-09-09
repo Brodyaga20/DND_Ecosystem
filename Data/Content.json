@@ -1,0 +1,298 @@
+{
+  "classes": [
+    {
+      "id": "warrior",
+      "name": "Воин",
+      "description": "Тот, кто встречает врага лицом к лицу. Выносливость, сталь и воля — его оружие.",
+      "icon": "res://assets/warrior_icon.png"
+    },
+    {
+      "id": "rogue",
+      "name": "Ассасин",
+      "description": "Тот, кто появляется из тени и исчезает до того, как враг успевает выдохнуть.",
+      "icon": "res://assets/assassin_icon.png"
+    },
+    {
+      "id": "mage",
+      "name": "Маг",
+      "description": "Тот, кто видит мир иначе. Реальность — это нити, которые можно переплести.",
+      "icon": "res://assets/mage_icon.png"
+    }
+  ],
+  "subclasses": [
+    {
+      "id": "paladin",
+      "name": "Паладин",
+      "class_id": "warrior",
+      "description": "Воин веры. Исцеляет и карает словом божьим.",
+      "resource": {
+        "name": "Карма",
+        "min": -10,
+        "max": 10
+      }
+    },
+    {
+      "id": "knight",
+      "name": "Рыцарь",
+      "class_id": "warrior",
+      "description": "Воин долга. Живая стена, за которой спокойно.",
+      "resource": {
+        "name": "Стойкость",
+        "min": 0,
+        "max": 20
+      }
+    },
+    {
+      "id": "berserker",
+      "name": "Берсерк",
+      "class_id": "warrior",
+      "description": "Воин инстинкта. Сила в боли, скорость в ярости.",
+      "resource": {
+        "name": "Ярость",
+        "min": 0,
+        "max": 30
+      }
+    },
+    {
+      "id": "captain",
+      "name": "Командир",
+      "class_id": "warrior",
+      "description": "Воин тактики. Ведёт за собой, меняет поле боя.",
+      "resource": {
+        "name": "Лидерские очки",
+        "min": 0,
+        "max": 10
+      }
+    },
+    {
+      "id": "sharpshooter",
+      "name": "Стрелок",
+      "class_id": "assassin",
+      "description": "Ассасин дистанции. Смерть приходит раньше, чем враг понимает.",
+      "resource": {
+        "name": "Стойка",
+        "type": "toggle"
+      }
+    },
+    {
+      "id": "killer",
+      "name": "Убийца",
+      "class_id": "assassin",
+      "description": "Ассасин тени. Один удар — одна жертва.",
+      "resource": {
+        "name": "Стойка",
+        "type": "toggle"
+      }
+    },
+    {
+      "id": "trapper",
+      "name": "Следопыт",
+      "class_id": "assassin",
+      "description": "Ассасин среды. Превращает поле боя в машину смерти.",
+      "resource": {
+        "name": "Стойка",
+        "type": "toggle"
+      }
+    },
+    {
+      "id": "duelist",
+      "name": "Дуэлянт",
+      "class_id": "assassin",
+      "description": "Ассасин чести. Бой — танец, сталь — искусство.",
+      "resource": {
+        "name": "Стойка",
+        "type": "toggle"
+      }
+    },
+    {
+      "id": "necromancer",
+      "name": "Некромант",
+      "class_id": "mage",
+      "description": "Маг смерти. Кости и души — лишь инструменты.",
+      "resource": {
+        "name": "Некрозаряды",
+        "min": 0,
+        "max": 10
+      }
+    },
+    {
+      "id": "elementalist",
+      "name": "Элементалист",
+      "class_id": "mage",
+      "description": "Маг стихий. Огонь, лёд, ветер — его голос.",
+      "resource": {
+        "name": "Поток",
+        "min": 0,
+        "max": 10
+      }
+    },
+    {
+      "id": "mentalist",
+      "name": "Менталист",
+      "class_id": "mage",
+      "description": "Маг разума. Бой в голове для него проще, а для врага страшнее, чем на мечах.",
+      "resource": {
+        "name": "Концентрация",
+        "min": 0,
+        "max": 10
+      }
+    },
+    {
+      "id": "spiritualist",
+      "name": "Клирик",
+      "class_id": "mage",
+      "description": "Маг души. Исцеляет и защищает тело и душу",
+      "resource": {
+        "name": "Благословение",
+        "min": 0,
+        "max": 10
+      }
+    }
+  ],
+  "archetypes": [
+    {
+      "id": "guardian_angel",
+      "name": "Ангел-хранитель",
+      "subclass_id": "cleric",
+      "description": "Ты — воплощение защиты. Твоя вера лечит и укрепляет."
+    },
+    {
+      "id": "holy_avenger",
+      "name": "Святой мститель",
+      "subclass_id": "cleric",
+      "description": "Ты — божественный суд. Твоя молитва — приговор."
+    },
+    {
+      "id": "steel_bastion",
+      "name": "Стальной бастион",
+      "subclass_id": "knight",
+      "description": "Ты — последний рубеж. Ты не отступаешь."
+    },
+    {
+      "id": "steel_blade",
+      "name": "Стальной клинок",
+      "subclass_id": "knight",
+      "description": "Ты — остриё атаки. Твой меч продолжение воли."
+    },
+    {
+      "id": "iron_whirlwind",
+      "name": "Железный вихрь",
+      "subclass_id": "berserker",
+      "description": "Ты — ураган из стали, щит — твоё оружие."
+    },
+    {
+      "id": "blood_reaper",
+      "name": "Кровавый жнец",
+      "subclass_id": "berserker",
+      "description": "Ты пьёшь силу из смерти. Каждая рана кормит ярость."
+    },
+    {
+      "id": "iron_barricade",
+      "name": "Железный заслон",
+      "subclass_id": "commander",
+      "description": "Ты — стратег и стена. Твои приказы держат строй."
+    },
+    {
+      "id": "ruthless_leader",
+      "name": "Жестокий лидер",
+      "subclass_id": "commander",
+      "description": "Ты ведёшь в атаку любой ценой. Победа — всё."
+    },
+    {
+      "id": "sniper",
+      "name": "Снайпер",
+      "subclass_id": "sharpshooter",
+      "description": "Ты — смерть с расстояния. Ты ждёшь, цель найдёт себя."
+    },
+    {
+      "id": "catcher",
+      "name": "Ловец",
+      "subclass_id": "sharpshooter",
+      "description": "Ты — охотник, чьи стрелы не убивают сразу, а контролируют."
+    },
+    {
+      "id": "killer",
+      "name": "Киллер",
+      "subclass_id": "killer",
+      "description": "Ты — инструмент смерти. Один удар — и ты исчез."
+    },
+    {
+      "id": "puppeteer",
+      "name": "Кукловод",
+      "subclass_id": "killer",
+      "description": "Ты дёргаешь за нити. Враг — марионетка."
+    },
+    {
+      "id": "sapper",
+      "name": "Сапёр",
+      "subclass_id": "trapper",
+      "description": "Ты подрываешь основы. Поле боя — твоя мина."
+    },
+    {
+      "id": "tactician",
+      "name": "Тактик",
+      "subclass_id": "trapper",
+      "description": "Ты — мозг операции. Ты заставляешь врага двигаться туда, куда тебе нужно."
+    },
+    {
+      "id": "fencer",
+      "name": "Фехтовальщик",
+      "subclass_id": "duelist",
+      "description": "Ты — художник. Твой холст — поле боя."
+    },
+    {
+      "id": "trickster",
+      "name": "Мастер уловок",
+      "subclass_id": "duelist",
+      "description": "Ты — хитрый боец. Ты заставляешь врага ошибаться."
+    },
+    {
+      "id": "golem_master",
+      "name": "Големастер",
+      "subclass_id": "necromancer",
+      "description": "Ты — строитель из смерти. Твой голем — таран и крепость."
+    },
+    {
+      "id": "decayer",
+      "name": "Разлагатель",
+      "subclass_id": "necromancer",
+      "description": "Ты — тот, кто ускоряет конец. Твои проклятия разлагают."
+    },
+    {
+      "id": "avatar",
+      "name": "Аватар",
+      "subclass_id": "elementalist",
+      "description": "Ты — воплощение стихии. Ты становишься ураганом."
+    },
+    {
+      "id": "chaosite",
+      "name": "Хаосит",
+      "subclass_id": "elementalist",
+      "description": "Ты — повелитель энтропии. Ты заставляешь мир ошибаться."
+    },
+    {
+      "id": "psychosomatic",
+      "name": "Психосоматик",
+      "subclass_id": "mentalist",
+      "description": "Ты делаешь воображаемое реальным. Иллюзии убивают."
+    },
+    {
+      "id": "psionic",
+      "name": "Псионик",
+      "subclass_id": "mentalist",
+      "description": "Ты читаешь и переписываешь сознание. Враг забывает, как держать меч."
+    },
+    {
+      "id": "healer",
+      "name": "Целитель",
+      "subclass_id": "spiritualist",
+      "description": "Ты исправляешь плоть. Ты возвращаешь с края смерти."
+    },
+    {
+      "id": "guardian",
+      "name": "Хранитель",
+      "subclass_id": "spiritualist",
+      "description": "Ты защищаешь душу. Ты ставишь щиты, которые не пробить."
+    }
+  ]
+}

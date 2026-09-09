@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://c7310a72tyevn"]
+
+[ext_resource type="Script" uid="uid://c15m1ng54cbpg" path="res://Scripts/RogueSubclassSelect.gd" id="1_66r1r"]
+[ext_resource type="Texture2D" uid="uid://beuwvha1p0f2i" path="res://Assets/RogueSubclassSelect.png" id="2_66r1r"]
+
+[sub_resource type="Theme" id="Theme_66r1r"]
+
+[node name="Node2D" type="Control" unique_id=2044504923]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_66r1r")
+
+[node name="BackGround" type="Sprite2D" parent="." unique_id=1925766710]
+position = Vector2(960.00006, 540)
+scale = Vector2(0.75000006, 0.7557733)
+texture = ExtResource("2_66r1r")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=254741138]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 70.0
+offset_right = 815.0
+offset_bottom = 176.0
+
+[node name="Next" type="Button" parent="." unique_id=1762152387]
+layout_mode = 0
+offset_left = 911.0
+offset_top = 998.0
+offset_right = 1103.0
+offset_bottom = 1048.0
+text = "Далее"
+
+[node name="DescriptionLabel" type="Label" parent="." unique_id=1554280828]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 909.0
+offset_right = 1511.0
+offset_bottom = 954.0
+horizontal_alignment = 1
+
+[node name="SharpshooterButton" type="Button" parent="." unique_id=151436317]
+layout_mode = 0
+offset_left = 737.0
+offset_top = 349.0
+offset_right = 837.0
+offset_bottom = 389.0
+text = "Стрелок"
+
+[node name="KillerButton" type="Button" parent="." unique_id=651705485]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 430.0
+offset_right = 431.0
+offset_bottom = 470.0
+text = "Убийца"
+
+[node name="TrapperButton" type="Button" parent="." unique_id=1106596992]
+layout_mode = 0
+offset_left = 1188.0
+offset_top = 418.0
+offset_right = 1288.0
+offset_bottom = 458.0
+text = "Следопыт"
+
+[node name="DuelistButton" type="Button" parent="." unique_id=979310546]
+layout_mode = 0
+offset_left = 1559.0
+offset_top = 397.0
+offset_right = 1659.0
+offset_bottom = 437.0
+text = "Дуэлянт"
+
+[node name="Back" type="Button" parent="." unique_id=528251324]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 115.0
+offset_bottom = 60.0
+text = "Назад"
+
+[node name="Label" type="Label" parent="." unique_id=1116185825]
+layout_mode = 0
+offset_left = 767.0
+offset_top = 50.0
+offset_right = 1243.0
+offset_bottom = 145.0
+theme = SubResource("Theme_66r1r")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Выберите подкласс персонажа. 
+Подкласс дополняет класс и определяет специализацию
+ внутри него."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Next" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="SharpshooterButton" to="." method="_on_sharpshooter_button_pressed"]
+[connection signal="pressed" from="KillerButton" to="." method="_on_killer_button_pressed"]
+[connection signal="pressed" from="TrapperButton" to="." method="_on_trapper_button_pressed"]
+[connection signal="pressed" from="DuelistButton" to="." method="_on_duelist_button_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
