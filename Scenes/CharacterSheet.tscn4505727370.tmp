@@ -1,0 +1,225 @@
+[gd_scene format=3 uid="uid://bymfeal1bsud6"]
+
+[ext_resource type="Script" uid="uid://3yiilcj6unwk" path="res://Scripts/CharacterSheet.gd" id="1_xhaus"]
+[ext_resource type="Texture2D" uid="uid://cu0pqpjdejapg" path="res://Assets/GuideBook.png" id="2_yfthu"]
+[ext_resource type="Texture2D" uid="uid://b5i0ioihqgwvx" path="res://Assets/Avatars/EmptyAvatar.png" id="3_yfthu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
+font_size = 52
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font_size = 31
+
+[node name="SharacterSheet" type="Node2D" unique_id=353121577]
+script = ExtResource("1_xhaus")
+
+[node name="SheetBack" type="Sprite2D" parent="." unique_id=574454992]
+position = Vector2(959.99994, 540)
+scale = Vector2(0.69767433, 0.703125)
+texture = ExtResource("2_yfthu")
+
+[node name="Editable" type="Control" parent="." unique_id=306227016]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Name" type="Control" parent="Editable" unique_id=952817583]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Name" type="Label" parent="Editable/Name" unique_id=1789381728]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 30.0
+offset_right = 601.0
+offset_bottom = 149.0
+text = "Имя"
+label_settings = SubResource("LabelSettings_yf5fn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NameEdit" type="LineEdit" parent="Editable/Name" unique_id=988808656]
+visible = false
+layout_mode = 0
+offset_left = 165.0
+offset_top = 30.0
+offset_right = 523.0
+offset_bottom = 149.0
+theme_override_font_sizes/font_size = 52
+text = "И"
+max_length = 15
+
+[node name="History" type="Control" parent="Editable" unique_id=641841934]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="History" type="Label" parent="Editable/History" unique_id=1574676802]
+custom_maximum_size = Vector2(580, -1)
+layout_mode = 0
+offset_left = 670.0
+offset_top = 130.0
+offset_right = 1250.0
+offset_bottom = 530.0
+text = "Предыстория"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HistoryEdit" type="TextEdit" parent="Editable/History" unique_id=48831448]
+visible = false
+custom_maximum_size = Vector2(580, -1)
+layout_mode = 0
+offset_left = 670.0
+offset_top = 130.0
+offset_right = 1250.0
+offset_bottom = 530.0
+text = "Предыстория"
+autowrap_mode = 2
+
+[node name="Traits" type="Control" parent="Editable" unique_id=1089026386]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Traits" type="Label" parent="Editable/Traits" unique_id=497986213]
+custom_maximum_size = Vector2(620, -1)
+layout_mode = 0
+offset_left = 88.0
+offset_top = 668.0
+offset_right = 600.0
+offset_bottom = 805.0
+text = "Черты"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TraitsEdit" type="TextEdit" parent="Editable/Traits" unique_id=1822330382]
+visible = false
+custom_maximum_size = Vector2(620, -1)
+layout_mode = 0
+offset_left = 88.0
+offset_top = 667.0
+offset_right = 601.0
+offset_bottom = 804.0
+text = "Черты"
+autowrap_mode = 2
+
+[node name="Class" type="Label" parent="." unique_id=1661318763]
+offset_left = 650.0
+offset_top = -5.0
+offset_right = 1270.0
+offset_bottom = 98.0
+text = "Класс"
+label_settings = SubResource("LabelSettings_g4v7s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatsContainer" type="VBoxContainer" parent="." unique_id=1767907796]
+offset_left = 1300.0
+offset_top = 277.0
+offset_right = 1460.0
+offset_bottom = 387.0
+
+[node name="StrengthLabel" type="Label" parent="StatsContainer" unique_id=1039309175]
+layout_mode = 2
+text = "ахаха"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AgilityLabel" type="Label" parent="StatsContainer" unique_id=452900778]
+layout_mode = 2
+text = "хахах"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IntelligenceLabel" type="Label" parent="StatsContainer" unique_id=1339019869]
+layout_mode = 2
+text = "ххахаха"
+horizontal_alignment = 1
+
+[node name="LuckLabel" type="Label" parent="StatsContainer" unique_id=1637116820]
+layout_mode = 2
+text = "хихихи"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Abilities" type="Control" parent="." unique_id=1547143961]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Abilities" type="ItemList" parent="Abilities" unique_id=1992828922]
+layout_mode = 0
+offset_left = 1500.0
+offset_top = 79.0
+offset_right = 1850.0
+offset_bottom = 1028.0
+
+[node name="Name" type="Label" parent="Abilities" unique_id=971340708]
+layout_mode = 0
+offset_left = 1500.0
+offset_top = 54.0
+offset_right = 1850.0
+offset_bottom = 77.0
+text = "Способности"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Items" type="VBoxContainer" parent="." unique_id=1994977358]
+offset_left = 24.0
+offset_top = 796.0
+offset_right = 751.0
+offset_bottom = 1047.0
+
+[node name="Label" type="Label" parent="Items" unique_id=827943215]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Items" unique_id=1493308458]
+layout_mode = 2
+
+[node name="Effects" type="HBoxContainer" parent="." unique_id=54175224]
+offset_left = 54.0
+offset_top = 820.0
+offset_right = 634.0
+offset_bottom = 931.0
+
+[node name="Avatar" type="Sprite2D" parent="." unique_id=1866744336]
+position = Vector2(344, 402)
+texture = ExtResource("3_yfthu")
+
+[node name="Buttons" type="Control" parent="." unique_id=547725681]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Back" type="Button" parent="Buttons" unique_id=1111655112]
+layout_mode = 0
+offset_left = 787.0
+offset_top = 983.0
+offset_right = 927.0
+offset_bottom = 1052.0
+text = "Назад"
+
+[node name="Edit" type="Button" parent="Buttons" unique_id=2113139487]
+layout_mode = 0
+offset_left = 985.0
+offset_top = 982.0
+offset_right = 1125.0
+offset_bottom = 1051.0
+text = "Изменить"
+
+[node name="Button" type="Button" parent="Buttons" unique_id=893249167]
+layout_mode = 0
+offset_left = 1300.0
+offset_top = 386.0
+offset_right = 1460.0
+offset_bottom = 421.0
+text = "Подробнее"
+
+[connection signal="pressed" from="Buttons/Back" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Buttons/Edit" to="." method="_on_edit_button_pressed"]

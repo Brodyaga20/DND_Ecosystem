@@ -457,43 +457,6 @@ text = "Подробно про каждую основную и произво�
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=229215695]
-visible = false
-offset_right = 1024.0
-offset_bottom = 1024.0
-color = Color(0, 0, 0, 0.84313726)
-
-[node name="Label" type="Label" parent="ColorRect" unique_id=1857359832]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 277.0
-offset_right = 998.0
-offset_bottom = 404.0
-text = "Вернуться на этот экран и изменить данные с этого этапа станет невозможно, только если создать персонажа заново. 
-Так происходит потому, что мне лень прописывать логику сохранения данных между сценами, и они будут
-храниться только в памяти устройства. 
-Можно будет изменить только предысторию и особенности, в уже созданном персонаже.
-
-Вы точно хотите продолжить?"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Yes" type="Button" parent="ColorRect" unique_id=1195167815]
-layout_mode = 0
-offset_left = 269.0
-offset_top = 594.0
-offset_right = 423.0
-offset_bottom = 668.0
-text = "Да"
-
-[node name="No" type="Button" parent="ColorRect" unique_id=1269492974]
-layout_mode = 0
-offset_left = 576.0
-offset_top = 594.0
-offset_right = 730.0
-offset_bottom = 668.0
-text = "Нет"
-
 [connection signal="text_changed" from="Name/Entering" to="." method="_on_entering_text_changed"]
 [connection signal="value_changed" from="Stats/Luck/SpinBox" to="." method="_on_spin_value_changed"]
 [connection signal="value_changed" from="Stats/Intelligence/SpinBox" to="." method="_on_spin_value_changed"]
@@ -501,5 +464,3 @@ text = "Нет"
 [connection signal="value_changed" from="Stats/Strength/SpinBox" to="." method="_on_spin_value_changed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
-[connection signal="pressed" from="ColorRect/Yes" to="." method="_on_yes_pressed"]
-[connection signal="pressed" from="ColorRect/No" to="." method="_on_no_pressed"]

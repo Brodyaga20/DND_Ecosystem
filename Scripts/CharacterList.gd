@@ -33,16 +33,16 @@ func create_character_card(char_data: Dictionary) -> Control:
 	card.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	card.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	var class_name_ = DataManager.get_class_data(char_data["class_id"])["name"]
-	card.text = char_data["name"] + "\n" + class_name_
+	var subclass_name_ = DataManager.get_subclass_data(char_data["subclass_id"])["name"]
+	card.text = char_data["name"] + "\n" + class_name_ + "\n" + subclass_name_
 	# Настраиваем размеры (можно задать через theme)
-	card.custom_minimum_size = Vector2(150, 80)
+	card.custom_minimum_size = Vector2(150, 250)
 	card.pressed.connect(_on_card_pressed.bind(char_data["id"]))
 	return card
 
 func _on_card_pressed(char_id: int):
 	# Выбираем персонажа
 	selected_char_id = char_id
-	print("Выбран персонаж:", char_id)
 	GameState.current_character_id = char_id
 	update_buttons()
 	update_selection_highlight()
@@ -56,8 +56,6 @@ func update_selection_highlight():
 	if selected_char_id != null:
 		for child in grid.get_children():
 			if child is Button:
-				# Находим карточку по ID (в data не храним, поэтому ищем совпадение текста? лучше хранить ID в метаданных)
-				# Добавим в card метаданные при создании
 				pass
 
 func update_buttons():
@@ -73,11 +71,8 @@ func _on_delete_confirm_dialog_confirmed():
 			selected_char_id = null
 			update_buttons()
 			update_grid()  # обновляем список
-		else:
-			print("Не удалось удалить персонажа")
 
-func _on_create_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/ClassSelect.tscn")
+
 
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/StartScreen.tscn")
@@ -90,8 +85,6 @@ func _on_delete_pressed() -> void:
 			selected_char_id = null
 			update_buttons()
 			update_grid()  # обновляем список
-		else:
-			print("Не удалось удалить персонажа")
 
 func _on_char_sheet_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/CharacterSheet.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Profile.tscn")

@@ -3,7 +3,6 @@ var max_points = 7
 var remaining_points = 7
 
 func _ready():
-	$ColorRect.visible = false
 	var class_data = DataManager.get_class_data(TempData.class_id)
 	var subclass_data = DataManager.get_subclass_data(TempData.subclass_id)
 	$SublassSelected.text = "Выбранный вами подкласс: " + class_data["name"] + " - " + subclass_data["name"]
@@ -41,6 +40,7 @@ func update_derived_stats():
 	$Derivatives/Numbers/Move.text = str(int(floor(2 + agility/2)))
 	$Derivatives/Numbers/Reroll.text = str(int(floor((luck + 1)/2)))
 	$Derivatives/Numbers/RerollBonus.text = str(int(floor(luck/2)))
+	$Derivatives/Numbers/ActiveSlots.text = str(int(3 + intelligence))
 	pass
 
 func sum_stats() -> int:
@@ -54,7 +54,6 @@ func _on_entering_text_changed(_new_text: String) -> void:
 
 func _on_back_pressed() -> void:
 	var class_id = TempData.class_id
-	print(class_id)
 	match class_id:
 		"warrior":
 			get_tree().change_scene_to_file("res://Scenes/WarriorSubclassSelect.tscn")
@@ -63,7 +62,7 @@ func _on_back_pressed() -> void:
 		"mage":
 			get_tree().change_scene_to_file("res://Scenes/MageSubclassSelect.tscn")
 
-func _on_yes_pressed() -> void:
+func _on_save_pressed() -> void:
 	if remaining_points == 0 and $Name/Entering.text != "":
 		TempData.character_name = $Name/Entering.text
 		TempData.stats = {
@@ -86,10 +85,3 @@ func _on_yes_pressed() -> void:
 		get_tree().change_scene_to_file("res://scenes/CharacterList.tscn")
 	
 	pass
-
-func _on_no_pressed() -> void:
-	$ColorRect.visible = false
-
-
-func _on_save_pressed() -> void:
-	$ColorRect.visible = true

@@ -27,12 +27,9 @@ func load_unlocks():
 		var json = JSON.parse_string(text)
 		if json:
 			unlocked = json
-			print("UnlockManager: загружено разблокировок")
 		else:
-			print("UnlockManager: ошибка парсинга unlock.json, создаём новый")
 			save_unlocks()
 	else:
-		print("UnlockManager: файл unlock.json не найден, создаём новый")
 		save_unlocks()
 
 func save_unlocks():
@@ -41,7 +38,6 @@ func save_unlocks():
 		var json = JSON.stringify(unlocked, "\t")
 		file.store_string(json)
 		file.close()
-		print("UnlockManager: сохранено в файл")
 
 func is_class_unlocked(class_id: String) -> bool:
 	return class_id in unlocked["classes"]
@@ -74,7 +70,6 @@ func lock_everything() -> void:
 		var json = JSON.stringify(unlocked, "\t")
 		file.store_string(json)
 		file.close()
-		print("UnlockManager: сохранено")
 	return
 
 func set_unlocks_from_server(data: Dictionary):

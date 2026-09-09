@@ -12,29 +12,42 @@ scale = Vector2(0.75000006, 0.7557731)
 texture = ExtResource("2_0on6r")
 
 [node name="PlayButton" type="Button" parent="." unique_id=434665691]
-offset_left = 363.0
+offset_left = 300.0
 offset_top = 236.0
-offset_right = 663.0
-offset_bottom = 375.0
+offset_right = 600.0
+offset_bottom = 356.0
 text = "Играть"
-metadata/_edit_use_anchors_ = true
 
 [node name="GuideButton" type="Button" parent="." unique_id=365177393]
-offset_left = 410.0
-offset_top = 540.0
-offset_right = 589.0
-offset_bottom = 636.0
+offset_left = 300.0
+offset_top = 381.0
+offset_right = 600.0
+offset_bottom = 501.0
 text = "Справочник"
-metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="." unique_id=517555725]
-offset_left = 269.0
-offset_top = 931.0
-offset_right = 707.0
-offset_bottom = 996.0
+offset_left = 537.0
+offset_top = 1005.0
+offset_right = 975.0
+offset_bottom = 1070.0
 text = "Очистить кеш(все данные из справочника удалятся)"
-metadata/_edit_use_anchors_ = true
+
+[node name="Exit" type="Button" parent="." unique_id=1000325984]
+offset_left = 300.0
+offset_top = 525.0
+offset_right = 600.0
+offset_bottom = 645.0
+text = "Выход"
+
+[node name="Master" type="Button" parent="." unique_id=1276797824]
+offset_left = 328.0
+offset_top = 725.0
+offset_right = 574.0
+offset_bottom = 842.0
+text = "Мастерская"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="GuideButton" to="." method="_on_guide_button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Master" to="." method="_on_master_pressed"]

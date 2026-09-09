@@ -15,13 +15,10 @@ func load_characters():
 		var json = JSON.parse_string(text)
 		if json:
 			characters = json
-			print("GameManager: загружено персонажей: ", characters.size())
 		else:
-			print("GameManager: ошибка парсинга, создаём пустой список")
 			characters = []
 			save_characters()
 	else:
-		print("GameManager: файл не найден, создаём новый")
 		characters = []
 		save_characters()
 
@@ -31,9 +28,6 @@ func save_characters():
 		var json = JSON.stringify(characters, "\t")
 		file.store_string(json)
 		file.close()
-		print("GameManager: сохранено персонажей: ", characters.size())
-	else:
-		print("GameManager: ОШИБКА сохранения!")
 
 func add_character(name: String, class_id: String, subclass_id: String, stats: Dictionary, background: String = "", traits: String = "", starting_gear: Array = []):
 	var new_char = {
@@ -43,18 +37,24 @@ func add_character(name: String, class_id: String, subclass_id: String, stats: D
 		"subclass_id": subclass_id,
 		"archetype_id": null,
 		"stats": stats,
-		"resources": {},  # позже заполним из данных подкласса
+		"resources": null, # позже заполним из данных подкласса
 		"background": background,
 		"traits": traits,
 		"starting_gear": starting_gear,
-		"hp_current": 40 + stats.get("strength", 0) * 4,  # начальное ХП
-		"hp_max": 40 + stats.get("strength", 0) * 4,
+		"hp_current": 40 + stats.get("strength", 0) * 10,  # начальное ХП
+		"hp_max": 40 + stats.get("strength", 0) * 10,
 		"created": Time.get_datetime_string_from_system(),
-		"locked": false
+		"locked": false,
+		"abilities_known": [DataManager.get_start_ability_for_subclass(subclass_id)["id"]]
 	}
+
 	if characters.size() >= MAX_CHARACTERS:
-		print("Достигнут лимит персонажей!")
 		return null  # или false
+	var resource = DataManager.get_resource_from_subclass(subclass_id)
+	resource.get_or_add("amount")
+	resource["amount"] = 0
+	new_char["resources"] = resource
+	print(new_char)
 	characters.append(new_char)
 	save_characters()
 	return new_char
