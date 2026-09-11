@@ -58,7 +58,7 @@ texture_focused = ExtResource("5_gdkq2")
 
 [node name="Label" type="Label" parent="SharpshooterButton" unique_id=1371107272]
 layout_mode = 0
-offset_right = 408.0
+offset_right = 425.0
 offset_bottom = 162.0
 theme_override_fonts/font = ExtResource("3_rqf5i")
 theme_override_font_sizes/font_size = 45
@@ -83,7 +83,7 @@ texture_focused = ExtResource("5_gdkq2")
 
 [node name="Label" type="Label" parent="KillerButton" unique_id=723630767]
 layout_mode = 0
-offset_right = 408.0
+offset_right = 425.0
 offset_bottom = 162.0
 theme_override_fonts/font = ExtResource("3_rqf5i")
 theme_override_font_sizes/font_size = 45
@@ -108,7 +108,7 @@ texture_focused = ExtResource("5_gdkq2")
 
 [node name="Label" type="Label" parent="TrapperButton" unique_id=677694309]
 layout_mode = 0
-offset_right = 408.0
+offset_right = 425.0
 offset_bottom = 162.0
 theme_override_fonts/font = ExtResource("3_rqf5i")
 theme_override_font_sizes/font_size = 45
@@ -133,7 +133,7 @@ texture_focused = ExtResource("4_qscbc")
 
 [node name="Label" type="Label" parent="DuelistButton" unique_id=1627244734]
 layout_mode = 0
-offset_right = 408.0
+offset_right = 425.0
 offset_bottom = 162.0
 theme_override_fonts/font = ExtResource("3_rqf5i")
 theme_override_font_sizes/font_size = 45

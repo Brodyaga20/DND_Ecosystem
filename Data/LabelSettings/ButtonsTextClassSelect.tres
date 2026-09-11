@@ -4,6 +4,6 @@
 
 [resource]
 font = ExtResource("1_xyu0t")
-font_size = 39
-shadow_size = 9
+font_size = 51
+shadow_size = 15
 shadow_color = Color(0, 0, 0, 1)

@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://dh7tj2186ie4u"]
 
 [ext_resource type="Script" uid="uid://l5ude65veo6w" path="res://Scripts/StartScreen.gd" id="1_ko4ly"]
+[ext_resource type="Texture2D" uid="uid://ei2pdn02lut8" path="res://Assets/Pictures/StartMenuBack.png" id="2_ey7n4"]
 [ext_resource type="Texture2D" uid="uid://ciwe5ik28iyxh" path="res://Assets/Pictures/ButtonsStart.png" id="3_a2231"]
 [ext_resource type="Texture2D" uid="uid://c8yi4guvti1dr" path="res://Assets/Pictures/ButtonsStartPressed.png" id="4_ey7n4"]
 [ext_resource type="Texture2D" uid="uid://1hx6ki5kaybv" path="res://Assets/Pictures/ButtonsStartHover.png" id="5_6mw8b"]
 [ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://Assets/Fonts/cinzel_bold.ttf" id="6_ey7n4"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a2231"]
-load_path = "res://.godot/imported/StartMenuBack.png-450327cbef092a6f3e57a215bcfb38b7.ctex"
 
 [node name="Node2D" type="Control" unique_id=1560189313]
 layout_mode = 3
@@ -17,7 +15,7 @@ script = ExtResource("1_ko4ly")
 [node name="ClassSelectBack" type="Sprite2D" parent="." unique_id=1151962293]
 position = Vector2(960.125, 539.78314)
 scale = Vector2(0.697077, 0.7034074)
-texture = SubResource("CompressedTexture2D_a2231")
+texture = ExtResource("2_ey7n4")
 
 [node name="Button" type="Button" parent="." unique_id=517555725]
 layout_mode = 0
