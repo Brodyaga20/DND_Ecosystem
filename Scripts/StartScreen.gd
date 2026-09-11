@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 func _ready():
 	# Можно добавить приветствие или музыку
@@ -22,8 +22,3 @@ func _on_exit_pressed() -> void:
 
 func exit():
 	get_tree().quit()
-
-
-func _on_master_pressed() -> void:
-	GameState.master_mode = true
-	get_tree().change_scene_to_file("res://scenes/MasterList.tscn")

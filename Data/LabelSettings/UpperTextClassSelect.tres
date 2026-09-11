@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://dphedhg6n6hit"]
+
+[ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://Assets/Fonts/cinzel_bold.ttf" id="1_t58oj"]
+
+[resource]
+font = ExtResource("1_t58oj")
+font_size = 25
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)

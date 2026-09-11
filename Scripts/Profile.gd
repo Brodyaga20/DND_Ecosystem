@@ -1,11 +1,13 @@
-extends Node2D
+extends Control
 
 var character_id = null
 var character_data = null
 var mode = "look"
 var is_master = false
+var peer_id
 
 func _ready():
+	peer_id = GameState.current_peer_id
 	$Editable/Name/NameEdit.visible = false
 	$Editable/History/HistoryEdit.visible = false
 	$Editable/Traits/TraitsEdit.visible = false
@@ -83,6 +85,8 @@ func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/MasterList.tscn")
 
 func _on_edit_button_pressed():
+	if character_data.get("locked", false) or GameState.is_connected_to_server:
+		return
 	match mode:
 		"look":
 			mode = "edit"
@@ -144,6 +148,8 @@ func _on_hp_apply_pressed() -> void:
 	$MasterEdit/HPEdit.text = ""  # очищаем поле
 	GameManager.save_characters()
 	update_display()
+	if is_master and multiplayer.is_server():
+		NetworkManager.update_character.rpc(character_data, peer_id)
 	pass # Replace with function body.
 
 
@@ -153,17 +159,37 @@ func _on_res_apply_pressed() -> void:
 	if input == "": return
 	var delta = int(input)
 	if character_data["resources"].size() == 0: return
-	var res_name = character_data["resources"].keys()[0]
-	character_data["resources"][res_name] += delta
+	if not character_data["resources"].has("amount"): return
+	character_data["resources"]["amount"] += delta
 	# Ограничения по минимуму/максимуму можно взять из данных подкласса
 	var subclass_data = DataManager.get_subclass_data(character_data["subclass_id"])
 	if subclass_data and subclass_data.has("resource"):
 		var min_val = subclass_data["resource"].get("min", 0)
 		var max_val = subclass_data["resource"].get("max", 10)
-		if character_data["resources"][res_name] < min_val:
-			character_data["resources"][res_name] = min_val
-		if character_data["resources"][res_name] > max_val:
-			character_data["resources"][res_name] = max_val
+		if character_data["resources"]["amount"] < min_val:
+			character_data["resources"]["amount"] = min_val
+		if character_data["resources"]["amount"] > max_val:
+			character_data["resources"]["amount"] = max_val
 	$MasterEdit/ResEdit.text = ""
 	GameManager.save_characters()
+	update_display()
+
+func refresh_data():
+	# Перезагружаем данные из GameState.remote_characters или GameManager
+	if GameState.current_peer_id != null:
+		# Если это удалённый персонаж, берём из remote_characters
+		var remote_data = GameState.remote_characters.get(GameState.current_peer_id)
+		if remote_data:
+			character_data = remote_data
+			print(GameManager.get_character(character_data["id"]))
+		else:
+			# возможно, персонаж удалён – вернуться в список
+			get_tree().change_scene_to_file("res://Scenes/CharacterList.tscn")
+			return
+	else:
+		# Локальный персонаж – из GameManager
+		character_data = GameManager.get_character(GameState.current_character_id)
+		if not character_data:
+			get_tree().change_scene_to_file("res://Scenes/CharacterList.tscn")
+			return
 	update_display()

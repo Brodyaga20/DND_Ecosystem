@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bymfeal1bsud6"]
 
 [ext_resource type="Script" uid="uid://3yiilcj6unwk" path="res://Scripts/Profile.gd" id="1_irxi3"]
-[ext_resource type="Texture2D" uid="uid://cu0pqpjdejapg" path="res://Assets/GuideBook.png" id="2_hjayj"]
-[ext_resource type="Texture2D" uid="uid://b5i0ioihqgwvx" path="res://Assets/Avatars/EmptyAvatar.png" id="3_h7yon"]
+[ext_resource type="Texture2D" uid="uid://cu0pqpjdejapg" path="res://Assets/Pictures/GuideBook.png" id="2_hjayj"]
+[ext_resource type="Texture2D" uid="uid://b5i0ioihqgwvx" path="res://Assets/Pictures/Avatars/EmptyAvatar.png" id="3_h7yon"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
 font_size = 52
@@ -10,7 +10,9 @@ font_size = 52
 [sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
 font_size = 31
 
-[node name="SharacterSheet" type="Node2D" unique_id=353121577]
+[node name="Profile" type="Control" unique_id=424448599]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_irxi3")
 
 [node name="SheetBack" type="Sprite2D" parent="." unique_id=574454992]
@@ -19,7 +21,6 @@ scale = Vector2(0.69767433, 0.703125)
 texture = ExtResource("2_hjayj")
 
 [node name="Editable" type="Control" parent="." unique_id=306227016]
-layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -108,6 +109,7 @@ text = "Черты"
 autowrap_mode = 2
 
 [node name="Class" type="Label" parent="." unique_id=1661318763]
+layout_mode = 0
 offset_left = 650.0
 offset_top = -5.0
 offset_right = 1270.0
@@ -118,6 +120,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StatsContainer" type="VBoxContainer" parent="." unique_id=1767907796]
+layout_mode = 0
 offset_left = 1300.0
 offset_top = 526.0
 offset_right = 1460.0
@@ -147,7 +150,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Abilities" type="Control" parent="." unique_id=1547143961]
-layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -170,6 +172,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Items" type="VBoxContainer" parent="." unique_id=1994977358]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 796.0
 offset_right = 751.0
@@ -182,6 +185,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Effects" type="HBoxContainer" parent="." unique_id=54175224]
+layout_mode = 0
 offset_left = 54.0
 offset_top = 820.0
 offset_right = 634.0
@@ -192,7 +196,6 @@ position = Vector2(344, 402)
 texture = ExtResource("3_h7yon")
 
 [node name="Buttons" type="Control" parent="." unique_id=547725681]
-layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -222,7 +225,6 @@ offset_bottom = 670.0
 text = "Подробнее"
 
 [node name="Resource" type="Control" parent="." unique_id=89600283]
-layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -249,7 +251,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HP" type="Control" parent="." unique_id=160536245]
-layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -276,7 +277,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MasterEdit" type="Control" parent="." unique_id=1483141109]
-layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

@@ -1,9 +1,28 @@
 [gd_scene format=3 uid="uid://cnov7avqi0a0o"]
 
 [ext_resource type="Script" uid="uid://c8ydb1cbaesmo" path="res://Scripts/ClassSelect.gd" id="1_aym83"]
-[ext_resource type="Texture2D" uid="uid://p75y8iy3gbwr" path="res://Assets/ClassSelectBack.png" id="2_7q16j"]
+[ext_resource type="Texture2D" uid="uid://p75y8iy3gbwr" path="res://Assets/Pictures/ClassSelectBack.png" id="2_7q16j"]
+[ext_resource type="Texture2D" uid="uid://bn4nocv76a8sw" path="res://Assets/Pictures/Buttons/ClassSelections/BaseNormal.png" id="3_2750n"]
+[ext_resource type="ButtonGroup" uid="uid://d1j331syqr8dt" path="res://Data/ButtonGroups/ClassSelect.tres" id="3_wtqs1"]
+[ext_resource type="Texture2D" uid="uid://d1aavbi2i3fba" path="res://Assets/Pictures/Buttons/ClassSelections/BasePressed.png" id="4_wtqs1"]
+[ext_resource type="Texture2D" uid="uid://ln3g8urp7dc7" path="res://Assets/Pictures/Buttons/ClassSelections/BaseHover.png" id="5_qvnra"]
+[ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://Assets/Fonts/cinzel_bold.ttf" id="6_junkc"]
+[ext_resource type="Texture2D" uid="uid://8u1ju70k1rju" path="res://Assets/Pictures/Buttons/Universal/BackNormal.png" id="8_d1qtr"]
+[ext_resource type="Texture2D" uid="uid://lw5wjk0pwr37" path="res://Assets/Pictures/Buttons/Universal/BackPressed.png" id="9_ctprq"]
+[ext_resource type="Texture2D" uid="uid://c8vrjooon177" path="res://Assets/Pictures/Buttons/Universal/BackHover.png" id="10_rapkh"]
+[ext_resource type="Shader" uid="uid://b84kr2bu7ux0h" path="res://Data/Shaders/BackBlur.gdshader" id="11_ri2h1"]
+[ext_resource type="LabelSettings" uid="uid://dphedhg6n6hit" path="res://Data/LabelSettings/UpperTextClassSelect.tres" id="12_n3n4g"]
+[ext_resource type="LabelSettings" uid="uid://k4l2d62tldd2" path="res://Data/LabelSettings/LowerTextClassSelect.tres" id="13_uta15"]
 
-[sub_resource type="Theme" id="Theme_g4v7s"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ef02c"]
+shader = ExtResource("11_ri2h1")
+shader_parameter/max_blur_lod = 4.0
+shader_parameter/inner = 0.0
+shader_parameter/outer = 0.7
+shader_parameter/falloff = 1.0
+shader_parameter/tint = Color(0, 0, 0, 0)
+
+[sub_resource type="Theme" id="Theme_8x07v"]
 
 [node name="Node2D" type="Control" unique_id=2044504923]
 layout_mode = 3
@@ -22,65 +41,148 @@ offset_top = 70.0
 offset_right = 815.0
 offset_bottom = 176.0
 
-[node name="Next" type="Button" parent="." unique_id=1762152387]
+[node name="Next" type="TextureButton" parent="." unique_id=767802749]
 layout_mode = 0
-offset_left = 801.0
-offset_top = 932.0
-offset_right = 1149.0
-offset_bottom = 1056.0
+offset_left = 1780.0
+offset_top = 1000.0
+offset_right = 1890.0
+offset_bottom = 1055.0
+texture_normal = ExtResource("8_d1qtr")
+texture_pressed = ExtResource("9_ctprq")
+texture_hover = ExtResource("10_rapkh")
+texture_focused = ExtResource("10_rapkh")
+
+[node name="Label" type="Label" parent="Next" unique_id=696286878]
+layout_mode = 0
+offset_right = 110.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("6_junkc")
+theme_override_font_sizes/font_size = 22
 text = "Далее"
-
-[node name="DescriptionLabel" type="Label" parent="." unique_id=1554280828]
-layout_mode = 0
-offset_left = 470.0
-offset_top = 869.0
-offset_right = 1471.0
-offset_bottom = 914.0
-horizontal_alignment = 1
-
-[node name="WarriorButton" type="Button" parent="." unique_id=151436317]
-layout_mode = 0
-offset_left = 408.0
-offset_top = 366.0
-offset_right = 508.0
-offset_bottom = 406.0
-text = "Воин"
-
-[node name="RogueButton" type="Button" parent="." unique_id=651705485]
-layout_mode = 0
-offset_left = 932.0
-offset_top = 473.0
-offset_right = 1032.0
-offset_bottom = 513.0
-text = "Ассасин"
-
-[node name="MageButton" type="Button" parent="." unique_id=1106596992]
-layout_mode = 0
-offset_left = 1481.0
-offset_top = 391.0
-offset_right = 1581.0
-offset_bottom = 431.0
-text = "Маг"
-
-[node name="Label" type="Label" parent="." unique_id=1228698589]
-layout_mode = 0
-offset_left = 732.0
-offset_top = 39.0
-offset_right = 1208.0
-offset_bottom = 134.0
-theme = SubResource("Theme_g4v7s")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Выберите класс персонажа. Класс определяет стиль игры."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Back" type="Button" parent="." unique_id=864352864]
+[node name="WarriorButton" type="TextureButton" parent="." unique_id=1964158823]
 layout_mode = 0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 115.0
-offset_bottom = 60.0
+offset_left = 210.0
+offset_top = 661.0
+offset_right = 610.0
+offset_bottom = 811.0
+toggle_mode = true
+keep_pressed_outside = true
+button_group = ExtResource("3_wtqs1")
+texture_normal = ExtResource("3_2750n")
+texture_pressed = ExtResource("4_wtqs1")
+texture_hover = ExtResource("5_qvnra")
+texture_focused = ExtResource("5_qvnra")
+
+[node name="Label" type="Label" parent="WarriorButton" unique_id=1854027089]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 150.0
+theme_override_fonts/font = ExtResource("6_junkc")
+theme_override_font_sizes/font_size = 50
+text = "Воин"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RogueButton" type="TextureButton" parent="." unique_id=1879350778]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 719.0
+offset_right = 1160.0
+offset_bottom = 869.0
+toggle_mode = true
+button_group = ExtResource("3_wtqs1")
+texture_normal = ExtResource("3_2750n")
+texture_pressed = ExtResource("4_wtqs1")
+texture_hover = ExtResource("5_qvnra")
+texture_focused = ExtResource("5_qvnra")
+
+[node name="Label" type="Label" parent="RogueButton" unique_id=766548117]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 150.0
+theme_override_fonts/font = ExtResource("6_junkc")
+theme_override_font_sizes/font_size = 50
+text = "Ассасин"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MageButton" type="TextureButton" parent="." unique_id=984811736]
+layout_mode = 0
+offset_left = 1310.0
+offset_top = 665.0
+offset_right = 1710.0
+offset_bottom = 815.0
+toggle_mode = true
+button_group = ExtResource("3_wtqs1")
+texture_normal = ExtResource("3_2750n")
+texture_pressed = ExtResource("4_wtqs1")
+texture_hover = ExtResource("5_qvnra")
+
+[node name="Label" type="Label" parent="MageButton" unique_id=1993369575]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 150.0
+theme_override_fonts/font = ExtResource("6_junkc")
+theme_override_font_sizes/font_size = 50
+text = "Маг"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="TextureButton" parent="." unique_id=726799108]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 130.0
+offset_bottom = 75.0
+texture_normal = ExtResource("8_d1qtr")
+texture_pressed = ExtResource("9_ctprq")
+texture_hover = ExtResource("10_rapkh")
+texture_focused = ExtResource("10_rapkh")
+
+[node name="Label" type="Label" parent="Back" unique_id=350636077]
+layout_mode = 0
+offset_right = 110.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("6_junkc")
+theme_override_font_sizes/font_size = 22
 text = "Назад"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Blur" type="ColorRect" parent="." unique_id=1987046487]
+material = SubResource("ShaderMaterial_ef02c")
+layout_mode = 0
+offset_left = 410.0
+offset_top = -1.0
+offset_right = 1510.0
+offset_bottom = 164.0
+color = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="Blur" unique_id=1771583237]
+layout_mode = 0
+offset_right = 1100.0
+offset_bottom = 130.0
+theme = SubResource("Theme_8x07v")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "Выберите класс персонажа. Класс определяет стиль игры."
+label_settings = ExtResource("12_n3n4g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="Blur" unique_id=1304990272]
+layout_mode = 0
+offset_top = 94.0
+offset_right = 1100.0
+offset_bottom = 139.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_junkc")
+theme_override_font_sizes/font_size = 25
+label_settings = ExtResource("13_uta15")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="WarriorButton" to="." method="_on_warrior_button_pressed"]

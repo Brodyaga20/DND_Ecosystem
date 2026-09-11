@@ -5,7 +5,7 @@ const selected_class_id = "warrior"
 
 func _ready():
 	$Next.disabled = true
-	$DescriptionLabel.text = ""
+	$Blur/DescriptionLabel.text = ""
 
 func _on_paladin_button_pressed():
 	select_subclass("paladin")
@@ -23,24 +23,11 @@ func select_subclass(subclass_id: String):
 	selected_subclass_id = subclass_id
 	var class_data = DataManager.get_subclass_data(subclass_id)
 	if class_data:
-		$DescriptionLabel.text = class_data["description"]
+		$Blur/DescriptionLabel.text = class_data["description"]
 		TempData.subclass_id = subclass_id
 		$Next.disabled = false
-		# Можно подсветить выбранную кнопку (например, изменить цвет)
-		highlight_button(subclass_id)
 
-func highlight_button(class_id: String):
-	# Сбросить цвет всех кнопок
-	$PaladinButton.modulate = Color.WHITE
-	$KnightButton.modulate = Color.WHITE
-	$BerserkerButton.modulate = Color.WHITE
-	$CaptainButton.modulate = Color.WHITE
-	# Подсветить выбранную
-	match class_id:
-		"paladin": $PaladinButton.modulate = Color.YELLOW
-		"knight": $KnightButton.modulate = Color.YELLOW
-		"berserker": $BerserkerButton.modulate = Color.YELLOW
-		"captain": $CaptainButton.modulate = Color.YELLOW
+
 
 func _on_next_button_pressed():
 	if selected_subclass_id != "":

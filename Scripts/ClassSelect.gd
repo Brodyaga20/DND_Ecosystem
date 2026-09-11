@@ -7,7 +7,7 @@ func _ready():
 	# Деактивируем кнопку "Далее" изначально
 	$Next.disabled = true
 	# Убираем описание
-	$DescriptionLabel.text = ""
+	$Blur/DescriptionLabel.text = ""
 
 func _on_warrior_button_pressed():
 	select_class("warrior")
@@ -22,22 +22,10 @@ func select_class(class_id: String):
 	selected_class_id = class_id
 	var class_data = DataManager.get_class_data(class_id)
 	if class_data:
-		$DescriptionLabel.text = class_data["description"]
+		$Blur/DescriptionLabel.text = class_data["description"]
 		TempData.class_id = class_id
 		$Next.disabled = false
-		# Можно подсветить выбранную кнопку (например, изменить цвет)
-		highlight_button(class_id)
 
-func highlight_button(class_id: String):
-	# Сбросить цвет всех кнопок
-	$WarriorButton.modulate = Color.WHITE
-	$RogueButton.modulate = Color.WHITE
-	$MageButton.modulate = Color.WHITE
-	# Подсветить выбранную
-	match class_id:
-		"warrior": $WarriorButton.modulate = Color.YELLOW
-		"rogue": $RogueButton.modulate = Color.YELLOW
-		"mage": $MageButton.modulate = Color.YELLOW
 
 
 func _on_back_button_pressed():

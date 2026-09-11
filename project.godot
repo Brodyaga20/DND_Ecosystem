@@ -22,6 +22,8 @@ TempData="*uid://dm0pia6hdlmo8"
 UnlockManager="*uid://d11408wu6pg1w"
 GameManager="*uid://ctbrm6ly5wbkt"
 GameState="*uid://dt5ryyp2ndlhs"
+ServerData="*uid://dph08hh1higao"
+NetworkManager="*uid://bhenbujemd21u"
 
 [display]
 
@@ -29,7 +31,6 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [physics]
 
@@ -40,3 +41,5 @@ window/stretch/aspect="expand"
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.00093636644, 0.00093636644, 0.00093636644, 1)

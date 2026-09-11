@@ -7,6 +7,7 @@ var characters = []  # массив словарей
 
 func _ready():
 	load_characters()
+	print(characters)
 
 func load_characters():
 	var file = FileAccess.open(CHARACTERS_FILE, FileAccess.READ)
@@ -30,6 +31,8 @@ func save_characters():
 		file.close()
 
 func add_character(name: String, class_id: String, subclass_id: String, stats: Dictionary, background: String = "", traits: String = "", starting_gear: Array = []):
+	if characters.size() >= MAX_CHARACTERS:
+		return null  # или false
 	var new_char = {
 		"id": int(Time.get_unix_time_from_system() * 1000),  # уникальный ID
 		"name": name,
@@ -48,13 +51,10 @@ func add_character(name: String, class_id: String, subclass_id: String, stats: D
 		"abilities_known": [DataManager.get_start_ability_for_subclass(subclass_id)["id"]]
 	}
 
-	if characters.size() >= MAX_CHARACTERS:
-		return null  # или false
-	var resource = DataManager.get_resource_from_subclass(subclass_id)
-	resource.get_or_add("amount")
+
+	var resource = DataManager.get_resource_from_subclass(subclass_id).duplicate(true)
 	resource["amount"] = 0
 	new_char["resources"] = resource
-	print(new_char)
 	characters.append(new_char)
 	save_characters()
 	return new_char

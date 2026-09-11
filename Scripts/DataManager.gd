@@ -47,7 +47,6 @@ func get_ability(id: String):
 func get_resource_from_subclass(id: String):
 	for s in subclasses:
 		if s["id"] == id:
-			print(s["resource"])
 			return s["resource"]
 	return null
 

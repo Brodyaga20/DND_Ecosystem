@@ -66,7 +66,7 @@ func unlock_archetype(archetype_id: String):
 func lock_everything() -> void:
 	var file = FileAccess.open(UNLOCK_FILE, FileAccess.WRITE)
 	if file:
-		unlocked = empty_unlocks
+		unlocked = empty_unlocks.duplicate(true)
 		var json = JSON.stringify(unlocked, "\t")
 		file.store_string(json)
 		file.close()

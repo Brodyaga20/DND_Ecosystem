@@ -1,5 +1,5 @@
 extends Node2D
-var max_points = 7
+var max_start_points = 7
 var remaining_points = 7
 
 func _ready():
@@ -15,14 +15,13 @@ func _ready():
 
 func update_ui():
 	var total = sum_stats()
-	remaining_points = max_points - total
-	$Stats/RemainingLabel.text = "Осталось очков: " + str(int(remaining_points))
+	remaining_points = max_start_points - total
+	if remaining_points >= 0:
+		$Stats/RemainingLabel.text = "Для создания стартового персонажа осталось " + str(int(remaining_points)) + " очков.\nВы можете создать персонажа сильнее или слабее стартового, если мастер разрешит."
+	else:
+		$Stats/RemainingLabel.text = "Ваш персонаж имеет на " + str(int(-remaining_points)) + " очков больше стартового.\nЭто нормально, если мастер разрешит."
 	update_derived_stats()
-	$Save.disabled = (remaining_points != 0 or $Name/Entering.text == "")
-	$Stats/Strength/SpinBox.max_value = $Stats/Strength/SpinBox.value + remaining_points
-	$Stats/Agility/SpinBox.max_value = $Stats/Agility/SpinBox.value + remaining_points
-	$Stats/Intelligence/SpinBox.max_value = $Stats/Intelligence/SpinBox.value + remaining_points
-	$Stats/Luck/SpinBox.max_value = $Stats/Luck/SpinBox.value + remaining_points
+	$Save.disabled = $Name/Entering.text == ""
 
 func update_derived_stats():
 	var strength = $Stats/Strength/SpinBox.value
@@ -82,6 +81,6 @@ func _on_save_pressed() -> void:
 			TempData.traits
 		)
 		TempData.reset()
-		get_tree().change_scene_to_file("res://scenes/CharacterList.tscn")
+		get_tree().change_scene_to_file("res://Scenes/CharacterList.tscn")
 	
 	pass
