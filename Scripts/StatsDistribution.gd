@@ -61,8 +61,14 @@ func _on_back_pressed() -> void:
 		"mage":
 			get_tree().change_scene_to_file("res://Scenes/MageSubclassSelect.tscn")
 
+func ask_for_stats():
+	pass
+
 func _on_save_pressed() -> void:
-	if remaining_points == 0 and $Name/Entering.text != "":
+	if remaining_points != 0:
+		ask_for_stats()
+		return
+	if $Name/Entering.text != "":
 		TempData.character_name = $Name/Entering.text
 		TempData.stats = {
 			"strength": $Stats/Strength/SpinBox.value,
@@ -72,7 +78,7 @@ func _on_save_pressed() -> void:
 		}
 		TempData.history = $History/Text.text
 		TempData.traits = $Traits/Text.text
-		var new_char = GameManager.add_character(
+		var _new_char = GameManager.add_character(
 			TempData.character_name,
 			TempData.class_id,
 			TempData.subclass_id,

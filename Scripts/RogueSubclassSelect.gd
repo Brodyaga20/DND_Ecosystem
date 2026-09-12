@@ -32,7 +32,7 @@ func select_subclass(subclass_id: String):
 
 func _on_next_button_pressed():
 	if selected_subclass_id != "":
-		get_tree().change_scene_to_file("res://Scenes/StatsDistribution.tscn")
+		get_tree().change_scene_to_file("res://Scenes/RaceSelect.tscn")
 		UnlockManager.unlock_class(selected_class_id)
 		UnlockManager.unlock_subclass(selected_subclass_id)
 

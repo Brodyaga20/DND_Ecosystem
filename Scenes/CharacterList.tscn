@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://8u1ju70k1rju" path="res://Assets/Pictures/Buttons/Universal/BackNormal.png" id="7_iqcw4"]
 [ext_resource type="Texture2D" uid="uid://lw5wjk0pwr37" path="res://Assets/Pictures/Buttons/Universal/BackPressed.png" id="8_h71au"]
 [ext_resource type="Texture2D" uid="uid://c8vrjooon177" path="res://Assets/Pictures/Buttons/Universal/BackHover.png" id="9_m0tkf"]
+[ext_resource type="LabelSettings" uid="uid://gohtfpbd5dmk" path="res://Data/LabelSettings/BackNextButtons.tres" id="10_h71au"]
 
 [node name="CharacterList" type="Control" unique_id=1236289594]
 layout_mode = 3
@@ -64,21 +65,22 @@ vertical_alignment = 1
 
 [node name="Back" type="TextureButton" parent="." unique_id=466963866]
 layout_mode = 0
-offset_left = 905.0
-offset_top = 989.0
-offset_right = 1015.0
-offset_bottom = 1044.0
+offset_left = 875.0
+offset_top = 975.0
+offset_right = 1045.0
+offset_bottom = 1060.0
 texture_normal = ExtResource("7_iqcw4")
 texture_pressed = ExtResource("8_h71au")
 texture_hover = ExtResource("9_m0tkf")
 
 [node name="Label" type="Label" parent="Back" unique_id=975426125]
 layout_mode = 0
-offset_right = 110.0
-offset_bottom = 55.0
+offset_right = 170.0
+offset_bottom = 85.0
 theme_override_fonts/font = ExtResource("6_rfau1")
 theme_override_font_sizes/font_size = 22
 text = "Назад"
+label_settings = ExtResource("10_h71au")
 horizontal_alignment = 1
 vertical_alignment = 1
 

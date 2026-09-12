@@ -43,10 +43,10 @@ offset_bottom = 176.0
 
 [node name="Next" type="TextureButton" parent="." unique_id=767802749]
 layout_mode = 0
-offset_left = 1780.0
-offset_top = 1000.0
-offset_right = 1890.0
-offset_bottom = 1055.0
+offset_left = 1730.0
+offset_top = 975.0
+offset_right = 1900.0
+offset_bottom = 1060.0
 texture_normal = ExtResource("8_d1qtr")
 texture_pressed = ExtResource("9_ctprq")
 texture_hover = ExtResource("10_rapkh")
@@ -54,8 +54,8 @@ texture_focused = ExtResource("10_rapkh")
 
 [node name="Label" type="Label" parent="Next" unique_id=696286878]
 layout_mode = 0
-offset_right = 110.0
-offset_bottom = 55.0
+offset_right = 170.0
+offset_bottom = 85.0
 theme_override_fonts/font = ExtResource("6_junkc")
 theme_override_font_sizes/font_size = 22
 text = "Далее"
@@ -144,8 +144,8 @@ texture_focused = ExtResource("10_rapkh")
 
 [node name="Label" type="Label" parent="Back" unique_id=350636077]
 layout_mode = 0
-offset_right = 110.0
-offset_bottom = 55.0
+offset_right = 170.0
+offset_bottom = 85.0
 theme_override_fonts/font = ExtResource("6_junkc")
 theme_override_font_sizes/font_size = 22
 text = "Назад"
