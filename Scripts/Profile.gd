@@ -55,7 +55,7 @@ func update_display():
 func update_data(selected_subclass):
 	$Editable/History/History.text = character_data.get("background", "")
 	$Editable/Traits/Traits.text = character_data.get("traits", "")
-	$Avatar.texture = load("res://Assets/Avatars/" + selected_subclass + ".png")
+	$Avatar.texture = load("res://Assets/Pictures/Avatars/" + selected_subclass + ".png")
 
 func update_stats(stats):
 	$StatsContainer/StrengthLabel.text = "Сила: " + str(int(stats["strength"]))

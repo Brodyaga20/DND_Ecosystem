@@ -4,6 +4,7 @@ var classes = []
 var subclasses = []
 var archetypes = []
 var abilities = []
+var races = []
 var resource 
 
 func _ready():
@@ -18,7 +19,8 @@ func load_data():
 			classes = json["classes"]
 			subclasses = json["subclasses"]
 			archetypes = json["archetypes"]
-			abilities = json.get("abilities", [])
+			races = json["races"]
+			abilities = json["abilities"]
 
 func get_class_data(id: String):
 	for c in classes:
@@ -44,6 +46,12 @@ func get_ability(id: String):
 			return a
 	return null
 
+func get_race_data(id: String):
+	for r in races:
+		if r["id"] == id:
+			return r
+	return null
+
 func get_resource_from_subclass(id: String):
 	for s in subclasses:
 		if s["id"] == id:
@@ -54,7 +62,6 @@ func get_start_ability_for_subclass(subclass: String):
 	for a in abilities:
 		if a["direction"] == subclass and a["tier"] == 0:
 			return a
-
 
 func get_subclasses_for_class(class_id: String):
 	var result = []

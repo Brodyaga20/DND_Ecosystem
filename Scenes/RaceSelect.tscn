@@ -1,6 +1,31 @@
 [gd_scene format=3 uid="uid://binueg1lwvq6l"]
 
 [ext_resource type="Texture2D" uid="uid://fj1epsfb30h1" path="res://Assets/Pictures/BackGrounds/RaceSelect.png" id="1_4jilo"]
+[ext_resource type="Script" uid="uid://ccaqc70bdrb2t" path="res://Scripts/RaceSelect.gd" id="1_pdlaj"]
+[ext_resource type="Texture2D" uid="uid://cuc32rmuknifv" path="res://Assets/Pictures/Buttons/SelectNormal.png" id="2_maeae"]
+[ext_resource type="Texture2D" uid="uid://cn30kk3qvmjxp" path="res://Assets/Pictures/Buttons/SelectPressed.png" id="3_pgoj6"]
+[ext_resource type="ButtonGroup" uid="uid://wtbuphqo2kfd" path="res://Data/ButtonGroups/RaceSelect.tres" id="3_v78ij"]
+[ext_resource type="Texture2D" uid="uid://8u1ju70k1rju" path="res://Assets/Pictures/Buttons/Universal/BackNormal.png" id="5_v78ij"]
+[ext_resource type="Texture2D" uid="uid://lw5wjk0pwr37" path="res://Assets/Pictures/Buttons/Universal/BackPressed.png" id="6_8fc8h"]
+[ext_resource type="Texture2D" uid="uid://c8vrjooon177" path="res://Assets/Pictures/Buttons/Universal/BackHover.png" id="7_3axmt"]
+[ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://Assets/Fonts/cinzel_bold.ttf" id="8_xnjbr"]
+[ext_resource type="Shader" uid="uid://b84kr2bu7ux0h" path="res://Data/Shaders/BackBlur.gdshader" id="10_xnjbr"]
+[ext_resource type="LabelSettings" uid="uid://dphedhg6n6hit" path="res://Data/LabelSettings/UpperTextClassSelect.tres" id="11_snada"]
+[ext_resource type="LabelSettings" uid="uid://k4l2d62tldd2" path="res://Data/LabelSettings/LowerTextClassSelect.tres" id="12_mwdfb"]
+[ext_resource type="LabelSettings" uid="uid://dw6ogecn6ui48" path="res://Data/LabelSettings/BigLabelsMenu.tres" id="12_snada"]
+[ext_resource type="Texture2D" uid="uid://djnul28uqq28v" path="res://Assets/Pictures/Buttons/CharList/UINormal.png" id="14_il6ek"]
+[ext_resource type="Texture2D" uid="uid://kgvvn1ywjmml" path="res://Assets/Pictures/Buttons/CharList/UIPressed.png" id="15_8saal"]
+[ext_resource type="Texture2D" uid="uid://6k4c2c7aqa2y" path="res://Assets/Pictures/Buttons/CharList/UIHover.png" id="16_wonh6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hohw2"]
+shader = ExtResource("10_xnjbr")
+shader_parameter/max_blur_lod = 4.0
+shader_parameter/inner = 0.0
+shader_parameter/outer = 0.7
+shader_parameter/falloff = 1.0
+shader_parameter/tint = Color(0, 0, 0, 0)
+
+[sub_resource type="Theme" id="Theme_il6ek"]
 
 [node name="RaceSelect" type="Control" unique_id=472857401]
 layout_mode = 3
@@ -9,7 +34,242 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_pdlaj")
 
-[node name="RaceSelect" type="Sprite2D" parent="." unique_id=87146060]
+[node name="Background" type="Sprite2D" parent="." unique_id=87146060]
 position = Vector2(960, 540)
 texture = ExtResource("1_4jilo")
+
+[node name="Buttons" type="Control" parent="." unique_id=2026300938]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GnomeButton" type="TextureButton" parent="Buttons" unique_id=943743743]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 816.0
+offset_right = 263.0
+offset_bottom = 896.0
+toggle_mode = true
+button_group = ExtResource("3_v78ij")
+texture_normal = ExtResource("2_maeae")
+texture_pressed = ExtResource("3_pgoj6")
+
+[node name="ChitinButton" type="TextureButton" parent="Buttons" unique_id=2005663874]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 821.0
+offset_right = 506.0
+offset_bottom = 901.0
+toggle_mode = true
+button_group = ExtResource("3_v78ij")
+texture_normal = ExtResource("2_maeae")
+texture_pressed = ExtResource("3_pgoj6")
+
+[node name="HumanButton" type="TextureButton" parent="Buttons" unique_id=920013139]
+layout_mode = 0
+offset_left = 657.0
+offset_top = 824.0
+offset_right = 737.0
+offset_bottom = 904.0
+toggle_mode = true
+button_group = ExtResource("3_v78ij")
+texture_normal = ExtResource("2_maeae")
+texture_pressed = ExtResource("3_pgoj6")
+
+[node name="AarakokraButton" type="TextureButton" parent="Buttons" unique_id=2098763638]
+layout_mode = 0
+offset_left = 856.0
+offset_top = 515.0
+offset_right = 936.0
+offset_bottom = 595.0
+toggle_mode = true
+button_group = ExtResource("3_v78ij")
+texture_normal = ExtResource("2_maeae")
+texture_pressed = ExtResource("3_pgoj6")
+
+[node name="GiantButton" type="TextureButton" parent="Buttons" unique_id=1910934552]
+layout_mode = 0
+offset_left = 1110.0
+offset_top = 801.0
+offset_right = 1190.0
+offset_bottom = 881.0
+toggle_mode = true
+button_group = ExtResource("3_v78ij")
+texture_normal = ExtResource("2_maeae")
+texture_pressed = ExtResource("3_pgoj6")
+
+[node name="AasimarButton" type="TextureButton" parent="Buttons" unique_id=1072857273]
+layout_mode = 0
+offset_left = 1342.0
+offset_top = 814.0
+offset_right = 1422.0
+offset_bottom = 894.0
+toggle_mode = true
+button_group = ExtResource("3_v78ij")
+texture_normal = ExtResource("2_maeae")
+texture_pressed = ExtResource("3_pgoj6")
+
+[node name="OwlinButton" type="TextureButton" parent="Buttons" unique_id=1050005429]
+layout_mode = 0
+offset_left = 1543.0
+offset_top = 829.0
+offset_right = 1623.0
+offset_bottom = 909.0
+toggle_mode = true
+button_group = ExtResource("3_v78ij")
+texture_normal = ExtResource("2_maeae")
+texture_pressed = ExtResource("3_pgoj6")
+
+[node name="DrowButton" type="TextureButton" parent="Buttons" unique_id=627353402]
+layout_mode = 0
+offset_left = 1743.0
+offset_top = 826.0
+offset_right = 1823.0
+offset_bottom = 906.0
+toggle_mode = true
+keep_pressed_outside = true
+button_group = ExtResource("3_v78ij")
+texture_normal = ExtResource("2_maeae")
+texture_pressed = ExtResource("3_pgoj6")
+
+[node name="Back" type="TextureButton" parent="." unique_id=615161199]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 190.0
+offset_bottom = 105.0
+texture_normal = ExtResource("5_v78ij")
+texture_pressed = ExtResource("6_8fc8h")
+texture_hover = ExtResource("7_3axmt")
+texture_focused = ExtResource("7_3axmt")
+
+[node name="Label" type="Label" parent="Back" unique_id=2138705743]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("8_xnjbr")
+theme_override_font_sizes/font_size = 22
+text = "Назад"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next" type="TextureButton" parent="." unique_id=181018866]
+layout_mode = 0
+offset_left = 1730.0
+offset_top = 975.0
+offset_right = 1900.0
+offset_bottom = 1060.0
+texture_normal = ExtResource("5_v78ij")
+texture_pressed = ExtResource("6_8fc8h")
+texture_hover = ExtResource("7_3axmt")
+texture_focused = ExtResource("7_3axmt")
+
+[node name="Label" type="Label" parent="Next" unique_id=1577375642]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("8_xnjbr")
+theme_override_font_sizes/font_size = 22
+text = "Далее"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Blur" type="ColorRect" parent="." unique_id=1265012004]
+material = SubResource("ShaderMaterial_hohw2")
+layout_mode = 0
+offset_left = 410.0
+offset_top = -1.0
+offset_right = 1510.0
+offset_bottom = 213.0
+color = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="Blur" unique_id=1928183427]
+layout_mode = 0
+offset_right = 1100.0
+offset_bottom = 130.0
+theme = SubResource("Theme_il6ek")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "Выберите расу персонажа. 
+Раса определяет отыгрыш и социальные взаимодействия."
+label_settings = ExtResource("11_snada")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NameLabel" type="Label" parent="Blur" unique_id=120865145]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 92.0
+offset_right = 750.0
+offset_bottom = 167.0
+text = "Совлин"
+label_settings = ExtResource("12_snada")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="Blur" unique_id=201988045]
+layout_mode = 0
+offset_top = 167.0
+offset_right = 1100.0
+offset_bottom = 212.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_xnjbr")
+theme_override_font_sizes/font_size = 25
+text = "БОЛЬШОЙ АБОБУС"
+label_settings = ExtResource("12_mwdfb")
+horizontal_alignment = 1
+
+[node name="NewRace" type="TextureButton" parent="." unique_id=46745347]
+layout_mode = 0
+offset_left = 670.0
+offset_top = 930.0
+offset_right = 920.0
+offset_bottom = 1070.0
+texture_normal = ExtResource("14_il6ek")
+texture_pressed = ExtResource("15_8saal")
+texture_hover = ExtResource("16_wonh6")
+
+[node name="Label" type="Label" parent="NewRace" unique_id=1501365009]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("8_xnjbr")
+theme_override_font_sizes/font_size = 25
+text = "Выбрать
+свою расу"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HalfBlood" type="TextureButton" parent="." unique_id=77954396]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 930.0
+offset_right = 1250.0
+offset_bottom = 1070.0
+texture_normal = ExtResource("14_il6ek")
+texture_pressed = ExtResource("15_8saal")
+texture_hover = ExtResource("16_wonh6")
+
+[node name="Label" type="Label" parent="HalfBlood" unique_id=181241540]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("8_xnjbr")
+theme_override_font_sizes/font_size = 25
+text = "Смешанная
+кровь"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Buttons/GnomeButton" to="." method="_on_gnome_button_pressed"]
+[connection signal="pressed" from="Buttons/ChitinButton" to="." method="_on_chitin_button_pressed"]
+[connection signal="pressed" from="Buttons/HumanButton" to="." method="_on_human_button_pressed"]
+[connection signal="pressed" from="Buttons/AarakokraButton" to="." method="_on_aarakokra_button_pressed"]
+[connection signal="pressed" from="Buttons/GiantButton" to="." method="_on_giant_button_pressed"]
+[connection signal="pressed" from="Buttons/AasimarButton" to="." method="_on_aasimar_button_pressed"]
+[connection signal="pressed" from="Buttons/OwlinButton" to="." method="_on_owlin_button_pressed"]
+[connection signal="pressed" from="Buttons/DrowButton" to="." method="_on_drow_button_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

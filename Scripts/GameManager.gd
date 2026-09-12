@@ -43,12 +43,17 @@ func add_character(name: String, class_id: String, subclass_id: String, stats: D
 		"resources": null, # позже заполним из данных подкласса
 		"background": background,
 		"traits": traits,
-		"starting_gear": starting_gear,
 		"hp_current": 40 + stats.get("strength", 0) * 10,  # начальное ХП
 		"hp_max": 40 + stats.get("strength", 0) * 10,
 		"created": Time.get_datetime_string_from_system(),
 		"locked": false,
-		"abilities_known": [DataManager.get_start_ability_for_subclass(subclass_id)["id"]]
+		"abilities_known": [DataManager.get_start_ability_for_subclass(subclass_id)["id"]],
+		"race_id": "",
+		"sex": "",
+		"age": "",
+		"inventory": [],
+		"equipment": {"head": "", "chest": "", "legs": "", "feet": "", "right_hand": "", "left_hand": "", "arrows": "", "bracers": "", "knee_pads": ""},
+		"effects": ""
 	}
 
 
