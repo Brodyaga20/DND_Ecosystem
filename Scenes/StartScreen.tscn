@@ -14,7 +14,6 @@ script = ExtResource("1_ko4ly")
 
 [node name="ClassSelectBack" type="Sprite2D" parent="." unique_id=1151962293]
 position = Vector2(960.125, 539.78314)
-scale = Vector2(0.697077, 0.7034074)
 texture = ExtResource("2_ey7n4")
 
 [node name="Button" type="Button" parent="." unique_id=517555725]

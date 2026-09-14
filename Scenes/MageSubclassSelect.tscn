@@ -32,7 +32,6 @@ script = ExtResource("1_m71r2")
 
 [node name="BackGround" type="Sprite2D" parent="." unique_id=1925766710]
 position = Vector2(960, 540)
-scale = Vector2(0.69767445, 0.703125)
 texture = ExtResource("2_m71r2")
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=254741138]
