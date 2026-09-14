@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byc2xbf6g0124"
-path="res://.godot/imported/giant.png-04797a5ccf7e57409a5acf9276811b3f.ctex"
+uid="uid://bt3s40dwbe8p1"
+path="res://.godot/imported/Giant.png-1fbe0d04dce75b33e832f1e0de5c6d8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pictures/Characters/RaceSelect/giant.png"
-dest_files=["res://.godot/imported/giant.png-04797a5ccf7e57409a5acf9276811b3f.ctex"]
+source_file="res://Assets/Pictures/Characters/RaceSelect/Giant.png"
+dest_files=["res://.godot/imported/Giant.png-1fbe0d04dce75b33e832f1e0de5c6d8f.ctex"]
 
 [params]
 

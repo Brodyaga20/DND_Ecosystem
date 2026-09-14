@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cey7teay03u4d" path="res://Assets/Pictures/Characters/RaceSelect/Human.png" id="6_ysmgl"]
 [ext_resource type="Texture2D" uid="uid://c8vrjooon177" path="res://Assets/Pictures/Buttons/Universal/BackHover.png" id="7_3axmt"]
 [ext_resource type="Texture2D" uid="uid://doiq3h3r1vsir" path="res://Assets/Pictures/Characters/RaceSelect/Aarakocra.png" id="7_4fyqd"]
-[ext_resource type="Texture2D" uid="uid://byc2xbf6g0124" path="res://Assets/Pictures/Characters/RaceSelect/giant.png" id="8_s7cy1"]
+[ext_resource type="Texture2D" uid="uid://bt3s40dwbe8p1" path="res://Assets/Pictures/Characters/RaceSelect/Giant.png" id="8_pp76f"]
 [ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://Assets/Fonts/cinzel_bold.ttf" id="8_xnjbr"]
 [ext_resource type="Texture2D" uid="uid://dvyn8ldxouu8p" path="res://Assets/Pictures/Characters/RaceSelect/Aasimar.png" id="9_7lttw"]
 [ext_resource type="Texture2D" uid="uid://4j0pdkjrmmru" path="res://Assets/Pictures/Characters/RaceSelect/Owlin.png" id="10_jqhg7"]
@@ -41,10 +41,10 @@ size = Vector2(203.63634, 527.2727)
 size = Vector2(190, 529)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gngh"]
-size = Vector2(194.92456, 513.5678)
+size = Vector2(181.92462, 513.5678)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcnqv"]
-size = Vector2(209.13351, 493.0725)
+size = Vector2(209.13351, 572.0968)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7numd"]
 size = Vector2(175.2171, 496.79202)
@@ -73,12 +73,10 @@ position = Vector2(960, 540)
 texture = ExtResource("1_4jilo")
 
 [node name="Gnome" type="Area2D" parent="." unique_id=1967818966]
-position = Vector2(194.00003, 701.00006)
-scale = Vector2(0.85, 0.85)
+position = Vector2(193.00003, 717.00006)
 
 [node name="Gnome" type="Sprite2D" parent="Gnome" unique_id=1113030315 groups=["characters"]]
 material = SubResource("ShaderMaterial_nydx7")
-scale = Vector2(1.0000001, 1.0000001)
 texture = ExtResource("18_a7xw8")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Gnome" unique_id=2057936158]
@@ -87,13 +85,11 @@ scale = Vector2(1.0000002, 1.0000002)
 shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="Chitin" type="Area2D" parent="." unique_id=1848901643]
-position = Vector2(457.99994, 630.99976)
-scale = Vector2(1.1, 1.1)
+position = Vector2(455.99994, 639.99976)
 
 [node name="Chitin" type="Sprite2D" parent="Chitin" unique_id=1492430631 groups=["characters"]]
 material = SubResource("ShaderMaterial_nydx7")
 position = Vector2(3.669783, 0.91767883)
-scale = Vector2(1.0000001, 1.0000001)
 texture = ExtResource("5_pp76f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Chitin" unique_id=82508175]
@@ -101,12 +97,11 @@ position = Vector2(7.2728577, 8.182068)
 shape = SubResource("RectangleShape2D_57qmd")
 
 [node name="Human" type="Area2D" parent="." unique_id=368739890]
-position = Vector2(543.00006, 648.0001)
+position = Vector2(544.00006, 648.0001)
 
 [node name="Human" type="Sprite2D" parent="Human" unique_id=991013605 groups=["characters"]]
 material = SubResource("ShaderMaterial_nydx7")
 position = Vector2(158.35294, 20)
-scale = Vector2(1.04, 1.04)
 texture = ExtResource("6_ysmgl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Human" unique_id=1543362313]
@@ -114,39 +109,33 @@ position = Vector2(148.99994, 20.499878)
 shape = SubResource("RectangleShape2D_d0u6y")
 
 [node name="Aarakocra" type="Area2D" parent="." unique_id=864208963]
-position = Vector2(820.00006, 438.00003)
-scale = Vector2(0.995, 0.995)
+position = Vector2(795.00006, 438.00003)
 
 [node name="Aarakocra" type="Sprite2D" parent="Aarakocra" unique_id=1827802805 groups=["characters"]]
 material = SubResource("ShaderMaterial_nydx7")
-scale = Vector2(0.995, 0.995)
 texture = ExtResource("7_4fyqd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Aarakocra" unique_id=762373529]
-position = Vector2(87.46228, 18.592926)
+position = Vector2(93.96222, 18.592926)
 shape = SubResource("RectangleShape2D_3gngh")
 
 [node name="Giant" type="Area2D" parent="." unique_id=959090653]
-position = Vector2(1130, 576)
-scale = Vector2(1.115, 1.115)
+position = Vector2(1183, 574)
 
 [node name="Giant" type="Sprite2D" parent="Giant" unique_id=1859544400 groups=["characters"]]
 material = SubResource("ShaderMaterial_nydx7")
-scale = Vector2(1.115, 1.115)
-texture = ExtResource("8_s7cy1")
+texture = ExtResource("8_pp76f")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Giant" unique_id=1620764019]
-position = Vector2(16.143555, -10.313904)
+position = Vector2(-40, 12.05603)
 scale = Vector2(1.1149999, 1.1149999)
 shape = SubResource("RectangleShape2D_fcnqv")
 
 [node name="Aasimar" type="Area2D" parent="." unique_id=2091077741]
-position = Vector2(1377, 665.99994)
-scale = Vector2(0.985, 0.985)
+position = Vector2(1361, 671.99994)
 
 [node name="Aasimar" type="Sprite2D" parent="Aasimar" unique_id=1248702324 groups=["characters"]]
 material = SubResource("ShaderMaterial_nydx7")
-scale = Vector2(0.985, 0.985)
 texture = ExtResource("9_7lttw")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Aasimar" unique_id=69148631]
@@ -155,12 +144,10 @@ scale = Vector2(0.985, 0.985)
 shape = SubResource("RectangleShape2D_7numd")
 
 [node name="Owlin" type="Area2D" parent="." unique_id=1205527130]
-position = Vector2(1578, 641)
-scale = Vector2(1.04, 1.04)
+position = Vector2(1592, 639)
 
 [node name="Owlin" type="Sprite2D" parent="Owlin" unique_id=311423246 groups=["characters"]]
 material = SubResource("ShaderMaterial_nydx7")
-scale = Vector2(1.04, 1.04)
 texture = ExtResource("10_jqhg7")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Owlin" unique_id=899072651]
@@ -169,12 +156,10 @@ scale = Vector2(1.04, 1.04)
 shape = SubResource("RectangleShape2D_p1u0y")
 
 [node name="Drow" type="Area2D" parent="." unique_id=1378254339]
-position = Vector2(1785, 693)
-scale = Vector2(0.955, 0.955)
+position = Vector2(1788, 689)
 
 [node name="Drow" type="Sprite2D" parent="Drow" unique_id=1179526091 groups=["characters"]]
 material = SubResource("ShaderMaterial_nydx7")
-scale = Vector2(0.955, 0.955)
 texture = ExtResource("11_k7jqh")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Drow" unique_id=525315963]
