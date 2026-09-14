@@ -62,7 +62,7 @@ func _on_human_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) 
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			clear_highlight()
 			$Human/Human.visible = true
-			select_race("chitin")
+			select_race("human")
 	pass
 
 func _on_aarakocra_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
