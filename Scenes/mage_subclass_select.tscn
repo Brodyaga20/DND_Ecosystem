@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://nnuxbo3c1uq0" path="res://scripts/mage_subclass_select.gd" id="1_m71r2"]
 [ext_resource type="Texture2D" uid="uid://c7oodx22tyo3u" path="res://assets/pictures/backgrounds/MageSubclassSelect.png" id="2_m71r2"]
 [ext_resource type="ButtonGroup" uid="uid://dhi3nkt1t5bvp" path="res://resources/button_groups/mage_select.tres" id="3_4tgm7"]
-[ext_resource type="Shader" uid="uid://b84kr2bu7ux0h" path="res://shaders/BackBlur.gdshader" id="3_iq8dh"]
+[ext_resource type="Shader" uid="uid://b84kr2bu7ux0h" path="res://shaders/back_blur.gdshader" id="3_iq8dh"]
 [ext_resource type="LabelSettings" uid="uid://dphedhg6n6hit" path="res://resources/label_settings/character_creation/selections_title.tres" id="4_lih68"]
 [ext_resource type="Texture2D" uid="uid://qwemqxe0hbpm" path="res://assets/pictures/buttons/class_selections/mage_normal.png" id="4_w028h"]
 [ext_resource type="Texture2D" uid="uid://cm0vg5gj2uamf" path="res://assets/pictures/buttons/class_selections/mage_pressed.png" id="5_oyb0k"]

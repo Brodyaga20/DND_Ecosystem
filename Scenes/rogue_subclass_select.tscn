@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c15m1ng54cbpg" path="res://scripts/rogue_subclass_select.gd" id="1_66r1r"]
 [ext_resource type="Texture2D" uid="uid://beuwvha1p0f2i" path="res://assets/pictures/backgrounds/RogueSubclassSelect.png" id="2_66r1r"]
-[ext_resource type="Shader" uid="uid://b84kr2bu7ux0h" path="res://shaders/BackBlur.gdshader" id="3_47vov"]
+[ext_resource type="Shader" uid="uid://b84kr2bu7ux0h" path="res://shaders/back_blur.gdshader" id="3_47vov"]
 [ext_resource type="ButtonGroup" uid="uid://wupxpww5t6kx" path="res://resources/button_groups/assasin_select.tres" id="3_gdkq2"]
 [ext_resource type="Texture2D" uid="uid://dsvbnvi8wpk2" path="res://assets/pictures/buttons/class_selections/assasin_normal.png" id="3_ovaax"]
 [ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://assets/fonts/cinzel_bold.ttf" id="3_rqf5i"]

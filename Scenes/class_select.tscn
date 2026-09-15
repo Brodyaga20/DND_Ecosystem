@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bn4nocv76a8sw" path="res://assets/pictures/buttons/class_selections/base_normal.png" id="8_1p1dx"]
 [ext_resource type="Texture2D" uid="uid://d1aavbi2i3fba" path="res://assets/pictures/buttons/class_selections/base_pressed.png" id="9_1p1dx"]
 [ext_resource type="Texture2D" uid="uid://ln3g8urp7dc7" path="res://assets/pictures/buttons/class_selections/base_hover.png" id="10_1p1dx"]
-[ext_resource type="Shader" uid="uid://b84kr2bu7ux0h" path="res://shaders/BackBlur.gdshader" id="11_c6hqj"]
+[ext_resource type="Shader" uid="uid://b84kr2bu7ux0h" path="res://shaders/back_blur.gdshader" id="11_c6hqj"]
 [ext_resource type="LabelSettings" uid="uid://cepn8fkumfb5n" path="res://resources/label_settings/character_creation/selections_button.tres" id="11_n84j2"]
 [ext_resource type="LabelSettings" uid="uid://dphedhg6n6hit" path="res://resources/label_settings/character_creation/selections_title.tres" id="12_3iipo"]
 [ext_resource type="LabelSettings" uid="uid://k4l2d62tldd2" path="res://resources/label_settings/character_creation/selections_description.tres" id="13_tliyi"]

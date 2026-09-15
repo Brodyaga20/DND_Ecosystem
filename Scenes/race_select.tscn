@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ccaqc70bdrb2t" path="res://scripts/race_select.gd" id="1_mt7p4"]
 [ext_resource type="Texture2D" uid="uid://fj1epsfb30h1" path="res://assets/pictures/backgrounds/race_select.png" id="2_mt7p4"]
-[ext_resource type="Shader" uid="uid://dccmt6i1j7wte" path="res://shaders/SelectGlow.gdshader" id="3_mt7p4"]
+[ext_resource type="Shader" uid="uid://dccmt6i1j7wte" path="res://shaders/select_glow.gdshader" id="3_mt7p4"]
 [ext_resource type="Texture2D" uid="uid://cgvgbdunpwl8h" path="res://assets/pictures/characters/race_select/gnome.png" id="4_mt7p4"]
 [ext_resource type="Texture2D" uid="uid://bo4mfxntoivpl" path="res://assets/pictures/characters/race_select/chitin.png" id="5_mt7p4"]
 [ext_resource type="Texture2D" uid="uid://cey7teay03u4d" path="res://assets/pictures/characters/race_select/human.png" id="6_mt7p4"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://c8vrjooon177" path="res://assets/pictures/buttons/universal/navigation_hover.png" id="14_mt7p4"]
 [ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://assets/fonts/cinzel_bold.ttf" id="15_mt7p4"]
 [ext_resource type="LabelSettings" uid="uid://gohtfpbd5dmk" path="res://resources/label_settings/character_creation/navigation_buttons.tres" id="16_8p0ev"]
-[ext_resource type="Shader" uid="uid://b84kr2bu7ux0h" path="res://shaders/BackBlur.gdshader" id="16_c3do8"]
+[ext_resource type="Shader" uid="uid://b84kr2bu7ux0h" path="res://shaders/back_blur.gdshader" id="16_c3do8"]
 [ext_resource type="LabelSettings" uid="uid://dphedhg6n6hit" path="res://resources/label_settings/character_creation/selections_title.tres" id="18_c3do8"]
 [ext_resource type="LabelSettings" uid="uid://dw6ogecn6ui48" path="res://resources/label_settings/character_creation/big_common_text.tres" id="18_mt7p4"]
 [ext_resource type="LabelSettings" uid="uid://k4l2d62tldd2" path="res://resources/label_settings/character_creation/selections_description.tres" id="20_c3do8"]

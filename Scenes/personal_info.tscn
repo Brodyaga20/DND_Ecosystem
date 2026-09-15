@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://lw5wjk0pwr37" path="res://assets/pictures/buttons/universal/navigation_pressed.png" id="4_tylaf"]
 [ext_resource type="Texture2D" uid="uid://c8vrjooon177" path="res://assets/pictures/buttons/universal/navigation_hover.png" id="5_tylaf"]
 [ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://assets/fonts/cinzel_bold.ttf" id="6_tylaf"]
-[ext_resource type="Shader" uid="uid://b84kr2bu7ux0h" path="res://shaders/BackBlur.gdshader" id="7_tylaf"]
+[ext_resource type="Shader" uid="uid://b84kr2bu7ux0h" path="res://shaders/back_blur.gdshader" id="7_tylaf"]
 [ext_resource type="LabelSettings" uid="uid://dphedhg6n6hit" path="res://resources/label_settings/character_creation/selections_title.tres" id="8_tylaf"]
-[ext_resource type="LabelSettings" uid="uid://dw6ogecn6ui48" path="res://resources/label_settings/character_creation/big_common_text.tres" id="9_qhhxa"]
+[ext_resource type="LabelSettings" uid="uid://dw6ogecn6ui48" path="res://resources/label_settings/character_creation/big_common_text.tres" id="9_tylaf"]
 [ext_resource type="Texture2D" uid="uid://dg56sjhikjp22" path="res://assets/pictures/backgrounds/personal_info/small_part.png" id="10_tylaf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xvhvp"]
@@ -77,7 +77,7 @@ theme = SubResource("Theme_3qu1t")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 19
 text = "Обязательное"
-label_settings = ExtResource("9_qhhxa")
+label_settings = ExtResource("9_tylaf")
 horizontal_alignment = 1
 vertical_alignment = 1
 
