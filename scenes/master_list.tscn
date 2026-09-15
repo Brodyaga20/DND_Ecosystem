@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cjsennith71uy"]
 
 [ext_resource type="Script" uid="uid://1vx4jvub04cr" path="res://scripts/master_list.gd" id="1_ev4kr"]
-[ext_resource type="Texture2D" uid="uid://qb0wy2u0u3l5" path="res://assets/pictures/backgrounds/OthersMenuBack.png" id="2_5eys3"]
+[ext_resource type="Texture2D" uid="uid://qb0wy2u0u3l5" path="res://assets-temp/pictures/backgrounds/OthersMenuBack.png" id="2_5eys3"]
 
 [node name="MasterList" type="Control" unique_id=406084420]
 layout_mode = 3

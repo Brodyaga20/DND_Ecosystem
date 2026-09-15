@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c7u2m4hot1o8d"]
 
 [ext_resource type="Script" uid="uid://c20jlf0kx6fc3" path="res://scripts/stats_distribution.gd" id="1_sdqnk"]
-[ext_resource type="Texture2D" uid="uid://qb0wy2u0u3l5" path="res://assets/pictures/backgrounds/OthersMenuBack.png" id="2_tnksl"]
+[ext_resource type="Texture2D" uid="uid://qb0wy2u0u3l5" path="res://assets-temp/pictures/backgrounds/OthersMenuBack.png" id="2_tnksl"]
 
 [sub_resource type="Theme" id="Theme_yfv0x"]
 

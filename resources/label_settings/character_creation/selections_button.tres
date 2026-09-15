@@ -1,6 +1,6 @@
 [gd_resource type="LabelSettings" format=3 uid="uid://cepn8fkumfb5n"]
 
-[ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://assets/fonts/cinzel_bold.ttf" id="1_xyu0t"]
+[ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://assets-temp/fonts/cinzel_bold.ttf" id="1_xyu0t"]
 
 [resource]
 font = ExtResource("1_xyu0t")

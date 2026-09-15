@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bymfeal1bsud6"]
 
 [ext_resource type="Script" uid="uid://3yiilcj6unwk" path="res://scripts/profile.gd" id="1_irxi3"]
-[ext_resource type="Texture2D" uid="uid://cu0pqpjdejapg" path="res://assets/pictures/backgrounds/GuideBook.png" id="2_hjayj"]
-[ext_resource type="Texture2D" uid="uid://b5i0ioihqgwvx" path="res://assets/pictures/avatars/EmptyAvatar.png" id="3_h7yon"]
+[ext_resource type="Texture2D" uid="uid://cu0pqpjdejapg" path="res://assets-temp/pictures/backgrounds/GuideBook.png" id="2_hjayj"]
+[ext_resource type="Texture2D" uid="uid://b5i0ioihqgwvx" path="res://assets-temp/pictures/avatars/EmptyAvatar.png" id="3_h7yon"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
 font_size = 52
