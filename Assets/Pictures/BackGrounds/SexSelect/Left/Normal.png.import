@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvnfqfyj4irjn"
-path="res://.godot/imported/Woman2.png-4ca87aee3cb60daf71c1f07dcc6110ea.ctex"
+uid="uid://cefkfjira7gc3"
+path="res://.godot/imported/Normal.png-e437c3c27e01e7001277c25cb4aaf264.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pictures/BackGrounds/SexSelect/Woman2.png"
-dest_files=["res://.godot/imported/Woman2.png-4ca87aee3cb60daf71c1f07dcc6110ea.ctex"]
+source_file="res://Assets/Pictures/BackGrounds/SexSelect/Left/Normal.png"
+dest_files=["res://.godot/imported/Normal.png-e437c3c27e01e7001277c25cb4aaf264.ctex"]
 
 [params]
 
