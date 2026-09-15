@@ -108,14 +108,14 @@ texture = ExtResource("6_ysmgl")
 position = Vector2(148.99994, 20.499878)
 shape = SubResource("RectangleShape2D_d0u6y")
 
-[node name="Aarakocra" type="Area2D" parent="." unique_id=864208963]
+[node name="Avian" type="Area2D" parent="." unique_id=864208963]
 position = Vector2(795.00006, 438.00003)
 
-[node name="Aarakocra" type="Sprite2D" parent="Aarakocra" unique_id=1827802805 groups=["characters"]]
+[node name="Avian" type="Sprite2D" parent="Avian" unique_id=1827802805 groups=["characters"]]
 material = SubResource("ShaderMaterial_nydx7")
 texture = ExtResource("7_4fyqd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Aarakocra" unique_id=762373529]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avian" unique_id=762373529]
 position = Vector2(93.96222, 18.592926)
 shape = SubResource("RectangleShape2D_3gngh")
 
@@ -296,7 +296,7 @@ vertical_alignment = 1
 [connection signal="input_event" from="Gnome" to="." method="_on_gnome_input_event"]
 [connection signal="input_event" from="Chitin" to="." method="_on_chitin_input_event"]
 [connection signal="input_event" from="Human" to="." method="_on_human_input_event"]
-[connection signal="input_event" from="Aarakocra" to="." method="_on_aarakocra_input_event"]
+[connection signal="input_event" from="Avian" to="." method="_on_aarakocra_input_event"]
 [connection signal="input_event" from="Giant" to="." method="_on_giant_input_event"]
 [connection signal="input_event" from="Aasimar" to="." method="_on_aasimar_input_event"]
 [connection signal="input_event" from="Owlin" to="." method="_on_owlin_input_event"]

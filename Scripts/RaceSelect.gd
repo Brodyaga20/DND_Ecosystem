@@ -4,6 +4,7 @@ var subclass = ""
 var wayback = ""
 var selected_race_id = ""
 var preselected_race_id = ""
+@onready var sprites = {"human": $Human/Human, "drow": $Drow/Drow, "gnome": $Gnome/Gnome, "chitin": $Chitin/Chitin, "avian": $Avian/Avian, "giant": $Giant/Giant, "aasimar": $Aasimar/Aasimar, "owlin": $Owlin/Owlin}
 
 func _ready():
 	subclass = TempData.subclass_id
@@ -24,6 +25,7 @@ func select_race(race_id: String):
 	TempData.race_id = race_id
 	var race_data = DataManager.get_race_data(race_id)
 	if race_data:
+		sprites[race_id].visible = true
 		$Blur/NameLabel.text = race_data["name"]
 		$Blur/DescriptionLabel.text = race_data["description"]
 		$Next.disabled = false
@@ -45,7 +47,6 @@ func _on_gnome_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) 
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			clear_highlight()
-			$Gnome/Gnome.visible = true
 			select_race("gnome")
 	pass
 
@@ -53,7 +54,6 @@ func _on_chitin_input_event(_viewport: Node, event: InputEvent, _shape_idx: int)
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			clear_highlight()
-			$Chitin/Chitin.visible = true
 			select_race("chitin")
 	pass
 
@@ -61,23 +61,20 @@ func _on_human_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) 
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			clear_highlight()
-			$Human/Human.visible = true
 			select_race("human")
 	pass
 
-func _on_aarakocra_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+func _on_avian_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			clear_highlight()
-			$Aarakocra/Aarakocra.visible = true
-			select_race("aarakocra")
+			select_race("avian")
 	pass
 
 func _on_giant_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			clear_highlight()
-			$Giant/Giant.visible = true
 			select_race("giant")
 	pass
 
@@ -85,7 +82,6 @@ func _on_aasimar_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			clear_highlight()
-			$Aasimar/Aasimar.visible = true
 			select_race("aasimar")
 	pass
 
@@ -93,7 +89,6 @@ func _on_owlin_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) 
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			clear_highlight()
-			$Owlin/Owlin.visible = true
 			select_race("owlin")
 	pass
 
@@ -101,6 +96,5 @@ func _on_drow_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			clear_highlight()
-			$Drow/Drow.visible = true
 			select_race("drow")
 	pass

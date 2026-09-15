@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do232pk0lrmfg"
-path="res://.godot/imported/SexSelect.png-ed392498adc0e2c37822a0f0dece545d.ctex"
+uid="uid://7twcps1cd7u1"
+path="res://.godot/imported/Noman.png-e78b54b9af3e31e0ad2c599bf4fbe718.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pictures/BackGrounds/SexSelect.png"
-dest_files=["res://.godot/imported/SexSelect.png-ed392498adc0e2c37822a0f0dece545d.ctex"]
+source_file="res://Assets/Pictures/BackGrounds/SexSelect/Noman.png"
+dest_files=["res://.godot/imported/Noman.png-e78b54b9af3e31e0ad2c599bf4fbe718.ctex"]
 
 [params]
 

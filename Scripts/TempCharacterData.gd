@@ -12,6 +12,7 @@ var stats = {
 }
 var history = ""
 var traits = ""
+var sex = ""
 
 
 func reset():
