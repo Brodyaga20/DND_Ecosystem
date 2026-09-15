@@ -4,7 +4,11 @@ var subclass = ""
 var wayback = ""
 var selected_race_id = ""
 var preselected_race_id = ""
-@onready var sprites = {"human": $Human/Human, "drow": $Drow/Drow, "gnome": $Gnome/Gnome, "chitin": $Chitin/Chitin, "avian": $Avian/Avian, "giant": $Giant/Giant, "aasimar": $Aasimar/Aasimar, "owlin": $Owlin/Owlin}
+var mixed_blood = false
+@onready var sprites = { "human": $HighlightedSprites/Human/Human, "drow": $HighlightedSprites/Drow/Drow,
+						 "gnome": $HighlightedSprites/Gnome/Gnome, "chitin": $HighlightedSprites/Chitin/Chitin,
+						 "avian": $HighlightedSprites/Avian/Avian, "giant": $HighlightedSprites/Giant/Giant,
+						 "owlin": $HighlightedSprites/Owlin/Owlin, "aasimar": $HighlightedSprites/Aasimar/Aasimar }
 
 func _ready():
 	subclass = TempData.subclass_id
@@ -25,6 +29,8 @@ func select_race(race_id: String):
 	TempData.race_id = race_id
 	var race_data = DataManager.get_race_data(race_id)
 	if race_data:
+		if !mixed_blood:
+			clear_highlight()
 		sprites[race_id].visible = true
 		$Blur/NameLabel.text = race_data["name"]
 		$Blur/DescriptionLabel.text = race_data["description"]
@@ -46,55 +52,51 @@ func clear_highlight():
 func _on_gnome_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			clear_highlight()
 			select_race("gnome")
 	pass
 
 func _on_chitin_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			clear_highlight()
 			select_race("chitin")
 	pass
 
 func _on_human_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			clear_highlight()
 			select_race("human")
 	pass
 
 func _on_avian_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			clear_highlight()
 			select_race("avian")
 	pass
 
 func _on_giant_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			clear_highlight()
 			select_race("giant")
 	pass
 
 func _on_aasimar_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			clear_highlight()
 			select_race("aasimar")
 	pass
 
 func _on_owlin_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			clear_highlight()
 			select_race("owlin")
 	pass
 
 func _on_drow_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			clear_highlight()
 			select_race("drow")
 	pass
+
+func _on_half_blood_pressed() -> void:
+	mixed_blood = !mixed_blood
+	pass # Replace with function body.

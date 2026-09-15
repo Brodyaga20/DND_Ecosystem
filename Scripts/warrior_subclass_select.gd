@@ -31,9 +31,9 @@ func select_subclass(subclass_id: String):
 
 func _on_next_button_pressed():
 	if selected_subclass_id != "":
-		get_tree().change_scene_to_file("res://scenes/RaceSelect.tscn")
+		get_tree().change_scene_to_file("res://scenes/race_select.tscn")
 		UnlockManager.unlock_class(selected_class_id)
 		UnlockManager.unlock_subclass(selected_subclass_id)
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/ClassSelect.tscn")
+	get_tree().change_scene_to_file("res://scenes/class_select.tscn")

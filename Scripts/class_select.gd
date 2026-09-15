@@ -22,7 +22,6 @@ func select_class(class_id: String):
 	selected_class_id = class_id
 	var class_data = DataManager.get_class_data(class_id)
 	if class_data:
-		print("unlo")
 		$Blur/DescriptionLabel.text = class_data["description"]
 		TempData.class_id = class_id
 		$Next.disabled = false
