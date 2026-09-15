@@ -1,0 +1,221 @@
+[gd_scene format=3 uid="uid://bu8lk3upeptdt"]
+
+[ext_resource type="Script" uid="uid://c5tjgi86nfpfx" path="res://scripts/warrior_subclass_select.gd" id="1_alm8s"]
+[ext_resource type="Texture2D" uid="uid://br47utkcndewq" path="res://assets/pictures/backgrounds/WarriorSubclassSelect.png" id="2_6pf77"]
+[ext_resource type="ButtonGroup" uid="uid://dphxpnsdl1hg" path="res://resources/button_groups/warrior_select.tres" id="3_he2xf"]
+[ext_resource type="Texture2D" uid="uid://nokr0hsk6w68" path="res://assets/pictures/buttons/class_selections/warrior_normal.png" id="3_xd46p"]
+[ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://assets/fonts/cinzel_bold.ttf" id="4_he2xf"]
+[ext_resource type="Texture2D" uid="uid://dja2g7b5exsr2" path="res://assets/pictures/buttons/class_selections/warrior_pressed.png" id="5_bb7ai"]
+[ext_resource type="Texture2D" uid="uid://x86qynfegq3w" path="res://assets/pictures/buttons/class_selections/warrior_hover.png" id="6_vxc24"]
+[ext_resource type="LabelSettings" uid="uid://dphedhg6n6hit" path="res://resources/label_settings/character_creation/selections_title.tres" id="8_fcqf1"]
+[ext_resource type="Texture2D" uid="uid://8u1ju70k1rju" path="res://assets/pictures/buttons/universal/navigation_normal.png" id="8_rhhlt"]
+[ext_resource type="Texture2D" uid="uid://lw5wjk0pwr37" path="res://assets/pictures/buttons/universal/navigation_pressed.png" id="9_fcqf1"]
+[ext_resource type="Texture2D" uid="uid://c8vrjooon177" path="res://assets/pictures/buttons/universal/navigation_hover.png" id="10_sdeiy"]
+[ext_resource type="Shader" uid="uid://b84kr2bu7ux0h" path="res://shaders/BackBlur.gdshader" id="11_sdeiy"]
+[ext_resource type="LabelSettings" uid="uid://k4l2d62tldd2" path="res://resources/label_settings/character_creation/selections_description.tres" id="13_1f3nf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1f3nf"]
+shader = ExtResource("11_sdeiy")
+shader_parameter/max_blur_lod = 4.0
+shader_parameter/inner = 0.0
+shader_parameter/outer = 0.7
+shader_parameter/falloff = 1.0
+shader_parameter/tint = Color(0, 0, 0, 0)
+
+[sub_resource type="Theme" id="Theme_7igeo"]
+
+[node name="Node2D" type="Control" unique_id=2044504923]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_alm8s")
+
+[node name="BackGround" type="Sprite2D" parent="." unique_id=1925766710]
+position = Vector2(959.9999, 540)
+scale = Vector2(1, 1.0000001)
+texture = ExtResource("2_6pf77")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=254741138]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 70.0
+offset_right = 815.0
+offset_bottom = 176.0
+
+[node name="PaladinButton" type="TextureButton" parent="." unique_id=812025136]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 559.00006
+offset_right = 657.0
+offset_bottom = 721.00006
+scale = Vector2(0.7, 0.7)
+toggle_mode = true
+button_group = ExtResource("3_he2xf")
+texture_normal = ExtResource("3_xd46p")
+texture_pressed = ExtResource("5_bb7ai")
+texture_hover = ExtResource("6_vxc24")
+texture_focused = ExtResource("6_vxc24")
+
+[node name="Label" type="Label" parent="PaladinButton" unique_id=481215283]
+layout_mode = 0
+offset_right = 408.0
+offset_bottom = 162.0
+theme_override_fonts/font = ExtResource("4_he2xf")
+theme_override_font_sizes/font_size = 45
+text = "Паладин"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KnightButton" type="TextureButton" parent="." unique_id=1794081046]
+layout_mode = 0
+offset_left = 661.0
+offset_top = 556.99994
+offset_right = 1069.0
+offset_bottom = 718.99994
+scale = Vector2(0.7, 0.7)
+toggle_mode = true
+button_group = ExtResource("3_he2xf")
+texture_normal = ExtResource("3_xd46p")
+texture_pressed = ExtResource("5_bb7ai")
+texture_hover = ExtResource("6_vxc24")
+texture_focused = ExtResource("6_vxc24")
+
+[node name="Label" type="Label" parent="KnightButton" unique_id=1928754437]
+layout_mode = 0
+offset_right = 408.0
+offset_bottom = 162.0
+theme_override_fonts/font = ExtResource("4_he2xf")
+theme_override_font_sizes/font_size = 45
+text = "Рыцарь"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BerserkerButton" type="TextureButton" parent="." unique_id=242676605]
+layout_mode = 0
+offset_left = 1067.0
+offset_top = 565.0
+offset_right = 1475.0
+offset_bottom = 727.0
+scale = Vector2(0.7, 0.7)
+toggle_mode = true
+button_group = ExtResource("3_he2xf")
+texture_normal = ExtResource("3_xd46p")
+texture_pressed = ExtResource("5_bb7ai")
+texture_hover = ExtResource("6_vxc24")
+texture_focused = ExtResource("6_vxc24")
+
+[node name="Label" type="Label" parent="BerserkerButton" unique_id=2067340859]
+layout_mode = 0
+offset_right = 408.0
+offset_bottom = 162.0
+theme_override_fonts/font = ExtResource("4_he2xf")
+theme_override_font_sizes/font_size = 45
+text = "Берсерк"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CaptainButton" type="TextureButton" parent="." unique_id=1436043877]
+layout_mode = 0
+offset_left = 1470.0
+offset_top = 552.0
+offset_right = 1878.0
+offset_bottom = 714.0
+scale = Vector2(0.7, 0.7)
+toggle_mode = true
+button_group = ExtResource("3_he2xf")
+texture_normal = ExtResource("3_xd46p")
+texture_pressed = ExtResource("5_bb7ai")
+texture_hover = ExtResource("6_vxc24")
+texture_focused = ExtResource("6_vxc24")
+
+[node name="Label" type="Label" parent="CaptainButton" unique_id=499328123]
+layout_mode = 0
+offset_right = 408.0
+offset_bottom = 162.0
+theme_override_fonts/font = ExtResource("4_he2xf")
+theme_override_font_sizes/font_size = 45
+text = "Командир"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="TextureButton" parent="." unique_id=843554996]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 130.0
+offset_bottom = 75.0
+texture_normal = ExtResource("8_rhhlt")
+texture_pressed = ExtResource("9_fcqf1")
+texture_hover = ExtResource("10_sdeiy")
+texture_focused = ExtResource("10_sdeiy")
+
+[node name="Label" type="Label" parent="Back" unique_id=1609480623]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("4_he2xf")
+theme_override_font_sizes/font_size = 22
+text = "Назад"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Blur" type="ColorRect" parent="." unique_id=1234155313]
+material = SubResource("ShaderMaterial_1f3nf")
+layout_mode = 0
+offset_left = 410.0
+offset_top = -1.0
+offset_right = 1510.0
+offset_bottom = 164.0
+color = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="Blur" unique_id=273880143]
+layout_mode = 0
+offset_right = 1100.0
+offset_bottom = 130.0
+theme = SubResource("Theme_7igeo")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "Выберите подкласс персонажа. 
+Подкласс дополняет класс и определяет специализацию
+ внутри него."
+label_settings = ExtResource("8_fcqf1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="Blur" unique_id=1554280828]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 1100.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_he2xf")
+theme_override_font_sizes/font_size = 25
+label_settings = ExtResource("13_1f3nf")
+horizontal_alignment = 1
+
+[node name="Next" type="TextureButton" parent="." unique_id=1580913649]
+layout_mode = 0
+offset_left = 1730.0
+offset_top = 975.0
+offset_right = 1900.0
+offset_bottom = 1060.0
+texture_normal = ExtResource("8_rhhlt")
+texture_pressed = ExtResource("9_fcqf1")
+texture_hover = ExtResource("10_sdeiy")
+texture_focused = ExtResource("10_sdeiy")
+
+[node name="Label" type="Label" parent="Next" unique_id=760982125]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("4_he2xf")
+theme_override_font_sizes/font_size = 22
+text = "Далее"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="PaladinButton" to="." method="_on_paladin_button_pressed"]
+[connection signal="pressed" from="KnightButton" to="." method="_on_knight_button_pressed"]
+[connection signal="pressed" from="BerserkerButton" to="." method="_on_berserker_button_pressed"]
+[connection signal="pressed" from="CaptainButton" to="." method="_on_captain_button_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_button_pressed"]

@@ -1,0 +1,469 @@
+[gd_scene format=3 uid="uid://c7u2m4hot1o8d"]
+
+[ext_resource type="Script" uid="uid://c20jlf0kx6fc3" path="res://scripts/stats_distribution.gd" id="1_sdqnk"]
+[ext_resource type="Texture2D" uid="uid://qb0wy2u0u3l5" path="res://assets/pictures/backgrounds/OthersMenuBack.png" id="2_tnksl"]
+
+[sub_resource type="Theme" id="Theme_yfv0x"]
+
+[node name="StatsDistribution" type="Node2D" unique_id=222493670]
+script = ExtResource("1_sdqnk")
+
+[node name="OthersMenuBack" type="Sprite2D" parent="." unique_id=87101203]
+position = Vector2(960, 540)
+scale = Vector2(0.75, 0.75577325)
+texture = ExtResource("2_tnksl")
+
+[node name="Name" type="Control" parent="." unique_id=1674150220]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Name" unique_id=1632820827]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 101.0
+offset_right = 893.0
+offset_bottom = 196.0
+theme = SubResource("Theme_yfv0x")
+text = "Придумайте имя персонажу"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Entering" type="LineEdit" parent="Name" unique_id=101939310]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 174.0
+offset_right = 893.0
+offset_bottom = 269.0
+alignment = 1
+
+[node name="Stats" type="Control" parent="." unique_id=51045582]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Luck" type="Control" parent="Stats" unique_id=1645917139]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SpinBox" type="SpinBox" parent="Stats/Luck" unique_id=1272635318]
+layout_mode = 0
+offset_left = 666.0
+offset_top = 639.0
+offset_right = 752.5
+offset_bottom = 670.0
+
+[node name="Label8" type="Label" parent="Stats/Luck" unique_id=14879768]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 639.0
+offset_right = 666.0
+offset_bottom = 671.0
+theme = SubResource("Theme_yfv0x")
+text = "УДАЧА"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="Stats/Luck" unique_id=618185063]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 651.0
+offset_right = 893.0
+offset_bottom = 746.0
+theme = SubResource("Theme_yfv0x")
+text = "От удачи зависит доступное количество перебросов
+кубика в день, а также бонусы к каждому из них"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Intelligence" type="Control" parent="Stats" unique_id=394991811]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SpinBox" type="SpinBox" parent="Stats/Intelligence" unique_id=26901628]
+layout_mode = 0
+offset_left = 666.0
+offset_top = 524.0
+offset_right = 752.5
+offset_bottom = 555.0
+
+[node name="Label6" type="Label" parent="Stats/Intelligence" unique_id=1903139703]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 524.0
+offset_right = 666.0
+offset_bottom = 556.0
+theme = SubResource("Theme_yfv0x")
+text = "ИНТЕЛЛЕКТ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="Stats/Intelligence" unique_id=1440719939]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 545.0
+offset_right = 893.0
+offset_bottom = 640.0
+theme = SubResource("Theme_yfv0x")
+text = "От интеллекта зависит урон и лечение магических
+способностей персонажа, а также количество активных
+ способностей, которые персонаж может использовать"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Agility" type="Control" parent="Stats" unique_id=289399936]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SpinBox" type="SpinBox" parent="Stats/Agility" unique_id=1100659762]
+layout_mode = 0
+offset_left = 666.0
+offset_top = 419.0
+offset_right = 752.5
+offset_bottom = 450.0
+
+[node name="Label4" type="Label" parent="Stats/Agility" unique_id=199310450]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 419.0
+offset_right = 666.0
+offset_bottom = 451.0
+theme = SubResource("Theme_yfv0x")
+text = "ЛОВКОСТЬ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Stats/Agility" unique_id=1844605478]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 431.0
+offset_right = 893.0
+offset_bottom = 526.0
+theme = SubResource("Theme_yfv0x")
+text = "От ловкости зависит скорость персонажа, а также урон 
+лёгкого оружия ближнего боя и луков"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Strength" type="Control" parent="Stats" unique_id=927799036]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SpinBox" type="SpinBox" parent="Stats/Strength" unique_id=1623057638]
+layout_mode = 0
+offset_left = 666.0
+offset_top = 314.0
+offset_right = 752.5
+offset_bottom = 345.0
+
+[node name="Label2" type="Label" parent="Stats/Strength" unique_id=600229691]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 314.0
+offset_right = 666.0
+offset_bottom = 346.0
+theme = SubResource("Theme_yfv0x")
+text = "СИЛА"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Stats/Strength" unique_id=2073183951]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 326.0
+offset_right = 893.0
+offset_bottom = 421.0
+theme = SubResource("Theme_yfv0x")
+text = "От силы зависит здоровье персонажа, его защита,
+а также урон оружия ближнего боя"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RemainingLabel" type="Label" parent="Stats" unique_id=745237592]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 743.0
+offset_right = 791.0
+offset_bottom = 850.0
+text = "Осталось очков: 7"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="History" type="Control" parent="." unique_id=1612367481]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1150.0
+offset_top = 41.0
+offset_right = 1656.0
+offset_bottom = 450.0
+
+[node name="Title" type="Label" parent="History" unique_id=805043722]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 3.0
+offset_right = 513.0
+offset_bottom = 98.0
+theme = SubResource("Theme_yfv0x")
+text = "Коротко опишите предысторию персонажа. Это не
+обязательно делать сейчас - можно добавить к созданному
+ персонажу предысторию в любой момент до начала кампании"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="TextEdit" parent="History" unique_id=223425852]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 104.0
+offset_right = 490.0
+offset_bottom = 329.0
+
+[node name="Traits" type="Control" parent="." unique_id=60339286]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="Traits" unique_id=2053263951]
+layout_mode = 0
+offset_left = 1162.0
+offset_top = 379.0
+offset_right = 1641.0
+offset_bottom = 480.0
+theme = SubResource("Theme_yfv0x")
+text = "Добавьте персонажу отличительные черты - например, 
+он быстро пьянеет или боится темноты, заикается или
+не может жить без любимого талисмана. 
+Это необязательно."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="LineEdit" parent="Traits" unique_id=127092962]
+layout_mode = 0
+offset_left = 1164.0
+offset_top = 487.0
+offset_right = 1640.0
+offset_bottom = 564.0
+alignment = 1
+
+[node name="Back" type="Button" parent="." unique_id=556855773]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 115.0
+offset_bottom = 60.0
+text = "Назад"
+
+[node name="Save" type="Button" parent="." unique_id=1831437355]
+offset_left = 825.0
+offset_top = 1002.0
+offset_right = 1064.0
+offset_bottom = 1053.0
+text = "Сохранить и продолжить"
+
+[node name="SublassSelected" type="Label" parent="." unique_id=1329106436]
+offset_left = 417.0
+offset_top = 272.0
+offset_right = 893.0
+offset_bottom = 309.0
+theme = SubResource("Theme_yfv0x")
+text = "Выбранный вами подкласс:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Derivatives" type="Control" parent="." unique_id=1425874066]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="Derivatives" unique_id=920134722]
+layout_mode = 0
+offset_left = 1261.0
+offset_top = 562.0
+offset_right = 1543.0
+offset_bottom = 606.0
+text = "Производные характеристики"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Names" type="VBoxContainer" parent="Derivatives" unique_id=65994475]
+layout_mode = 0
+offset_left = 1199.0
+offset_top = 607.0
+offset_right = 1457.0
+offset_bottom = 927.0
+
+[node name="Health" type="Label" parent="Derivatives/Names" unique_id=87533651]
+layout_mode = 2
+text = "Здоровье"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Melee" type="Label" parent="Derivatives/Names" unique_id=500514258]
+layout_mode = 2
+text = "Доп урон ближнего боя"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LightMelee" type="Label" parent="Derivatives/Names" unique_id=1101538488]
+layout_mode = 2
+text = "Доп урон лёгкого ближнего боя"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Range" type="Label" parent="Derivatives/Names" unique_id=1600524053]
+layout_mode = 2
+text = "Доп урон дальнего боя"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Magic" type="Label" parent="Derivatives/Names" unique_id=1302345712]
+layout_mode = 2
+text = "Доп урон магии"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Heal" type="Label" parent="Derivatives/Names" unique_id=1871171505]
+layout_mode = 2
+text = "Доп исцеление"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Defence" type="Label" parent="Derivatives/Names" unique_id=614236439]
+layout_mode = 2
+text = "Базовая защита"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DefencePierceing" type="Label" parent="Derivatives/Names" unique_id=921315075]
+layout_mode = 2
+text = "Пробивание брони"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Move" type="Label" parent="Derivatives/Names" unique_id=351632129]
+layout_mode = 2
+text = "Передвижение"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rerolls" type="Label" parent="Derivatives/Names" unique_id=2135875512]
+layout_mode = 2
+text = "Перебросы"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RerollsBonus" type="Label" parent="Derivatives/Names" unique_id=50824000]
+layout_mode = 2
+text = "Бонус к перебросам"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ActiveSlots" type="Label" parent="Derivatives/Names" unique_id=1082306828]
+layout_mode = 2
+text = "Активные слоты"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Numbers" type="VBoxContainer" parent="Derivatives" unique_id=1996885286]
+layout_mode = 0
+offset_left = 1462.0
+offset_top = 607.0
+offset_right = 1571.0
+offset_bottom = 927.0
+
+[node name="Health" type="Label" parent="Derivatives/Numbers" unique_id=1946175771]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Melee" type="Label" parent="Derivatives/Numbers" unique_id=1086832643]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LightMelee" type="Label" parent="Derivatives/Numbers" unique_id=2012023866]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Range" type="Label" parent="Derivatives/Numbers" unique_id=1526702462]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Magic" type="Label" parent="Derivatives/Numbers" unique_id=1553202305]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Heal" type="Label" parent="Derivatives/Numbers" unique_id=2080415364]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Defence" type="Label" parent="Derivatives/Numbers" unique_id=1654603731]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DefencePierceing" type="Label" parent="Derivatives/Numbers" unique_id=911051745]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Move" type="Label" parent="Derivatives/Numbers" unique_id=1443989128]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Reroll" type="Label" parent="Derivatives/Numbers" unique_id=1354565880]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RerollBonus" type="Label" parent="Derivatives/Numbers" unique_id=684606312]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ActiveSlots" type="Label" parent="Derivatives/Numbers" unique_id=1632576437]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="Label" parent="." unique_id=2091779139]
+offset_left = 376.0
+offset_top = 944.0
+offset_right = 1527.0
+offset_bottom = 993.0
+text = "Подробно про каждую основную и производную характеристику можно 
+будет прочитать в справочнике после создания первого персонажа"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="text_changed" from="Name/Entering" to="." method="_on_entering_text_changed"]
+[connection signal="value_changed" from="Stats/Luck/SpinBox" to="." method="_on_spin_value_changed"]
+[connection signal="value_changed" from="Stats/Intelligence/SpinBox" to="." method="_on_spin_value_changed"]
+[connection signal="value_changed" from="Stats/Agility/SpinBox" to="." method="_on_spin_value_changed"]
+[connection signal="value_changed" from="Stats/Strength/SpinBox" to="." method="_on_spin_value_changed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Save" to="." method="_on_save_pressed"]

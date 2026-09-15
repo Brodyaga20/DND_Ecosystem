@@ -14,12 +14,12 @@ func _ready():
 	character_id = GameState.current_character_id
 	if character_id == null:
 		# Если ID не передан, возвращаемся в список
-		get_tree().change_scene_to_file("res://Scenes/CharacterList.tscn")
+		get_tree().change_scene_to_file("res://scenes/character_list.tscn")
 		return
 	
 	character_data = GameManager.get_character(character_id)
 	if character_data == null:
-		get_tree().change_scene_to_file("res://Scenes/CharacterList.tscn")
+		get_tree().change_scene_to_file("res://scenes/character_list.tscn")
 		return
 	is_master = GameState.master_mode
 	set_vision()
@@ -55,7 +55,6 @@ func update_display():
 func update_data(selected_subclass):
 	$Editable/History/History.text = character_data.get("background", "")
 	$Editable/Traits/Traits.text = character_data.get("traits", "")
-	$Avatar.texture = load("res://Assets/Pictures/Avatars/" + selected_subclass + ".png")
 
 func update_stats(stats):
 	$StatsContainer/StrengthLabel.text = "Сила: " + str(int(stats["strength"]))
@@ -80,9 +79,9 @@ func update_abilities(abilities):
 
 func _on_back_button_pressed():
 	if !is_master:
-		get_tree().change_scene_to_file("res://Scenes/CharacterList.tscn")
+		get_tree().change_scene_to_file("res://scenes/character_list.tscn")
 		return
-	get_tree().change_scene_to_file("res://Scenes/MasterList.tscn")
+	get_tree().change_scene_to_file("res://scenes/master_list.tscn")
 
 func _on_edit_button_pressed():
 	if character_data.get("locked", false) or GameState.is_connected_to_server:
@@ -90,7 +89,7 @@ func _on_edit_button_pressed():
 	match mode:
 		"look":
 			mode = "edit"
-			$Buttons/Back.disabled = true
+			$buttons/Back.disabled = true
 			if !character_data["locked"]:
 				$Editable/Name/Name.visible = false
 				$Editable/History/History.visible = false
@@ -103,7 +102,7 @@ func _on_edit_button_pressed():
 				$Editable/Traits/TraitsEdit.visible = true
 		"edit":
 			mode = "look"
-			$Buttons/Back.disabled = false
+			$buttons/Back.disabled = false
 			$Editable/Name/NameEdit.visible = false
 			$Editable/History/HistoryEdit.visible = false
 			$Editable/Traits/TraitsEdit.visible = false
@@ -181,15 +180,14 @@ func refresh_data():
 		var remote_data = GameState.remote_characters.get(GameState.current_peer_id)
 		if remote_data:
 			character_data = remote_data
-			print(GameManager.get_character(character_data["id"]))
 		else:
 			# возможно, персонаж удалён – вернуться в список
-			get_tree().change_scene_to_file("res://Scenes/CharacterList.tscn")
+			get_tree().change_scene_to_file("res://scenes/character_list.tscn")
 			return
 	else:
 		# Локальный персонаж – из GameManager
 		character_data = GameManager.get_character(GameState.current_character_id)
 		if not character_data:
-			get_tree().change_scene_to_file("res://Scenes/CharacterList.tscn")
+			get_tree().change_scene_to_file("res://scenes/character_list.tscn")
 			return
 	update_display()

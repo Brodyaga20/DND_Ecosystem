@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvdbgrm3sjfy"
-path="res://.godot/imported/mentalist.png-e85788e6388bea70d462d7ee24c4a5bc.ctex"
+path="res://.godot/imported/mentalist.png-103822548c07570c1a1701066b1bb985.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pictures/Avatars/mentalist.png"
-dest_files=["res://.godot/imported/mentalist.png-e85788e6388bea70d462d7ee24c4a5bc.ctex"]
+source_file="res://assets/pictures/avatars/mentalist.png"
+dest_files=["res://.godot/imported/mentalist.png-103822548c07570c1a1701066b1bb985.ctex"]
 
 [params]
 

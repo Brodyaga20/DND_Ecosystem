@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dacqi5q38ikjy"
-path="res://.godot/imported/sharpshooter.png-f3768f077e73728eed64ae7110d9302f.ctex"
+path="res://.godot/imported/sharpshooter.png-275a92faaa9a5c12a98a729b96dc207f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pictures/Avatars/sharpshooter.png"
-dest_files=["res://.godot/imported/sharpshooter.png-f3768f077e73728eed64ae7110d9302f.ctex"]
+source_file="res://assets/pictures/avatars/sharpshooter.png"
+dest_files=["res://.godot/imported/sharpshooter.png-275a92faaa9a5c12a98a729b96dc207f.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c481moubv2lmb"
-path="res://.godot/imported/trapper.png-fcd815e585eb09ed7dc60a7936472a3a.ctex"
+path="res://.godot/imported/trapper.png-e25d9ac18722e494b4b9691343669ad5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pictures/Avatars/trapper.png"
-dest_files=["res://.godot/imported/trapper.png-fcd815e585eb09ed7dc60a7936472a3a.ctex"]
+source_file="res://assets/pictures/avatars/trapper.png"
+dest_files=["res://.godot/imported/trapper.png-e25d9ac18722e494b4b9691343669ad5.ctex"]
 
 [params]
 

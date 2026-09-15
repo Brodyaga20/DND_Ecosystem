@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://cadh5xa4c8rvd"]
+
+[ext_resource type="Script" uid="uid://bdpl2gvm2rq1i" path="res://scripts/sex_select.gd" id="1_rm8pj"]
+[ext_resource type="Texture2D" uid="uid://cefkfjira7gc3" path="res://assets/pictures/backgrounds/sex_select/left/normal.png" id="2_rm8pj"]
+[ext_resource type="Texture2D" uid="uid://jr5ar0l3g8ak" path="res://assets/pictures/backgrounds/sex_select/right/normal.png" id="3_rm8pj"]
+[ext_resource type="Texture2D" uid="uid://8u1ju70k1rju" path="res://assets/pictures/buttons/universal/navigation_normal.png" id="4_rm8pj"]
+[ext_resource type="Texture2D" uid="uid://lw5wjk0pwr37" path="res://assets/pictures/buttons/universal/navigation_pressed.png" id="5_rm8pj"]
+[ext_resource type="Texture2D" uid="uid://c8vrjooon177" path="res://assets/pictures/buttons/universal/navigation_hover.png" id="6_rm8pj"]
+[ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://assets/fonts/cinzel_bold.ttf" id="7_rm8pj"]
+[ext_resource type="Shader" uid="uid://b84kr2bu7ux0h" path="res://shaders/BackBlur.gdshader" id="8_rm8pj"]
+[ext_resource type="LabelSettings" uid="uid://dw6ogecn6ui48" path="res://resources/label_settings/character_creation/big_common_text.tres" id="9_rm8pj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpk2v"]
+size = Vector2(409, 931)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(443.5, 878)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_46s2d"]
+shader = ExtResource("8_rm8pj")
+shader_parameter/max_blur_lod = 4.0
+shader_parameter/inner = 0.0
+shader_parameter/outer = 0.7
+shader_parameter/falloff = 1.0
+shader_parameter/tint = Color(0, 0, 0, 0)
+
+[sub_resource type="Theme" id="Theme_fay6s"]
+
+[node name="SexSelect" type="Node2D" unique_id=614736920]
+script = ExtResource("1_rm8pj")
+
+[node name="Backs" type="Node2D" parent="." unique_id=720456465]
+
+[node name="BackgroundLeft" type="Sprite2D" parent="Backs" unique_id=582594493]
+position = Vector2(480, 540)
+texture = ExtResource("2_rm8pj")
+
+[node name="BackgroundRight" type="Sprite2D" parent="Backs" unique_id=1131609254]
+position = Vector2(1440, 540)
+texture = ExtResource("3_rm8pj")
+
+[node name="Back" type="TextureButton" parent="." unique_id=930738295]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 190.0
+offset_bottom = 105.0
+texture_normal = ExtResource("4_rm8pj")
+texture_pressed = ExtResource("5_rm8pj")
+texture_hover = ExtResource("6_rm8pj")
+texture_focused = ExtResource("6_rm8pj")
+
+[node name="Label" type="Label" parent="Back" unique_id=264321479]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("7_rm8pj")
+theme_override_font_sizes/font_size = 22
+text = "Назад"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next" type="TextureButton" parent="." unique_id=1008848211]
+offset_left = 1730.0
+offset_top = 975.0
+offset_right = 1900.0
+offset_bottom = 1060.0
+texture_normal = ExtResource("4_rm8pj")
+texture_pressed = ExtResource("5_rm8pj")
+texture_hover = ExtResource("6_rm8pj")
+texture_focused = ExtResource("6_rm8pj")
+
+[node name="Label" type="Label" parent="Next" unique_id=633114311]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("7_rm8pj")
+theme_override_font_sizes/font_size = 22
+text = "Далее"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ManArea" type="Area2D" parent="." unique_id=25255097]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ManArea" unique_id=255610484]
+position = Vector2(418.5, 539.5)
+shape = SubResource("RectangleShape2D_lpk2v")
+
+[node name="WomanArea" type="Area2D" parent="." unique_id=815175847]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WomanArea" unique_id=1008484779]
+position = Vector2(1530.25, 524)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="Blur" type="ColorRect" parent="." unique_id=794556950]
+material = SubResource("ShaderMaterial_46s2d")
+offset_left = 410.0
+offset_right = 1510.0
+offset_bottom = 311.0
+color = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="Blur" unique_id=1198933602]
+layout_mode = 0
+offset_right = 1100.0
+offset_bottom = 130.0
+theme = SubResource("Theme_fay6s")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "Выберите пол персонажа. 
+Пол персонажа ни на что не влияет"
+label_settings = ExtResource("9_rm8pj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Blur" unique_id=2002481234]
+layout_mode = 0
+offset_top = 176.0
+offset_right = 1100.0
+offset_bottom = 306.0
+theme = SubResource("Theme_fay6s")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+label_settings = ExtResource("9_rm8pj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="input_event" from="ManArea" to="." method="_on_man_area_input_event"]
+[connection signal="mouse_entered" from="ManArea" to="." method="_on_man_area_mouse_entered"]
+[connection signal="mouse_exited" from="ManArea" to="." method="_on_man_area_mouse_exited"]
+[connection signal="input_event" from="WomanArea" to="." method="_on_woman_area_input_event"]
+[connection signal="mouse_entered" from="WomanArea" to="." method="_on_woman_area_mouse_entered"]
+[connection signal="mouse_exited" from="WomanArea" to="." method="_on_woman_area_mouse_exited"]

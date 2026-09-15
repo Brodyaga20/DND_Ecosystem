@@ -1,0 +1,225 @@
+[gd_scene format=3 uid="uid://d0a4a0lmnn3ds"]
+
+[ext_resource type="Script" uid="uid://nnuxbo3c1uq0" path="res://scripts/mage_subclass_select.gd" id="1_m71r2"]
+[ext_resource type="Texture2D" uid="uid://c7oodx22tyo3u" path="res://assets/pictures/backgrounds/MageSubclassSelect.png" id="2_m71r2"]
+[ext_resource type="ButtonGroup" uid="uid://dhi3nkt1t5bvp" path="res://resources/button_groups/mage_select.tres" id="3_4tgm7"]
+[ext_resource type="Shader" uid="uid://b84kr2bu7ux0h" path="res://shaders/BackBlur.gdshader" id="3_iq8dh"]
+[ext_resource type="LabelSettings" uid="uid://dphedhg6n6hit" path="res://resources/label_settings/character_creation/selections_title.tres" id="4_lih68"]
+[ext_resource type="Texture2D" uid="uid://qwemqxe0hbpm" path="res://assets/pictures/buttons/class_selections/mage_normal.png" id="4_w028h"]
+[ext_resource type="Texture2D" uid="uid://cm0vg5gj2uamf" path="res://assets/pictures/buttons/class_selections/mage_pressed.png" id="5_oyb0k"]
+[ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://assets/fonts/cinzel_bold.ttf" id="5_y56ip"]
+[ext_resource type="Texture2D" uid="uid://bjvn04cagbu1u" path="res://assets/pictures/buttons/class_selections/mage_hover.png" id="6_ef8pm"]
+[ext_resource type="LabelSettings" uid="uid://k4l2d62tldd2" path="res://resources/label_settings/character_creation/selections_description.tres" id="6_g4k3o"]
+[ext_resource type="Texture2D" uid="uid://8u1ju70k1rju" path="res://assets/pictures/buttons/universal/navigation_normal.png" id="7_ncide"]
+[ext_resource type="LabelSettings" uid="uid://cepn8fkumfb5n" path="res://resources/label_settings/character_creation/selections_button.tres" id="8_ktvn1"]
+[ext_resource type="Texture2D" uid="uid://lw5wjk0pwr37" path="res://assets/pictures/buttons/universal/navigation_pressed.png" id="8_v76b6"]
+[ext_resource type="Texture2D" uid="uid://c8vrjooon177" path="res://assets/pictures/buttons/universal/navigation_hover.png" id="9_1xqdg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1cs1u"]
+shader = ExtResource("3_iq8dh")
+shader_parameter/max_blur_lod = 4.0
+shader_parameter/inner = 0.0
+shader_parameter/outer = 0.7
+shader_parameter/falloff = 1.0
+shader_parameter/tint = Color(0, 0, 0, 0)
+
+[sub_resource type="Theme" id="Theme_ncide"]
+
+[node name="Node2D" type="Control" unique_id=2044504923]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_m71r2")
+
+[node name="BackGround" type="Sprite2D" parent="." unique_id=1925766710]
+position = Vector2(960, 540)
+texture = ExtResource("2_m71r2")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=254741138]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 70.0
+offset_right = 815.0
+offset_bottom = 176.0
+
+[node name="NecromancerButton" type="TextureButton" parent="." unique_id=1522621699]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 726.0
+offset_right = 643.0
+offset_bottom = 868.0
+scale = Vector2(0.7, 0.7)
+toggle_mode = true
+button_group = ExtResource("3_4tgm7")
+texture_normal = ExtResource("4_w028h")
+texture_pressed = ExtResource("5_oyb0k")
+texture_hover = ExtResource("6_ef8pm")
+texture_focused = ExtResource("6_ef8pm")
+
+[node name="Label" type="Label" parent="NecromancerButton" unique_id=947179961]
+layout_mode = 0
+offset_right = 395.0
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("5_y56ip")
+theme_override_font_sizes/font_size = 45
+text = "Некромант"
+label_settings = ExtResource("8_ktvn1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ElementalistButton" type="TextureButton" parent="." unique_id=1803994971]
+layout_mode = 0
+offset_left = 661.0
+offset_top = 722.0
+offset_right = 1056.0
+offset_bottom = 864.0
+scale = Vector2(0.7, 0.7)
+toggle_mode = true
+button_group = ExtResource("3_4tgm7")
+texture_normal = ExtResource("4_w028h")
+texture_pressed = ExtResource("5_oyb0k")
+texture_hover = ExtResource("6_ef8pm")
+texture_focused = ExtResource("6_ef8pm")
+
+[node name="Label" type="Label" parent="ElementalistButton" unique_id=1203100851]
+layout_mode = 0
+offset_right = 395.0
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("5_y56ip")
+theme_override_font_sizes/font_size = 45
+text = "Элементар"
+label_settings = ExtResource("8_ktvn1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MentalistButton" type="TextureButton" parent="." unique_id=370569191]
+layout_mode = 0
+offset_left = 1056.0
+offset_top = 724.99994
+offset_right = 1451.0
+offset_bottom = 866.99994
+scale = Vector2(0.7, 0.7)
+toggle_mode = true
+button_group = ExtResource("3_4tgm7")
+texture_normal = ExtResource("4_w028h")
+texture_pressed = ExtResource("5_oyb0k")
+texture_hover = ExtResource("6_ef8pm")
+texture_focused = ExtResource("6_ef8pm")
+
+[node name="Label" type="Label" parent="MentalistButton" unique_id=1508219141]
+layout_mode = 0
+offset_right = 395.0
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("5_y56ip")
+theme_override_font_sizes/font_size = 45
+text = "Менталист"
+label_settings = ExtResource("8_ktvn1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpiritualistButton" type="TextureButton" parent="." unique_id=1723552070]
+layout_mode = 0
+offset_left = 1442.0
+offset_top = 712.99994
+offset_right = 1837.0
+offset_bottom = 854.99994
+scale = Vector2(0.7, 0.7)
+toggle_mode = true
+button_group = ExtResource("3_4tgm7")
+texture_normal = ExtResource("4_w028h")
+texture_pressed = ExtResource("5_oyb0k")
+texture_hover = ExtResource("6_ef8pm")
+texture_focused = ExtResource("6_ef8pm")
+
+[node name="Label" type="Label" parent="SpiritualistButton" unique_id=1451460942]
+layout_mode = 0
+offset_right = 395.0
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("5_y56ip")
+theme_override_font_sizes/font_size = 45
+text = "Клирик"
+label_settings = ExtResource("8_ktvn1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Blur" type="ColorRect" parent="." unique_id=753056324]
+material = SubResource("ShaderMaterial_1cs1u")
+layout_mode = 0
+offset_left = 410.0
+offset_top = -1.0
+offset_right = 1510.0
+offset_bottom = 164.0
+color = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="Blur" unique_id=544721976]
+layout_mode = 0
+offset_right = 1100.0
+offset_bottom = 130.0
+theme = SubResource("Theme_ncide")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "Выберите подкласс персонажа. 
+Подкласс дополняет класс и определяет специализацию
+ внутри него."
+label_settings = ExtResource("4_lih68")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="Blur" unique_id=1767419124]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 1100.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_y56ip")
+theme_override_font_sizes/font_size = 25
+label_settings = ExtResource("6_g4k3o")
+horizontal_alignment = 1
+
+[node name="Next" type="TextureButton" parent="." unique_id=439917698]
+layout_mode = 0
+offset_left = 1730.0
+offset_top = 975.0
+offset_right = 1900.0
+offset_bottom = 1060.0
+texture_normal = ExtResource("7_ncide")
+texture_pressed = ExtResource("8_v76b6")
+texture_hover = ExtResource("9_1xqdg")
+texture_focused = ExtResource("9_1xqdg")
+
+[node name="Label" type="Label" parent="Next" unique_id=1838381678]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("5_y56ip")
+theme_override_font_sizes/font_size = 22
+text = "Далее"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="TextureButton" parent="." unique_id=1816904276]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 130.0
+offset_bottom = 75.0
+texture_normal = ExtResource("7_ncide")
+texture_pressed = ExtResource("8_v76b6")
+texture_hover = ExtResource("9_1xqdg")
+texture_focused = ExtResource("9_1xqdg")
+
+[node name="Label" type="Label" parent="Back" unique_id=877858948]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("5_y56ip")
+theme_override_font_sizes/font_size = 22
+text = "Назад"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="NecromancerButton" to="." method="_on_necromancer_button_pressed"]
+[connection signal="pressed" from="ElementalistButton" to="." method="_on_elementalist_button_pressed"]
+[connection signal="pressed" from="MentalistButton" to="." method="_on_mentalist_button_pressed"]
+[connection signal="pressed" from="SpiritualistButton" to="." method="_on_spiritualist_button_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

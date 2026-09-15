@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xxj64530y1oh"
-path="res://.godot/imported/elementalist.png-5a1cffeaa5df4db5c917b2e813188e7f.ctex"
+path="res://.godot/imported/elementalist.png-b74e43829f4d987d911a46975cbecde5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pictures/Avatars/elementalist.png"
-dest_files=["res://.godot/imported/elementalist.png-5a1cffeaa5df4db5c917b2e813188e7f.ctex"]
+source_file="res://assets/pictures/avatars/elementalist.png"
+dest_files=["res://.godot/imported/elementalist.png-b74e43829f4d987d911a46975cbecde5.ctex"]
 
 [params]
 

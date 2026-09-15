@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c28qsjbuxnm7m"
-path="res://.godot/imported/necromancer.png-7d227c028ade9476bfa02480646ca1a8.ctex"
+path="res://.godot/imported/necromancer.png-87a392f4a3975025e08d9546eb1da011.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pictures/Avatars/necromancer.png"
-dest_files=["res://.godot/imported/necromancer.png-7d227c028ade9476bfa02480646ca1a8.ctex"]
+source_file="res://assets/pictures/avatars/necromancer.png"
+dest_files=["res://.godot/imported/necromancer.png-87a392f4a3975025e08d9546eb1da011.ctex"]
 
 [params]
 
