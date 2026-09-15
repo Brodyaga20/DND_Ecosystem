@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dyknauep5j4j2"]
 
 [ext_resource type="Script" uid="uid://bhrtr0o6smf26" path="res://scripts/guide_book.gd" id="1_xt61f"]
-[ext_resource type="Texture2D" uid="uid://cu0pqpjdejapg" path="res://assets-temp/pictures/backgrounds/GuideBook.png" id="2_ehpyh"]
+[ext_resource type="Texture2D" uid="uid://cu0pqpjdejapg" path="res://assets/pictures/backgrounds/GuideBook.png" id="2_ehpyh"]
 
 [sub_resource type="Theme" id="Theme_g4v7s"]
 default_font_size = 47

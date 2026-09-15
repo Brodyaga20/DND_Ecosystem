@@ -5,6 +5,7 @@ var wayback = ""
 var selected_race_id = ""
 var preselected_race_id = ""
 var mixed_blood = false
+var mixed_blood_name = ""
 @onready var sprites = { "human": $HighlightedSprites/Human/Human, "drow": $HighlightedSprites/Drow/Drow,
 						 "gnome": $HighlightedSprites/Gnome/Gnome, "chitin": $HighlightedSprites/Chitin/Chitin,
 						 "avian": $HighlightedSprites/Avian/Avian, "giant": $HighlightedSprites/Giant/Giant,
@@ -31,9 +32,11 @@ func select_race(race_id: String):
 	if race_data:
 		if !mixed_blood:
 			clear_highlight()
-		sprites[race_id].visible = true
-		$Blur/NameLabel.text = race_data["name"]
-		$Blur/DescriptionLabel.text = race_data["description"]
+			$Blur/NameLabel.text = race_data["name"]
+			$Blur/DescriptionLabel.text = race_data["description"]
+			sprites[race_id].visible = true
+		else:
+			sprites[race_id].visible = !sprites[race_id].visible
 		$Next.disabled = false
 
 func _on_back_pressed() -> void:
@@ -97,6 +100,15 @@ func _on_drow_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -
 			select_race("drow")
 	pass
 
-func _on_half_blood_pressed() -> void:
+func _on_mixed_blood_pressed() -> void:
+	if !mixed_blood:
+		$Blur/NameLabel.text = "Выберите несколько рас"
+		$Blur/Label.text = ""
+		$Blur/DescriptionLabel.text = ""
+	else:
+		$Blur/NameLabel.text = ""
+		$Blur/Label.text = "Выберите расу персонажа.\nРаса определяет отыгрыш, социальные\nвзаимодействия и ваше место в мире"
+		$Blur/DescriptionLabel.text = ""
 	mixed_blood = !mixed_blood
+	clear_highlight()
 	pass # Replace with function body.
