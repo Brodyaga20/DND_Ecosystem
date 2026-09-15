@@ -1,7 +1,11 @@
 extends Node2D
 
-@onready var man = load("res://Assets/Pictures/BackGrounds/SexSelect/Man.png")
-@onready var woman = load("res://Assets/Pictures/BackGrounds/SexSelect/Noman.png")
+@onready var man = load("res://Assets/Pictures/BackGrounds/SexSelect/Man2.png")
+@onready var woman = load("res://Assets/Pictures/BackGrounds/SexSelect/Woman2.png")
+@onready var preselect_man = load("res://Assets/Pictures/BackGrounds/SexSelect/Man.png")
+@onready var preselect_woman = load("res://Assets/Pictures/BackGrounds/SexSelect/Woman.png")
+@onready var normal = load("res://Assets/Pictures/BackGrounds/SexSelect/SexSelect.png")
+var preselected_sex = ""
 func _ready():
 	$Next.disabled = true
 
@@ -32,3 +36,26 @@ func select_sex(sex: String):
 			$Blur/Label2.text = "Мужской"
 		"woman":
 			$Blur/Label2.text = "Женский"
+
+func _on_man_area_mouse_entered() -> void:
+	preselected_sex = "man"
+	preselect(preselect_man)
+	pass # Replace with function body.
+
+func _on_woman_area_mouse_entered() -> void:
+	preselected_sex = "woman"
+	preselect(preselect_woman)
+	pass # Replace with function body.
+
+func _on_man_area_mouse_exited() -> void:
+	clear_select()
+
+func _on_woman_area_mouse_exited() -> void:
+	clear_select()
+	
+func preselect(sex):
+	change_back(sex)
+
+func clear_select():
+	if preselected_sex == "":
+		change_back(normal)

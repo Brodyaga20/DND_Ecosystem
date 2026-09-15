@@ -112,7 +112,6 @@ offset_bottom = 306.0
 theme = SubResource("Theme_fay6s")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 19
-text = "Мужчинка"
 label_settings = ExtResource("8_opdhk")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -120,4 +119,7 @@ vertical_alignment = 1
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="input_event" from="ManArea" to="." method="_on_man_area_input_event"]
 [connection signal="mouse_entered" from="ManArea" to="." method="_on_man_area_mouse_entered"]
+[connection signal="mouse_exited" from="ManArea" to="." method="_on_man_area_mouse_exited"]
 [connection signal="input_event" from="WomanArea" to="." method="_on_woman_area_input_event"]
+[connection signal="mouse_entered" from="WomanArea" to="." method="_on_woman_area_mouse_entered"]
+[connection signal="mouse_exited" from="WomanArea" to="." method="_on_woman_area_mouse_exited"]
