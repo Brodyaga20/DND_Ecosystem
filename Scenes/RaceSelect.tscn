@@ -296,7 +296,7 @@ vertical_alignment = 1
 [connection signal="input_event" from="Gnome" to="." method="_on_gnome_input_event"]
 [connection signal="input_event" from="Chitin" to="." method="_on_chitin_input_event"]
 [connection signal="input_event" from="Human" to="." method="_on_human_input_event"]
-[connection signal="input_event" from="Avian" to="." method="_on_aarakocra_input_event"]
+[connection signal="input_event" from="Avian" to="." method="_on_avian_input_event"]
 [connection signal="input_event" from="Giant" to="." method="_on_giant_input_event"]
 [connection signal="input_event" from="Aasimar" to="." method="_on_aasimar_input_event"]
 [connection signal="input_event" from="Owlin" to="." method="_on_owlin_input_event"]

@@ -25,6 +25,7 @@ func select_race(race_id: String):
 	TempData.race_id = race_id
 	var race_data = DataManager.get_race_data(race_id)
 	if race_data:
+		print(race_id)
 		sprites[race_id].visible = true
 		$Blur/NameLabel.text = race_data["name"]
 		$Blur/DescriptionLabel.text = race_data["description"]
