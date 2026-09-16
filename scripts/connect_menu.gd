@@ -49,20 +49,13 @@ func _on_client_connected():
 	NetworkManager.send_my_character.rpc_id(1, char_data)
 	get_tree().change_scene_to_file("res://scenes/character_list.tscn")
 
-
-
 func _on_peer_connected(_id):
 	if not multiplayer or not multiplayer.is_server():
 		return
 
-
-
-
 func _on_connection_failed():
 	multiplayer.multiplayer_peer = null
 
-
-
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/CharacterList.tscn")
+	get_tree().change_scene_to_file("res://scenes/character_list.tscn")
 	pass # Replace with function body.

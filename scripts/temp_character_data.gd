@@ -3,7 +3,7 @@ extends Node
 var class_id = ""
 var subclass_id = ""
 var character_name = ""
-var race_id = ""
+var race_name = ""
 var stats = {
 	"strength": 0,
 	"dexterity": 0,

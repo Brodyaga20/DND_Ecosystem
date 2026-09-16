@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://lw5wjk0pwr37" path="res://assets/pictures/buttons/universal/navigation_pressed.png" id="4_li3nm"]
 [ext_resource type="Texture2D" uid="uid://c8vrjooon177" path="res://assets/pictures/buttons/universal/navigation_hover.png" id="5_2yjjf"]
 [ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://assets/fonts/cinzel_bold.ttf" id="6_2kwcr"]
+[ext_resource type="LabelSettings" uid="uid://b6pl1hvrey7ie" path="res://resources/label_settings/character_creation/medium_common_text.tres" id="6_qhhxa"]
 [ext_resource type="Shader" uid="uid://b84kr2bu7ux0h" path="res://shaders/back_blur.gdshader" id="7_tylaf"]
 [ext_resource type="LabelSettings" uid="uid://dphedhg6n6hit" path="res://resources/label_settings/character_creation/selections_title.tres" id="8_tylaf"]
 [ext_resource type="LabelSettings" uid="uid://dw6ogecn6ui48" path="res://resources/label_settings/character_creation/big_common_text.tres" id="9_tylaf"]
@@ -27,26 +28,6 @@ script = ExtResource("1_tylaf")
 [node name="PersonalInfo" type="Sprite2D" parent="." unique_id=622241646]
 position = Vector2(960, 540)
 texture = ExtResource("2_tylaf")
-
-[node name="Back" type="TextureButton" parent="." unique_id=1701363920]
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 190.0
-offset_bottom = 105.0
-texture_normal = ExtResource("3_qhhxa")
-texture_pressed = ExtResource("4_li3nm")
-texture_hover = ExtResource("5_2yjjf")
-texture_focused = ExtResource("5_2yjjf")
-
-[node name="Label" type="Label" parent="Back" unique_id=854367258]
-layout_mode = 0
-offset_right = 170.0
-offset_bottom = 85.0
-theme_override_fonts/font = ExtResource("6_2kwcr")
-theme_override_font_sizes/font_size = 22
-text = "Назад"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Blur" type="ColorRect" parent="." unique_id=235093565]
 material = SubResource("ShaderMaterial_xvhvp")
@@ -70,14 +51,66 @@ vertical_alignment = 1
 
 [node name="NessesaryTitle" type="Label" parent="Blur" unique_id=1054665728]
 layout_mode = 0
-offset_top = 108.0
+offset_top = 100.0
 offset_right = 960.0
-offset_bottom = 165.0
+offset_bottom = 160.0
 theme = SubResource("Theme_3qu1t")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 19
 text = "Обязательное"
 label_settings = ExtResource("9_tylaf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NameTitle" type="Label" parent="Blur" unique_id=1372402202]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 161.0
+offset_right = 692.0
+offset_bottom = 221.0
+theme = SubResource("Theme_3qu1t")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "Имя"
+label_settings = ExtResource("6_qhhxa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SmallPart" type="Sprite2D" parent="." unique_id=1976598340]
+position = Vector2(0, 540)
+texture = ExtResource("10_fweql")
+centered = false
+
+[node name="NessesaryTitle" type="Label" parent="." unique_id=1720917218]
+offset_left = 960.0
+offset_top = 100.0
+offset_right = 1920.0
+offset_bottom = 160.0
+theme = SubResource("Theme_3qu1t")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "Необязательное"
+label_settings = ExtResource("9_tylaf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="TextureButton" parent="." unique_id=1701363920]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 190.0
+offset_bottom = 105.0
+texture_normal = ExtResource("3_qhhxa")
+texture_pressed = ExtResource("4_li3nm")
+texture_hover = ExtResource("5_2yjjf")
+texture_focused = ExtResource("5_2yjjf")
+
+[node name="Label" type="Label" parent="Back" unique_id=854367258]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("6_2kwcr")
+theme_override_font_sizes/font_size = 22
+text = "Назад"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -101,7 +134,8 @@ text = "Далее"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SmallPart" type="Sprite2D" parent="." unique_id=1976598340]
-position = Vector2(0, 540)
-texture = ExtResource("10_fweql")
-centered = false
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1832783020]
+offset_left = 87.0
+offset_top = 229.0
+offset_right = 874.0
+offset_bottom = 317.0

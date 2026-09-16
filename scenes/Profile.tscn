@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bymfeal1bsud6"]
 
 [ext_resource type="Script" uid="uid://3yiilcj6unwk" path="res://scripts/profile.gd" id="1_irxi3"]
-[ext_resource type="Texture2D" uid="uid://cu0pqpjdejapg" path="res://assets/pictures/backgrounds/GuideBook.png" id="2_hjayj"]
-[ext_resource type="Texture2D" path="res://assets/pictures/avatars/EmptyAvatar.png" id="3_h7yon"]
+[ext_resource type="Texture2D" uid="uid://dlsifyf178kba" path="res://assets/pictures/backgrounds/personal_info.png" id="2_b4vjc"]
+[ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://assets/fonts/cinzel_bold.ttf" id="3_vpega"]
+[ext_resource type="Texture2D" uid="uid://bkibvvfo7pee3" path="res://assets/pictures/buttons/locked_vertical.png" id="4_7cwr7"]
+[ext_resource type="Texture2D" uid="uid://i0hcmp1p1lc4" path="res://assets/pictures/buttons/locked_square.png" id="5_gmahi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
 font_size = 52
@@ -17,8 +19,7 @@ script = ExtResource("1_irxi3")
 
 [node name="SheetBack" type="Sprite2D" parent="." unique_id=574454992]
 position = Vector2(959.99994, 540)
-scale = Vector2(0.69767433, 0.703125)
-texture = ExtResource("2_hjayj")
+texture = ExtResource("2_b4vjc")
 
 [node name="Editable" type="Control" parent="." unique_id=306227016]
 anchors_preset = 0
@@ -32,10 +33,10 @@ offset_bottom = 40.0
 
 [node name="Name" type="Label" parent="Editable/Name" unique_id=1789381728]
 layout_mode = 0
-offset_left = 87.0
-offset_top = 30.0
-offset_right = 601.0
-offset_bottom = 149.0
+offset_left = 714.0
+offset_top = 2.0
+offset_right = 1228.0
+offset_bottom = 121.0
 text = "Имя"
 label_settings = SubResource("LabelSettings_yf5fn")
 horizontal_alignment = 1
@@ -57,18 +58,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="History" type="Label" parent="Editable/History" unique_id=1574676802]
-custom_maximum_size = Vector2(580, -1)
-layout_mode = 0
-offset_left = 670.0
-offset_top = 130.0
-offset_right = 1250.0
-offset_bottom = 530.0
-text = "Предыстория"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
 [node name="HistoryEdit" type="TextEdit" parent="Editable/History" unique_id=48831448]
 visible = false
 custom_maximum_size = Vector2(580, -1)
@@ -85,18 +74,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Traits" type="Label" parent="Editable/Traits" unique_id=497986213]
-custom_maximum_size = Vector2(620, -1)
-layout_mode = 0
-offset_left = 88.0
-offset_top = 668.0
-offset_right = 600.0
-offset_bottom = 805.0
-text = "Черты"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
 [node name="TraitsEdit" type="TextEdit" parent="Editable/Traits" unique_id=1822330382]
 visible = false
 custom_maximum_size = Vector2(620, -1)
@@ -110,10 +87,21 @@ autowrap_mode = 2
 
 [node name="Class" type="Label" parent="." unique_id=1661318763]
 layout_mode = 0
-offset_left = 650.0
-offset_top = -5.0
-offset_right = 1270.0
-offset_bottom = 98.0
+offset_left = 84.0
+offset_top = 820.0
+offset_right = 499.0
+offset_bottom = 923.0
+text = "Класс"
+label_settings = SubResource("LabelSettings_g4v7s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Race" type="Label" parent="." unique_id=1464447222]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 1640.0
+offset_right = 583.0
+offset_bottom = 1743.0
 text = "Класс"
 label_settings = SubResource("LabelSettings_g4v7s")
 horizontal_alignment = 1
@@ -128,23 +116,27 @@ offset_bottom = 636.0
 
 [node name="StrengthLabel" type="Label" parent="StatsContainer" unique_id=1039309175]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vpega")
 text = "ахаха"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AgilityLabel" type="Label" parent="StatsContainer" unique_id=452900778]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vpega")
 text = "хахах"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="IntelligenceLabel" type="Label" parent="StatsContainer" unique_id=1339019869]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vpega")
 text = "ххахаха"
 horizontal_alignment = 1
 
 [node name="LuckLabel" type="Label" parent="StatsContainer" unique_id=1637116820]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vpega")
 text = "хихихи"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -171,29 +163,15 @@ text = "Способности"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Items" type="VBoxContainer" parent="." unique_id=1994977358]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 796.0
-offset_right = 751.0
-offset_bottom = 1047.0
-
-[node name="Label" type="Label" parent="Items" unique_id=827943215]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Items" unique_id=1493308458]
-layout_mode = 2
-
 [node name="Effects" type="HBoxContainer" parent="." unique_id=54175224]
 layout_mode = 0
-offset_left = 54.0
-offset_top = 820.0
-offset_right = 634.0
-offset_bottom = 931.0
+offset_left = 615.0
+offset_top = 643.0
+offset_right = 1195.0
+offset_bottom = 754.0
 
 [node name="Avatar" type="Sprite2D" parent="." unique_id=1866744336]
 position = Vector2(344, 402)
-texture = ExtResource("3_h7yon")
 
 [node name="Buttons" type="Control" parent="." unique_id=547725681]
 anchors_preset = 0
@@ -261,6 +239,7 @@ offset_left = 1300.0
 offset_top = 345.0
 offset_right = 1460.0
 offset_bottom = 380.0
+theme_override_fonts/font = ExtResource("3_vpega")
 text = "Здоровье"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -271,6 +250,7 @@ offset_left = 1230.0
 offset_top = 385.0
 offset_right = 1530.0
 offset_bottom = 440.0
+theme_override_fonts/font = ExtResource("3_vpega")
 theme_override_font_sizes/font_size = 40
 text = "0"
 horizontal_alignment = 1
@@ -310,6 +290,24 @@ offset_top = 271.0
 offset_right = 1483.0
 offset_bottom = 324.0
 text = "прим"
+
+[node name="LockedVertical" type="Sprite2D" parent="." unique_id=2084137958]
+position = Vector2(756, 629)
+texture = ExtResource("4_7cwr7")
+
+[node name="LockedSquare" type="NinePatchRect" parent="." unique_id=2135472530]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 322.0
+offset_right = 446.0
+offset_bottom = 607.0
+texture = ExtResource("5_gmahi")
+patch_margin_left = 15
+patch_margin_top = 15
+patch_margin_right = 15
+patch_margin_bottom = 15
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
 [connection signal="pressed" from="Buttons/Back" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Buttons/Edit" to="." method="_on_edit_button_pressed"]

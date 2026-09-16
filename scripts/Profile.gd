@@ -42,7 +42,7 @@ func update_display():
 	update_abilities(abilities)
 	$Editable/Name/Name.text = character_data["name"]
 	$Class.text = class_data["name"] + " - " + subclass_data["name"]
-	
+	$Race
 	
 	# Снаряжение (пока список)
 	#var gear = character_data.get("starting_gear", [])

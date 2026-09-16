@@ -29,7 +29,7 @@ func save_characters():
 		file.store_string(json)
 		file.close()
 
-func add_character(name: String, class_id: String, subclass_id: String, stats: Dictionary, background: String = "", traits: String = "", starting_gear: Array = []):
+func add_character(name: String, class_id: String, subclass_id: String, stats: Dictionary, background: String = "", traits: String = "", _starting_gear: Array = []):
 	if characters.size() >= MAX_CHARACTERS:
 		return null  # или false
 	var new_char = {
@@ -47,7 +47,7 @@ func add_character(name: String, class_id: String, subclass_id: String, stats: D
 		"created": Time.get_datetime_string_from_system(),
 		"locked": false,
 		"abilities_known": [DataManager.get_start_ability_for_subclass(subclass_id)["id"]],
-		"race_id": "",
+		"race_name": "",
 		"sex": "",
 		"age": "",
 		"inventory": [],
