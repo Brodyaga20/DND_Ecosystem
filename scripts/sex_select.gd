@@ -10,7 +10,6 @@ var selected_sex = ""
 enum sex_types {MAN, WOMAN}
 func _ready():
 	$Next.disabled = true
-	print(TempData.race_name)
 
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/race_select.tscn")

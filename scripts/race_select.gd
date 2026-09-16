@@ -5,6 +5,7 @@ var wayback = ""
 var mixed_blood = false
 var mixed_blood_name = ""
 var race_name = ""
+var mixed_parents = []
 @onready var sprites = { "human": $HighlightedSprites/Human/Human, "drow": $HighlightedSprites/Drow/Drow,
 						 "gnome": $HighlightedSprites/Gnome/Gnome, "chitin": $HighlightedSprites/Chitin/Chitin,
 						 "avian": $HighlightedSprites/Avian/Avian, "giant": $HighlightedSprites/Giant/Giant,
@@ -25,7 +26,6 @@ func _ready():
 	$Blur/DescriptionLabel.text = ""
 
 func select_race(race_id: String):
-	TempData.race_id = race_id
 	var race_data = DataManager.get_race_data(race_id)
 	if race_data:
 		if !mixed_blood:
@@ -37,7 +37,6 @@ func select_race(race_id: String):
 		elif race_id == "new_race":
 			TempData.race_name = $NewRaceScreen/NewRaceNameEdit.text
 		$Next.disabled = false
-	print("Название расы: ", TempData.race_name)
 
 func update_text(race_data):
 	$Blur/NameLabel.text = race_data["name"]
@@ -48,7 +47,7 @@ func _on_back_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_next_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/sex_select.tscn")
+	go_to_sex_select()
 
 func clear_highlight() -> void:
 	for child in get_tree().get_nodes_in_group("characters"):
@@ -137,4 +136,14 @@ func _on_no_pressed() -> void:
 
 func _on_yes_pressed() -> void:
 	select_race("new_race")
+	go_to_sex_select()
+
+func save_parents():
+	for child in sprites:
+		if sprites[child].visible:
+			TempData.race_parents.append(child)
+
+func go_to_sex_select():
+	save_parents()
+	print(TempData.race_parents)
 	get_tree().change_scene_to_file("res://scenes/sex_select.tscn")

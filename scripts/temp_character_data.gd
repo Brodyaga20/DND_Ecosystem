@@ -4,6 +4,7 @@ var class_id = ""
 var subclass_id = ""
 var character_name = ""
 var race_name = ""
+var race_parents = []
 var stats = {
 	"strength": 0,
 	"dexterity": 0,
