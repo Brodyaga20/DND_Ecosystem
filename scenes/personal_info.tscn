@@ -11,6 +11,11 @@
 [ext_resource type="LabelSettings" uid="uid://dphedhg6n6hit" path="res://resources/label_settings/character_creation/selections_title.tres" id="8_tylaf"]
 [ext_resource type="LabelSettings" uid="uid://dw6ogecn6ui48" path="res://resources/label_settings/character_creation/big_common_text.tres" id="9_tylaf"]
 [ext_resource type="Texture2D" uid="uid://dg56sjhikjp22" path="res://assets/pictures/backgrounds/personal_info/small_part.png" id="10_fweql"]
+[ext_resource type="Texture2D" uid="uid://bqwnn042y7id6" path="res://assets/pictures/buttons/age_selection/young.png" id="11_fweql"]
+[ext_resource type="Texture2D" uid="uid://ldnmb25axk8h" path="res://assets/pictures/buttons/age_selection/mature.png" id="12_gj8oi"]
+[ext_resource type="LabelSettings" uid="uid://k4l2d62tldd2" path="res://resources/label_settings/character_creation/selections_description.tres" id="13_gj8oi"]
+[ext_resource type="Texture2D" uid="uid://bldgt0n3mevpj" path="res://assets/pictures/buttons/age_selection/old.png" id="13_kbhir"]
+[ext_resource type="Texture2D" uid="uid://itniyukqqe3m" path="res://assets/pictures/buttons/age_selection/ancient.png" id="14_mi52y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xvhvp"]
 shader = ExtResource("7_tylaf")
@@ -25,7 +30,7 @@ shader_parameter/tint = Color(0, 0, 0, 0)
 [node name="PersonalInfo" type="Node2D" unique_id=1681643822]
 script = ExtResource("1_tylaf")
 
-[node name="PersonalInfo" type="Sprite2D" parent="." unique_id=622241646]
+[node name="Background" type="Sprite2D" parent="." unique_id=622241646]
 position = Vector2(960, 540)
 texture = ExtResource("2_tylaf")
 
@@ -35,7 +40,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(1, 1, 1, 0)
 
-[node name="Label" type="Label" parent="Blur" unique_id=398621408]
+[node name="MainTitle" type="Label" parent="Blur" unique_id=398621408]
 layout_mode = 0
 offset_left = 410.0
 offset_right = 1510.0
@@ -51,9 +56,9 @@ vertical_alignment = 1
 
 [node name="NessesaryTitle" type="Label" parent="Blur" unique_id=1054665728]
 layout_mode = 0
-offset_top = 100.0
+offset_top = 90.0
 offset_right = 960.0
-offset_bottom = 160.0
+offset_bottom = 150.0
 theme = SubResource("Theme_3qu1t")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 19
@@ -62,44 +67,12 @@ label_settings = ExtResource("9_tylaf")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="NameTitle" type="Label" parent="Blur" unique_id=1372402202]
+[node name="UnnessesaryTitle" type="Label" parent="Blur" unique_id=1720917218]
 layout_mode = 0
-offset_left = 268.0
-offset_top = 161.0
-offset_right = 692.0
-offset_bottom = 221.0
-theme = SubResource("Theme_3qu1t")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 19
-text = "Имя"
-label_settings = ExtResource("6_qhhxa")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AgeTitle" type="Label" parent="Blur" unique_id=1743469490]
-layout_mode = 0
-offset_left = 268.0
-offset_top = 319.0
-offset_right = 692.0
-offset_bottom = 379.0
-theme = SubResource("Theme_3qu1t")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 19
-text = "Возраст"
-label_settings = ExtResource("6_qhhxa")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SmallPart" type="Sprite2D" parent="." unique_id=1976598340]
-position = Vector2(0, 540)
-texture = ExtResource("10_fweql")
-centered = false
-
-[node name="NessesaryTitle" type="Label" parent="." unique_id=1720917218]
 offset_left = 960.0
-offset_top = 100.0
+offset_top = 90.0
 offset_right = 1920.0
-offset_bottom = 160.0
+offset_bottom = 150.0
 theme = SubResource("Theme_3qu1t")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 19
@@ -107,6 +80,11 @@ text = "Необязательное"
 label_settings = ExtResource("9_tylaf")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SmallPart" type="Sprite2D" parent="." unique_id=1976598340]
+position = Vector2(0, 540)
+texture = ExtResource("10_fweql")
+centered = false
 
 [node name="Back" type="TextureButton" parent="." unique_id=1701363920]
 offset_left = 20.0
@@ -149,7 +127,281 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LineEdit" type="LineEdit" parent="." unique_id=1832783020]
-offset_left = 87.0
-offset_top = 229.0
+offset_left = 50.0
+offset_top = 160.0
+offset_right = 910.0
+offset_bottom = 248.0
+theme_override_fonts/font = ExtResource("6_2kwcr")
+theme_override_font_sizes/font_size = 42
+placeholder_text = "Имя"
+alignment = 1
+
+[node name="Age" type="Control" parent="." unique_id=1325815073]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AgeTitle" type="Label" parent="Age" unique_id=1743469490]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 245.0
+offset_right = 690.0
+offset_bottom = 305.0
+theme = SubResource("Theme_3qu1t")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "Возраст"
+label_settings = ExtResource("6_qhhxa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RangesButtons" type="Control" parent="Age" unique_id=487965034]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Young" type="TextureButton" parent="Age/RangesButtons" unique_id=1019956786]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 308.0
+offset_right = 245.0
+offset_bottom = 433.0
+texture_normal = ExtResource("11_fweql")
+
+[node name="Label" type="Label" parent="Age/RangesButtons/Young" unique_id=878501335]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 125.0
+text = "Молодой"
+label_settings = ExtResource("13_gj8oi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mature" type="TextureButton" parent="Age/RangesButtons" unique_id=347603920]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 308.0
+offset_right = 455.0
+offset_bottom = 433.0
+texture_normal = ExtResource("12_gj8oi")
+
+[node name="Label" type="Label" parent="Age/RangesButtons/Mature" unique_id=1430032106]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 125.0
+text = "Зрелый"
+label_settings = ExtResource("13_gj8oi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Old" type="TextureButton" parent="Age/RangesButtons" unique_id=258043064]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 308.0
+offset_right = 665.0
+offset_bottom = 433.0
+texture_normal = ExtResource("13_kbhir")
+
+[node name="Label" type="Label" parent="Age/RangesButtons/Old" unique_id=888562654]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 125.0
+text = "Старый"
+label_settings = ExtResource("13_gj8oi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ancient" type="TextureButton" parent="Age/RangesButtons" unique_id=2091178501]
+layout_mode = 0
+offset_left = 715.0
+offset_top = 308.0
+offset_right = 875.0
+offset_bottom = 433.0
+texture_normal = ExtResource("14_mi52y")
+
+[node name="Label" type="Label" parent="Age/RangesButtons/Ancient" unique_id=1878093991]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 125.0
+text = "Древний"
+label_settings = ExtResource("13_gj8oi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AdditionalAgeInfo" type="Control" parent="Age" unique_id=867652802]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AgeRange" type="Label" parent="Age/AdditionalAgeInfo" unique_id=1892042194]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 439.0
+offset_right = 890.0
+offset_bottom = 499.0
+theme = SubResource("Theme_3qu1t")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "Для выбранной расы это от 10 до 20 лет"
+label_settings = ExtResource("6_qhhxa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AgeDesc" type="Label" parent="Age/AdditionalAgeInfo" unique_id=260540032]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 503.0
+offset_right = 741.0
+offset_bottom = 563.0
+theme = SubResource("Theme_3qu1t")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "Можно ввести конретное число:"
+label_settings = ExtResource("6_qhhxa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit2" type="LineEdit" parent="Age/AdditionalAgeInfo" unique_id=514038823]
+layout_mode = 0
+offset_left = 748.0
+offset_top = 504.0
 offset_right = 874.0
-offset_bottom = 317.0
+offset_bottom = 564.0
+theme_override_fonts/font = ExtResource("6_2kwcr")
+theme_override_font_sizes/font_size = 25
+placeholder_text = "возраст"
+alignment = 1
+
+[node name="History" type="Control" parent="." unique_id=1691668714]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HistoryTitle" type="Label" parent="History" unique_id=1350396593]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 160.0
+offset_right = 1920.0
+offset_bottom = 220.0
+theme = SubResource("Theme_3qu1t")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "Предыстория"
+label_settings = ExtResource("6_qhhxa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HistoryEdit" type="LineEdit" parent="History" unique_id=866101656]
+layout_mode = 0
+offset_left = 990.0
+offset_top = 220.0
+offset_right = 1890.0
+offset_bottom = 460.0
+theme_override_fonts/font = ExtResource("6_2kwcr")
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Чем герой занимался до кампании?"
+alignment = 1
+
+[node name="Traits" type="Control" parent="." unique_id=595901872]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TraitsTitle" type="Label" parent="Traits" unique_id=609331765]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 470.0
+offset_right = 1920.0
+offset_bottom = 530.0
+theme = SubResource("Theme_3qu1t")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "Черты"
+label_settings = ExtResource("6_qhhxa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TraitsEdit" type="LineEdit" parent="Traits" unique_id=1344426350]
+layout_mode = 0
+offset_left = 990.0
+offset_top = 530.0
+offset_right = 1890.0
+offset_bottom = 620.0
+theme_override_fonts/font = ExtResource("6_2kwcr")
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Изюминки - боится мышей или заикается"
+alignment = 1
+emoji_menu_enabled = false
+
+[node name="Goal" type="Control" parent="." unique_id=1959663758]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GoalTitle" type="Label" parent="Goal" unique_id=1263943195]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 630.0
+offset_right = 1920.0
+offset_bottom = 690.0
+theme = SubResource("Theme_3qu1t")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "Цель в жизни"
+label_settings = ExtResource("6_qhhxa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoalEdit" type="LineEdit" parent="Goal" unique_id=2040931309]
+layout_mode = 0
+offset_left = 990.0
+offset_top = 690.0
+offset_right = 1890.0
+offset_bottom = 780.0
+theme_override_fonts/font = ExtResource("6_2kwcr")
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Чего герой хочет добиться за кампанию?"
+alignment = 1
+emoji_menu_enabled = false
+
+[node name="Secret" type="Control" parent="." unique_id=870609796]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SecretTitle" type="Label" parent="Secret" unique_id=499638857]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 790.0
+offset_right = 1920.0
+offset_bottom = 850.0
+theme = SubResource("Theme_3qu1t")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "Секрет"
+label_settings = ExtResource("6_qhhxa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SecretEdit" type="LineEdit" parent="Secret" unique_id=548757900]
+layout_mode = 0
+offset_left = 990.0
+offset_top = 850.0
+offset_right = 1890.0
+offset_bottom = 940.0
+theme_override_fonts/font = ExtResource("6_2kwcr")
+theme_override_font_sizes/font_size = 30
+placeholder_text = "То, что известно только вам и мастеру"
+alignment = 1
+emoji_menu_enabled = false
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Age/RangesButtons/Young" to="." method="_on_young_pressed"]
+[connection signal="pressed" from="Age/RangesButtons/Mature" to="." method="_on_mature_pressed"]
+[connection signal="pressed" from="Age/RangesButtons/Old" to="." method="_on_old_pressed"]
+[connection signal="pressed" from="Age/RangesButtons/Ancient" to="." method="_on_ancient_pressed"]

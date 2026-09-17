@@ -14,16 +14,19 @@ var mixed_parents = []
 func _ready():
 	$NewRaceScreen.visible = false
 	subclass = TempData.subclass_id
+	set_wayback()
+	clear_highlight()
+	$Next.disabled = true
+	$Blur/NameLabel.text = ""
+	$Blur/DescriptionLabel.text = ""
+
+func set_wayback():
 	if subclass == "mage":
 		wayback = "res://scenes/mage_subclass_select.tscn"
 	elif subclass == "assasin":
 		wayback = "res://scenes/rogue_subclass_select.tscn"
 	else:
 		wayback = "res://scenes/warrior_subclass_select.tscn"
-	clear_highlight()
-	$Next.disabled = true
-	$Blur/NameLabel.text = ""
-	$Blur/DescriptionLabel.text = ""
 
 func select_race(race_id: String):
 	var race_data = DataManager.get_race_data(race_id)
@@ -144,6 +147,16 @@ func save_parents():
 			TempData.race_parents.append(child)
 
 func go_to_sex_select():
+	var race_range = {"young": [0, 0], "mature": [0, 0], "old": [0, 0], "ancient": [0, 0]}
 	save_parents()
-	print(TempData.race_parents)
+	for p in TempData.race_parents:
+		var race_data = DataManager.get_race_data(p)
+		var age_ranges = race_data["lifespan"]
+		for a in age_ranges:
+			for aa in range(0, 2):
+				race_range[a][aa] += age_ranges[a][aa]
+	for a in race_range:
+			for aa in range(0, 2):
+				race_range[a][aa] = int(race_range[a][aa]/TempData.race_parents.size())
+	TempData.race_ages = race_range
 	get_tree().change_scene_to_file("res://scenes/sex_select.tscn")
