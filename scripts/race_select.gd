@@ -1,6 +1,6 @@
 extends Node2D
 
-var subclass = ""
+var class_id = ""
 var wayback = ""
 var mixed_blood = false
 var mixed_blood_name = ""
@@ -13,7 +13,7 @@ var mixed_parents = []
 
 func _ready():
 	$NewRaceScreen.visible = false
-	subclass = TempData.subclass_id
+	class_id = TempData.class_id
 	set_wayback()
 	clear_highlight()
 	$Next.disabled = true
@@ -21,9 +21,9 @@ func _ready():
 	$Blur/DescriptionLabel.text = ""
 
 func set_wayback():
-	if subclass == "mage":
+	if class_id == "mage":
 		wayback = "res://scenes/mage_subclass_select.tscn"
-	elif subclass == "assasin":
+	elif class_id == "assasin":
 		wayback = "res://scenes/rogue_subclass_select.tscn"
 	else:
 		wayback = "res://scenes/warrior_subclass_select.tscn"
