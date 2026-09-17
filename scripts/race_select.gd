@@ -142,6 +142,7 @@ func _on_yes_pressed() -> void:
 	go_to_sex_select()
 
 func save_parents():
+	TempData.race_parents.clear()
 	for child in sprites:
 		if sprites[child].visible:
 			TempData.race_parents.append(child)
