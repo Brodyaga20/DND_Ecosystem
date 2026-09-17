@@ -3,9 +3,9 @@ extends Node2D
 var class_id = ""
 var wayback = ""
 var mixed_blood = false
+var new_race = false
 var mixed_blood_name = ""
 var race_name = ""
-var mixed_parents = []
 @onready var sprites = { "human": $HighlightedSprites/Human/Human, "drow": $HighlightedSprites/Drow/Drow,
 						 "gnome": $HighlightedSprites/Gnome/Gnome, "chitin": $HighlightedSprites/Chitin/Chitin,
 						 "avian": $HighlightedSprites/Avian/Avian, "giant": $HighlightedSprites/Giant/Giant,
@@ -53,8 +53,8 @@ func _on_next_pressed() -> void:
 	go_to_sex_select()
 
 func clear_highlight() -> void:
-	for child in get_tree().get_nodes_in_group("characters"):
-		child.visible = false
+	for sprite in sprites:
+		sprite.visible = false
 
 func _on_gnome_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
@@ -156,7 +156,8 @@ func go_to_sex_select():
 		for a in age_ranges:
 			for aa in range(0, 2):
 				race_range[a][aa] += age_ranges[a][aa]
-	for a in race_range:
+	if !new_race:
+		for a in race_range:
 			for aa in range(0, 2):
 				race_range[a][aa] = int(race_range[a][aa]/TempData.race_parents.size())
 	TempData.race_ages = race_range
