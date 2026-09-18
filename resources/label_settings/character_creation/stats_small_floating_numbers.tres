@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://dcvhuy82evw8s"]
+
+[ext_resource type="FontFile" uid="uid://x1w7x5ymdd5l" path="res://assets/fonts/vinque rg.ttf" id="1_waxsn"]
+
+[resource]
+font = ExtResource("1_waxsn")
+font_size = 73
+font_color = Color(0, 0, 0, 1)
+outline_size = 15

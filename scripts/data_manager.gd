@@ -5,6 +5,8 @@ var subclasses = []
 var archetypes = []
 var abilities = []
 var races = []
+var ages_periods = []
+var stats = []
 var resource 
 
 func _ready():
@@ -21,6 +23,20 @@ func load_data():
 			archetypes = json["archetypes"]
 			races = json["races"]
 			abilities = json["abilities"]
+			ages_periods = json["ages_periods_names"]
+			stats = json["stats"]
+
+func get_name_from_age_period_id(id: String):
+	for a in ages_periods:
+		if a["id"] == id:
+			return a["name"]
+	return null
+
+func get_data_from_stat_id(id: String):
+	for s in stats:
+		if s["id"] == id:
+			return s
+	return null
 
 func get_class_data(id: String):
 	for c in classes:

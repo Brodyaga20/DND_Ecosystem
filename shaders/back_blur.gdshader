@@ -10,7 +10,7 @@ uniform float max_blur_lod : hint_range(0.0, 5.0) = 2.0;
 uniform float inner : hint_range(0.0, 1.5) = 0.0;
 
 // Где размытие полностью пропадает (1.0 ≈ края по короткой стороне)
-uniform float outer : hint_range(0.05, 1.5) = 1.0;
+uniform float outer : hint_range(0.05, 1.5) = 0.8;
 
 // Кривая градиента: 1.0 = линейно, >1 = резче к центру, <1 = плавнее
 uniform float falloff : hint_range(0.1, 4.0) = 0.1;

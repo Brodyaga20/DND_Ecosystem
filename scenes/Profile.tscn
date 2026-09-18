@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dlsifyf178kba" path="res://assets/pictures/backgrounds/personal_info.png" id="2_b4vjc"]
 [ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://assets/fonts/cinzel_bold.ttf" id="3_vpega"]
 [ext_resource type="Texture2D" uid="uid://bkibvvfo7pee3" path="res://assets/pictures/buttons/locked_vertical.png" id="4_7cwr7"]
-[ext_resource type="Texture2D" uid="uid://i0hcmp1p1lc4" path="res://assets/pictures/buttons/locked_square.png" id="5_gmahi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
 font_size = 52
@@ -98,10 +97,10 @@ vertical_alignment = 1
 
 [node name="Race" type="Label" parent="." unique_id=1464447222]
 layout_mode = 0
-offset_left = 168.0
-offset_top = 1640.0
-offset_right = 583.0
-offset_bottom = 1743.0
+offset_left = 733.0
+offset_top = 739.0
+offset_right = 1148.0
+offset_bottom = 842.0
 text = "Класс"
 label_settings = SubResource("LabelSettings_g4v7s")
 horizontal_alignment = 1
@@ -292,22 +291,9 @@ offset_bottom = 324.0
 text = "прим"
 
 [node name="LockedVertical" type="Sprite2D" parent="." unique_id=2084137958]
-position = Vector2(756, 629)
+position = Vector2(960, 542.5)
+scale = Vector2(9.57, 2.7175)
 texture = ExtResource("4_7cwr7")
-
-[node name="LockedSquare" type="NinePatchRect" parent="." unique_id=2135472530]
-layout_mode = 0
-offset_left = 97.0
-offset_top = 322.0
-offset_right = 446.0
-offset_bottom = 607.0
-texture = ExtResource("5_gmahi")
-patch_margin_left = 15
-patch_margin_top = 15
-patch_margin_right = 15
-patch_margin_bottom = 15
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
 
 [connection signal="pressed" from="Buttons/Back" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Buttons/Edit" to="." method="_on_edit_button_pressed"]

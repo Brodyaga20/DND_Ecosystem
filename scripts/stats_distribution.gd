@@ -1,55 +1,61 @@
 extends Node2D
-var max_start_points = 7
-var remaining_points = 7
 
-func _ready():
-	var class_data = DataManager.get_class_data(TempData.class_id)
-	var subclass_data = DataManager.get_subclass_data(TempData.subclass_id)
-	$SublassSelected.text = "Выбранный вами подкласс: " + class_data["name"] + " - " + subclass_data["name"]
-	$Stats/Strength/SpinBox.value = 0
-	$Stats/Agility/SpinBox.value = 0
-	$Stats/Intelligence/SpinBox.value = 0
-	$Stats/Luck/SpinBox.value = 0
+var max_start_points := 7
+var remaining_points := 7
+var selected_stat := ""
+var preselected_stat := ""
+var selected_id := ""
+
+@onready var sprites_root: Node2D = $Bowls
+@onready var math_signs_root: Node2D = $MainNumber
+@onready var main_number: Label = $MainNumber/MainNumberContainer/SubViewport/MainNumber
+
+@onready var numbers := {
+	"power":        $SmallNumbers/Power,
+	"intelligence": $SmallNumbers/Intelligence,
+	"agility":      $SmallNumbers/Agility,
+	"luck":         $SmallNumbers/Luck,
+}
+
+@onready var stat_colors := {
+	"power":        Color(1.0, 0.5, 0.5),
+	"intelligence": Color(0.5, 0.5, 1.0),
+	"agility":      Color(0.5, 0.8, 0.5),
+	"luck":         Color(1.0, 0.85, 0.4),
+}
+
+func _ready() -> void:
 	update_ui()
+	clear()
 	$Save.disabled = true
 
-func update_ui():
-	var total = sum_stats()
-	remaining_points = max_start_points - total
-	if remaining_points >= 0:
-		$Stats/RemainingLabel.text = "Для создания стартового персонажа осталось " + str(int(remaining_points)) + " очков.\nВы можете создать персонажа сильнее или слабее стартового, если мастер разрешит."
-	else:
-		$Stats/RemainingLabel.text = "Ваш персонаж имеет на " + str(int(-remaining_points)) + " очков больше стартового.\nЭто нормально, если мастер разрешит."
+	# Подписываемся на новый сигнал с id
+	for child in sprites_root.get_children():
+		if child is GlowElement:
+			child.id_selected.connect(_on_stat_id_selected)
+		
+	for child in math_signs_root.get_children():
+		if child is GlowElement:
+			child.id_pressed.connect(_on_plus_minus_pressed)
+
+func clear() -> void:
+	main_number.text = ""
+	$MainNumber.visible = false
+	$Blur/CentralTitle.text = ""
+	$Blur/CentralDescription.text = ""
+	selected_id = ""
+
+func update_ui() -> void:
 	update_derived_stats()
-	$Save.disabled = $Name/Entering.text == ""
 
-func update_derived_stats():
-	var strength = $Stats/Strength/SpinBox.value
-	var agility = $Stats/Agility/SpinBox.value
-	var intelligence = $Stats/Intelligence/SpinBox.value
-	var luck = $Stats/Luck/SpinBox.value
-	$Derivatives/Numbers/Health.text = str(int(40 + strength * 10))
-	$Derivatives/Numbers/Melee.text = str(int(strength))
-	$Derivatives/Numbers/LightMelee.text = str(int(agility))
-	$Derivatives/Numbers/Range.text = str(int(agility))
-	$Derivatives/Numbers/Magic.text = str(int(intelligence))
-	$Derivatives/Numbers/Heal.text = str(int(intelligence))
-	$Derivatives/Numbers/Defence.text = str(int(floor(strength/2)))
-	$Derivatives/Numbers/DefencePierceing.text = str(int(floor(agility * 1.5)))
-	$Derivatives/Numbers/Move.text = str(int(floor(2 + agility/2)))
-	$Derivatives/Numbers/Reroll.text = str(int(floor((luck + 1)/2)))
-	$Derivatives/Numbers/RerollBonus.text = str(int(floor(luck/2)))
-	$Derivatives/Numbers/ActiveSlots.text = str(int(3 + intelligence))
+func update_derived_stats() -> void:
+	#var strength = $Stats/Strength/SpinBox.value
+	#var agility = $Stats/Agility/SpinBox.value
+	#var intelligence = $Stats/Intelligence/SpinBox.value
+	#var luck = $Stats/Luck/SpinBox.value
+	#$Derivatives/Numbers/Health.text = str(int(40 + strength * 10))
+	# ... (оставил закомментированным как было)
 	pass
-
-func sum_stats() -> int:
-	return $Stats/Strength/SpinBox.value + $Stats/Agility/SpinBox.value + $Stats/Intelligence/SpinBox.value + $Stats/Luck/SpinBox.value
-
-func _on_spin_value_changed(_value):
-	update_ui()
-
-func _on_entering_text_changed(_new_text: String) -> void:
-	update_ui()
 
 func _on_back_pressed() -> void:
 	var class_id = TempData.class_id
@@ -61,20 +67,16 @@ func _on_back_pressed() -> void:
 		"mage":
 			get_tree().change_scene_to_file("res://scenes/MageSubclassSelect.tscn")
 
-func ask_for_stats():
-	pass
-
 func _on_save_pressed() -> void:
 	if remaining_points != 0:
-		ask_for_stats()
 		return
 	if $Name/Entering.text != "":
 		TempData.character_name = $Name/Entering.text
 		TempData.stats = {
-			"strength": $Stats/Strength/SpinBox.value,
-			"dexterity": $Stats/Agility/SpinBox.value,
+			"power":        $Stats/Strength/SpinBox.value,
+			"agility":      $Stats/Agility/SpinBox.value,
 			"intelligence": $Stats/Intelligence/SpinBox.value,
-			"luck": $Stats/Luck/SpinBox.value
+			"luck":         $Stats/Luck/SpinBox.value,
 		}
 		TempData.history = $History/Text.text
 		TempData.traits = $Traits/Text.text
@@ -88,5 +90,47 @@ func _on_save_pressed() -> void:
 		)
 		TempData.reset()
 		get_tree().change_scene_to_file("res://scenes/CharacterList.tscn")
-	
+
+func update_central_labels() -> void:
+	update_selected_stat_text()
+	update_main_number()
+
+func update_selected_stat_text() -> void:
+	if selected_id == "":
+		$Blur/CentralTitle.text = ""
+		$Blur/CentralDescription.text = ""
+		return
+	var data = DataManager.get_data_from_stat_id(selected_id)
+	$Blur/CentralTitle.text = data["name"]
+	$Blur/CentralDescription.text = data["description"]
+
+func update_main_number() -> void:
+	if selected_id == "" or not numbers.has(selected_id):
+		return
+	main_number.text = numbers[selected_id].text
+	$MainNumber/MainNumberContainer.material.set_shader_parameter(
+		"glow_color", stat_colors[selected_id]
+	)
+
+func _on_stat_id_selected(id: String) -> void:
+	if id == "":
+		return
+	# Повторный клик по той же чаше — просто ничего не делаем
+	if id == selected_id:
+		return
+	selected_id = id
+	$MainNumber.visible = true
+	update_central_labels()
+
+func _on_plus_minus_pressed(id: String):
+	match id:
+		"plus":
+			main_number.text = str(int(main_number.text) + 1)
+		"minus":
+			main_number.text = str(int(main_number.text) - 1)
+	update_selected_stat()
+	pass
+
+func update_selected_stat():
+	numbers[selected_id].text = main_number.text
 	pass

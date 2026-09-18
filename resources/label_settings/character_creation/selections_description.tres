@@ -2,8 +2,13 @@
 
 [ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://assets/fonts/cinzel_bold.ttf" id="1_ymcr4"]
 
+[sub_resource type="FontVariation" id="FontVariation_87vdx"]
+base_font = ExtResource("1_ymcr4")
+spacing_glyph = 1
+
 [resource]
-font = ExtResource("1_ymcr4")
+paragraph_spacing = 1.0
+font = SubResource("FontVariation_87vdx")
 font_size = 23
 shadow_size = 13
 shadow_color = Color(0, 0, 0, 1)

@@ -85,7 +85,6 @@ func _on_card_pressed(char_id: int):
 
 func update_buttons():
 	var has_selected = (selected_char_id != null)
-	$Create.disabled = not has_selected
 	$Delete.disabled = not has_selected
 
 

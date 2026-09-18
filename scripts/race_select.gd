@@ -54,7 +54,7 @@ func _on_next_pressed() -> void:
 
 func clear_highlight() -> void:
 	for sprite in sprites:
-		sprite.visible = false
+		sprites[sprite].visible = false
 
 func _on_gnome_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
@@ -127,10 +127,12 @@ func _on_new_race_pressed() -> void:
 	open_new_race_dialog()
 
 func open_new_race_dialog() -> void:
+	new_race = true
 	clear_highlight()
 	$NewRaceScreen.visible = true
 
 func close_new_race_dialog():
+	new_race = false
 	$NewRaceScreen.visible = false
 	$Next.disabled = true
 

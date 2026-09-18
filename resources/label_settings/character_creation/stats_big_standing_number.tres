@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://dt4fdc7033ihr"]
+
+[ext_resource type="FontFile" uid="uid://x1w7x5ymdd5l" path="res://assets/fonts/vinque rg.ttf" id="1_xpr05"]
+
+[resource]
+font = ExtResource("1_xpr05")
+font_size = 127
+font_color = Color(0, 0, 0, 1)
+outline_size = 22

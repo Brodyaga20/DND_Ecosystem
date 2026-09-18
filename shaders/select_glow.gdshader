@@ -3,7 +3,7 @@ shader_type canvas_item;
 // Цвет свечения
 uniform vec4 glow_color : source_color = vec4(1.0, 0.84, 0.0, 1.0);
 // Максимальный радиус свечения в пикселях
-uniform float glow_width : hint_range(0.0, 32.0) = 14.0;
+uniform float glow_width : hint_range(0.0, 32.0) = 5.0;
 // Общая интенсивность свечения
 uniform float glow_intensity : hint_range(0.0, 3.0) = 1.0;
 // Порог прозрачности самого спрайта

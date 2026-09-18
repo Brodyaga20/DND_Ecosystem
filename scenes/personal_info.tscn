@@ -42,8 +42,7 @@ color = Color(1, 1, 1, 0)
 
 [node name="MainTitle" type="Label" parent="Blur" unique_id=398621408]
 layout_mode = 0
-offset_left = 410.0
-offset_right = 1510.0
+offset_right = 1920.0
 offset_bottom = 130.0
 theme = SubResource("Theme_3qu1t")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -56,9 +55,9 @@ vertical_alignment = 1
 
 [node name="NessesaryTitle" type="Label" parent="Blur" unique_id=1054665728]
 layout_mode = 0
-offset_top = 90.0
+offset_top = 92.0
 offset_right = 960.0
-offset_bottom = 150.0
+offset_bottom = 152.0
 theme = SubResource("Theme_3qu1t")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 19
@@ -70,9 +69,9 @@ vertical_alignment = 1
 [node name="UnnessesaryTitle" type="Label" parent="Blur" unique_id=1720917218]
 layout_mode = 0
 offset_left = 960.0
-offset_top = 90.0
+offset_top = 92.0
 offset_right = 1920.0
-offset_bottom = 150.0
+offset_bottom = 152.0
 theme = SubResource("Theme_3qu1t")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 19
@@ -126,7 +125,7 @@ text = "Далее"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="." unique_id=1832783020]
+[node name="NameEdit" type="LineEdit" parent="." unique_id=1832783020]
 offset_left = 50.0
 offset_top = 160.0
 offset_right = 910.0
@@ -144,14 +143,13 @@ offset_bottom = 40.0
 
 [node name="AgeTitle" type="Label" parent="Age" unique_id=1743469490]
 layout_mode = 0
-offset_left = 270.0
 offset_top = 245.0
-offset_right = 690.0
+offset_right = 960.0
 offset_bottom = 305.0
 theme = SubResource("Theme_3qu1t")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 19
-text = "Возраст"
+text = "Выберите возраст персонажа"
 label_settings = ExtResource("6_qhhxa")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -257,14 +255,14 @@ offset_bottom = 563.0
 theme = SubResource("Theme_3qu1t")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 19
-text = "Можно ввести конретное число:"
+text = "Можно конретное число:"
 label_settings = ExtResource("6_qhhxa")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LineEdit2" type="LineEdit" parent="Age/AdditionalAgeInfo" unique_id=514038823]
+[node name="ExactAgeEdit" type="LineEdit" parent="Age/AdditionalAgeInfo" unique_id=514038823]
 layout_mode = 0
-offset_left = 748.0
+offset_left = 674.0
 offset_top = 504.0
 offset_right = 874.0
 offset_bottom = 564.0
@@ -401,7 +399,10 @@ alignment = 1
 emoji_menu_enabled = false
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="text_changed" from="NameEdit" to="." method="_on_name_edit_text_changed"]
 [connection signal="pressed" from="Age/RangesButtons/Young" to="." method="_on_young_pressed"]
 [connection signal="pressed" from="Age/RangesButtons/Mature" to="." method="_on_mature_pressed"]
 [connection signal="pressed" from="Age/RangesButtons/Old" to="." method="_on_old_pressed"]
 [connection signal="pressed" from="Age/RangesButtons/Ancient" to="." method="_on_ancient_pressed"]
+[connection signal="text_changed" from="Age/AdditionalAgeInfo/ExactAgeEdit" to="." method="_on_exact_age_edit_text_changed"]
