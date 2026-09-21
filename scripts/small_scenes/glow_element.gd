@@ -18,7 +18,7 @@ enum SelectionMode { MANUAL, RADIO, TOGGLE, FLASH }
 @export var glow_hover: float = 5.0
 @export var glow_selected: float = 14.0
 @export var duration: float = 0.1
-@export var glow_color: Color = Color(0, 0, 0)
+@export var glow_color: Color = Color(1, 1, 1)
 
 var _flash_tween: Tween
 var _mat: ShaderMaterial

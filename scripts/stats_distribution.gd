@@ -27,12 +27,11 @@ var selected_id := ""
 func _ready() -> void:
 	update_ui()
 	clear()
-	$Save.disabled = true
+	$Next.disabled = true
 
-	# Подписываемся на новый сигнал с id
 	for child in sprites_root.get_children():
 		if child is GlowElement:
-			child.id_selected.connect(_on_stat_id_selected)
+			child.id_selected.connect(_on_stat_bowl_selected)
 		
 	for child in math_signs_root.get_children():
 		if child is GlowElement:
@@ -67,9 +66,7 @@ func _on_back_pressed() -> void:
 		"mage":
 			get_tree().change_scene_to_file("res://scenes/MageSubclassSelect.tscn")
 
-func _on_save_pressed() -> void:
-	if remaining_points != 0:
-		return
+func _on_next_pressed() -> void:
 	if $Name/Entering.text != "":
 		TempData.character_name = $Name/Entering.text
 		TempData.stats = {
@@ -112,10 +109,9 @@ func update_main_number() -> void:
 		"glow_color", stat_colors[selected_id]
 	)
 
-func _on_stat_id_selected(id: String) -> void:
+func _on_stat_bowl_selected(id: String) -> void:
 	if id == "":
 		return
-	# Повторный клик по той же чаше — просто ничего не делаем
 	if id == selected_id:
 		return
 	selected_id = id
@@ -134,3 +130,11 @@ func _on_plus_minus_pressed(id: String):
 func update_selected_stat():
 	numbers[selected_id].text = main_number.text
 	pass
+
+func check_sum():
+	var power = int($SmallNumbers/Power.text)
+	var agility = int($SmallNumbers/Agility.text)
+	var intelligence = int($SmallNumbers/Intelligence.text)
+	var luck = int($SmallNumbers/Luck.text)
+	var sum = power + agility + intelligence + luck
+	return sum

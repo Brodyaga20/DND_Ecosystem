@@ -13,6 +13,14 @@
 [ext_resource type="Shader" uid="uid://b84kr2bu7ux0h" path="res://shaders/back_blur.gdshader" id="9_eea3m"]
 [ext_resource type="LabelSettings" uid="uid://dt4fdc7033ihr" path="res://resources/label_settings/character_creation/stats_big_standing_number.tres" id="10_87vdx"]
 [ext_resource type="LabelSettings" uid="uid://dw6ogecn6ui48" path="res://resources/label_settings/character_creation/big_common_text.tres" id="11_qdoeo"]
+[ext_resource type="Texture2D" uid="uid://bgek4651k7ijw" path="res://assets/pictures/buttons/stats_distribution/distribute_normal.png" id="14_gyjic"]
+[ext_resource type="Texture2D" uid="uid://conoma2cgjqpf" path="res://assets/pictures/buttons/stats_distribution/distribute_pressed.png" id="15_byfs1"]
+[ext_resource type="Texture2D" uid="uid://d2mj42ejhj30m" path="res://assets/pictures/buttons/stats_distribution/distribute_hover.png" id="16_0q0hm"]
+[ext_resource type="Texture2D" uid="uid://8u1ju70k1rju" path="res://assets/pictures/buttons/universal/navigation_normal.png" id="17_wxem1"]
+[ext_resource type="LabelSettings" uid="uid://oe73r5j8mbfb" path="res://resources/label_settings/character_creation/stats_buttons.tres" id="18_byfs1"]
+[ext_resource type="Texture2D" uid="uid://lw5wjk0pwr37" path="res://assets/pictures/buttons/universal/navigation_pressed.png" id="18_i6by7"]
+[ext_resource type="Texture2D" uid="uid://c8vrjooon177" path="res://assets/pictures/buttons/universal/navigation_hover.png" id="19_ij5el"]
+[ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://assets/fonts/cinzel_bold.ttf" id="20_trewl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
 shader = ExtResource("8_87vdx")
@@ -51,13 +59,6 @@ offset_right = 115.0
 offset_bottom = 60.0
 text = "Назад"
 metadata/_edit_use_anchors_ = true
-
-[node name="Save" type="Button" parent="." unique_id=1831437355]
-offset_left = 825.0
-offset_top = 1002.0
-offset_right = 1064.0
-offset_bottom = 1053.0
-text = "Сохранить и продолжить"
 
 [node name="Derivatives" type="Control" parent="." unique_id=1425874066]
 layout_mode = 3
@@ -475,17 +476,17 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="CentralDescription" type="Label" parent="Blur" unique_id=1785454932]
-custom_maximum_size = Vector2(1920, -1)
+custom_maximum_size = Vector2(1200, -1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.28
 anchor_top = 0.7945348
 anchor_right = -0.28
 anchor_bottom = 0.7945348
-offset_left = 537.6
-offset_top = -0.00039672852
-offset_right = 2457.6
-offset_bottom = 59.999603
+offset_left = 897.6
+offset_top = -0.00088500977
+offset_right = 2097.6
+offset_bottom = 59.999115
 text = "fdfdfdfdfd"
 label_settings = ExtResource("3_eea3m")
 horizontal_alignment = 1
@@ -504,5 +505,49 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="RandomDistributionButton" type="TextureButton" parent="." unique_id=2141654798]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ReccomendedDistributionButton2" type="TextureButton" parent="." unique_id=253789201]
+offset_left = 1016.0
+offset_top = 889.0
+offset_right = 1366.0
+offset_bottom = 1039.0
+texture_normal = ExtResource("14_gyjic")
+texture_pressed = ExtResource("15_byfs1")
+texture_hover = ExtResource("16_0q0hm")
+
+[node name="Label" type="Label" parent="ReccomendedDistributionButton2" unique_id=404564994]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 150.0
+theme_override_fonts/font = ExtResource("20_trewl")
+theme_override_font_sizes/font_size = 32
+text = "Рекомендовано"
+label_settings = ExtResource("18_byfs1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next" type="TextureButton" parent="." unique_id=1272146902]
+offset_left = 1730.0
+offset_top = 975.0
+offset_right = 1900.0
+offset_bottom = 1060.0
+texture_normal = ExtResource("17_wxem1")
+texture_pressed = ExtResource("18_i6by7")
+texture_hover = ExtResource("19_ij5el")
+texture_focused = ExtResource("19_ij5el")
+
+[node name="Label" type="Label" parent="Next" unique_id=308740807]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("20_trewl")
+theme_override_font_sizes/font_size = 22
+text = "Далее"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

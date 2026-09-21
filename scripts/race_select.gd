@@ -14,19 +14,10 @@ var race_name = ""
 func _ready():
 	$NewRaceScreen.visible = false
 	class_id = TempData.class_id
-	set_wayback()
 	clear_highlight()
 	$Next.disabled = true
 	$Blur/NameLabel.text = ""
 	$Blur/DescriptionLabel.text = ""
-
-func set_wayback():
-	if class_id == "mage":
-		wayback = "res://scenes/mage_subclass_select.tscn"
-	elif class_id == "assasin":
-		wayback = "res://scenes/rogue_subclass_select.tscn"
-	else:
-		wayback = "res://scenes/warrior_subclass_select.tscn"
 
 func select_race(race_id: String):
 	var race_data = DataManager.get_race_data(race_id)
@@ -46,8 +37,7 @@ func update_text(race_data):
 	$Blur/DescriptionLabel.text = race_data["description"]
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file(wayback)
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/class_select.tscn")
 
 func _on_next_pressed() -> void:
 	go_to_sex_select()

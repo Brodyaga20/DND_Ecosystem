@@ -38,11 +38,17 @@ func get_data_from_stat_id(id: String):
 			return s
 	return null
 
-func get_class_data(id: String):
+func get_class_data(id: String) -> Dictionary:
 	for c in classes:
 		if c["id"] == id:
 			return c
-	return null
+	return {}
+
+func get_class_name_from_id(id: String):
+	return get_class_data(id)["name"]
+
+func get_class_description_from_id(id: String):
+	return get_class_data(id)["description"]
 
 func get_subclass_data(id: String):
 	for s in subclasses:
