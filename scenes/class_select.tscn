@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cnov7avqi0a0o"]
 
-[ext_resource type="Script" uid="uid://c8ydb1cbaesmo" path="res://scripts/class_select.gd" id="1_1p1dx"]
+[ext_resource type="Script" uid="uid://c8ydb1cbaesmo" path="res://scripts/scenes_scripts/char_creation/class_select.gd" id="1_1p1dx"]
 [ext_resource type="Texture2D" uid="uid://p75y8iy3gbwr" path="res://assets/pictures/backgrounds/ClassSelectBack.png" id="2_1p1dx"]
 [ext_resource type="Texture2D" uid="uid://8u1ju70k1rju" path="res://assets/pictures/buttons/universal/navigation_normal.png" id="3_1p1dx"]
 [ext_resource type="Texture2D" uid="uid://lw5wjk0pwr37" path="res://assets/pictures/buttons/universal/navigation_pressed.png" id="4_1p1dx"]
@@ -149,7 +149,7 @@ glow_color = Color(0.5764706, 1, 1, 1)
 position = Vector2(329, 315)
 texture = ExtResource("18_ntofh")
 
-[node name="Adventurer" parent="Sprites" unique_id=1959508297 node_paths=PackedStringArray("target_visual") instance=ExtResource("15_eyc6o")]
+[node name="Adventurer" parent="Sprites" unique_id=1959508297 node_paths=PackedStringArray("target_visual", "hitbox_source") instance=ExtResource("15_eyc6o")]
 layout_mode = 0
 offset_left = 995.0
 offset_top = 601.0
@@ -159,11 +159,16 @@ target_visual = NodePath("Sprite2D")
 selection_mode = 1
 radio_group_name = "class_select_group"
 display_name = "adventurer"
+hitbox_mode = 1
+hitbox_source = NodePath("CollisionPolygon2D")
 glow_color = Color(1, 0.88235295, 0.23529412, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprites/Adventurer" unique_id=1303070509]
 position = Vector2(409, 241)
 texture = ExtResource("18_e6kc1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprites/Adventurer" unique_id=661369125]
+polygon = PackedVector2Array(449, 110, 513, 87, 500, 11, 748, 2, 643, 141, 665, 286, 821, 351, 584, 454, 463, 434, 389, 473, 196, 406, -19, 371, 114, 287, 173, 117, 350, 188)
 
 [node name="Assassin" parent="Sprites" unique_id=998333099 node_paths=PackedStringArray("target_visual") instance=ExtResource("15_eyc6o")]
 layout_mode = 0

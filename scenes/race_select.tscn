@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://binueg1lwvq6l"]
 
-[ext_resource type="Script" uid="uid://ccaqc70bdrb2t" path="res://scripts/race_select.gd" id="1_mt7p4"]
+[ext_resource type="Script" uid="uid://ccaqc70bdrb2t" path="res://scripts/scenes_scripts/char_creation/race_select.gd" id="1_mt7p4"]
 [ext_resource type="Texture2D" uid="uid://fj1epsfb30h1" path="res://assets/pictures/backgrounds/race_select.png" id="2_mt7p4"]
-[ext_resource type="Shader" uid="uid://dccmt6i1j7wte" path="res://shaders/select_glow.gdshader" id="3_mt7p4"]
+[ext_resource type="PackedScene" uid="uid://cel13lvfr517" path="res://scenes/templates/glow_element.tscn" id="3_8p0ev"]
 [ext_resource type="Texture2D" uid="uid://cgvgbdunpwl8h" path="res://assets/pictures/characters/race_select/gnome.png" id="4_mt7p4"]
 [ext_resource type="Texture2D" uid="uid://bo4mfxntoivpl" path="res://assets/pictures/characters/race_select/chitin.png" id="5_mt7p4"]
 [ext_resource type="Texture2D" uid="uid://cey7teay03u4d" path="res://assets/pictures/characters/race_select/human.png" id="6_mt7p4"]
@@ -24,38 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://kgvvn1ywjmml" path="res://assets/pictures/buttons/character_list/ui_pressed.png" id="21_mt7p4"]
 [ext_resource type="Texture2D" uid="uid://6k4c2c7aqa2y" path="res://assets/pictures/buttons/character_list/ui_hover.png" id="22_mt7p4"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nydx7"]
-shader = ExtResource("3_mt7p4")
-shader_parameter/glow_color = Color(1, 0.84, 0, 1)
-shader_parameter/glow_width = 8.0
-shader_parameter/glow_intensity = 1.0
-shader_parameter/alpha_threshold = 0.5
-shader_parameter/samples = 12
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(207.64717, 412.94116)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
-size = Vector2(203.63634, 527.2727)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0u6y"]
-size = Vector2(190, 529)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gngh"]
-size = Vector2(181.92462, 513.5678)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcnqv"]
-size = Vector2(209.13351, 572.0968)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7numd"]
-size = Vector2(175.2171, 496.79202)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1u0y"]
-size = Vector2(187.68481, 492.78848)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5s0fj"]
-size = Vector2(155.69745, 486.82886)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hohw2"]
 shader = ExtResource("16_c3do8")
 shader_parameter/max_blur_lod = 4.0
@@ -73,102 +41,132 @@ script = ExtResource("1_mt7p4")
 position = Vector2(960, 540)
 texture = ExtResource("2_mt7p4")
 
-[node name="HighlightedSprites" type="Node2D" parent="." unique_id=1471568180]
+[node name="Sprites" type="Node2D" parent="." unique_id=1471568180]
 
-[node name="Gnome" type="Area2D" parent="HighlightedSprites" unique_id=1967818966]
-position = Vector2(193.00003, 717.00006)
+[node name="Gnome" parent="Sprites" unique_id=1281942755 node_paths=PackedStringArray("target_visual") instance=ExtResource("3_8p0ev")]
+offset_left = -4.0
+offset_top = 488.0
+offset_right = 96.0
+offset_bottom = 588.0
+target_visual = NodePath("Sprite2D")
+selection_mode = 1
+radio_group_name = "race_select"
+display_name = "gnome"
+glow_color = Color(0.69411767, 0.6901961, 0.6784314, 1)
 
-[node name="Gnome" type="Sprite2D" parent="HighlightedSprites/Gnome" unique_id=1113030315 groups=["characters"]]
-material = SubResource("ShaderMaterial_nydx7")
+[node name="Sprite2D" type="Sprite2D" parent="Sprites/Gnome" unique_id=778536305]
 texture = ExtResource("4_mt7p4")
+centered = false
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="HighlightedSprites/Gnome" unique_id=2057936158]
-position = Vector2(31.764662, 28.235199)
-scale = Vector2(1.0000002, 1.0000002)
-shape = SubResource("RectangleShape2D_yf5fn")
+[node name="Chitin" parent="Sprites" unique_id=1951488132 node_paths=PackedStringArray("target_visual") instance=ExtResource("3_8p0ev")]
+offset_left = 281.0
+offset_top = 335.0
+offset_right = 381.0
+offset_bottom = 435.0
+target_visual = NodePath("Sprite2D")
+selection_mode = 1
+radio_group_name = "race_select"
+display_name = "chitin"
+glow_color = Color(0.69411767, 0.6901961, 0.6784314, 1)
 
-[node name="Chitin" type="Area2D" parent="HighlightedSprites" unique_id=1848901643]
-position = Vector2(455.99994, 639.99976)
-
-[node name="Chitin" type="Sprite2D" parent="HighlightedSprites/Chitin" unique_id=1492430631 groups=["characters"]]
-material = SubResource("ShaderMaterial_nydx7")
-position = Vector2(3.669783, 0.91767883)
+[node name="Sprite2D" type="Sprite2D" parent="Sprites/Chitin" unique_id=1419184358]
 texture = ExtResource("5_mt7p4")
+centered = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HighlightedSprites/Chitin" unique_id=82508175]
-position = Vector2(7.2728577, 8.182068)
-shape = SubResource("RectangleShape2D_57qmd")
+[node name="Human" parent="Sprites" unique_id=587322813 node_paths=PackedStringArray("target_visual") instance=ExtResource("3_8p0ev")]
+offset_left = 556.0
+offset_top = 390.0
+offset_right = 656.0
+offset_bottom = 490.0
+target_visual = NodePath("Sprite2D")
+selection_mode = 1
+radio_group_name = "race_select"
+display_name = "human"
+glow_color = Color(0.69411767, 0.6901961, 0.6784314, 1)
 
-[node name="Human" type="Area2D" parent="HighlightedSprites" unique_id=368739890]
-position = Vector2(544.00006, 648.0001)
-
-[node name="Human" type="Sprite2D" parent="HighlightedSprites/Human" unique_id=991013605 groups=["characters"]]
-material = SubResource("ShaderMaterial_nydx7")
-position = Vector2(158.35294, 20)
+[node name="Sprite2D" type="Sprite2D" parent="Sprites/Human" unique_id=1510654458]
 texture = ExtResource("6_mt7p4")
+centered = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HighlightedSprites/Human" unique_id=1543362313]
-position = Vector2(148.99994, 20.499878)
-shape = SubResource("RectangleShape2D_d0u6y")
+[node name="Avian" parent="Sprites" unique_id=1340853865 node_paths=PackedStringArray("target_visual", "hitbox_source") instance=ExtResource("3_8p0ev")]
+offset_left = 554.0
+offset_top = 151.0
+offset_right = 654.0
+offset_bottom = 251.0
+target_visual = NodePath("Sprite2D")
+selection_mode = 1
+radio_group_name = "race_select"
+display_name = "avian"
+hitbox_mode = 1
+hitbox_source = NodePath("CollisionPolygon2D")
+glow_color = Color(0.69411767, 0.6901961, 0.6784314, 1)
 
-[node name="Avian" type="Area2D" parent="HighlightedSprites" unique_id=864208963]
-position = Vector2(795.00006, 438.00003)
-
-[node name="Avian" type="Sprite2D" parent="HighlightedSprites/Avian" unique_id=1827802805 groups=["characters"]]
-material = SubResource("ShaderMaterial_nydx7")
+[node name="Sprite2D" type="Sprite2D" parent="Sprites/Avian" unique_id=979046764]
 texture = ExtResource("7_mt7p4")
+centered = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HighlightedSprites/Avian" unique_id=762373529]
-position = Vector2(93.96222, 18.592926)
-shape = SubResource("RectangleShape2D_3gngh")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprites/Avian" unique_id=1315297502]
+polygon = PackedVector2Array(15, 20, 195, 46, 323, 136, 353, 27, 473, 37, 421, 497, 315, 569, 303, 474, 225, 442, 256, 367, 251, 295, 5, 80)
 
-[node name="Giant" type="Area2D" parent="HighlightedSprites" unique_id=959090653]
-position = Vector2(1183, 574)
+[node name="Giant" parent="Sprites" unique_id=418076075 node_paths=PackedStringArray("target_visual") instance=ExtResource("3_8p0ev")]
+offset_left = 987.0
+offset_top = 218.0
+offset_right = 1087.0
+offset_bottom = 318.0
+target_visual = NodePath("Sprite2D")
+selection_mode = 1
+radio_group_name = "race_select"
+display_name = "giant"
+glow_color = Color(0.69411767, 0.6901961, 0.6784314, 1)
 
-[node name="Giant" type="Sprite2D" parent="HighlightedSprites/Giant" unique_id=1859544400 groups=["characters"]]
-material = SubResource("ShaderMaterial_nydx7")
+[node name="Sprite2D" type="Sprite2D" parent="Sprites/Giant" unique_id=685698802]
 texture = ExtResource("8_mt7p4")
+centered = false
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="HighlightedSprites/Giant" unique_id=1620764019]
-position = Vector2(-40, 12.05603)
-scale = Vector2(1.1149999, 1.1149999)
-shape = SubResource("RectangleShape2D_fcnqv")
+[node name="Aasimar" parent="Sprites" unique_id=1052021011 node_paths=PackedStringArray("target_visual") instance=ExtResource("3_8p0ev")]
+offset_left = 1230.0
+offset_top = 404.0
+offset_right = 1330.0
+offset_bottom = 504.0
+target_visual = NodePath("Sprite2D")
+selection_mode = 1
+radio_group_name = "race_select"
+display_name = "aasimar"
+glow_color = Color(0.69411767, 0.6901961, 0.6784314, 1)
 
-[node name="Aasimar" type="Area2D" parent="HighlightedSprites" unique_id=2091077741]
-position = Vector2(1361, 671.99994)
-
-[node name="Aasimar" type="Sprite2D" parent="HighlightedSprites/Aasimar" unique_id=1248702324 groups=["characters"]]
-material = SubResource("ShaderMaterial_nydx7")
+[node name="Sprite2D" type="Sprite2D" parent="Sprites/Aasimar" unique_id=1288360542]
 texture = ExtResource("9_mt7p4")
+centered = false
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="HighlightedSprites/Aasimar" unique_id=69148631]
-position = Vector2(9.137085, -5.07605)
-scale = Vector2(0.985, 0.985)
-shape = SubResource("RectangleShape2D_7numd")
+[node name="Owlin" parent="Sprites" unique_id=1479700081 node_paths=PackedStringArray("target_visual") instance=ExtResource("3_8p0ev")]
+offset_left = 1448.0
+offset_top = 347.0
+offset_right = 1548.0
+offset_bottom = 447.0
+target_visual = NodePath("Sprite2D")
+selection_mode = 1
+radio_group_name = "race_select"
+display_name = "owlin"
+glow_color = Color(0.69411767, 0.6901961, 0.6784314, 1)
 
-[node name="Owlin" type="Area2D" parent="HighlightedSprites" unique_id=1205527130]
-position = Vector2(1592, 639)
-
-[node name="Owlin" type="Sprite2D" parent="HighlightedSprites/Owlin" unique_id=311423246 groups=["characters"]]
-material = SubResource("ShaderMaterial_nydx7")
+[node name="Sprite2D" type="Sprite2D" parent="Sprites/Owlin" unique_id=391719913]
 texture = ExtResource("10_mt7p4")
+centered = false
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="HighlightedSprites/Owlin" unique_id=899072651]
-position = Vector2(10.096191, 0.48077393)
-scale = Vector2(1.04, 1.04)
-shape = SubResource("RectangleShape2D_p1u0y")
+[node name="Drow" parent="Sprites" unique_id=1848651820 node_paths=PackedStringArray("target_visual") instance=ExtResource("3_8p0ev")]
+offset_left = 1656.0
+offset_top = 435.0
+offset_right = 1756.0
+offset_bottom = 535.0
+target_visual = NodePath("Sprite2D")
+selection_mode = 1
+radio_group_name = "race_select"
+display_name = "drow"
+glow_color = Color(0.69411767, 0.6901961, 0.6784314, 1)
 
-[node name="Drow" type="Area2D" parent="HighlightedSprites" unique_id=1378254339]
-position = Vector2(1788, 689)
-
-[node name="Drow" type="Sprite2D" parent="HighlightedSprites/Drow" unique_id=1179526091 groups=["characters"]]
-material = SubResource("ShaderMaterial_nydx7")
+[node name="Sprite2D" type="Sprite2D" parent="Sprites/Drow" unique_id=494628735]
 texture = ExtResource("11_mt7p4")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="HighlightedSprites/Drow" unique_id=525315963]
-position = Vector2(7.329834, -17.801025)
-scale = Vector2(0.955, 0.955)
-shape = SubResource("RectangleShape2D_5s0fj")
+centered = false
 
 [node name="Back" type="TextureButton" parent="." unique_id=615161199]
 offset_left = 20.0
@@ -373,14 +371,6 @@ label_settings = ExtResource("16_8p0ev")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="input_event" from="HighlightedSprites/Gnome" to="." method="_on_gnome_input_event"]
-[connection signal="input_event" from="HighlightedSprites/Chitin" to="." method="_on_chitin_input_event"]
-[connection signal="input_event" from="HighlightedSprites/Human" to="." method="_on_human_input_event"]
-[connection signal="input_event" from="HighlightedSprites/Avian" to="." method="_on_avian_input_event"]
-[connection signal="input_event" from="HighlightedSprites/Giant" to="." method="_on_giant_input_event"]
-[connection signal="input_event" from="HighlightedSprites/Aasimar" to="." method="_on_aasimar_input_event"]
-[connection signal="input_event" from="HighlightedSprites/Owlin" to="." method="_on_owlin_input_event"]
-[connection signal="input_event" from="HighlightedSprites/Drow" to="." method="_on_drow_input_event"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="NewRace" to="." method="_on_new_race_pressed"]

@@ -2,7 +2,7 @@ extends Control
 class_name GlowElement
 
 signal selected(sprite: GlowElement)
-signal id_selected(id: String)
+signal id_selected(id: String, is_selected: bool)
 signal id_pressed(id: String)
 
 enum SelectionMode { MANUAL, RADIO, TOGGLE, FLASH }
@@ -11,7 +11,14 @@ enum SelectionMode { MANUAL, RADIO, TOGGLE, FLASH }
 @export var selection_mode: SelectionMode = SelectionMode.MANUAL
 @export var radio_group_name: String = "glow_radio_group"
 @export var auto_size_visual: bool = true
-@export var display_name: String = ""   # сюда пишешь id, например "agility"
+@export var display_name: String = ""
+
+enum HitboxMode { RECT, POLYGON }
+
+@export_group("Hitbox")
+@export var hitbox_mode: HitboxMode = HitboxMode.RECT
+@export var hitbox_polygon: PackedVector2Array
+@export var hitbox_source: CollisionPolygon2D
 
 @export_group("Glow Settings")
 @export var glow_off: float = 0.0
@@ -58,6 +65,20 @@ func _ready() -> void:
 	mouse_exited.connect(_on_exit)
 	gui_input.connect(_on_gui_input)
 
+func _has_point(point: Vector2) -> bool:
+	match hitbox_mode:
+		HitboxMode.RECT:
+			return Rect2(Vector2.ZERO, size).has_point(point)
+
+		HitboxMode.POLYGON:
+			var poly := hitbox_polygon
+			if hitbox_source:
+				poly = hitbox_source.polygon
+			if poly.is_empty():
+				return false
+			return Geometry2D.is_point_in_polygon(point, poly)
+
+	return false
 
 func _update_size() -> void:
 	if not target_visual:
@@ -88,7 +109,6 @@ func _update_size() -> void:
 		target_visual.position = Vector2.ZERO
 		target_visual.size = visual_size
 
-
 func _on_enter() -> void:
 	is_hovered = true
 	refresh()
@@ -104,7 +124,7 @@ func _on_gui_input(event: InputEvent) -> void:
 		_handle_click_behavior()
 		emit_signal("selected", self)
 		emit_signal("id_pressed", display_name)
-		emit_signal("id_selected", display_name)
+		emit_signal("id_selected", display_name, is_selected)
 
 func _handle_click_behavior() -> void:
 	match selection_mode:
@@ -125,8 +145,6 @@ func _handle_click_behavior() -> void:
 			_flash_tween.tween_callback(func(): set_selected(true))
 			_flash_tween.tween_interval(duration * 2)
 			_flash_tween.tween_callback(func(): set_selected(false))
-
-# ---------- Состояние ----------
 
 func set_selected(v: bool) -> void:
 	is_selected = v

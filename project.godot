@@ -26,6 +26,7 @@ GameState="*uid://dt5ryyp2ndlhs"
 ServerData="*uid://dph08hh1higao"
 NetworkManager="*uid://bhenbujemd21u"
 RngManager="*uid://cad42nrqsk05r"
+UtilManager="*uid://c60db60xk5go5"
 
 [display]
 

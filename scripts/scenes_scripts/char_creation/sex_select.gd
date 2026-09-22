@@ -8,6 +8,7 @@ extends Node2D
 @onready var normal_right = load("res://assets/pictures/backgrounds/sex_select/right/normal.png")
 var selected_sex = ""
 enum sex_types {MAN, WOMAN}
+var shoosed_sex = sex_types.MAN
 func _ready():
 	$Next.disabled = true
 
@@ -38,7 +39,7 @@ func change_left_back(left):
 	$Backs/BackgroundLeft.texture = left
 
 func select_sex(sex: String):
-	TempData.sex = sex
+	selected_sex = sex
 	match sex:
 		"man":
 			$Blur/Label2.text = "Мужской"
@@ -78,6 +79,10 @@ func clear_select(sex):
 	if sex == "woman" and selected_sex == "man":
 		change_right_back(normal_right)
 
+func save_sex():
+	TempData.char_data.sex = selected_sex
+
 func _on_next_pressed() -> void:
+	save_sex()
 	get_tree().change_scene_to_file("res://scenes/personal_info.tscn")
 	pass # Replace with function body.

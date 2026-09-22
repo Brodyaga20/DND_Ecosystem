@@ -1,0 +1,374 @@
+[gd_scene format=3 uid="uid://binueg1lwvq6l"]
+
+[ext_resource type="Script" uid="uid://ccaqc70bdrb2t" path="res://scripts/race_select.gd" id="1_mt7p4"]
+[ext_resource type="Texture2D" uid="uid://fj1epsfb30h1" path="res://assets/pictures/backgrounds/race_select.png" id="2_mt7p4"]
+[ext_resource type="PackedScene" uid="uid://cel13lvfr517" path="res://scenes/templates/glow_element.tscn" id="3_8p0ev"]
+[ext_resource type="Texture2D" uid="uid://cgvgbdunpwl8h" path="res://assets/pictures/characters/race_select/gnome.png" id="4_mt7p4"]
+[ext_resource type="Texture2D" uid="uid://bo4mfxntoivpl" path="res://assets/pictures/characters/race_select/chitin.png" id="5_mt7p4"]
+[ext_resource type="Texture2D" uid="uid://cey7teay03u4d" path="res://assets/pictures/characters/race_select/human.png" id="6_mt7p4"]
+[ext_resource type="Texture2D" uid="uid://doiq3h3r1vsir" path="res://assets/pictures/characters/race_select/avian.png" id="7_mt7p4"]
+[ext_resource type="Texture2D" uid="uid://bt3s40dwbe8p1" path="res://assets/pictures/characters/race_select/giant.png" id="8_mt7p4"]
+[ext_resource type="Texture2D" uid="uid://dvyn8ldxouu8p" path="res://assets/pictures/characters/race_select/aasimar.png" id="9_mt7p4"]
+[ext_resource type="Texture2D" uid="uid://4j0pdkjrmmru" path="res://assets/pictures/characters/race_select/owlin.png" id="10_mt7p4"]
+[ext_resource type="Texture2D" uid="uid://brgc1c0e1rqar" path="res://assets/pictures/characters/race_select/drow.png" id="11_mt7p4"]
+[ext_resource type="Texture2D" uid="uid://8u1ju70k1rju" path="res://assets/pictures/buttons/universal/navigation_normal.png" id="12_mt7p4"]
+[ext_resource type="Texture2D" uid="uid://lw5wjk0pwr37" path="res://assets/pictures/buttons/universal/navigation_pressed.png" id="13_mt7p4"]
+[ext_resource type="Texture2D" uid="uid://c8vrjooon177" path="res://assets/pictures/buttons/universal/navigation_hover.png" id="14_mt7p4"]
+[ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://assets/fonts/cinzel_bold.ttf" id="15_mt7p4"]
+[ext_resource type="LabelSettings" uid="uid://gohtfpbd5dmk" path="res://resources/label_settings/character_creation/navigation_buttons.tres" id="16_8p0ev"]
+[ext_resource type="Shader" uid="uid://b84kr2bu7ux0h" path="res://shaders/back_blur.gdshader" id="16_c3do8"]
+[ext_resource type="LabelSettings" uid="uid://dphedhg6n6hit" path="res://resources/label_settings/character_creation/selections_title.tres" id="18_c3do8"]
+[ext_resource type="LabelSettings" uid="uid://dw6ogecn6ui48" path="res://resources/label_settings/character_creation/big_common_text.tres" id="18_mt7p4"]
+[ext_resource type="LabelSettings" uid="uid://k4l2d62tldd2" path="res://resources/label_settings/character_creation/selections_description.tres" id="20_c3do8"]
+[ext_resource type="Texture2D" uid="uid://djnul28uqq28v" path="res://assets/pictures/buttons/character_list/ui_normal.png" id="20_mt7p4"]
+[ext_resource type="Texture2D" uid="uid://kgvvn1ywjmml" path="res://assets/pictures/buttons/character_list/ui_pressed.png" id="21_mt7p4"]
+[ext_resource type="Texture2D" uid="uid://6k4c2c7aqa2y" path="res://assets/pictures/buttons/character_list/ui_hover.png" id="22_mt7p4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hohw2"]
+shader = ExtResource("16_c3do8")
+shader_parameter/max_blur_lod = 4.0
+shader_parameter/inner = 0.0
+shader_parameter/outer = 0.7
+shader_parameter/falloff = 1.0
+shader_parameter/tint = Color(0, 0, 0, 0)
+
+[sub_resource type="Theme" id="Theme_il6ek"]
+
+[node name="RaceSelect" type="Node2D" unique_id=2082084819]
+script = ExtResource("1_mt7p4")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=87146060]
+position = Vector2(960, 540)
+texture = ExtResource("2_mt7p4")
+
+[node name="Sprites" type="Node2D" parent="." unique_id=1471568180]
+
+[node name="Gnome" parent="Sprites" unique_id=1281942755 node_paths=PackedStringArray("target_visual") instance=ExtResource("3_8p0ev")]
+offset_left = -4.0
+offset_top = 488.0
+offset_right = 96.0
+offset_bottom = 588.0
+target_visual = NodePath("Sprite2D")
+selection_mode = 1
+radio_group_name = "race_select"
+display_name = "gnome"
+glow_color = Color(0.69411767, 0.6901961, 0.6784314, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprites/Gnome" unique_id=778536305]
+texture = ExtResource("4_mt7p4")
+centered = false
+
+[node name="Chitin" parent="Sprites" unique_id=1951488132 node_paths=PackedStringArray("target_visual") instance=ExtResource("3_8p0ev")]
+offset_left = 281.0
+offset_top = 335.0
+offset_right = 381.0
+offset_bottom = 435.0
+target_visual = NodePath("Sprite2D")
+selection_mode = 1
+radio_group_name = "race_select"
+display_name = "chitin"
+glow_color = Color(0.69411767, 0.6901961, 0.6784314, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprites/Chitin" unique_id=1419184358]
+texture = ExtResource("5_mt7p4")
+centered = false
+
+[node name="Human" parent="Sprites" unique_id=587322813 node_paths=PackedStringArray("target_visual") instance=ExtResource("3_8p0ev")]
+offset_left = 556.0
+offset_top = 390.0
+offset_right = 656.0
+offset_bottom = 490.0
+target_visual = NodePath("Sprite2D")
+selection_mode = 1
+radio_group_name = "race_select"
+display_name = "human"
+glow_color = Color(0.69411767, 0.6901961, 0.6784314, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprites/Human" unique_id=1510654458]
+texture = ExtResource("6_mt7p4")
+centered = false
+
+[node name="Avian" parent="Sprites" unique_id=1340853865 node_paths=PackedStringArray("target_visual") instance=ExtResource("3_8p0ev")]
+offset_left = 554.0
+offset_top = 151.0
+offset_right = 654.0
+offset_bottom = 251.0
+target_visual = NodePath("Sprite2D")
+selection_mode = 1
+radio_group_name = "race_select"
+display_name = "avian"
+glow_color = Color(0.69411767, 0.6901961, 0.6784314, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprites/Avian" unique_id=979046764]
+texture = ExtResource("7_mt7p4")
+centered = false
+
+[node name="Giant" parent="Sprites" unique_id=418076075 node_paths=PackedStringArray("target_visual") instance=ExtResource("3_8p0ev")]
+offset_left = 987.0
+offset_top = 218.0
+offset_right = 1087.0
+offset_bottom = 318.0
+target_visual = NodePath("Sprite2D")
+selection_mode = 1
+radio_group_name = "race_select"
+display_name = "giant"
+glow_color = Color(0.69411767, 0.6901961, 0.6784314, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprites/Giant" unique_id=685698802]
+texture = ExtResource("8_mt7p4")
+centered = false
+
+[node name="Aasimar" parent="Sprites" unique_id=1052021011 node_paths=PackedStringArray("target_visual") instance=ExtResource("3_8p0ev")]
+offset_left = 1230.0
+offset_top = 404.0
+offset_right = 1330.0
+offset_bottom = 504.0
+target_visual = NodePath("Sprite2D")
+selection_mode = 1
+radio_group_name = "race_select"
+display_name = "aasimar"
+glow_color = Color(0.69411767, 0.6901961, 0.6784314, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprites/Aasimar" unique_id=1288360542]
+texture = ExtResource("9_mt7p4")
+centered = false
+
+[node name="Owlin" parent="Sprites" unique_id=1479700081 node_paths=PackedStringArray("target_visual") instance=ExtResource("3_8p0ev")]
+offset_left = 1448.0
+offset_top = 347.0
+offset_right = 1548.0
+offset_bottom = 447.0
+target_visual = NodePath("Sprite2D")
+selection_mode = 1
+radio_group_name = "race_select"
+display_name = "owlin"
+glow_color = Color(0.69411767, 0.6901961, 0.6784314, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprites/Owlin" unique_id=391719913]
+texture = ExtResource("10_mt7p4")
+centered = false
+
+[node name="Drow" parent="Sprites" unique_id=1848651820 node_paths=PackedStringArray("target_visual") instance=ExtResource("3_8p0ev")]
+offset_left = 1656.0
+offset_top = 435.0
+offset_right = 1756.0
+offset_bottom = 535.0
+target_visual = NodePath("Sprite2D")
+selection_mode = 1
+radio_group_name = "race_select"
+display_name = "drow"
+glow_color = Color(0.69411767, 0.6901961, 0.6784314, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprites/Drow" unique_id=494628735]
+texture = ExtResource("11_mt7p4")
+centered = false
+
+[node name="Back" type="TextureButton" parent="." unique_id=615161199]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 190.0
+offset_bottom = 105.0
+texture_normal = ExtResource("12_mt7p4")
+texture_pressed = ExtResource("13_mt7p4")
+texture_hover = ExtResource("14_mt7p4")
+texture_focused = ExtResource("14_mt7p4")
+
+[node name="Label" type="Label" parent="Back" unique_id=2138705743]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("15_mt7p4")
+theme_override_font_sizes/font_size = 22
+text = "Назад"
+label_settings = ExtResource("16_8p0ev")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next" type="TextureButton" parent="." unique_id=181018866]
+offset_left = 1730.0
+offset_top = 975.0
+offset_right = 1900.0
+offset_bottom = 1060.0
+texture_normal = ExtResource("12_mt7p4")
+texture_pressed = ExtResource("13_mt7p4")
+texture_hover = ExtResource("14_mt7p4")
+texture_focused = ExtResource("14_mt7p4")
+
+[node name="Label" type="Label" parent="Next" unique_id=1577375642]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("15_mt7p4")
+theme_override_font_sizes/font_size = 22
+text = "Далее"
+label_settings = ExtResource("16_8p0ev")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Blur" type="ColorRect" parent="." unique_id=1265012004]
+material = SubResource("ShaderMaterial_hohw2")
+offset_left = 410.0
+offset_top = -1.0
+offset_right = 1510.0
+offset_bottom = 213.0
+color = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="Blur" unique_id=1928183427]
+layout_mode = 0
+offset_top = -13.0
+offset_right = 1100.0
+offset_bottom = 117.0
+theme = SubResource("Theme_il6ek")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "Выберите расу персонажа. 
+Раса определяет отыгрыш, социальные 
+взаимодействия и ваше место в мире"
+label_settings = ExtResource("18_c3do8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NameLabel" type="Label" parent="Blur" unique_id=120865145]
+layout_mode = 0
+offset_top = 92.0
+offset_right = 1100.0
+offset_bottom = 167.0
+text = "Совлин"
+label_settings = ExtResource("18_mt7p4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="Blur" unique_id=201988045]
+layout_mode = 0
+offset_top = 167.0
+offset_right = 1100.0
+offset_bottom = 212.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_mt7p4")
+theme_override_font_sizes/font_size = 25
+text = "БОЛЬШОЙ АБОБУС"
+label_settings = ExtResource("20_c3do8")
+horizontal_alignment = 1
+
+[node name="NewRace" type="TextureButton" parent="." unique_id=46745347]
+offset_left = 670.0
+offset_top = 930.0
+offset_right = 920.0
+offset_bottom = 1070.0
+texture_normal = ExtResource("20_mt7p4")
+texture_pressed = ExtResource("21_mt7p4")
+texture_hover = ExtResource("22_mt7p4")
+
+[node name="Label" type="Label" parent="NewRace" unique_id=1501365009]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("15_mt7p4")
+theme_override_font_sizes/font_size = 25
+text = "Выбрать
+свою расу"
+label_settings = ExtResource("16_8p0ev")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MixedBlood" type="TextureButton" parent="." unique_id=77954396]
+offset_left = 1000.0
+offset_top = 930.0
+offset_right = 1250.0
+offset_bottom = 1070.0
+toggle_mode = true
+texture_normal = ExtResource("20_mt7p4")
+texture_pressed = ExtResource("22_mt7p4")
+texture_hover = ExtResource("22_mt7p4")
+
+[node name="Label" type="Label" parent="MixedBlood" unique_id=181241540]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("15_mt7p4")
+theme_override_font_sizes/font_size = 25
+text = "Смешанная
+кровь"
+label_settings = ExtResource("16_8p0ev")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NewRaceScreen" type="ColorRect" parent="." unique_id=250852265]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.9098039)
+
+[node name="NewRaceNameEdit" type="LineEdit" parent="NewRaceScreen" unique_id=1087936361]
+layout_mode = 0
+offset_left = 740.0
+offset_top = 446.0
+offset_right = 1180.0
+offset_bottom = 571.0
+theme_override_fonts/font = ExtResource("15_mt7p4")
+theme_override_font_sizes/font_size = 20
+placeholder_text = "Введите название расы, если уверены"
+alignment = 1
+
+[node name="Label" type="Label" parent="NewRaceScreen" unique_id=435715264]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 326.0
+theme_override_fonts/font = ExtResource("15_mt7p4")
+theme_override_font_sizes/font_size = 25
+text = "ВНИМАНИЕ
+В мире Тривернума широко распространены только
+представленные на основном экране выбора расы.
+Вы уверены, что хотите выбрать свою расу?"
+label_settings = ExtResource("18_mt7p4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="No" type="TextureButton" parent="NewRaceScreen" unique_id=1917660801]
+layout_mode = 0
+offset_left = 670.0
+offset_top = 930.0
+offset_right = 920.0
+offset_bottom = 1070.0
+texture_normal = ExtResource("20_mt7p4")
+texture_pressed = ExtResource("21_mt7p4")
+texture_hover = ExtResource("22_mt7p4")
+
+[node name="Label" type="Label" parent="NewRaceScreen/No" unique_id=1857814633]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("15_mt7p4")
+theme_override_font_sizes/font_size = 25
+text = "Нет"
+label_settings = ExtResource("16_8p0ev")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Yes" type="TextureButton" parent="NewRaceScreen" unique_id=435988271]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 930.0
+offset_right = 1250.0
+offset_bottom = 1070.0
+texture_normal = ExtResource("20_mt7p4")
+texture_pressed = ExtResource("21_mt7p4")
+texture_hover = ExtResource("22_mt7p4")
+
+[node name="Label" type="Label" parent="NewRaceScreen/Yes" unique_id=604431671]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("15_mt7p4")
+theme_override_font_sizes/font_size = 25
+text = "Принять"
+label_settings = ExtResource("16_8p0ev")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="NewRace" to="." method="_on_new_race_pressed"]
+[connection signal="pressed" from="MixedBlood" to="." method="_on_mixed_blood_pressed"]
+[connection signal="pressed" from="NewRaceScreen/No" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="NewRaceScreen/Yes" to="." method="_on_yes_pressed"]

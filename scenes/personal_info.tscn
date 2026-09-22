@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://co6hvvsvok0lp"]
 
-[ext_resource type="Script" uid="uid://dn6qpbpwcrjp4" path="res://scripts/personal_info.gd" id="1_tylaf"]
+[ext_resource type="Script" uid="uid://dn6qpbpwcrjp4" path="res://scripts/scenes_scripts/char_creation/personal_info.gd" id="1_tylaf"]
 [ext_resource type="Texture2D" uid="uid://blwd5dj1ka8c" path="res://assets/pictures/backgrounds/personal_info/personal_info.png" id="2_tylaf"]
 [ext_resource type="Texture2D" uid="uid://8u1ju70k1rju" path="res://assets/pictures/buttons/universal/navigation_normal.png" id="3_qhhxa"]
 [ext_resource type="Texture2D" uid="uid://lw5wjk0pwr37" path="res://assets/pictures/buttons/universal/navigation_pressed.png" id="4_li3nm"]

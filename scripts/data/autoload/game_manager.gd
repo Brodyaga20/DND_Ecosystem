@@ -29,31 +29,32 @@ func save_characters():
 		file.store_string(json)
 		file.close()
 
-func add_character(name: String, class_id: String, subclass_id: String, stats: Dictionary, background: String = "", traits: String = "", _starting_gear: Array = []):
+func add_character(name: String, class_id: String, subclass_id: String, stats: StatsData, background: String = "", traits: String = "", _starting_gear: Array = []):
 	if characters.size() >= MAX_CHARACTERS:
 		return null  # или false
-	var new_char = {
-		"id": int(Time.get_unix_time_from_system() * 1000),  # уникальный ID
-		"name": name,
-		"class_id": class_id,
-		"subclass_id": subclass_id,
-		"archetype_id": null,
-		"stats": stats,
-		"resources": null, # позже заполним из данных подкласса
-		"background": background,
-		"traits": traits,
-		"hp_current": 40 + stats.get("strength", 0) * 10,  # начальное ХП
-		"hp_max": 40 + stats.get("strength", 0) * 10,
-		"created": Time.get_datetime_string_from_system(),
-		"locked": false,
-		"abilities_known": [DataManager.get_start_ability_for_subclass(subclass_id)["id"]],
-		"race_name": "",
-		"sex": "",
-		"age": "",
-		"inventory": [],
-		"equipment": {"head": "", "chest": "", "legs": "", "feet": "", "right_hand": "", "left_hand": "", "arrows": "", "bracers": "", "knee_pads": ""},
-		"effects": ""
-	}
+	var new_char = CharacterData.new()
+	#{
+		#"id": int(Time.get_unix_time_from_system() * 1000),  # уникальный ID
+		#"name": name,
+		#"class_id": class_id,
+		#"subclass_id": subclass_id,
+		#"archetype_id": null,
+		#"stats": stats,
+		#"resources": null, # позже заполним из данных подкласса
+		#"background": background,
+		#"traits": traits,
+		#"hp_current": 40 + stats.power * 10,  # начальное ХП
+		#"hp_max": 40 + stats.power * 10,
+		#"created": Time.get_datetime_string_from_system(),
+		#"locked": false,
+		#"abilities_known": [DataManager.get_start_ability_for_subclass(subclass_id)["id"]],
+		#"race_name": "",
+		#"sex": "",
+		#"age": "",
+		#"inventory": [],
+		#"equipment": {"head": "", "chest": "", "legs": "", "feet": "", "right_hand": "", "left_hand": "", "arrows": "", "bracers": "", "knee_pads": ""},
+		#"effects": ""
+	#}
 
 
 	var resource = DataManager.get_resource_from_subclass(subclass_id).duplicate(true)

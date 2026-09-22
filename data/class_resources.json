@@ -1,0 +1,29 @@
+{
+    "chance": {
+      "name": "Шансы"
+    },
+    "chi": {
+      "name": "Ци"
+    },
+    "durability": {
+      "name": "Стойкость"
+    },
+    "ether": {
+      "name": "Эфир"
+    },
+    "intuition": {
+      "name": "Чутьё"
+    },
+    "karma": {
+      "name": "Карма"
+    },
+    "leadership": {
+      "name": "Лидерские очки"
+    },
+    "rage": {
+      "name": "Ярость"
+    },
+    "spirit": {
+      "name": "Дух"
+    }
+}

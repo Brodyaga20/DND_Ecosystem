@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cadh5xa4c8rvd"]
 
-[ext_resource type="Script" uid="uid://bdpl2gvm2rq1i" path="res://scripts/sex_select.gd" id="1_rm8pj"]
+[ext_resource type="Script" uid="uid://bdpl2gvm2rq1i" path="res://scripts/scenes_scripts/char_creation/sex_select.gd" id="1_rm8pj"]
 [ext_resource type="Texture2D" uid="uid://cefkfjira7gc3" path="res://assets/pictures/backgrounds/sex_select/left/normal.png" id="2_rm8pj"]
 [ext_resource type="Texture2D" uid="uid://jr5ar0l3g8ak" path="res://assets/pictures/backgrounds/sex_select/right/normal.png" id="3_rm8pj"]
 [ext_resource type="Texture2D" uid="uid://8u1ju70k1rju" path="res://assets/pictures/buttons/universal/navigation_normal.png" id="4_rm8pj"]

@@ -21,4 +21,3 @@ offset_right = 100.0
 offset_bottom = 101.0
 script = ExtResource("3_wi22t")
 selection_mode = 2
-glow_color = Color(1, 1, 1, 1)

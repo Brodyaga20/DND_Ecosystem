@@ -67,26 +67,20 @@ func _on_back_pressed() -> void:
 			get_tree().change_scene_to_file("res://scenes/MageSubclassSelect.tscn")
 
 func _on_next_pressed() -> void:
-	if $Name/Entering.text != "":
-		TempData.character_name = $Name/Entering.text
-		TempData.stats = {
-			"power":        $Stats/Strength/SpinBox.value,
-			"agility":      $Stats/Agility/SpinBox.value,
-			"intelligence": $Stats/Intelligence/SpinBox.value,
-			"luck":         $Stats/Luck/SpinBox.value,
-		}
-		TempData.history = $History/Text.text
-		TempData.traits = $Traits/Text.text
-		var _new_char = GameManager.add_character(
-			TempData.character_name,
-			TempData.class_id,
-			TempData.subclass_id,
-			TempData.stats,
-			TempData.history,
-			TempData.traits
-		)
-		TempData.reset()
-		get_tree().change_scene_to_file("res://scenes/CharacterList.tscn")
+	TempData.stats.power        = int($SmallNumbers/Power.text)
+	TempData.stats.agility      = int($SmallNumbers/Agility.text)
+	TempData.stats.intelligence = int($SmallNumbers/Intelligence.text)
+	TempData.stats.luck         = int($SmallNumbers/Luck.text)
+	#var _new_char = GameManager.add_character(
+		#TempData.character_name,
+		#TempData.class_id,
+		#TempData.subclass_id,
+		#TempData.stats,
+		#TempData.history,
+		#TempData.traits
+	#)
+	print(TempData.char_data)
+	get_tree().change_scene_to_file("res://scenes/start_equipment_select.tscn")
 
 func update_central_labels() -> void:
 	update_selected_stat_text()
@@ -97,9 +91,9 @@ func update_selected_stat_text() -> void:
 		$Blur/CentralTitle.text = ""
 		$Blur/CentralDescription.text = ""
 		return
-	var data = DataManager.get_data_from_stat_id(selected_id)
-	$Blur/CentralTitle.text = data["name"]
-	$Blur/CentralDescription.text = data["description"]
+	var data = DataManager.stats.get_by_id(selected_id)
+	$Blur/CentralTitle.text = data.display_name
+	$Blur/CentralDescription.text = data.description
 
 func update_main_number() -> void:
 	if selected_id == "" or not numbers.has(selected_id):
@@ -109,7 +103,7 @@ func update_main_number() -> void:
 		"glow_color", stat_colors[selected_id]
 	)
 
-func _on_stat_bowl_selected(id: String) -> void:
+func _on_stat_bowl_selected(id: String, _is_selected: bool) -> void:
 	if id == "":
 		return
 	if id == selected_id:
@@ -138,3 +132,21 @@ func check_sum():
 	var luck = int($SmallNumbers/Luck.text)
 	var sum = power + agility + intelligence + luck
 	return sum
+
+func _on_random_distribution_button_2_pressed() -> void:
+	var stats = StatsData.randomize_base_stats()
+	distribute_stats_data(stats)
+
+
+func _on_recommended_distribution_button_pressed() -> void:
+	var class_id = TempData.char_data.class_id
+	var class_data = DataManager.character_classes.get_by_id(class_id)
+	var stats = class_data.recommended_stats_distribution
+	distribute_stats_data(stats)
+
+func distribute_stats_data(data: StatsData):
+	$SmallNumbers/Power.text = str(data.power)
+	$SmallNumbers/Agility.text = str(data.agility)
+	$SmallNumbers/Intelligence.text = str(data.intelligence)
+	$SmallNumbers/Luck.text = str(data.luck)
+	update_main_number()
