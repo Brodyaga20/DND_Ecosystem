@@ -29,6 +29,8 @@ var sex: String = &""
 #var class_resource: ClassResourceState
 var hp: HpState
 var stats: StatsData
+var money: MoneyState
+var level: int
 
 # --- Личное ---
 var personal: PersonalInfo
@@ -83,6 +85,14 @@ func forget_ability(ability_id: StringName) -> bool:
 		return false
 	ability_ids.remove_at(idx)
 	return true
+
+func add_money(add: int):
+	money = MoneyState.from_copper(money.absolute() + add)
+
+func spend_money(spend: int):
+	if spend > money.absolute():
+		return
+	add_money(-spend)
 
 func add_item(item: InventoryItem) -> void:
 	for existing in inventory:
@@ -140,6 +150,7 @@ func to_dict() -> Dictionary:
 		"sex": String(sex),
 		#"class_resource": class_resource.to_dict(),
 		"hp": hp.to_dict(),
+		#"money": money.to_dict(),
 		"stats": stats.to_dict(),
 		"personal": personal.to_dict(),
 		"active_effects": effects,
@@ -156,7 +167,7 @@ static func from_dict(raw: Dictionary) -> CharacterData:
 	c.subclass_id = StringName(raw.get("subclass_id", ""))
 	c.archetype_id = StringName(raw.get("archetype_id", ""))
 	c.character_name = raw.get("character_name", "")
-	c.gender = StringName(raw.get("gender", ""))
+	c.sex = StringName(raw.get("sex", ""))
 
 	if raw.has("race"):
 		c.race = RaceRef.from_dict(raw["race"])

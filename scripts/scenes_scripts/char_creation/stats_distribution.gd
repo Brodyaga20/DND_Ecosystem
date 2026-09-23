@@ -27,7 +27,7 @@ var selected_id := ""
 func _ready() -> void:
 	update_ui()
 	clear()
-	$Next.disabled = true
+	$Next.disabled = false
 
 	for child in sprites_root.get_children():
 		if child is GlowElement:
@@ -67,20 +67,19 @@ func _on_back_pressed() -> void:
 			get_tree().change_scene_to_file("res://scenes/MageSubclassSelect.tscn")
 
 func _on_next_pressed() -> void:
-	TempData.stats.power        = int($SmallNumbers/Power.text)
-	TempData.stats.agility      = int($SmallNumbers/Agility.text)
-	TempData.stats.intelligence = int($SmallNumbers/Intelligence.text)
-	TempData.stats.luck         = int($SmallNumbers/Luck.text)
-	#var _new_char = GameManager.add_character(
-		#TempData.character_name,
-		#TempData.class_id,
-		#TempData.subclass_id,
-		#TempData.stats,
-		#TempData.history,
-		#TempData.traits
-	#)
+	TempData.char_data.stats.power        = int($SmallNumbers/Power.text)
+	TempData.char_data.stats.agility      = int($SmallNumbers/Agility.text)
+	TempData.char_data.stats.intelligence = int($SmallNumbers/Intelligence.text)
+	TempData.char_data.stats.luck         = int($SmallNumbers/Luck.text)
+	TempData.char_data.id = int(Time.get_unix_time_from_system() * 1000)
+	var character = TempData.char_data
+	if not SaveSystem.save_character(character):
+		return
+
+	#GameState.set_player_character(character)
+	get_tree().change_scene_to_file("res://scenes/characters_list.tscn")
 	print(TempData.char_data)
-	get_tree().change_scene_to_file("res://scenes/start_equipment_select.tscn")
+	#get_tree().change_scene_to_file("res://scenes/start_equipment_select.tscn")
 
 func update_central_labels() -> void:
 	update_selected_stat_text()
@@ -136,7 +135,6 @@ func check_sum():
 func _on_random_distribution_button_2_pressed() -> void:
 	var stats = StatsData.randomize_base_stats()
 	distribute_stats_data(stats)
-
 
 func _on_recommended_distribution_button_pressed() -> void:
 	var class_id = TempData.char_data.class_id

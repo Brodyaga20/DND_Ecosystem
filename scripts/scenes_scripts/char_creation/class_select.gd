@@ -27,7 +27,8 @@ func update_labels():
 	$Blur/DescriptionLabel.text = cls.short_description
 
 func _on_back_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/character_list.tscn")
+	get_tree().change_scene_to_file("res://scenes/characters_list.tscn")
+	TempData.reset()
 
 func _on_next_pressed() -> void:
 	TempData.char_data.class_id = selected_class_id

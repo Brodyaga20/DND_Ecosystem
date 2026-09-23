@@ -4,7 +4,7 @@ extends Node
 var character_classes: CharacterClassRepository
 var character_subclasses: CharacterSubclassRepository
 var races: RacesRepository
-var archetypes: CharacterArchetypeRepository
+var character_archetypes: CharacterArchetypeRepository
 var resources: ClassResourceRepository
 var age_periods: NamedEntryRepository
 var stats: StatsRepository
@@ -15,7 +15,7 @@ func _ready() -> void:
 	character_classes = CharacterClassRepository.new()
 	character_subclasses = CharacterSubclassRepository.new()
 	races = RacesRepository.new()
-	archetypes = CharacterArchetypeRepository.new()
+	character_archetypes = CharacterArchetypeRepository.new()
 	resources = ClassResourceRepository.new()
 	stats = StatsRepository.new()
 	
@@ -26,7 +26,7 @@ func _ready() -> void:
 	character_classes.load_from("res://data/character_classes.json")
 	character_subclasses.load_from("res://data/character_subclasses.json")
 	races.load_from("res://data/races.json")
-	archetypes.load_from("res://data/character_archetypes.json")
+	character_archetypes.load_from("res://data/character_archetypes.json")
 	resources.load_from("res://data/class_resources.json")
 	stats.load_from("res://data/stats.json")
 	

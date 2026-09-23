@@ -5,7 +5,7 @@ signal selected(sprite: GlowElement)
 signal id_selected(id: String, is_selected: bool)
 signal id_pressed(id: String)
 
-enum SelectionMode { MANUAL, RADIO, TOGGLE, FLASH }
+enum SelectionMode { MANUAL, RADIO, TOGGLE, FLASH}
 
 @export var target_visual: CanvasItem
 @export var selection_mode: SelectionMode = SelectionMode.MANUAL
@@ -34,13 +34,11 @@ var is_hovered := false
 var is_selected := false
 
 func _ready() -> void:
-	
 	if not target_visual:
 		for child in get_children():
 			if child is CanvasItem:
 				target_visual = child
 				break
-
 	if target_visual:
 		if target_visual.material:
 			_mat = target_visual.material.duplicate() as ShaderMaterial
@@ -60,10 +58,12 @@ func _ready() -> void:
 			target_visual.texture_changed.connect(_update_size)
 
 	_update_size()
-
 	mouse_entered.connect(_on_enter)
 	mouse_exited.connect(_on_exit)
 	gui_input.connect(_on_gui_input)
+
+func update_shader_parameter(par_type: String, new_par):
+	target_visual.material.set_shader_parameter(par_type, new_par)
 
 func _has_point(point: Vector2) -> bool:
 	match hitbox_mode:
@@ -145,6 +145,7 @@ func _handle_click_behavior() -> void:
 			_flash_tween.tween_callback(func(): set_selected(true))
 			_flash_tween.tween_interval(duration * 2)
 			_flash_tween.tween_callback(func(): set_selected(false))
+		
 
 func set_selected(v: bool) -> void:
 	is_selected = v

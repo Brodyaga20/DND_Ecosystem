@@ -6,7 +6,7 @@ func _ready():
 
 func _on_play_button_pressed():
 	# Переход к списку персонажей
-	get_tree().change_scene_to_file("res://scenes/character_list.tscn")
+	get_tree().change_scene_to_file("res://scenes/characters_list.tscn")
 
 func _on_guide_button_pressed() -> void:
 		# Переход к справочнику

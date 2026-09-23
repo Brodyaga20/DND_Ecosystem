@@ -2,12 +2,11 @@
 
 [ext_resource type="Script" uid="uid://3yiilcj6unwk" path="res://scripts/profile.gd" id="1_irxi3"]
 [ext_resource type="Texture2D" uid="uid://dlsifyf178kba" path="res://assets/pictures/backgrounds/personal_info.png" id="2_b4vjc"]
-[ext_resource type="LabelSettings" uid="uid://dw6ogecn6ui48" path="res://resources/label_settings/character_creation/big_common_text.tres" id="3_7cwr7"]
 [ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://assets/fonts/cinzel_bold.ttf" id="3_vpega"]
-[ext_resource type="Texture2D" uid="uid://xpncrdo3ii6b" path="res://assets/pictures/profile/under_name.png" id="4_vpega"]
-[ext_resource type="Texture2D" uid="uid://dwgjxm3pobyl7" path="res://assets/pictures/profile/under.png" id="6_gmahi"]
-[ext_resource type="PackedScene" uid="uid://cel13lvfr517" path="res://scenes/templates/glow_element.tscn" id="7_7cwr7"]
-[ext_resource type="Texture2D" uid="uid://iwjnjfnn63mt" path="res://assets/pictures/profile/class/assassin.png" id="8_gmahi"]
+[ext_resource type="Texture2D" uid="uid://bkibvvfo7pee3" path="res://assets/pictures/buttons/locked_vertical.png" id="4_7cwr7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
+font_size = 52
 
 [sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
 font_size = 31
@@ -21,22 +20,6 @@ script = ExtResource("1_irxi3")
 position = Vector2(959.99994, 540)
 texture = ExtResource("2_b4vjc")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=632827266]
-layout_mode = 0
-offset_left = 1280.0
-offset_top = 90.0
-offset_right = 1830.0
-offset_bottom = 990.0
-texture = ExtResource("6_gmahi")
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
-
-[node name="NameSubstrate" type="Sprite2D" parent="." unique_id=1678343684]
-position = Vector2(960, 65)
-texture = ExtResource("4_vpega")
-
 [node name="Editable" type="Control" parent="." unique_id=306227016]
 anchors_preset = 0
 offset_right = 40.0
@@ -49,12 +32,12 @@ offset_bottom = 40.0
 
 [node name="Name" type="Label" parent="Editable/Name" unique_id=1789381728]
 layout_mode = 0
-offset_left = 710.0
+offset_left = 714.0
 offset_top = 2.0
-offset_right = 1210.0
-offset_bottom = 122.0
+offset_right = 1228.0
+offset_bottom = 121.0
 text = "Имя"
-label_settings = ExtResource("3_7cwr7")
+label_settings = SubResource("LabelSettings_yf5fn")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -101,12 +84,23 @@ offset_bottom = 804.0
 text = "Черты"
 autowrap_mode = 2
 
+[node name="Class" type="Label" parent="." unique_id=1661318763]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 820.0
+offset_right = 499.0
+offset_bottom = 923.0
+text = "Класс"
+label_settings = SubResource("LabelSettings_g4v7s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Race" type="Label" parent="." unique_id=1464447222]
 layout_mode = 0
-offset_left = -477.0
-offset_top = 468.0
-offset_right = -62.0
-offset_bottom = 571.0
+offset_left = 733.0
+offset_top = 739.0
+offset_right = 1148.0
+offset_bottom = 842.0
 text = "Класс"
 label_settings = SubResource("LabelSettings_g4v7s")
 horizontal_alignment = 1
@@ -114,10 +108,10 @@ vertical_alignment = 1
 
 [node name="StatsContainer" type="VBoxContainer" parent="." unique_id=1767907796]
 layout_mode = 0
-offset_left = 2055.0
-offset_top = 520.0
-offset_right = 2215.0
-offset_bottom = 630.0
+offset_left = 1300.0
+offset_top = 526.0
+offset_right = 1460.0
+offset_bottom = 636.0
 
 [node name="StrengthLabel" type="Label" parent="StatsContainer" unique_id=1039309175]
 layout_mode = 2
@@ -148,34 +142,32 @@ vertical_alignment = 1
 
 [node name="Abilities" type="Control" parent="." unique_id=1547143961]
 anchors_preset = 0
-offset_left = -257.0
-offset_top = 118.0
-offset_right = -144.0
-offset_bottom = 203.0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Abilities" type="ItemList" parent="Abilities" unique_id=1992828922]
 layout_mode = 0
-offset_left = 2439.0
-offset_top = 155.0
-offset_right = 2789.0
-offset_bottom = 1104.0
+offset_left = 1500.0
+offset_top = 79.0
+offset_right = 1850.0
+offset_bottom = 1028.0
 
 [node name="Name" type="Label" parent="Abilities" unique_id=971340708]
 layout_mode = 0
-offset_left = 2439.0
-offset_top = 130.0
-offset_right = 2789.0
-offset_bottom = 153.0
+offset_left = 1500.0
+offset_top = 54.0
+offset_right = 1850.0
+offset_bottom = 77.0
 text = "Способности"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Effects" type="HBoxContainer" parent="." unique_id=54175224]
 layout_mode = 0
-offset_left = -585.0
-offset_top = 544.0
-offset_right = -5.0
-offset_bottom = 655.0
+offset_left = 615.0
+offset_top = 643.0
+offset_right = 1195.0
+offset_bottom = 754.0
 
 [node name="Avatar" type="Sprite2D" parent="." unique_id=1866744336]
 position = Vector2(344, 402)
@@ -187,26 +179,26 @@ offset_bottom = 40.0
 
 [node name="Back" type="Button" parent="Buttons" unique_id=1111655112]
 layout_mode = 0
-offset_left = 790.0
-offset_top = 1128.0
-offset_right = 930.0
-offset_bottom = 1197.0
+offset_left = 787.0
+offset_top = 983.0
+offset_right = 927.0
+offset_bottom = 1052.0
 text = "Назад"
 
 [node name="Edit" type="Button" parent="Buttons" unique_id=2113139487]
 layout_mode = 0
-offset_left = 988.0
-offset_top = 1127.0
-offset_right = 1128.0
-offset_bottom = 1196.0
+offset_left = 985.0
+offset_top = 982.0
+offset_right = 1125.0
+offset_bottom = 1051.0
 text = "Изменить"
 
 [node name="Button" type="Button" parent="Buttons" unique_id=893249167]
 layout_mode = 0
-offset_left = 2055.0
-offset_top = 629.0
-offset_right = 2215.0
-offset_bottom = 664.0
+offset_left = 1300.0
+offset_top = 635.0
+offset_right = 1460.0
+offset_bottom = 670.0
 text = "Подробнее"
 
 [node name="Resource" type="Control" parent="." unique_id=89600283]
@@ -216,20 +208,20 @@ offset_bottom = 40.0
 
 [node name="ResourceName" type="Label" parent="Resource" unique_id=488936928]
 layout_mode = 0
-offset_left = 2232.0
-offset_top = 134.0
-offset_right = 2392.0
-offset_bottom = 169.0
+offset_left = 1300.0
+offset_top = 169.0
+offset_right = 1460.0
+offset_bottom = 204.0
 text = "Лидерские очки"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ResourceAmount" type="Label" parent="Resource" unique_id=1365320368]
 layout_mode = 0
-offset_left = 2232.0
-offset_top = 174.0
-offset_right = 2392.0
-offset_bottom = 229.0
+offset_left = 1300.0
+offset_top = 209.0
+offset_right = 1460.0
+offset_bottom = 264.0
 theme_override_font_sizes/font_size = 40
 text = "0"
 horizontal_alignment = 1
@@ -242,10 +234,10 @@ offset_bottom = 40.0
 
 [node name="ResourceName" type="Label" parent="HP" unique_id=543107553]
 layout_mode = 0
-offset_left = 2232.0
-offset_top = 310.0
-offset_right = 2392.0
-offset_bottom = 345.0
+offset_left = 1300.0
+offset_top = 345.0
+offset_right = 1460.0
+offset_bottom = 380.0
 theme_override_fonts/font = ExtResource("3_vpega")
 text = "Здоровье"
 horizontal_alignment = 1
@@ -253,10 +245,10 @@ vertical_alignment = 1
 
 [node name="ResourceAmount" type="Label" parent="HP" unique_id=1763512256]
 layout_mode = 0
-offset_left = 2162.0
-offset_top = 350.0
-offset_right = 2462.0
-offset_bottom = 405.0
+offset_left = 1230.0
+offset_top = 385.0
+offset_right = 1530.0
+offset_bottom = 440.0
 theme_override_fonts/font = ExtResource("3_vpega")
 theme_override_font_sizes/font_size = 40
 text = "0"
@@ -270,82 +262,38 @@ offset_bottom = 40.0
 
 [node name="HPEdit" type="LineEdit" parent="MasterEdit" unique_id=405273625]
 layout_mode = 0
-offset_left = 2234.0
-offset_top = 405.0
-offset_right = 2308.0
-offset_bottom = 461.0
+offset_left = 1302.0
+offset_top = 440.0
+offset_right = 1376.0
+offset_bottom = 496.0
 
 [node name="HPApply" type="Button" parent="MasterEdit" unique_id=76583893]
 layout_mode = 0
-offset_left = 2315.0
-offset_top = 406.0
-offset_right = 2419.0
-offset_bottom = 461.0
+offset_left = 1383.0
+offset_top = 441.0
+offset_right = 1487.0
+offset_bottom = 496.0
 text = "прим"
 
 [node name="ResEdit" type="LineEdit" parent="MasterEdit" unique_id=1645670623]
 layout_mode = 0
-offset_left = 2235.0
-offset_top = 235.0
-offset_right = 2307.0
-offset_bottom = 290.0
+offset_left = 1303.0
+offset_top = 270.0
+offset_right = 1375.0
+offset_bottom = 325.0
 
 [node name="ResApply" type="Button" parent="MasterEdit" unique_id=2014065973]
 layout_mode = 0
-offset_left = 2322.0
-offset_top = 236.0
-offset_right = 2415.0
-offset_bottom = 289.0
+offset_left = 1390.0
+offset_top = 271.0
+offset_right = 1483.0
+offset_bottom = 324.0
 text = "прим"
 
-[node name="Class" parent="." unique_id=1281942755 node_paths=PackedStringArray("target_visual") instance=ExtResource("7_7cwr7")]
-layout_mode = 0
-offset_left = 630.0
-offset_top = 130.0
-offset_right = 730.0
-offset_bottom = 230.0
-target_visual = NodePath("Sprite")
-selection_mode = 0
-display_name = "class"
-glow_hover = 15.0
-glow_selected = 20.0
-
-[node name="Sprite" type="Sprite2D" parent="Class" unique_id=1801009829]
-position = Vector2(120, 120)
-texture = ExtResource("8_gmahi")
-
-[node name="Subclass" parent="." unique_id=1107064089 node_paths=PackedStringArray("target_visual") instance=ExtResource("7_7cwr7")]
-layout_mode = 0
-offset_left = 840.0
-offset_top = 130.0
-offset_right = 940.0
-offset_bottom = 230.0
-target_visual = NodePath("Sprite")
-selection_mode = 0
-display_name = "class"
-glow_hover = 15.0
-glow_selected = 20.0
-
-[node name="Sprite" type="Sprite2D" parent="Subclass" unique_id=137669650]
-position = Vector2(120, 120)
-texture = ExtResource("8_gmahi")
-
-[node name="Archetype" parent="." unique_id=1129208964 node_paths=PackedStringArray("target_visual") instance=ExtResource("7_7cwr7")]
-layout_mode = 0
-offset_left = 1050.0
-offset_top = 130.0
-offset_right = 1150.0
-offset_bottom = 230.0
-target_visual = NodePath("Sprite")
-selection_mode = 0
-display_name = "archetype"
-glow_hover = 15.0
-glow_selected = 20.0
-glow_color = Color(1, 1, 0.38431373, 1)
-
-[node name="Sprite" type="Sprite2D" parent="Archetype" unique_id=1305815262]
-position = Vector2(120, 120)
-texture = ExtResource("8_gmahi")
+[node name="LockedVertical" type="Sprite2D" parent="." unique_id=2084137958]
+position = Vector2(569, 650.9999)
+scale = Vector2(1.3649998, 0.59000003)
+texture = ExtResource("4_7cwr7")
 
 [connection signal="pressed" from="Buttons/Back" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Buttons/Edit" to="." method="_on_edit_button_pressed"]

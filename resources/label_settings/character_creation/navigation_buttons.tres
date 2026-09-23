@@ -1,4 +1,7 @@
 [gd_resource type="LabelSettings" format=3 uid="uid://gohtfpbd5dmk"]
 
+[ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://assets/fonts/cinzel_bold.ttf" id="1_jrdwr"]
+
 [resource]
+font = ExtResource("1_jrdwr")
 font_size = 26
