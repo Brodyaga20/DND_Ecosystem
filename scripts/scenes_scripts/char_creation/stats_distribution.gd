@@ -40,7 +40,7 @@ func _ready() -> void:
 func clear() -> void:
 	main_number.text = ""
 	$MainNumber.visible = false
-	$Blur/CentralTitle.text = ""
+	$Blur/CentralTitle.text = "Выберите чашу"
 	$Blur/CentralDescription.text = ""
 	selected_id = ""
 
@@ -67,19 +67,34 @@ func _on_back_pressed() -> void:
 			get_tree().change_scene_to_file("res://scenes/MageSubclassSelect.tscn")
 
 func _on_next_pressed() -> void:
-	TempData.char_data.stats.power        = int($SmallNumbers/Power.text)
-	TempData.char_data.stats.agility      = int($SmallNumbers/Agility.text)
-	TempData.char_data.stats.intelligence = int($SmallNumbers/Intelligence.text)
-	TempData.char_data.stats.luck         = int($SmallNumbers/Luck.text)
-	TempData.char_data.id = int(Time.get_unix_time_from_system() * 1000)
+	save_stats()
+	save_hp()
+	set_id()
+	TempData.char_data.money = MoneyState.from_copper(120)
 	var character = TempData.char_data
 	if not SaveSystem.save_character(character):
 		return
 
-	#GameState.set_player_character(character)
 	get_tree().change_scene_to_file("res://scenes/characters_list.tscn")
-	print(TempData.char_data)
 	#get_tree().change_scene_to_file("res://scenes/start_equipment_select.tscn")
+
+func set_id():
+	TempData.char_data.id = int(Time.get_unix_time_from_system() * 1000)
+
+func save_stats() -> void:
+	var power        := int($SmallNumbers/Power.text)
+	var agility      := int($SmallNumbers/Agility.text)
+	var intelligence := int($SmallNumbers/Intelligence.text)
+	var luck         := int($SmallNumbers/Luck.text)
+	TempData.char_data.stats.power        = power
+	TempData.char_data.stats.agility      = agility
+	TempData.char_data.stats.intelligence = intelligence
+	TempData.char_data.stats.luck         = luck
+
+func save_hp() -> void:
+	var power := int($SmallNumbers/Power.text)
+	TempData.char_data.hp.max_hp = 40 + power * 10
+	TempData.char_data.hp.current_hp = 40 + power * 10
 
 func update_central_labels() -> void:
 	update_selected_stat_text()

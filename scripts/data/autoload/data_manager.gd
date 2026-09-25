@@ -34,7 +34,6 @@ func _ready() -> void:
 	
 	_build_class_subclass_links()
 	#items.load_from("res://data/items.json")
-	
 
 func _build_class_subclass_links() -> void:
 	for sub in character_subclasses.all():
@@ -44,3 +43,11 @@ func _build_class_subclass_links() -> void:
 			continue
 		
 		parent.subclass_ids.append(sub.id)
+
+func find_ability(tier: int, subclass_id: StringName) -> Array[String]:
+	var ability_arr : Array[String]
+	for a in abilities:
+		if a.tier == tier and a.subclass_id == subclass_id:
+			ability_arr.append(a.id)
+	return ability_arr
+	

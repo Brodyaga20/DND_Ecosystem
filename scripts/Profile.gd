@@ -16,11 +16,10 @@ const active_glow_width := 15
 enum CardTypes {CLASS, SUBCLASS, ARCHETYPE}
 
 func _ready():
-	$Editable/Name/NameEdit.visible = false
-	$Editable/History/HistoryEdit.visible = false
-	$Editable/Traits/TraitsEdit.visible = false
+	var hp_line = $HpSubstrate/HpLine
 	if char_data == null:
 		get_tree().change_scene_to_file("res://scenes/characters_list.tscn")
+	hp_line.region_enabled = true
 	set_vision()
 	update_display()
 
@@ -28,8 +27,11 @@ func set_vision():
 	$MasterEdit.visible = is_master
 
 func update_display():
+	update_name()
 	update_cards()
 	update_money()
+	update_abilities()
+	update_hp()
 	#var stats = character_data["stats"]
 	#var resource = character_data["resources"]
 	#var abilities = character_data.get("abilities_known", [])
@@ -37,7 +39,6 @@ func update_display():
 	#update_stats(stats)
 	#update_resources(resource)
 	#update_abilities(abilities)
-	$Editable/Name/Name.text = char_data.character_name
 	
 	
 	# Снаряжение (пока список)
@@ -48,6 +49,17 @@ func update_display():
 		#if item:
 			#$VBoxContainer/GearList.add_item(item["name"])
 
+func update_name():
+	$NameSubstrate/Label.text = str(GameState.player.character_name)
+
+func update_hp():
+	$HpSubstrate/GlowElement2.hover_text = str(GameState.player.hp.current_hp) + "/" + str(GameState.player.hp.max_hp)
+	$HpSubstrate/HPLabel.text = str(GameState.player.hp.current_hp)
+	var percent = GameState.player.hp.get_percentage()
+	var width = int(percent * 2.12 + 9)
+	$HpSubstrate/HpLine.region_rect = Rect2(0, 0, width, 50)
+	pass
+
 func update_cards():
 	update_class()
 	update_subclass()
@@ -55,13 +67,15 @@ func update_cards():
 	update_abilities()
 
 func update_money():
-	pass
+	$MoneySubstrate/Coins/MagicCoin/Amount.text = str(GameState.player.money.magic_coin)
+	$MoneySubstrate/Coins/GoldCoin/Amount.text= str(GameState.player.money.gold_coin)
+	$MoneySubstrate/Coins/SilverCoin/Amount.text = str(GameState.player.money.silver_coin)
+	$MoneySubstrate/Coins/CopperCoin/Amount.text = str(GameState.player.money.copper_coin)
 
 func update_abilities():
 	if !abilities.is_empty():
 		for i in clampi(abilities.size(), 0, 3):
 			update_abilitiy_cards(i)
-	print(abilities)
 
 func update_abilitiy_cards(number: int):
 	var sprite: Sprite2D
@@ -79,23 +93,23 @@ func update_abilitiy_cards(number: int):
 func update_class():
 	var selected_class = DataManager.character_classes.get_by_id(char_data.class_id)
 	if selected_class != null:
-		configure_unlocked_card($Class/Sprite, CardTypes.CLASS)
+		configure_unlocked_card($ProgressCards/Class/Sprite, CardTypes.CLASS)
 	else:
-		configure_locked_card($Class/Sprite)
+		configure_locked_card($ProgressCards/Class/Sprite)
 
 func update_subclass():
 	var selected_subclass = DataManager.character_subclasses.get_by_id(char_data.subclass_id)
 	if selected_subclass != null:
-		configure_unlocked_card($Subclass/Sprite, CardTypes.SUBCLASS)
+		configure_unlocked_card($ProgressCards/Subclass/Sprite, CardTypes.SUBCLASS)
 	else:
-		configure_locked_card($Subclass/Sprite)
+		configure_locked_card($ProgressCards/Subclass/Sprite)
 
 func update_archetype():
 	var selected_archetype = DataManager.character_archetypes.get_by_id(char_data.archetype_id)
 	if selected_archetype != null:
-		configure_unlocked_card($Archetype/Sprite, CardTypes.ARCHETYPE)
+		configure_unlocked_card($ProgressCards/Archetype/Sprite, CardTypes.ARCHETYPE)
 	else:
-		configure_locked_card($Archetype/Sprite)
+		configure_locked_card($ProgressCards/Archetype/Sprite)
 
 func configure_unlocked_card(sprite: Sprite2D, type: CardTypes):
 	var path : String
@@ -172,15 +186,7 @@ func _on_edit_button_pressed():
 			save_data()
 
 func save_data():
-	var new_name = $Editable/Name/NameEdit.text
-	if new_name == "":
-		return
-	
-	var new_background = $Editable/History/HistoryEdit.text
-	var new_traits = $Editable/Traits/TraitsEdit.text
 	update_display()
-	
-	# Выходим из режима редактирования
 
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/characters_list.tscn")

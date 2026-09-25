@@ -1,21 +1,23 @@
 # game_state.gd (Autoload)
 extends Node
 
-signal player_character_changed(character: CharacterData)
+signal player_character_changed(character: PlayerData)
+signal meta_changed
 
-var player: CharacterData = null
+var player: PlayerData = null
+var meta: MetaProfile
 
-func set_player_character(c: CharacterData) -> void:
-	player = c
-	player_character_changed.emit(c)
+func _ready() -> void:
+	meta = SaveSystem.load_meta_profile()
+
+func set_player_character(p: PlayerData) -> void:
+	player = p
+	player_character_changed.emit(p)
 
 func clear_player_character() -> void:
 	player = null
 	player_character_changed.emit(null)
 
-# --- Мета ---
-
-func load_meta_into_state() -> void:
-	var meta := SaveSystem.load_meta()
-	# last_character_id здесь, если нужно для создания новых
-	# активный id и т.п.
+func save_meta() -> void:
+	SaveSystem.save_meta_profile(meta)
+	meta_changed.emit()

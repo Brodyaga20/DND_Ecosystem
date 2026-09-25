@@ -114,11 +114,9 @@ func _update_size() -> void:
 		target_visual.size = visual_size
 
 func _on_enter() -> void:
-	print(tooltip_text)
 	is_hovered = true
 	refresh()
 	if has_tooltip and hover_text != "":
-		print("yeah")
 		CustomTooltip.show_at(hover_text, Vector2.ZERO)
 
 func _on_exit() -> void:
@@ -155,7 +153,6 @@ func _handle_click_behavior() -> void:
 			_flash_tween.tween_callback(func(): set_selected(true))
 			_flash_tween.tween_interval(duration * 2)
 			_flash_tween.tween_callback(func(): set_selected(false))
-		
 
 func set_selected(v: bool) -> void:
 	is_selected = v

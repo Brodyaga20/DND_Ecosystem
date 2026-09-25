@@ -21,7 +21,6 @@ func _on_ancient_pressed() -> void:
 	set_ages_text("ancient")
 
 func set_ages_text(period: String):
-	enable_next_button_if_legit()
 	age_period = period
 	var arr = [0, 0]
 	var race_kind = TempData.char_data.race.kind
@@ -46,8 +45,10 @@ func set_ages_text(period: String):
 	$Age/AdditionalAgeInfo/ExactAgeEdit.placeholder_text = DataManager.age_periods.get_name(period)
 	$Age/AdditionalAgeInfo/AgeRange.text = text
 	$Age/AdditionalAgeInfo.visible = true
+	enable_next_button_if_legit()
 
 func enable_next_button_if_legit():
+	print($NameEdit.text, age_period)
 	if $NameEdit.text != "" and age_period != null:
 		$Next.disabled = false
 	else:

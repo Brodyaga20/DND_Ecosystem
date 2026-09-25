@@ -1,3 +1,4 @@
+# save_system.gd (Autoload)
 extends Node
 
 const META_PATH := "user://meta.json"
@@ -7,23 +8,22 @@ const MAX_CHARACTERS := 6
 func _ready() -> void:
 	DirAccess.make_dir_recursive_absolute(CHARACTERS_DIR)
 
-# --- Мета ---
+# --- Meta profile ---
 
-func save_meta(meta: Dictionary) -> void:
-	_write_json(META_PATH, meta)
+func save_meta_profile(profile: MetaProfile) -> bool:
+	return _write_json(META_PATH, profile.to_dict())
 
-func load_meta() -> Dictionary:
-	return _read_json(META_PATH, {})
+func load_meta_profile() -> MetaProfile:
+	var raw := _read_json(META_PATH, {})
+	return MetaProfile.from_dict(raw)
 
-# --- Персонаж ---
+# --- Character ---
 
-func get_character_count() -> int:
-	var meta := load_meta()
-	var ids: Array = meta.get("character_ids", [])
-	return ids.size()
+func get_character_count(profile: MetaProfile) -> int:
+	return profile.character_ids.size()
 
-func can_create_character() -> bool:
-	return get_character_count() < MAX_CHARACTERS
+func can_create_character(profile: MetaProfile) -> bool:
+	return profile.character_ids.size() < MAX_CHARACTERS
 
 func save_character(c: CharacterData) -> bool:
 	if c.id <= 0:
@@ -31,12 +31,12 @@ func save_character(c: CharacterData) -> bool:
 		return false
 
 	var path := _character_path(c.id)
-	var data := c.to_dict()
-	if not _write_json(path, data):
+	if not _write_json(path, c.to_dict()):
 		return false
 
-	_register_in_meta(c.id)
-	return true
+	var profile := load_meta_profile()
+	profile.add_character_id(c.id)
+	return save_meta_profile(profile)
 
 func load_character(id: int) -> CharacterData:
 	var path := _character_path(id)
@@ -45,23 +45,24 @@ func load_character(id: int) -> CharacterData:
 		return null
 
 	raw = _migrate_character(raw)
-	return CharacterData.from_dict(raw)
+
+	# Пока у нас только CharacterData, но с PlayerData будет ветвление
+	return PlayerData.from_dict(raw)
 
 func delete_character(id: int) -> bool:
 	var path := _character_path(id)
-	if not FileAccess.file_exists(path):
-		return false
-	DirAccess.remove_absolute(path)
-	GameState.clear_player_character()
-	_unregister_in_meta(id)
-	return true
+	if FileAccess.file_exists(path):
+		DirAccess.remove_absolute(path)
+
+	if GameState.player != null and GameState.player.id == id:
+		GameState.clear_player_character()
+
+	var profile := load_meta_profile()
+	profile.remove_character_id(id)
+	return save_meta_profile(profile)
 
 func list_character_ids() -> Array[int]:
-	var meta := load_meta()
-	var ids: Array[int] = []
-	for id in meta.get("character_ids", []):
-		ids.append(int(id))
-	return ids
+	return load_meta_profile().character_ids.duplicate()
 
 # --- Внутреннее ---
 
@@ -92,30 +93,7 @@ func _read_json(path: String, fallback: Dictionary) -> Dictionary:
 		return fallback
 	return parsed
 
-func _register_in_meta(id: int) -> void:
-	var meta := load_meta()
-	var ids: Array[int] = []
-	for existing in meta.get("character_ids", []):
-		ids.append(int(existing))
-	if not id in ids:
-		ids.append(int(id))
-	meta["character_ids"] = ids
-	meta["last_character_id"] = int(id)
-	save_meta(meta)
-
-func _unregister_in_meta(id: int) -> void:
-	var meta := load_meta()
-	var ids: Array[int] = []
-	for existing in meta.get("character_ids", []):
-		ids.append(int(existing))
-	print(ids)
-	ids.erase(id)
-	print(id, " ", ids)
-	meta["character_ids"] = ids
-	meta["last_character_id"] = -1
-	save_meta(meta)
-
 func _migrate_character(raw: Dictionary) -> Dictionary:
 	var _version := int(raw.get("version", 0))
-
+	# сюда будут добавляться миграции по версиям
 	return raw

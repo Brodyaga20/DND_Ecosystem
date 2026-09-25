@@ -9,7 +9,6 @@ var _active := false
 
 func _ready() -> void:
 	hide()
-	# Чтобы панель не ловила мышь
 	_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
@@ -28,6 +27,8 @@ func show_at(text: String, _ignored_pos: Vector2) -> void:
 	show()
 	_active = true
 	await get_tree().process_frame
+	_panel.reset_size()
+
 	_update_position()
 
 func _process(_delta: float) -> void:

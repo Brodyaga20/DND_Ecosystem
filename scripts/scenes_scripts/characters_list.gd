@@ -9,7 +9,7 @@ var button_group: ButtonGroup
 
 func _ready():
 	update_ui_buttons()
-	if !SaveSystem.can_create_character():
+	if !SaveSystem.can_create_character(GameState.meta):
 		$Create.disabled = true
 	button_group = ButtonGroup.new()
 	button_group.allow_unpress = false   # нельзя "отжать" кликом по той же кнопке
@@ -24,9 +24,9 @@ func update_grid():
 
 func _populate_character_list() -> void:
 	var grid = $VBoxContainer/CharactersGrid
-	var ids := SaveSystem.list_character_ids()
+	var ids = SaveSystem.list_character_ids()
 	for id in ids:
-		var c := SaveSystem.load_character(id)
+		var c = SaveSystem.load_character(id)
 		if c == null:
 			continue
 		var button := TextureButton.new()
@@ -66,14 +66,14 @@ func arrange(text: Label, card: TextureButton) -> Label:
 	return text
 
 func update_ui_buttons():
-	$Create.disabled    = !SaveSystem.can_create_character()
+	$Create.disabled    = !SaveSystem.can_create_character(GameState.meta)
 	$Play.disabled      = (selected_char_id == null)
 	$Delete.disabled    = (selected_char_id == null)
 	$CharSheet.disabled = (selected_char_id == null)
 
 func _on_card_pressed(char_id: int):
 	selected_char_id = char_id
-	var character := SaveSystem.load_character(char_id)
+	var character = SaveSystem.load_character(char_id)
 	GameState.set_player_character(character)
 	update_ui_buttons()
 

@@ -59,6 +59,7 @@ func _on_mixed_blood_pressed() -> void:
 			set_mixed_blood_mode()
 		RaceModes.MIXED:
 			set_single_mode()
+	disable_transition()
 
 func set_mixed_blood_mode():
 	mode = RaceModes.MIXED

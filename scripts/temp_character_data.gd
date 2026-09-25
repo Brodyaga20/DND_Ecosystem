@@ -1,6 +1,6 @@
 extends Node
 
-var char_data = CharacterData.new()
+var char_data = PlayerData.new()
 
 func reset():
-	char_data = CharacterData.new()
+	char_data = PlayerData.new()
