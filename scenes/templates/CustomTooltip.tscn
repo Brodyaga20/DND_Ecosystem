@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cddwtfqgj3smy"]
+
+[ext_resource type="Script" uid="uid://b0lcukcd26iw6" path="res://scripts/data/autoload/custom_elements/custom_tooltip.gd" id="1_nggqd"]
+[ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://assets/fonts/cinzel_bold.ttf" id="2_tpypb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpypb"]
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(0.08078333, 0.08078336, 0.080783255, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_bvrbq"]
+font = ExtResource("2_tpypb")
+
+[node name="CustomTooltip" type="CanvasLayer" unique_id=1783542840]
+layer = 100
+script = ExtResource("1_nggqd")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=2036868672]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tpypb")
+
+[node name="Label" type="Label" parent="Panel" unique_id=1322956275]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_bvrbq")
+horizontal_alignment = 1
+vertical_alignment = 1

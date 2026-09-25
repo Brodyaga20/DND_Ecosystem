@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://die1lpad31skt"
-path="res://.godot/imported/locked.png-36674d7405546b92d3c6ce254cce0d91.ctex"
+uid="uid://ca6tg14b8bbk8"
+path="res://.godot/imported/paladin.png-00e79876d76b680ed0fb81b6b1328b09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pictures/profile/archetype/locked.png"
-dest_files=["res://.godot/imported/locked.png-36674d7405546b92d3c6ce254cce0d91.ctex"]
+source_file="res://assets/pictures/profile/subclass/paladin.png"
+dest_files=["res://.godot/imported/paladin.png-00e79876d76b680ed0fb81b6b1328b09.ctex"]
 
 [params]
 

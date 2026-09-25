@@ -27,6 +27,7 @@ ServerData="*uid://dph08hh1higao"
 NetworkManager="*uid://bhenbujemd21u"
 RngManager="*uid://cad42nrqsk05r"
 UtilManager="*uid://c60db60xk5go5"
+CustomTooltip="*uid://cddwtfqgj3smy"
 
 [display]
 

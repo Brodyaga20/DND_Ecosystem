@@ -4,13 +4,16 @@ var character_id = null
 var mode = "look"
 var is_master = false
 var peer_id
-var char_data = GameState.player
+var char_data := GameState.player
+var abilities := char_data.ability_ids
 
 const null_glow_color := Color(0, 0, 0)
 const active_glow_color := Color(1, 1, 1)
 
 const null_glow_width := 5
 const active_glow_width := 15
+
+enum CardTypes {CLASS, SUBCLASS, ARCHETYPE}
 
 func _ready():
 	$Editable/Name/NameEdit.visible = false
@@ -25,8 +28,8 @@ func set_vision():
 	$MasterEdit.visible = is_master
 
 func update_display():
-	update_pictures()
-	
+	update_cards()
+	update_money()
 	#var stats = character_data["stats"]
 	#var resource = character_data["resources"]
 	#var abilities = character_data.get("abilities_known", [])
@@ -45,46 +48,91 @@ func update_display():
 		#if item:
 			#$VBoxContainer/GearList.add_item(item["name"])
 
-func update_pictures():
+func update_cards():
 	update_class()
 	update_subclass()
 	update_archetype()
+	update_abilities()
+
+func update_money():
+	pass
+
+func update_abilities():
+	if !abilities.is_empty():
+		for i in clampi(abilities.size(), 0, 3):
+			update_abilitiy_cards(i)
+	print(abilities)
+
+func update_abilitiy_cards(number: int):
+	var sprite: Sprite2D
+	var ability_tier = DataManager.abilities.get_by_id(abilities[number]).tier
+	sprite = $RightSubstrate/AbilitiesSubstrate/Control.get_child(number).get_child(0)
+	var sprite_root = sprite.get_parent()
+	var path : String = "res://assets/pictures/abilities/" + str(ability_tier) + "/" + abilities[number] + ".png"
+	var ability_name = DataManager.abilities.get_by_id(abilities[number]).display_name
+	var hover_text = " " + ability_name + " "
+	sprite_root.has_tooltip = true
+	sprite_root.hover_text = hover_text
+	sprite.texture = load(path)
+	pass
 
 func update_class():
 	var selected_class = DataManager.character_classes.get_by_id(char_data.class_id)
-	var class_path : String
 	if selected_class != null:
-		class_path = "res://assets/pictures/profile/class/" + str(char_data.class_id) + ".png"
-		$Class/Sprite.texture = load(class_path)
+		configure_unlocked_card($Class/Sprite, CardTypes.CLASS)
+	else:
+		configure_locked_card($Class/Sprite)
 
 func update_subclass():
 	var selected_subclass = DataManager.character_subclasses.get_by_id(char_data.subclass_id)
-	var subclass_path : String
 	if selected_subclass != null:
-		subclass_path = "res://assets/pictures/profile/subclass/" + str(char_data.subclass_id) + ".png"
-		$Subclass/Sprite.texture = load(subclass_path)
-		$Subclass.glow_hover = 15
-		$Subclass.update_shader_parameter("glow_color", active_glow_color)
-		$Subclass.update_shader_parameter("glow_width", active_glow_width)
+		configure_unlocked_card($Subclass/Sprite, CardTypes.SUBCLASS)
 	else:
-		$Subclass/Sprite.texture = load("res://assets/pictures/profile/subclass/locked.png")
-		$Subclass.update_shader_parameter("glow_color", null_glow_color)
-		$Subclass.update_shader_parameter("glow_width", null_glow_width)
+		configure_locked_card($Subclass/Sprite)
 
 func update_archetype():
 	var selected_archetype = DataManager.character_archetypes.get_by_id(char_data.archetype_id)
-	var archetype_path : String
 	if selected_archetype != null:
-		archetype_path = "res://assets/pictures/profile/subclass/" + str(char_data.archetype_id) + ".png"
-		$Archetype/Sprite.texture = load(archetype_path)
-		$Archetype.update_shader_parameter("glow_color", active_glow_color)
-		$Archetype.update_shader_parameter("glow_width", active_glow_width)
+		configure_unlocked_card($Archetype/Sprite, CardTypes.ARCHETYPE)
 	else:
-		print("no archetype")
-		$Archetype/Sprite.texture = load("res://assets/pictures/profile/archetype/locked.png")
-		$Archetype.update_shader_parameter("glow_color", null_glow_color)
-		$Archetype.update_shader_parameter("glow_width", null_glow_width)
-		print($Archetype.glow_color)
+		configure_locked_card($Archetype/Sprite)
+
+func configure_unlocked_card(sprite: Sprite2D, type: CardTypes):
+	var path : String
+	var id : String
+	var data : RefCounted
+	match type:
+		CardTypes.CLASS:
+			id = str(char_data.class_id)
+			path = "res://assets/pictures/profile/class/" + id + ".png"
+			data = DataManager.character_classes.get_by_id(id)
+		CardTypes.SUBCLASS:
+			id = str(char_data.subclass_id)
+			path = "res://assets/pictures/profile/subclass/" + id + ".png"
+			data = DataManager.character_subclasses.get_by_id(id)
+		CardTypes.ARCHETYPE:
+			id = str(char_data.subclass_id)
+			path = "res://assets/pictures/profile/archetype/" + id + ".png"
+			data = DataManager.character_archetypes.get_by_id(id)
+	var role_name := str(data.display_name)
+	var sprite_root = sprite.get_parent()
+	sprite.texture = load(path)
+	sprite_root.has_tooltip = true
+	var text = " " + role_name + " "
+	sprite_root.hover_text = text
+
+func configure_locked_card(sprite: Sprite2D):
+	var sprite_root : GlowElement
+	sprite_root = sprite.get_parent()
+	var text_node : Label
+	for c in sprite_root.get_children():
+		if c.name == "Label":
+			text_node = sprite_root.get_child(1)
+			text_node.text = "???"
+	sprite.texture = load("res://assets/pictures/profile/locked.png")
+	sprite_root.update_shader_parameter("glow_color", null_glow_color)
+	sprite_root.update_shader_parameter("glow_width", null_glow_width)
+	pass
 
 func update_stats(stats):
 	$StatsContainer/StrengthLabel.text = "Сила: " + str(int(stats["strength"]))
@@ -96,22 +144,6 @@ func update_resources(resource):
 	$Resource/ResourceName.text = resource["name"]
 	$Resource/ResourceAmount.text = str(resource["amount"])
 	#$HP/ResourceAmount.text = "%d / %d" % [character_data["hp_current"], character_data["hp_max"]]
-
-func update_abilities(abilities):
-	$Abilities/Abilities.clear()
-	for id in abilities:
-		var ab = DataManager.get_ability(id)
-		if ab:
-			$Abilities/Abilities.add_item(ab["name"])
-			$Abilities/Abilities.set_item_tooltip(-1, ab["short_desc"])
-		else:
-			$Abilities/Abilities.add_item(id + " (неизвестно)")
-
-func _on_back_button_pressed():
-	if !is_master:
-		get_tree().change_scene_to_file("res://scenes/characters_list.tscn")
-		return
-	get_tree().change_scene_to_file("res://scenes/master_list.tscn")
 
 func _on_edit_button_pressed():
 	match mode:
@@ -146,75 +178,9 @@ func save_data():
 	
 	var new_background = $Editable/History/HistoryEdit.text
 	var new_traits = $Editable/Traits/TraitsEdit.text
-	
-	# Обновляем данные в character_data
-	#character_data["name"] = new_name
-	#character_data["background"] = new_background
-	#character_data["traits"] = new_traits
-	
-	# Сохраняем весь массив персонажей в файл
-	#GameManager.save_characters()
-	
-	# Обновляем отображение (чтобы Label показали новые значения)
 	update_display()
 	
 	# Выходим из режима редактирования
 
-func _on_hp_apply_pressed() -> void:
-	if not is_master: return
-	var input = $MasterEdit/HPEdit.text
-	if input == "": return
-	var delta = int(input)
-	#character_data["hp_current"] += delta
-	# Не даём упасть ниже 0
-	#if character_data["hp_current"] < 0:
-		#character_data["hp_current"] = 0
-	# Не даём превысить максимум
-	#if character_data["hp_current"] > character_data["hp_max"]:
-		#character_data["hp_current"] = character_data["hp_max"]
-	#$MasterEdit/HPEdit.text = ""  # очищаем поле
-	#GameManager.save_characters()
-	update_display()
-	#if is_master and multiplayer.is_server():
-		#NetworkManager.update_character.rpc(character_data, peer_id)
-	pass # Replace with function body.
-
-
-func _on_res_apply_pressed() -> void:
-	if not is_master: return
-	var input = $MasterEdit/ResEdit.text
-	if input == "": return
-	var delta = int(input)
-	#if character_data["resources"].size() == 0: return
-	#if not character_data["resources"].has("amount"): return
-	#character_data["resources"]["amount"] += delta
-	# Ограничения по минимуму/максимуму можно взять из данных подкласса
-	#var subclass_data = DataManager.get_subclass_data(character_data["subclass_id"])
-	#if subclass_data and subclass_data.has("resource"):
-		#var min_val = subclass_data["resource"].get("min", 0)
-		#var max_val = subclass_data["resource"].get("max", 10)
-		#if character_data["resources"]["amount"] < min_val:
-			#character_data["resources"]["amount"] = min_val
-		#if character_data["resources"]["amount"] > max_val:
-			#character_data["resources"]["amount"] = max_val
-	#$MasterEdit/ResEdit.text = ""
-	#GameManager.save_characters()
-	#update_display()
-
-func refresh_data():
-	# Перезагружаем данные из GameState.remote_characters или GameManager
-	if GameState.current_peer_id != null:
-		# Если это удалённый персонаж, берём из remote_characters
-		var remote_data = GameState.remote_characters.get(GameState.current_peer_id)
-		#if remote_data:
-			#character_data = remote_data
-		#else:
-			# возможно, персонаж удалён – вернуться в список
-			#get_tree().change_scene_to_file("res://scenes/characters_list.tscn")
-			#return
-	#else:
-		# Локальный персонаж – из GameManager
-		#if not character_data:
-			#get_tree().change_scene_to_file("res://scenes/characters_list.tscn")
-			#return
-	update_display()
+func _on_back_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/characters_list.tscn")

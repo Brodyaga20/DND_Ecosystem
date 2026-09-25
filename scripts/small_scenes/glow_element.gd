@@ -15,6 +15,10 @@ enum SelectionMode { MANUAL, RADIO, TOGGLE, FLASH}
 
 enum HitboxMode { RECT, POLYGON }
 
+@export_group("Tooltip")
+@export var has_tooltip: bool = false
+@export var hover_text: String = ""
+
 @export_group("Hitbox")
 @export var hitbox_mode: HitboxMode = HitboxMode.RECT
 @export var hitbox_polygon: PackedVector2Array
@@ -110,12 +114,18 @@ func _update_size() -> void:
 		target_visual.size = visual_size
 
 func _on_enter() -> void:
+	print(tooltip_text)
 	is_hovered = true
 	refresh()
+	if has_tooltip and hover_text != "":
+		print("yeah")
+		CustomTooltip.show_at(hover_text, Vector2.ZERO)
 
 func _on_exit() -> void:
 	is_hovered = false
 	refresh()
+	if has_tooltip:
+		CustomTooltip.hide_tooltip()
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton \

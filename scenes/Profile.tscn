@@ -8,9 +8,22 @@
 [ext_resource type="Texture2D" uid="uid://dwgjxm3pobyl7" path="res://assets/pictures/profile/under.png" id="6_gmahi"]
 [ext_resource type="PackedScene" uid="uid://cel13lvfr517" path="res://scenes/templates/glow_element.tscn" id="7_7cwr7"]
 [ext_resource type="Texture2D" uid="uid://iwjnjfnn63mt" path="res://assets/pictures/profile/class/assassin.png" id="8_gmahi"]
+[ext_resource type="Texture2D" uid="uid://8u1ju70k1rju" path="res://assets/pictures/buttons/universal/navigation_normal.png" id="9_bvrbq"]
+[ext_resource type="Texture2D" uid="uid://lw5wjk0pwr37" path="res://assets/pictures/buttons/universal/navigation_pressed.png" id="10_phn0r"]
+[ext_resource type="Texture2D" uid="uid://c8vrjooon177" path="res://assets/pictures/buttons/universal/navigation_hover.png" id="11_trlsy"]
+[ext_resource type="LabelSettings" uid="uid://gohtfpbd5dmk" path="res://resources/label_settings/character_creation/navigation_buttons.tres" id="12_dwqdx"]
+[ext_resource type="Texture2D" uid="uid://bsbocu2u8tpw0" path="res://assets/pictures/profile/under_2_level.png" id="14_trlsy"]
+[ext_resource type="Texture2D" uid="uid://ggdlyipm4f6b" path="res://assets/pictures/profile/avatar_frame.png" id="15_dwqdx"]
+[ext_resource type="LabelSettings" uid="uid://qa7o6tmwpjxr" path="res://resources/label_settings/profile/class_names.tres" id="16_hoglx"]
+[ext_resource type="Texture2D" uid="uid://bn68rdhx2cb7o" path="res://assets/pictures/buttons/more.png" id="18_h5oix"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
-font_size = 31
+[sub_resource type="FontVariation" id="FontVariation_57qmd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
+font = SubResource("FontVariation_57qmd")
+font_size = 55
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Profile" type="Control" unique_id=424448599]
 layout_mode = 3
@@ -20,18 +33,6 @@ script = ExtResource("1_irxi3")
 [node name="SheetBack" type="Sprite2D" parent="." unique_id=574454992]
 position = Vector2(959.99994, 540)
 texture = ExtResource("2_b4vjc")
-
-[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=632827266]
-layout_mode = 0
-offset_left = 1280.0
-offset_top = 90.0
-offset_right = 1830.0
-offset_bottom = 990.0
-texture = ExtResource("6_gmahi")
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
 
 [node name="NameSubstrate" type="Sprite2D" parent="." unique_id=1678343684]
 position = Vector2(960, 65)
@@ -101,74 +102,12 @@ offset_bottom = 804.0
 text = "Черты"
 autowrap_mode = 2
 
-[node name="Race" type="Label" parent="." unique_id=1464447222]
-layout_mode = 0
-offset_left = -477.0
-offset_top = 468.0
-offset_right = -62.0
-offset_bottom = 571.0
-text = "Класс"
-label_settings = SubResource("LabelSettings_g4v7s")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="StatsContainer" type="VBoxContainer" parent="." unique_id=1767907796]
-layout_mode = 0
-offset_left = 2055.0
-offset_top = 520.0
-offset_right = 2215.0
-offset_bottom = 630.0
-
-[node name="StrengthLabel" type="Label" parent="StatsContainer" unique_id=1039309175]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_vpega")
-text = "ахаха"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AgilityLabel" type="Label" parent="StatsContainer" unique_id=452900778]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_vpega")
-text = "хахах"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="IntelligenceLabel" type="Label" parent="StatsContainer" unique_id=1339019869]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_vpega")
-text = "ххахаха"
-horizontal_alignment = 1
-
-[node name="LuckLabel" type="Label" parent="StatsContainer" unique_id=1637116820]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_vpega")
-text = "хихихи"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Abilities" type="Control" parent="." unique_id=1547143961]
 anchors_preset = 0
 offset_left = -257.0
 offset_top = 118.0
 offset_right = -144.0
 offset_bottom = 203.0
-
-[node name="Abilities" type="ItemList" parent="Abilities" unique_id=1992828922]
-layout_mode = 0
-offset_left = 2439.0
-offset_top = 155.0
-offset_right = 2789.0
-offset_bottom = 1104.0
-
-[node name="Name" type="Label" parent="Abilities" unique_id=971340708]
-layout_mode = 0
-offset_left = 2439.0
-offset_top = 130.0
-offset_right = 2789.0
-offset_bottom = 153.0
-text = "Способности"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Effects" type="HBoxContainer" parent="." unique_id=54175224]
 layout_mode = 0
@@ -185,125 +124,27 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Back" type="Button" parent="Buttons" unique_id=1111655112]
-layout_mode = 0
-offset_left = 790.0
-offset_top = 1128.0
-offset_right = 930.0
-offset_bottom = 1197.0
-text = "Назад"
-
-[node name="Edit" type="Button" parent="Buttons" unique_id=2113139487]
-layout_mode = 0
-offset_left = 988.0
-offset_top = 1127.0
-offset_right = 1128.0
-offset_bottom = 1196.0
-text = "Изменить"
-
-[node name="Button" type="Button" parent="Buttons" unique_id=893249167]
-layout_mode = 0
-offset_left = 2055.0
-offset_top = 629.0
-offset_right = 2215.0
-offset_bottom = 664.0
-text = "Подробнее"
-
 [node name="Resource" type="Control" parent="." unique_id=89600283]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="ResourceName" type="Label" parent="Resource" unique_id=488936928]
-layout_mode = 0
-offset_left = 2232.0
-offset_top = 134.0
-offset_right = 2392.0
-offset_bottom = 169.0
-text = "Лидерские очки"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ResourceAmount" type="Label" parent="Resource" unique_id=1365320368]
-layout_mode = 0
-offset_left = 2232.0
-offset_top = 174.0
-offset_right = 2392.0
-offset_bottom = 229.0
-theme_override_font_sizes/font_size = 40
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="HP" type="Control" parent="." unique_id=160536245]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ResourceName" type="Label" parent="HP" unique_id=543107553]
-layout_mode = 0
-offset_left = 2232.0
-offset_top = 310.0
-offset_right = 2392.0
-offset_bottom = 345.0
-theme_override_fonts/font = ExtResource("3_vpega")
-text = "Здоровье"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ResourceAmount" type="Label" parent="HP" unique_id=1763512256]
-layout_mode = 0
-offset_left = 2162.0
-offset_top = 350.0
-offset_right = 2462.0
-offset_bottom = 405.0
-theme_override_fonts/font = ExtResource("3_vpega")
-theme_override_font_sizes/font_size = 40
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="MasterEdit" type="Control" parent="." unique_id=1483141109]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HPEdit" type="LineEdit" parent="MasterEdit" unique_id=405273625]
-layout_mode = 0
-offset_left = 2234.0
-offset_top = 405.0
-offset_right = 2308.0
-offset_bottom = 461.0
-
-[node name="HPApply" type="Button" parent="MasterEdit" unique_id=76583893]
-layout_mode = 0
-offset_left = 2315.0
-offset_top = 406.0
-offset_right = 2419.0
-offset_bottom = 461.0
-text = "прим"
-
-[node name="ResEdit" type="LineEdit" parent="MasterEdit" unique_id=1645670623]
-layout_mode = 0
-offset_left = 2235.0
-offset_top = 235.0
-offset_right = 2307.0
-offset_bottom = 290.0
-
-[node name="ResApply" type="Button" parent="MasterEdit" unique_id=2014065973]
-layout_mode = 0
-offset_left = 2322.0
-offset_top = 236.0
-offset_right = 2415.0
-offset_bottom = 289.0
-text = "прим"
-
 [node name="Class" parent="." unique_id=1281942755 node_paths=PackedStringArray("target_visual") instance=ExtResource("7_7cwr7")]
 layout_mode = 0
 offset_left = 630.0
-offset_top = 130.0
+offset_top = 215.0
 offset_right = 730.0
-offset_bottom = 230.0
+offset_bottom = 315.0
 target_visual = NodePath("Sprite")
 selection_mode = 0
 display_name = "class"
@@ -314,12 +155,23 @@ glow_selected = 20.0
 position = Vector2(120, 120)
 texture = ExtResource("8_gmahi")
 
+[node name="Label" type="Label" parent="Class" unique_id=416065684]
+layout_mode = 0
+offset_top = -59.0
+offset_right = 240.0
+offset_bottom = 1.0
+theme_override_font_sizes/font_size = 67
+text = "КЛАСС"
+label_settings = ExtResource("16_hoglx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Subclass" parent="." unique_id=1107064089 node_paths=PackedStringArray("target_visual") instance=ExtResource("7_7cwr7")]
 layout_mode = 0
 offset_left = 840.0
-offset_top = 130.0
+offset_top = 215.0
 offset_right = 940.0
-offset_bottom = 230.0
+offset_bottom = 315.0
 target_visual = NodePath("Sprite")
 selection_mode = 0
 display_name = "class"
@@ -330,12 +182,23 @@ glow_selected = 20.0
 position = Vector2(120, 120)
 texture = ExtResource("8_gmahi")
 
+[node name="Label" type="Label" parent="Subclass" unique_id=1766090529]
+layout_mode = 0
+offset_top = -59.0
+offset_right = 240.0
+offset_bottom = 1.0
+theme_override_font_sizes/font_size = 67
+text = "ПОДКЛАСС"
+label_settings = ExtResource("16_hoglx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Archetype" parent="." unique_id=1129208964 node_paths=PackedStringArray("target_visual") instance=ExtResource("7_7cwr7")]
 layout_mode = 0
 offset_left = 1050.0
-offset_top = 130.0
+offset_top = 215.0
 offset_right = 1150.0
-offset_bottom = 230.0
+offset_bottom = 315.0
 target_visual = NodePath("Sprite")
 selection_mode = 0
 display_name = "archetype"
@@ -347,7 +210,278 @@ glow_color = Color(1, 1, 0.38431373, 1)
 position = Vector2(120, 120)
 texture = ExtResource("8_gmahi")
 
-[connection signal="pressed" from="Buttons/Back" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="Buttons/Edit" to="." method="_on_edit_button_pressed"]
-[connection signal="pressed" from="MasterEdit/HPApply" to="." method="_on_hp_apply_pressed"]
-[connection signal="pressed" from="MasterEdit/ResApply" to="." method="_on_res_apply_pressed"]
+[node name="Label" type="Label" parent="Archetype" unique_id=895710976]
+layout_mode = 0
+offset_top = -59.0
+offset_right = 240.0
+offset_bottom = 1.0
+theme_override_font_sizes/font_size = 67
+text = "АРХЕТИП"
+label_settings = ExtResource("16_hoglx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="TextureButton" parent="." unique_id=652209991]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 840.0
+offset_right = 345.0
+offset_bottom = 925.0
+texture_normal = ExtResource("9_bvrbq")
+texture_pressed = ExtResource("10_phn0r")
+texture_hover = ExtResource("11_trlsy")
+
+[node name="Label" type="Label" parent="Back" unique_id=1565951024]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("3_vpega")
+theme_override_font_sizes/font_size = 22
+text = "Назад"
+label_settings = ExtResource("12_dwqdx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightSubstrate" type="NinePatchRect" parent="." unique_id=632827266]
+layout_mode = 0
+offset_left = 1280.0
+offset_top = 85.0
+offset_right = 1830.0
+offset_bottom = 995.0
+texture = ExtResource("6_gmahi")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="AbilitiesSubstrate" type="Sprite2D" parent="RightSubstrate" unique_id=1726829271]
+position = Vector2(275, 134)
+texture = ExtResource("14_trlsy")
+
+[node name="Control" type="Control" parent="RightSubstrate/AbilitiesSubstrate" unique_id=985782989]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Ability1" parent="RightSubstrate/AbilitiesSubstrate/Control" unique_id=741207955 node_paths=PackedStringArray("target_visual") instance=ExtResource("7_7cwr7")]
+layout_mode = 0
+offset_left = -242.0
+offset_top = -50.0
+offset_right = -142.0
+offset_bottom = 50.0
+target_visual = NodePath("Sprite")
+
+[node name="Sprite" type="Sprite2D" parent="RightSubstrate/AbilitiesSubstrate/Control/Ability1" unique_id=1650451900]
+position = Vector2(70, 70)
+
+[node name="Ability2" parent="RightSubstrate/AbilitiesSubstrate/Control" unique_id=16277610 node_paths=PackedStringArray("target_visual") instance=ExtResource("7_7cwr7")]
+layout_mode = 0
+offset_left = -115.0
+offset_top = -50.0
+offset_right = -15.0
+offset_bottom = 50.0
+target_visual = NodePath("Sprite")
+
+[node name="Sprite" type="Sprite2D" parent="RightSubstrate/AbilitiesSubstrate/Control/Ability2" unique_id=705814079]
+position = Vector2(70, 70)
+
+[node name="Ability3" parent="RightSubstrate/AbilitiesSubstrate/Control" unique_id=1848984263 node_paths=PackedStringArray("target_visual") instance=ExtResource("7_7cwr7")]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -50.0
+offset_right = 112.0
+offset_bottom = 50.0
+target_visual = NodePath("Sprite")
+
+[node name="Sprite" type="Sprite2D" parent="RightSubstrate/AbilitiesSubstrate/Control/Ability3" unique_id=1546901617]
+position = Vector2(70, 70)
+
+[node name="Label" type="Label" parent="RightSubstrate/AbilitiesSubstrate" unique_id=1131032622]
+offset_left = -150.0
+offset_top = -93.0
+offset_right = 150.0
+offset_bottom = -53.0
+theme_override_font_sizes/font_size = 67
+text = "СПОСОБНОСТИ"
+label_settings = ExtResource("16_hoglx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GlowElement" parent="RightSubstrate/AbilitiesSubstrate" unique_id=161308967 node_paths=PackedStringArray("target_visual") instance=ExtResource("7_7cwr7")]
+offset_left = 143.0
+offset_top = -29.5
+offset_right = 243.0
+offset_bottom = 70.5
+target_visual = NodePath("More")
+
+[node name="More" type="Sprite2D" parent="RightSubstrate/AbilitiesSubstrate/GlowElement" unique_id=1890712682]
+position = Vector2(50, 50)
+texture = ExtResource("18_h5oix")
+
+[node name="Label" type="Label" parent="RightSubstrate/AbilitiesSubstrate/GlowElement/More" unique_id=676625978]
+offset_left = -23.0
+offset_top = -56.0
+offset_right = 23.0
+offset_bottom = 25.0
+text = "..."
+label_settings = SubResource("LabelSettings_yf5fn")
+horizontal_alignment = 1
+
+[node name="InvetorySubstrate" type="Sprite2D" parent="RightSubstrate" unique_id=1597936251]
+position = Vector2(275, 455)
+texture = ExtResource("14_trlsy")
+
+[node name="Label" type="Label" parent="RightSubstrate/InvetorySubstrate" unique_id=1013002761]
+offset_left = -150.0
+offset_top = -125.0
+offset_right = 150.0
+offset_bottom = -85.0
+theme_override_font_sizes/font_size = 67
+text = "ИНВЕНТАРЬ"
+label_settings = ExtResource("16_hoglx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FamiliarsSubstrate" type="Sprite2D" parent="RightSubstrate" unique_id=1991722715]
+position = Vector2(275, 750)
+texture = ExtResource("14_trlsy")
+
+[node name="Label" type="Label" parent="RightSubstrate/FamiliarsSubstrate" unique_id=1600283331]
+offset_left = -150.0
+offset_top = -125.0
+offset_right = 150.0
+offset_bottom = -85.0
+theme_override_font_sizes/font_size = 67
+text = "ФАМИЛЬЯРЫ"
+label_settings = ExtResource("16_hoglx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AvatarFrame" type="Sprite2D" parent="." unique_id=696239644]
+position = Vector2(260, 260)
+texture = ExtResource("15_dwqdx")
+
+[node name="Label" type="Label" parent="AvatarFrame" unique_id=334621049]
+offset_left = -181.0
+offset_top = -84.0
+offset_right = 189.0
+offset_bottom = 111.0
+theme_override_font_sizes/font_size = 67
+text = "АВАТАР"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Under" type="Sprite2D" parent="." unique_id=1996891329]
+position = Vector2(542.5, 259.99997)
+scale = Vector2(0.3415061, 0.40462428)
+texture = ExtResource("6_gmahi")
+
+[node name="Label" type="Label" parent="Under" unique_id=117837467]
+offset_left = -241.79384
+offset_top = -171.627
+offset_right = 258.20618
+offset_bottom = 110.373
+theme_override_font_sizes/font_size = 67
+text = "ХП
+И КЛАССОВЫЙ
+РЕСУРС"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Under2" type="Sprite2D" parent="." unique_id=1404159108]
+position = Vector2(260, 496.87497)
+scale = Vector2(0.6129597, 0.12052022)
+texture = ExtResource("6_gmahi")
+
+[node name="Label" type="Label" parent="Under2" unique_id=941603523]
+offset_left = -249.19363
+offset_top = -708.15906
+offset_right = 250.8064
+offset_bottom = -426.15906
+scale = Vector2(0.985, 4.75)
+theme_override_font_sizes/font_size = 67
+text = "Эффекты
+состояния"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Under3" type="Sprite2D" parent="." unique_id=719275703]
+position = Vector2(260.00003, 654.5)
+scale = Vector2(0.6129597, 0.22080927)
+texture = ExtResource("6_gmahi")
+
+[node name="Label" type="Label" parent="Under3" unique_id=1576137054]
+offset_left = -251.51688
+offset_top = -353.86383
+offset_right = 248.48312
+offset_bottom = -71.86383
+scale = Vector2(1, 2.62)
+theme_override_font_sizes/font_size = 67
+text = "ДЕНЬГИ"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Under4" type="Sprite2D" parent="." unique_id=876493745]
+position = Vector2(857.00006, 555)
+scale = Vector2(1.4430823, 0.2543352)
+texture = ExtResource("6_gmahi")
+
+[node name="Label" type="Label" parent="Under4" unique_id=139521327]
+offset_left = -260.05557
+offset_top = -216.25006
+offset_right = 103.87665
+offset_bottom = 78.637024
+scale = Vector2(0.245, 2.125)
+theme_override_font_sizes/font_size = 67
+text = "УРОВЕНЬ
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Under4" unique_id=67380585]
+offset_left = 158.0209
+offset_top = -231.97734
+offset_right = 521.9531
+offset_bottom = 62.909744
+scale = Vector2(0.245, 2.125)
+theme_override_font_sizes/font_size = 67
+text = "ВТОРИЧНЫЕ
+СТАТЫ
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Under4" unique_id=467620534]
+offset_left = -140.80098
+offset_top = -279.15915
+offset_right = 278.19904
+offset_bottom = 15.727936
+scale = Vector2(0.615, 2.125)
+theme_override_font_sizes/font_size = 67
+text = "ПЕРВИЧНЫЕ
+СТАТЫ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Under5" type="Sprite2D" parent="." unique_id=2029453300]
+position = Vector2(857.00006, 838.00006)
+scale = Vector2(1.4430823, 0.3630058)
+texture = ExtResource("6_gmahi")
+
+[node name="Label2" type="Label" parent="Under5" unique_id=1251742695]
+offset_left = -200.2658
+offset_top = -336.083
+offset_right = 460.23022
+offset_bottom = -1.1846924
+scale = Vector2(0.615, 2.125)
+theme_override_font_sizes/font_size = 67
+text = "БЫСТРЫЕ
+ДЕЙСТВИЯ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

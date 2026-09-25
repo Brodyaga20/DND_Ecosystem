@@ -1,3 +1,38 @@
 {
-
+  "smite": {
+    "name": "Кара",
+    "long_description": "Добавляет ко всем вашим атакам +50% урона, который будет некротическим или светозарным - в зависимости от вашей церкви.",
+    "short_description": "Раз в день добавляет к атакам урон от вашей церкви",
+    "tier": 0,
+    "class_id": "paladin",
+    "action_type": "additional_action",
+    "resource_cost": 0,
+    "cooldown": "day",
+    "duration": "battle",
+    "usage": "self"
+  },
+  "block": {
+    "name": "Блок",
+    "long_description": "Добавляет ко всем вашим атакам +50% урона, который будет некротическим или светозарным - в зависимости от вашей церкви.",
+    "short_description": "Раз в день добавляет к атакам урон от вашей церкви",
+    "tier": 0,
+    "class_id": "paladin",
+    "action_type": "additional_action",
+    "resource_cost": 0,
+    "cooldown": "day",
+    "duration": "battle",
+    "usage": "self"
+  },
+  "summon_skeleton": {
+    "name": "Призыв скелета",
+    "long_description": "Добавляет ко всем вашим атакам +50% урона, который будет некротическим или светозарным - в зависимости от вашей церкви.",
+    "short_description": "Раз в день добавляет к атакам урон от вашей церкви",
+    "tier": 0,
+    "class_id": "paladin",
+    "action_type": "additional_action",
+    "resource_cost": 0,
+    "cooldown": "day",
+    "duration": "battle",
+    "usage": "self"
+  }
 }
