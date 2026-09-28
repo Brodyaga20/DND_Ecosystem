@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t7camli46dja"
-path="res://.godot/imported/money_substrate.png-60d7db16ce24d5ff3736664f5a277a30.ctex"
+uid="uid://dcnuqfju8a1wk"
+path="res://.godot/imported/hp_line_empty_glow.png-0e0d820159be14838e15a89016fa6ed2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pictures/profile/money_substrate.png"
-dest_files=["res://.godot/imported/money_substrate.png-60d7db16ce24d5ff3736664f5a277a30.ctex"]
+source_file="res://assets/pictures/profile/hp/hp_line_empty_glow.png"
+dest_files=["res://.godot/imported/hp_line_empty_glow.png-0e0d820159be14838e15a89016fa6ed2.ctex"]
 
 [params]
 

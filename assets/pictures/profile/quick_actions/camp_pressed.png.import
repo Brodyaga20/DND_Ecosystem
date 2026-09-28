@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3lwp2w0nrd12"
-path="res://.godot/imported/effects_substrate.png-bf96fe3118bbd4ea07da3bfdbed4c8a8.ctex"
+uid="uid://iqjeub8mi637"
+path="res://.godot/imported/camp_pressed.png-3b8c2e7f749f6b71d2e640809f861f70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pictures/profile/effects_substrate.png"
-dest_files=["res://.godot/imported/effects_substrate.png-bf96fe3118bbd4ea07da3bfdbed4c8a8.ctex"]
+source_file="res://assets/pictures/profile/quick_actions/camp_pressed.png"
+dest_files=["res://.godot/imported/camp_pressed.png-3b8c2e7f749f6b71d2e640809f861f70.ctex"]
 
 [params]
 

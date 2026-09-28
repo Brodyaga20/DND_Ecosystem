@@ -48,7 +48,6 @@ func set_ages_text(period: String):
 	enable_next_button_if_legit()
 
 func enable_next_button_if_legit():
-	print($NameEdit.text, age_period)
 	if $NameEdit.text != "" and age_period != null:
 		$Next.disabled = false
 	else:

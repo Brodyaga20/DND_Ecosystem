@@ -7,29 +7,39 @@
 [ext_resource type="Texture2D" uid="uid://xpncrdo3ii6b" path="res://assets/pictures/profile/under_name.png" id="4_vpega"]
 [ext_resource type="Texture2D" uid="uid://dwgjxm3pobyl7" path="res://assets/pictures/profile/under.png" id="6_gmahi"]
 [ext_resource type="PackedScene" uid="uid://cel13lvfr517" path="res://scenes/templates/glow_element.tscn" id="7_7cwr7"]
+[ext_resource type="Texture2D" uid="uid://dyreb3rq0q275" path="res://assets/pictures/profile/locked.png" id="8_4cipp"]
 [ext_resource type="Texture2D" uid="uid://iwjnjfnn63mt" path="res://assets/pictures/profile/class/assassin.png" id="8_gmahi"]
 [ext_resource type="Texture2D" uid="uid://8u1ju70k1rju" path="res://assets/pictures/buttons/universal/navigation_normal.png" id="9_bvrbq"]
 [ext_resource type="Texture2D" uid="uid://lw5wjk0pwr37" path="res://assets/pictures/buttons/universal/navigation_pressed.png" id="10_phn0r"]
 [ext_resource type="Texture2D" uid="uid://c8vrjooon177" path="res://assets/pictures/buttons/universal/navigation_hover.png" id="11_trlsy"]
 [ext_resource type="LabelSettings" uid="uid://gohtfpbd5dmk" path="res://resources/label_settings/character_creation/navigation_buttons.tres" id="12_dwqdx"]
 [ext_resource type="Texture2D" uid="uid://bsbocu2u8tpw0" path="res://assets/pictures/profile/under_2_level.png" id="14_trlsy"]
-[ext_resource type="Texture2D" uid="uid://ggdlyipm4f6b" path="res://assets/pictures/profile/avatar_frame.png" id="15_dwqdx"]
-[ext_resource type="Texture2D" uid="uid://dy285urm3j1rv" path="res://assets/pictures/profile/empty_avatar.png" id="15_ye357"]
+[ext_resource type="Texture2D" uid="uid://ggdlyipm4f6b" path="res://assets/pictures/profile/avatar/avatar_frame.png" id="15_dwqdx"]
+[ext_resource type="Texture2D" uid="uid://dy285urm3j1rv" path="res://assets/pictures/profile/avatar/empty_avatar.png" id="15_ye357"]
 [ext_resource type="LabelSettings" uid="uid://qa7o6tmwpjxr" path="res://resources/label_settings/profile/class_names.tres" id="16_hoglx"]
-[ext_resource type="Texture2D" uid="uid://t7camli46dja" path="res://assets/pictures/profile/money_substrate.png" id="17_6g1ge"]
+[ext_resource type="Texture2D" uid="uid://t7camli46dja" path="res://assets/pictures/profile/coins/money_substrate.png" id="17_6g1ge"]
 [ext_resource type="Texture2D" uid="uid://cui5p7ohbc4k" path="res://assets/pictures/profile/coins/copper.png" id="18_6g1ge"]
 [ext_resource type="Texture2D" uid="uid://bn68rdhx2cb7o" path="res://assets/pictures/buttons/more.png" id="18_h5oix"]
-[ext_resource type="Texture2D" uid="uid://3lwp2w0nrd12" path="res://assets/pictures/profile/effects_substrate.png" id="18_qbrun"]
 [ext_resource type="LabelSettings" uid="uid://debipsaduspfs" path="res://resources/label_settings/profile/moneys.tres" id="18_rtvim"]
 [ext_resource type="Texture2D" uid="uid://bdkhmakhpikll" path="res://assets/pictures/profile/coins/gold.png" id="19_2bw5n"]
-[ext_resource type="Texture2D" uid="uid://b4bhmliadq0er" path="res://assets/pictures/buttons/more_effects.png" id="19_4cipp"]
+[ext_resource type="Texture2D" uid="uid://cv3jhj6w6keai" path="res://assets/pictures/profile/quick_actions/quickactions_substrate.png" id="19_q6yrq"]
 [ext_resource type="Texture2D" uid="uid://duamjf2ln78ao" path="res://assets/pictures/profile/coins/magic.png" id="20_2nbg3"]
 [ext_resource type="Texture2D" uid="uid://diswed80p671b" path="res://assets/pictures/profile/coins/silver.png" id="21_t64su"]
-[ext_resource type="Texture2D" uid="uid://c3dqo0wmol8rd" path="res://assets/pictures/profile/hp_substrate.png" id="22_t64su"]
+[ext_resource type="Texture2D" uid="uid://c3dqo0wmol8rd" path="res://assets/pictures/profile/hp/hp_substrate.png" id="22_t64su"]
 [ext_resource type="FontFile" uid="uid://x1w7x5ymdd5l" path="res://assets/fonts/vinque rg.ttf" id="23_8ov01"]
-[ext_resource type="Texture2D" uid="uid://qutjxe3pinwk" path="res://assets/pictures/profile/hp_button.png" id="23_pptql"]
-[ext_resource type="Texture2D" uid="uid://do3kq0wp8boun" path="res://assets/pictures/profile/hp_line.png" id="24_8ov01"]
-[ext_resource type="Texture2D" uid="uid://dcnuqfju8a1wk" path="res://assets/pictures/profile/hp_line_empty_glow.png" id="29_iod5f"]
+[ext_resource type="Texture2D" uid="uid://do3kq0wp8boun" path="res://assets/pictures/profile/hp/hp_line.png" id="24_8ov01"]
+[ext_resource type="Texture2D" uid="uid://dcnuqfju8a1wk" path="res://assets/pictures/profile/hp/hp_line_empty_glow.png" id="29_iod5f"]
+[ext_resource type="Texture2D" uid="uid://b0up17hy22wl1" path="res://assets/pictures/profile/stats_substract.png" id="30_iod5f"]
+[ext_resource type="Texture2D" uid="uid://brw62ylufmi5w" path="res://assets/pictures/profile/quick_actions/personal_inactive.png" id="32_rr6al"]
+[ext_resource type="Texture2D" uid="uid://0qhw84g3okgg" path="res://assets/pictures/profile/quick_actions/personal_pressed.png" id="33_s8kfw"]
+[ext_resource type="Texture2D" uid="uid://deg1m4mvy3db8" path="res://assets/pictures/profile/quick_actions/map_normal.png" id="34_2mfnn"]
+[ext_resource type="Texture2D" uid="uid://bm5u80l3fid0x" path="res://assets/pictures/profile/quick_actions/map_pressed.png" id="35_b20np"]
+[ext_resource type="Texture2D" uid="uid://ba2a2mvk7t3ej" path="res://assets/pictures/profile/quick_actions/roll_normal.png" id="36_t3yaa"]
+[ext_resource type="Texture2D" uid="uid://bxmun16s0vavx" path="res://assets/pictures/profile/quick_actions/roll_pressed.png" id="37_2pyf3"]
+[ext_resource type="Texture2D" uid="uid://iwfo45qygycx" path="res://assets/pictures/profile/quick_actions/camp_normal.png" id="38_djxqx"]
+[ext_resource type="Texture2D" uid="uid://iqjeub8mi637" path="res://assets/pictures/profile/quick_actions/camp_pressed.png" id="39_qr0h3"]
+[ext_resource type="Texture2D" uid="uid://db612cyjg3u17" path="res://assets/pictures/profile/quick_actions/quests_normal.png" id="40_fq3pk"]
+[ext_resource type="Texture2D" uid="uid://cpt4tr5y7i7s1" path="res://assets/pictures/profile/quick_actions/quests_pressed.png" id="41_v7rdl"]
 
 [sub_resource type="FontVariation" id="FontVariation_57qmd"]
 
@@ -39,15 +49,38 @@ font_size = 55
 outline_size = 7
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4v7s"]
+atlas = ExtResource("24_8ov01")
+
 [sub_resource type="LabelSettings" id="LabelSettings_57qmd"]
 font = ExtResource("23_8ov01")
-font_size = 42
+font_size = 33
 outline_size = 13
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font = ExtResource("23_8ov01")
+font_size = 77
+outline_size = 11
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_t3yaa"]
+font = ExtResource("23_8ov01")
+font_size = 21
+outline_size = 11
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7pgvt"]
+font = ExtResource("23_8ov01")
+font_size = 55
+outline_size = 11
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Profile" type="Control" unique_id=424448599]
 layout_mode = 3
 anchors_preset = 0
+offset_left = 1.0
+offset_right = 1.0
 script = ExtResource("1_irxi3")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=574454992]
@@ -81,10 +114,10 @@ offset_bottom = 40.0
 
 [node name="Class" parent="ProgressCards" unique_id=1281942755 node_paths=PackedStringArray("target_visual") instance=ExtResource("7_7cwr7")]
 layout_mode = 0
-offset_left = 630.0
-offset_top = 215.0
-offset_right = 730.0
-offset_bottom = 315.0
+offset_left = 439.0
+offset_top = 234.0
+offset_right = 539.0
+offset_bottom = 334.0
 target_visual = NodePath("Sprite")
 selection_mode = 0
 display_name = "class"
@@ -108,10 +141,10 @@ vertical_alignment = 1
 
 [node name="Subclass" parent="ProgressCards" unique_id=1107064089 node_paths=PackedStringArray("target_visual") instance=ExtResource("7_7cwr7")]
 layout_mode = 0
-offset_left = 840.0
-offset_top = 215.0
-offset_right = 940.0
-offset_bottom = 315.0
+offset_left = 649.0
+offset_top = 234.0
+offset_right = 749.0
+offset_bottom = 334.0
 target_visual = NodePath("Sprite")
 selection_mode = 0
 display_name = "class"
@@ -135,10 +168,10 @@ vertical_alignment = 1
 
 [node name="Archetype" parent="ProgressCards" unique_id=1129208964 node_paths=PackedStringArray("target_visual") instance=ExtResource("7_7cwr7")]
 layout_mode = 0
-offset_left = 1050.0
-offset_top = 215.0
-offset_right = 1150.0
-offset_bottom = 315.0
+offset_left = 859.0
+offset_top = 234.0
+offset_right = 959.0
+offset_bottom = 334.0
 target_visual = NodePath("Sprite")
 selection_mode = 0
 display_name = "archetype"
@@ -161,12 +194,40 @@ label_settings = ExtResource("16_hoglx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Apotheosis" parent="ProgressCards" unique_id=1685439176 node_paths=PackedStringArray("target_visual") instance=ExtResource("7_7cwr7")]
+layout_mode = 0
+offset_left = 1069.0
+offset_top = 234.0
+offset_right = 1169.0
+offset_bottom = 334.0
+target_visual = NodePath("Sprite")
+selection_mode = 0
+display_name = "archetype"
+glow_hover = 15.0
+glow_selected = 20.0
+glow_color = Color(0, 0, 0, 1)
+
+[node name="Sprite" type="Sprite2D" parent="ProgressCards/Apotheosis" unique_id=198414212]
+position = Vector2(120, 120)
+texture = ExtResource("8_4cipp")
+
+[node name="Label" type="Label" parent="ProgressCards/Apotheosis" unique_id=93744488]
+layout_mode = 0
+offset_top = -59.0
+offset_right = 240.0
+offset_bottom = 1.0
+theme_override_font_sizes/font_size = 67
+text = "???"
+label_settings = ExtResource("16_hoglx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Back" type="TextureButton" parent="." unique_id=652209991]
 layout_mode = 0
-offset_left = 175.0
-offset_top = 889.0
-offset_right = 345.0
-offset_bottom = 974.0
+offset_left = 194.99998
+offset_top = 906.0
+offset_right = 365.0
+offset_bottom = 991.0
 texture_normal = ExtResource("9_bvrbq")
 texture_pressed = ExtResource("10_phn0r")
 texture_hover = ExtResource("11_trlsy")
@@ -184,10 +245,10 @@ vertical_alignment = 1
 
 [node name="RightSubstrate" type="NinePatchRect" parent="." unique_id=632827266]
 layout_mode = 0
-offset_left = 1280.0
-offset_top = 85.0
-offset_right = 1830.0
-offset_bottom = 995.0
+offset_left = 1301.0
+offset_top = 70.0
+offset_right = 1851.0
+offset_bottom = 1010.0
 texture = ExtResource("6_gmahi")
 patch_margin_left = 20
 patch_margin_top = 20
@@ -195,7 +256,7 @@ patch_margin_right = 20
 patch_margin_bottom = 20
 
 [node name="AbilitiesSubstrate" type="Sprite2D" parent="RightSubstrate" unique_id=1726829271]
-position = Vector2(275, 134)
+position = Vector2(275, 815)
 texture = ExtResource("14_trlsy")
 
 [node name="Control" type="Control" parent="RightSubstrate/AbilitiesSubstrate" unique_id=985782989]
@@ -239,9 +300,9 @@ position = Vector2(70, 70)
 
 [node name="Label" type="Label" parent="RightSubstrate/AbilitiesSubstrate" unique_id=1131032622]
 offset_left = -150.0
-offset_top = -93.0
+offset_top = -90.0
 offset_right = 150.0
-offset_bottom = -53.0
+offset_bottom = -50.0
 theme_override_font_sizes/font_size = 67
 text = "СПОСОБНОСТИ"
 label_settings = ExtResource("16_hoglx")
@@ -269,14 +330,14 @@ label_settings = SubResource("LabelSettings_yf5fn")
 horizontal_alignment = 1
 
 [node name="InvetorySubstrate" type="Sprite2D" parent="RightSubstrate" unique_id=1597936251]
-position = Vector2(275, 455)
+position = Vector2(275, 355)
 texture = ExtResource("14_trlsy")
 
 [node name="Label" type="Label" parent="RightSubstrate/InvetorySubstrate" unique_id=1013002761]
 offset_left = -150.0
-offset_top = -125.0
+offset_top = -90.0
 offset_right = 150.0
-offset_bottom = -85.0
+offset_bottom = -50.0
 theme_override_font_sizes/font_size = 67
 text = "ИНВЕНТАРЬ"
 label_settings = ExtResource("16_hoglx")
@@ -284,77 +345,44 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FamiliarsSubstrate" type="Sprite2D" parent="RightSubstrate" unique_id=1991722715]
-position = Vector2(275, 750)
+position = Vector2(275, 585)
 texture = ExtResource("14_trlsy")
 
 [node name="Label" type="Label" parent="RightSubstrate/FamiliarsSubstrate" unique_id=1600283331]
 offset_left = -150.0
-offset_top = -125.0
+offset_top = -90.0
 offset_right = 150.0
-offset_bottom = -85.0
+offset_bottom = -50.0
 theme_override_font_sizes/font_size = 67
 text = "ФАМИЛЬЯРЫ"
 label_settings = ExtResource("16_hoglx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="EffectsSubstrate" type="Sprite2D" parent="RightSubstrate" unique_id=919811472]
+position = Vector2(275, 125)
+texture = ExtResource("14_trlsy")
+
+[node name="Label" type="Label" parent="RightSubstrate/EffectsSubstrate" unique_id=963777576]
+offset_left = -150.0
+offset_top = -90.0
+offset_right = 150.0
+offset_bottom = -50.0
+theme_override_font_sizes/font_size = 67
+text = "ЭФФЕКТЫ"
+label_settings = ExtResource("16_hoglx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="EmptyAvatar" type="Sprite2D" parent="." unique_id=634492527]
-position = Vector2(261, 260)
+position = Vector2(277, 277)
 texture = ExtResource("15_ye357")
 
 [node name="AvatarFrame" type="Sprite2D" parent="EmptyAvatar" unique_id=696239644]
 texture = ExtResource("15_dwqdx")
 
-[node name="EffectsSubstrate" type="Sprite2D" parent="." unique_id=1996891329]
-position = Vector2(544.5, 259.99997)
-texture = ExtResource("18_qbrun")
-
-[node name="MoreButton" parent="EffectsSubstrate" unique_id=1714563166 node_paths=PackedStringArray("target_visual") instance=ExtResource("7_7cwr7")]
-offset_left = -50.5
-offset_top = 91.00003
-offset_right = 49.5
-offset_bottom = 191.00003
-target_visual = NodePath("More")
-
-[node name="More" type="Sprite2D" parent="EffectsSubstrate/MoreButton" unique_id=1703975508]
-position = Vector2(50, 50)
-texture = ExtResource("19_4cipp")
-
-[node name="Label" type="Label" parent="EffectsSubstrate/MoreButton/More" unique_id=451355741]
-offset_left = -23.0
-offset_top = -56.0
-offset_right = 23.0
-offset_bottom = 25.0
-text = "..."
-label_settings = SubResource("LabelSettings_yf5fn")
-horizontal_alignment = 1
-
-[node name="Under4" type="Sprite2D" parent="." unique_id=876493745]
-position = Vector2(857.00006, 555)
-scale = Vector2(1.4430823, 0.2543352)
-texture = ExtResource("6_gmahi")
-
-[node name="Under5" type="Sprite2D" parent="." unique_id=2029453300]
-position = Vector2(857.00006, 838.00006)
-scale = Vector2(1.4430823, 0.3630058)
-texture = ExtResource("6_gmahi")
-
-[node name="Label2" type="Label" parent="Under5" unique_id=1251742695]
-visible = false
-offset_left = -200.2658
-offset_top = -336.083
-offset_right = 460.23022
-offset_bottom = -1.1846924
-scale = Vector2(0.615, 2.125)
-theme_override_font_sizes/font_size = 67
-text = "БЫСТРЫЕ
-ДЕЙСТВИЯ"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="MoneySubstrate" type="Sprite2D" parent="." unique_id=1124158592]
-position = Vector2(260, 745)
-scale = Vector2(1.0114942, 1)
+position = Vector2(277, 761)
 texture = ExtResource("17_6g1ge")
 
 [node name="Numbers" type="Control" parent="MoneySubstrate" unique_id=773275155]
@@ -480,55 +508,217 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="HpSubstrate" type="Sprite2D" parent="." unique_id=730027704]
-position = Vector2(260, 535)
-scale = Vector2(1.0057142, 1)
+position = Vector2(277.00003, 551.0002)
+scale = Vector2(0.9942857, 1)
 texture = ExtResource("22_t64su")
 
-[node name="GlowElement" parent="HpSubstrate" unique_id=448968973 instance=ExtResource("7_7cwr7")]
-offset_left = -170.02847
-offset_top = -93.0
-offset_right = -70.02847
-offset_bottom = 7.0
-selection_mode = 0
+[node name="GlowElement" parent="HpSubstrate" unique_id=356362696 node_paths=PackedStringArray("target_visual", "hitbox_source") instance=ExtResource("7_7cwr7")]
+offset_left = -167.95978
+offset_top = -95.00015
+offset_right = -67.95978
+offset_bottom = 4.9998474
+target_visual = NodePath("Sprite2D")
 has_tooltip = true
-hover_text = "Ваше ХП"
-
-[node name="HpButton" type="Sprite2D" parent="HpSubstrate/GlowElement" unique_id=1448372014]
-position = Vector2(60, 52)
-texture = ExtResource("23_pptql")
-
-[node name="GlowElement2" parent="HpSubstrate" unique_id=127348732 node_paths=PackedStringArray("hitbox_source") instance=ExtResource("7_7cwr7")]
-offset_left = -79.545456
-offset_top = -93.0
-offset_right = 20.454544
-offset_bottom = 7.0
-has_tooltip = true
+hover_text = "Ваше здоровье"
 hitbox_mode = 1
-hitbox_source = NodePath("CollisionPolygon2D")
-glow_hover = 15.0
-glow_selected = 20.0
+hitbox_source = NodePath("")
 
-[node name="Sprite2D" type="Sprite2D" parent="HpSubstrate/GlowElement2" unique_id=61654518]
-position = Vector2(135, 49)
+[node name="Sprite2D" type="Sprite2D" parent="HpSubstrate/GlowElement" unique_id=61654518]
+position = Vector2(169.99997, 50.00003)
+scale = Vector2(0.99999976, 0.99999976)
 texture = ExtResource("29_iod5f")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HpSubstrate/GlowElement2" unique_id=603958463]
-polygon = PackedVector2Array(28.835236, 66, 238.63638, 66, 238.63638, 38, 194.88638, 38, 186.93185, 50, 180.96594, 38, 139.20456, 38, 133.23865, 50, 127.272736, 38, 86.50571, 38, 80.539795, 48, 74.57387, 38, 28.835236, 38)
-
-[node name="HpLine" type="Sprite2D" parent="HpSubstrate" unique_id=2102454083]
-position = Vector2(-60.99434, -68)
+[node name="HpLine" type="TextureRect" parent="HpSubstrate" unique_id=1433134242]
+offset_left = -158.90808
+offset_top = -74.00018
+offset_right = -158.90808
+offset_bottom = -74.00018
 scale = Vector2(1.0036987, 1)
-texture = ExtResource("24_8ov01")
-centered = false
+texture = SubResource("AtlasTexture_g4v7s")
 
 [node name="HPLabel" type="Label" parent="HpSubstrate" unique_id=853402908]
-offset_left = -160.02274
-offset_top = -79.0
-offset_right = -60.022736
-offset_bottom = -7.0
+offset_left = -48.275894
+offset_top = -76.00018
+offset_right = 51.724106
+offset_bottom = -4.000183
 text = "999"
 label_settings = SubResource("LabelSettings_57qmd")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="StatsSubstract" type="Sprite2D" parent="." unique_id=330636097]
+position = Vector2(876, 597)
+texture = ExtResource("30_iod5f")
+
+[node name="Level" type="Label" parent="StatsSubstract" unique_id=1527753591]
+offset_left = -314.0
+offset_top = -60.0
+offset_right = -254.0
+offset_bottom = 53.0
+text = "0"
+label_settings = SubResource("LabelSettings_g4v7s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Power" type="Control" parent="StatsSubstract" unique_id=547246454]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Name" type="Label" parent="StatsSubstract/Power" unique_id=1914237698]
+layout_mode = 0
+offset_left = -102.0
+offset_top = -16.0
+offset_right = 4.0
+offset_bottom = 97.0
+text = "сила"
+label_settings = SubResource("LabelSettings_t3yaa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Number" type="Label" parent="StatsSubstract/Power" unique_id=590785969]
+layout_mode = 0
+offset_left = -77.0
+offset_top = -96.0
+offset_right = -17.0
+offset_bottom = 17.0
+text = "0"
+label_settings = SubResource("LabelSettings_7pgvt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Agility" type="Control" parent="StatsSubstract" unique_id=1997398871]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Name" type="Label" parent="StatsSubstract/Agility" unique_id=474078746]
+layout_mode = 0
+offset_left = 25.0
+offset_top = -104.0
+offset_right = 131.0
+offset_bottom = 9.0
+text = "ловкость"
+label_settings = SubResource("LabelSettings_t3yaa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Number" type="Label" parent="StatsSubstract/Agility" unique_id=834191328]
+layout_mode = 0
+offset_left = 47.0
+offset_top = -22.0
+offset_right = 107.0
+offset_bottom = 91.0
+text = "0"
+label_settings = SubResource("LabelSettings_7pgvt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Intelligence" type="Control" parent="StatsSubstract" unique_id=1870703080]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Name" type="Label" parent="StatsSubstract/Intelligence" unique_id=2092310328]
+layout_mode = 0
+offset_left = 148.0
+offset_top = -16.0
+offset_right = 254.0
+offset_bottom = 97.0
+text = "интеллект"
+label_settings = SubResource("LabelSettings_t3yaa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Number" type="Label" parent="StatsSubstract/Intelligence" unique_id=2107287346]
+layout_mode = 0
+offset_left = 169.0
+offset_top = -96.0
+offset_right = 229.0
+offset_bottom = 17.0
+text = "0"
+label_settings = SubResource("LabelSettings_7pgvt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Luck" type="Control" parent="StatsSubstract" unique_id=599311679]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Name" type="Label" parent="StatsSubstract/Luck" unique_id=615640461]
+layout_mode = 0
+offset_left = 270.0
+offset_top = -104.0
+offset_right = 376.0
+offset_bottom = 9.0
+text = "удача"
+label_settings = SubResource("LabelSettings_t3yaa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Number" type="Label" parent="StatsSubstract/Luck" unique_id=337675566]
+layout_mode = 0
+offset_left = 292.0
+offset_top = -22.0
+offset_right = 352.0
+offset_bottom = 91.0
+text = "0"
+label_settings = SubResource("LabelSettings_7pgvt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuickActionsSubsctract" type="Sprite2D" parent="." unique_id=2029453300]
+position = Vector2(876, 875)
+texture = ExtResource("19_q6yrq")
+
+[node name="Personal" type="TextureButton" parent="QuickActionsSubsctract" unique_id=1532394712]
+offset_left = -370.0
+offset_top = -84.0
+offset_right = -232.0
+offset_bottom = 60.0
+texture_normal = ExtResource("32_rr6al")
+texture_pressed = ExtResource("33_s8kfw")
+texture_hover = ExtResource("33_s8kfw")
+
+[node name="Map" type="TextureButton" parent="QuickActionsSubsctract" unique_id=1145408452]
+offset_left = -221.0
+offset_top = -42.0
+offset_right = -89.0
+offset_bottom = 100.0
+texture_normal = ExtResource("34_2mfnn")
+texture_pressed = ExtResource("35_b20np")
+texture_hover = ExtResource("35_b20np")
+
+[node name="Roll" type="TextureButton" parent="QuickActionsSubsctract" unique_id=837874615]
+offset_left = -69.0
+offset_top = -92.0
+offset_right = 67.0
+offset_bottom = 62.0
+texture_normal = ExtResource("36_t3yaa")
+texture_pressed = ExtResource("37_2pyf3")
+texture_hover = ExtResource("37_2pyf3")
+
+[node name="Camp" type="TextureButton" parent="QuickActionsSubsctract" unique_id=1954890199]
+offset_left = 94.0
+offset_top = -50.0
+offset_right = 214.0
+offset_bottom = 98.0
+texture_normal = ExtResource("38_djxqx")
+texture_pressed = ExtResource("39_qr0h3")
+texture_hover = ExtResource("39_qr0h3")
+
+[node name="Quests" type="TextureButton" parent="QuickActionsSubsctract" unique_id=350575843]
+offset_left = 232.0
+offset_top = -81.0
+offset_right = 372.0
+offset_bottom = 53.0
+texture_normal = ExtResource("40_fq3pk")
+texture_pressed = ExtResource("41_v7rdl")
+texture_hover = ExtResource("41_v7rdl")
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

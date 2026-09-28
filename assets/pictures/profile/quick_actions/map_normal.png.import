@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcnuqfju8a1wk"
-path="res://.godot/imported/hp_line_empty_glow.png-d29883bf2013d0b1906e86689a430b7e.ctex"
+uid="uid://deg1m4mvy3db8"
+path="res://.godot/imported/map_normal.png-015f793b9b9faef1a7e6543a83a83bdc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pictures/profile/hp_line_empty_glow.png"
-dest_files=["res://.godot/imported/hp_line_empty_glow.png-d29883bf2013d0b1906e86689a430b7e.ctex"]
+source_file="res://assets/pictures/profile/quick_actions/map_normal.png"
+dest_files=["res://.godot/imported/map_normal.png-015f793b9b9faef1a7e6543a83a83bdc.ctex"]
 
 [params]
 

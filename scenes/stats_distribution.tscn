@@ -21,6 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://lw5wjk0pwr37" path="res://assets/pictures/buttons/universal/navigation_pressed.png" id="18_i6by7"]
 [ext_resource type="Texture2D" uid="uid://c8vrjooon177" path="res://assets/pictures/buttons/universal/navigation_hover.png" id="19_ij5el"]
 [ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://assets/fonts/cinzel_bold.ttf" id="20_trewl"]
+[ext_resource type="Texture2D" uid="uid://djnul28uqq28v" path="res://assets/pictures/buttons/character_list/ui_normal.png" id="22_ij5el"]
+[ext_resource type="Texture2D" uid="uid://kgvvn1ywjmml" path="res://assets/pictures/buttons/character_list/ui_pressed.png" id="23_trewl"]
+[ext_resource type="Texture2D" uid="uid://6k4c2c7aqa2y" path="res://assets/pictures/buttons/character_list/ui_hover.png" id="24_r2l3u"]
+[ext_resource type="LabelSettings" uid="uid://gohtfpbd5dmk" path="res://resources/label_settings/character_creation/navigation_buttons.tres" id="25_qs7of"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
 shader = ExtResource("8_87vdx")
@@ -38,6 +42,12 @@ shader_parameter/inner = 0.0
 shader_parameter/outer = 0.7
 shader_parameter/falloff = 1.0
 shader_parameter/tint = Color(0, 0, 0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ij5el"]
+font = ExtResource("20_trewl")
+font_size = 41
+shadow_size = 16
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="StatsDistribution" type="Node2D" unique_id=222493670]
 script = ExtResource("1_sdqnk")
@@ -437,7 +447,7 @@ offset_left = -110.0
 offset_top = -23.0
 offset_right = 308.0
 offset_bottom = 177.0
-text = "10"
+text = "0"
 label_settings = ExtResource("10_87vdx")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -446,7 +456,7 @@ vertical_alignment = 1
 material = SubResource("ShaderMaterial_qdoeo")
 offset_left = 3.0
 offset_right = 1923.0
-offset_bottom = 312.0
+offset_bottom = 333.0
 color = Color(1, 1, 1, 0)
 
 [node name="Title" type="Label" parent="Blur" unique_id=2091779139]
@@ -527,9 +537,9 @@ vertical_alignment = 1
 
 [node name="RandomDistributionButton" type="TextureButton" parent="." unique_id=253789201]
 offset_left = 1016.0
-offset_top = 889.0
+offset_top = 936.0
 offset_right = 1366.0
-offset_bottom = 1039.0
+offset_bottom = 1056.0
 texture_normal = ExtResource("14_gyjic")
 texture_pressed = ExtResource("15_byfs1")
 texture_hover = ExtResource("16_0q0hm")
@@ -537,7 +547,7 @@ texture_hover = ExtResource("16_0q0hm")
 [node name="Label" type="Label" parent="RandomDistributionButton" unique_id=404564994]
 layout_mode = 0
 offset_right = 350.0
-offset_bottom = 150.0
+offset_bottom = 120.0
 theme_override_fonts/font = ExtResource("20_trewl")
 theme_override_font_sizes/font_size = 32
 text = "Случайно"
@@ -547,9 +557,9 @@ vertical_alignment = 1
 
 [node name="RecommendedDistributionButton" type="TextureButton" parent="." unique_id=102586202]
 offset_left = 545.0
-offset_top = 889.0
+offset_top = 936.0
 offset_right = 895.0
-offset_bottom = 1039.0
+offset_bottom = 1056.0
 texture_normal = ExtResource("14_gyjic")
 texture_pressed = ExtResource("15_byfs1")
 texture_hover = ExtResource("16_0q0hm")
@@ -557,7 +567,7 @@ texture_hover = ExtResource("16_0q0hm")
 [node name="Label" type="Label" parent="RecommendedDistributionButton" unique_id=1226107237]
 layout_mode = 0
 offset_right = 350.0
-offset_bottom = 150.0
+offset_bottom = 120.0
 theme_override_fonts/font = ExtResource("20_trewl")
 theme_override_font_sizes/font_size = 32
 text = "Рекомендовано"
@@ -565,7 +575,98 @@ label_settings = ExtResource("18_byfs1")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Title" type="Label" parent="." unique_id=770042502]
+custom_minimum_size = Vector2(1000, 0)
+offset_left = 460.0
+offset_top = 861.0
+offset_right = 1460.0
+offset_bottom = 951.0
+text = "У персонажа 1 уровня суммарно 7 очков характеристик."
+label_settings = ExtResource("3_eea3m")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="WrongStatsSum" type="ColorRect" parent="." unique_id=928117708]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.9098039)
+
+[node name="Attention" type="Label" parent="WrongStatsSum" unique_id=1560760353]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 161.0
+theme_override_fonts/font = ExtResource("20_trewl")
+theme_override_font_sizes/font_size = 25
+text = "ВНИМАНИЕ"
+label_settings = ExtResource("11_qdoeo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="Label" parent="WrongStatsSum" unique_id=1206704189]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 0
+offset_left = 460.0
+offset_top = 188.0
+offset_right = 1460.0
+offset_bottom = 805.0
+theme_override_fonts/font = ExtResource("20_trewl")
+theme_override_font_sizes/font_size = 25
+text = "ВНИМАНИЕ"
+label_settings = SubResource("LabelSettings_ij5el")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="No" type="TextureButton" parent="WrongStatsSum" unique_id=1231540102]
+layout_mode = 0
+offset_left = 670.0
+offset_top = 930.0
+offset_right = 920.0
+offset_bottom = 1070.0
+texture_normal = ExtResource("22_ij5el")
+texture_pressed = ExtResource("23_trewl")
+texture_hover = ExtResource("24_r2l3u")
+
+[node name="Label" type="Label" parent="WrongStatsSum/No" unique_id=1064409468]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("20_trewl")
+theme_override_font_sizes/font_size = 25
+text = "Вернуться"
+label_settings = ExtResource("25_qs7of")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Yes" type="TextureButton" parent="WrongStatsSum" unique_id=747517788]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 930.0
+offset_right = 1250.0
+offset_bottom = 1070.0
+texture_normal = ExtResource("22_ij5el")
+texture_pressed = ExtResource("23_trewl")
+texture_hover = ExtResource("24_r2l3u")
+
+[node name="Label" type="Label" parent="WrongStatsSum/Yes" unique_id=2082199913]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("20_trewl")
+theme_override_font_sizes/font_size = 25
+text = "Продолжить"
+label_settings = ExtResource("25_qs7of")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="RandomDistributionButton" to="." method="_on_random_distribution_button_2_pressed"]
+[connection signal="mouse_entered" from="RandomDistributionButton" to="." method="_on_random_distribution_button_mouse_entered"]
+[connection signal="mouse_exited" from="RandomDistributionButton" to="." method="_on_random_distribution_button_mouse_exited"]
+[connection signal="pressed" from="RandomDistributionButton" to="." method="_on_random_distribution_button_pressed"]
+[connection signal="mouse_entered" from="RecommendedDistributionButton" to="." method="_on_recommended_distribution_button_mouse_entered"]
+[connection signal="mouse_exited" from="RecommendedDistributionButton" to="." method="_on_recommended_distribution_button_mouse_exited"]
 [connection signal="pressed" from="RecommendedDistributionButton" to="." method="_on_recommended_distribution_button_pressed"]
+[connection signal="pressed" from="WrongStatsSum/No" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="WrongStatsSum/Yes" to="." method="_on_yes_pressed"]

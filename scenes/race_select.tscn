@@ -254,6 +254,7 @@ theme_override_font_sizes/font_size = 25
 text = "БОЛЬШОЙ АБОБУС"
 label_settings = ExtResource("20_c3do8")
 horizontal_alignment = 1
+autowrap_mode = 1
 
 [node name="NewRace" type="TextureButton" parent="." unique_id=46745347]
 offset_left = 670.0
@@ -299,7 +300,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NewRaceScreen" type="ColorRect" parent="." unique_id=250852265]
-visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 0.9098039)

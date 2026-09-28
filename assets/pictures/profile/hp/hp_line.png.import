@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy285urm3j1rv"
-path="res://.godot/imported/empty_avatar.png-d0077ea930b8a5c2b0b3b698ca14873c.ctex"
+uid="uid://do3kq0wp8boun"
+path="res://.godot/imported/hp_line.png-25fb3aed7e189262da2a479fc797a00f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pictures/profile/empty_avatar.png"
-dest_files=["res://.godot/imported/empty_avatar.png-d0077ea930b8a5c2b0b3b698ca14873c.ctex"]
+source_file="res://assets/pictures/profile/hp/hp_line.png"
+dest_files=["res://.godot/imported/hp_line.png-25fb3aed7e189262da2a479fc797a00f.ctex"]
 
 [params]
 

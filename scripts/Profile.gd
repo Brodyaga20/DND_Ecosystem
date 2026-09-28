@@ -1,6 +1,6 @@
 extends Control
 
-var character_id = null
+var hp_atlas := AtlasTexture.new()
 var mode = "look"
 var is_master = false
 var peer_id
@@ -16,10 +16,10 @@ const active_glow_width := 15
 enum CardTypes {CLASS, SUBCLASS, ARCHETYPE}
 
 func _ready():
-	var hp_line = $HpSubstrate/HpLine
+	hp_atlas.atlas = load("res://assets/pictures/profile/hp/hp_line.png")
+	$HpSubstrate/HpLine.texture = hp_atlas
 	if char_data == null:
 		get_tree().change_scene_to_file("res://scenes/characters_list.tscn")
-	hp_line.region_enabled = true
 	set_vision()
 	update_display()
 
@@ -32,6 +32,7 @@ func update_display():
 	update_money()
 	update_abilities()
 	update_hp()
+	update_stats()
 	#var stats = character_data["stats"]
 	#var resource = character_data["resources"]
 	#var abilities = character_data.get("abilities_known", [])
@@ -49,15 +50,25 @@ func update_display():
 		#if item:
 			#$VBoxContainer/GearList.add_item(item["name"])
 
+func update_stats():
+	var stats = GameState.player.stats
+	$StatsSubstract/Power/Number.text        = str(stats.power)
+	$StatsSubstract/Agility/Number.text      = str(stats.agility)
+	$StatsSubstract/Intelligence/Number.text = str(stats.intelligence)
+	$StatsSubstract/Luck/Number.text         = str(stats.luck)
+	var sum = stats.agility + stats.power + stats.intelligence + stats.luck
+	$StatsSubstract/Level.text = str(sum - 6)
+	
+
 func update_name():
 	$NameSubstrate/Label.text = str(GameState.player.character_name)
 
 func update_hp():
-	$HpSubstrate/GlowElement2.hover_text = str(GameState.player.hp.current_hp) + "/" + str(GameState.player.hp.max_hp)
-	$HpSubstrate/HPLabel.text = str(GameState.player.hp.current_hp)
+	$HpSubstrate/HPLabel.text = str(GameState.player.hp.current_hp) + "/" + str(GameState.player.hp.max_hp)
 	var percent = GameState.player.hp.get_percentage()
-	var width = int(percent * 2.12 + 9)
-	$HpSubstrate/HpLine.region_rect = Rect2(0, 0, width, 50)
+	var width = int(percent * hp_atlas.get_width()/100)
+	hp_atlas.region = Rect2(0, 0, width, hp_atlas.get_height())
+	#$HpSubstrate/HpLine.texture = Rect2(0, 0, width, 50)
 	pass
 
 func update_cards():
@@ -147,12 +158,6 @@ func configure_locked_card(sprite: Sprite2D):
 	sprite_root.update_shader_parameter("glow_color", null_glow_color)
 	sprite_root.update_shader_parameter("glow_width", null_glow_width)
 	pass
-
-func update_stats(stats):
-	$StatsContainer/StrengthLabel.text = "Сила: " + str(int(stats["strength"]))
-	$StatsContainer/AgilityLabel.text = "Ловкость: " + str(int(stats["dexterity"]))
-	$StatsContainer/IntelligenceLabel.text = "Интеллект: " + str(int(stats["intelligence"]))
-	$StatsContainer/LuckLabel.text = "Удача: " + str(int(stats["luck"]))
 
 func update_resources(resource):
 	$Resource/ResourceName.text = resource["name"]
