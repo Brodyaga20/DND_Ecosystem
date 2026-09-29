@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://crw8xxy2282tg"]
+
+[ext_resource type="PackedScene" uid="uid://cel13lvfr517" path="res://scenes/templates/glow_element.tscn" id="1_1ylxn"]
+
+[node name="StatCircle" unique_id=1281942755 node_paths=PackedStringArray("target_visual") instance=ExtResource("1_1ylxn")]
+target_visual = NodePath("Sprite")
+
+[node name="Sprite" type="Sprite2D" parent="." index="0" unique_id=1987416234]
+
+[node name="Number" type="Label" parent="." index="1" unique_id=1564035525]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

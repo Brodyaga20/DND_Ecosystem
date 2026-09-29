@@ -17,7 +17,8 @@ enum HitboxMode { RECT, POLYGON }
 
 @export_group("Tooltip")
 @export var has_tooltip: bool = false
-@export var hover_text: String = ""
+@export var tooltip_lines: Array[String] = []
+@export var tooltip_style: TooltipStyle
 
 @export_group("Hitbox")
 @export var hitbox_mode: HitboxMode = HitboxMode.RECT
@@ -116,8 +117,8 @@ func _update_size() -> void:
 func _on_enter() -> void:
 	is_hovered = true
 	refresh()
-	if has_tooltip and hover_text != "":
-		CustomTooltip.show_at(hover_text, Vector2.ZERO)
+	if has_tooltip and tooltip_lines.size() > 0:
+		CustomTooltip.show_lines(tooltip_lines, tooltip_style)
 
 func _on_exit() -> void:
 	is_hovered = false

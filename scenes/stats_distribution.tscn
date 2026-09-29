@@ -588,6 +588,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="WrongStatsSum" type="ColorRect" parent="." unique_id=928117708]
+visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 0.9098039)

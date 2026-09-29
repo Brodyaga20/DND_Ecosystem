@@ -5,8 +5,10 @@
 [ext_resource type="LabelSettings" uid="uid://dw6ogecn6ui48" path="res://resources/label_settings/character_creation/big_common_text.tres" id="3_7cwr7"]
 [ext_resource type="FontFile" uid="uid://bmi3qlrfv0fa5" path="res://assets/fonts/cinzel_bold.ttf" id="3_vpega"]
 [ext_resource type="Texture2D" uid="uid://xpncrdo3ii6b" path="res://assets/pictures/profile/under_name.png" id="4_vpega"]
+[ext_resource type="Texture2D" uid="uid://v0eiuthwudaf" path="res://assets/pictures/tooltip_substrate.png" id="6_2pyf3"]
 [ext_resource type="Texture2D" uid="uid://dwgjxm3pobyl7" path="res://assets/pictures/profile/under.png" id="6_gmahi"]
 [ext_resource type="PackedScene" uid="uid://cel13lvfr517" path="res://scenes/templates/glow_element.tscn" id="7_7cwr7"]
+[ext_resource type="Script" uid="uid://64oiq85nwq36" path="res://resources/custom/tooltip_styles/tooltip_style.gd" id="7_t3yaa"]
 [ext_resource type="Texture2D" uid="uid://dyreb3rq0q275" path="res://assets/pictures/profile/locked.png" id="8_4cipp"]
 [ext_resource type="Texture2D" uid="uid://iwjnjfnn63mt" path="res://assets/pictures/profile/class/assassin.png" id="8_gmahi"]
 [ext_resource type="Texture2D" uid="uid://8u1ju70k1rju" path="res://assets/pictures/buttons/universal/navigation_normal.png" id="9_bvrbq"]
@@ -29,17 +31,35 @@
 [ext_resource type="FontFile" uid="uid://x1w7x5ymdd5l" path="res://assets/fonts/vinque rg.ttf" id="23_8ov01"]
 [ext_resource type="Texture2D" uid="uid://do3kq0wp8boun" path="res://assets/pictures/profile/hp/hp_line.png" id="24_8ov01"]
 [ext_resource type="Texture2D" uid="uid://dcnuqfju8a1wk" path="res://assets/pictures/profile/hp/hp_line_empty_glow.png" id="29_iod5f"]
-[ext_resource type="Texture2D" uid="uid://b0up17hy22wl1" path="res://assets/pictures/profile/stats_substract.png" id="30_iod5f"]
+[ext_resource type="Texture2D" uid="uid://b0up17hy22wl1" path="res://assets/pictures/profile/stats/stats_substract.png" id="30_iod5f"]
+[ext_resource type="Texture2D" uid="uid://o7nurt7reuok" path="res://assets/pictures/profile/stats/power.png" id="32_djxqx"]
 [ext_resource type="Texture2D" uid="uid://brw62ylufmi5w" path="res://assets/pictures/profile/quick_actions/personal_inactive.png" id="32_rr6al"]
+[ext_resource type="Texture2D" uid="uid://dgr48jgdjs1f3" path="res://assets/pictures/profile/stats/bars/power.png" id="33_i6y78"]
 [ext_resource type="Texture2D" uid="uid://0qhw84g3okgg" path="res://assets/pictures/profile/quick_actions/personal_pressed.png" id="33_s8kfw"]
+[ext_resource type="Texture2D" uid="uid://cynvpo8whj7h6" path="res://assets/pictures/profile/stats/agility.png" id="33_v7rdl"]
 [ext_resource type="Texture2D" uid="uid://deg1m4mvy3db8" path="res://assets/pictures/profile/quick_actions/map_normal.png" id="34_2mfnn"]
+[ext_resource type="LabelSettings" uid="uid://cqgu06cujuhh7" path="res://resources/label_settings/profile/stats_numbers.tres" id="34_pm0x0"]
+[ext_resource type="Texture2D" uid="uid://cfaih7b0iniwr" path="res://assets/pictures/profile/stats/intelligence.png" id="34_yt3oh"]
 [ext_resource type="Texture2D" uid="uid://bm5u80l3fid0x" path="res://assets/pictures/profile/quick_actions/map_pressed.png" id="35_b20np"]
+[ext_resource type="Texture2D" uid="uid://cgompkjeaobus" path="res://assets/pictures/profile/stats/bars/agility.png" id="35_c81xl"]
+[ext_resource type="Texture2D" uid="uid://m5v7utokbfwe" path="res://assets/pictures/profile/stats/luck.png" id="35_rwb4f"]
 [ext_resource type="Texture2D" uid="uid://ba2a2mvk7t3ej" path="res://assets/pictures/profile/quick_actions/roll_normal.png" id="36_t3yaa"]
 [ext_resource type="Texture2D" uid="uid://bxmun16s0vavx" path="res://assets/pictures/profile/quick_actions/roll_pressed.png" id="37_2pyf3"]
+[ext_resource type="Texture2D" uid="uid://df4qxfiykwc6i" path="res://assets/pictures/profile/stats/bars/intelligence.png" id="37_pm0x0"]
 [ext_resource type="Texture2D" uid="uid://iwfo45qygycx" path="res://assets/pictures/profile/quick_actions/camp_normal.png" id="38_djxqx"]
 [ext_resource type="Texture2D" uid="uid://iqjeub8mi637" path="res://assets/pictures/profile/quick_actions/camp_pressed.png" id="39_qr0h3"]
+[ext_resource type="Texture2D" uid="uid://bgdtf0d415m2p" path="res://assets/pictures/profile/stats/bars/luck.png" id="39_t4e5p"]
+[ext_resource type="Texture2D" uid="uid://cmhwfxgi138tu" path="res://assets/pictures/profile/stats/bars/level.png" id="40_c81xl"]
 [ext_resource type="Texture2D" uid="uid://db612cyjg3u17" path="res://assets/pictures/profile/quick_actions/quests_normal.png" id="40_fq3pk"]
 [ext_resource type="Texture2D" uid="uid://cpt4tr5y7i7s1" path="res://assets/pictures/profile/quick_actions/quests_pressed.png" id="41_v7rdl"]
+
+[sub_resource type="Resource" id="Resource_7pgvt"]
+script = ExtResource("7_t3yaa")
+background_texture = ExtResource("6_2pyf3")
+padding_left = 8
+padding_right = 8
+font = ExtResource("23_8ov01")
+metadata/_custom_type_script = "uid://64oiq85nwq36"
 
 [sub_resource type="FontVariation" id="FontVariation_57qmd"]
 
@@ -67,12 +87,6 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_t3yaa"]
 font = ExtResource("23_8ov01")
 font_size = 21
-outline_size = 11
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_7pgvt"]
-font = ExtResource("23_8ov01")
-font_size = 55
 outline_size = 11
 outline_color = Color(0, 0, 0, 1)
 
@@ -121,6 +135,8 @@ offset_bottom = 334.0
 target_visual = NodePath("Sprite")
 selection_mode = 0
 display_name = "class"
+has_tooltip = true
+tooltip_style = SubResource("Resource_7pgvt")
 glow_hover = 15.0
 glow_selected = 20.0
 
@@ -385,13 +401,6 @@ texture = ExtResource("15_dwqdx")
 position = Vector2(277, 761)
 texture = ExtResource("17_6g1ge")
 
-[node name="Numbers" type="Control" parent="MoneySubstrate" unique_id=773275155]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-metadata/_edit_use_anchors_ = true
-
 [node name="Coins" type="Control" parent="MoneySubstrate" unique_id=305977403]
 layout_mode = 3
 anchors_preset = 0
@@ -406,8 +415,9 @@ offset_top = -96.0
 offset_right = -71.0
 offset_bottom = 4.0
 target_visual = NodePath("Sprite")
+selection_mode = 3
 has_tooltip = true
-hover_text = "Магическая монета"
+tooltip_lines = Array[String](["Магическая монета"])
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite" type="Sprite2D" parent="MoneySubstrate/Coins/MagicCoin" unique_id=1816343663]
@@ -433,8 +443,9 @@ offset_top = -96.0
 offset_right = 89.0
 offset_bottom = 4.0
 target_visual = NodePath("Sprite")
+selection_mode = 3
 has_tooltip = true
-hover_text = "Золотая монета"
+tooltip_lines = Array[String](["Золотая монета"])
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite" type="Sprite2D" parent="MoneySubstrate/Coins/GoldCoin" unique_id=132878753]
@@ -460,8 +471,9 @@ offset_top = -5.0
 offset_right = -71.0
 offset_bottom = 95.0
 target_visual = NodePath("Sprite")
+selection_mode = 3
 has_tooltip = true
-hover_text = "Серебряная монета"
+tooltip_lines = Array[String](["Серебряная монета"])
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite" type="Sprite2D" parent="MoneySubstrate/Coins/SilverCoin" unique_id=413733784]
@@ -487,8 +499,9 @@ offset_top = -5.0
 offset_right = 89.0
 offset_bottom = 95.0
 target_visual = NodePath("Sprite")
+selection_mode = 3
 has_tooltip = true
-hover_text = "Медная монета"
+tooltip_lines = Array[String](["Медная монета"])
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite" type="Sprite2D" parent="MoneySubstrate/Coins/CopperCoin" unique_id=28811778]
@@ -512,16 +525,14 @@ position = Vector2(277.00003, 551.0002)
 scale = Vector2(0.9942857, 1)
 texture = ExtResource("22_t64su")
 
-[node name="GlowElement" parent="HpSubstrate" unique_id=356362696 node_paths=PackedStringArray("target_visual", "hitbox_source") instance=ExtResource("7_7cwr7")]
+[node name="GlowElement" parent="HpSubstrate" unique_id=356362696 node_paths=PackedStringArray("target_visual") instance=ExtResource("7_7cwr7")]
 offset_left = -167.95978
 offset_top = -95.00015
 offset_right = -67.95978
 offset_bottom = 4.9998474
 target_visual = NodePath("Sprite2D")
 has_tooltip = true
-hover_text = "Ваше здоровье"
 hitbox_mode = 1
-hitbox_source = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="HpSubstrate/GlowElement" unique_id=61654518]
 position = Vector2(169.99997, 50.00003)
@@ -560,18 +571,33 @@ label_settings = SubResource("LabelSettings_g4v7s")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Power" type="Control" parent="StatsSubstract" unique_id=547246454]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ProgressBar" type="TextureProgressBar" parent="StatsSubstract" unique_id=795599402]
+offset_left = -147.0
+offset_top = -103.0
+offset_right = -134.0
+offset_bottom = 107.0
+value = 67.0
+fill_mode = 3
+texture_progress = ExtResource("40_c81xl")
+
+[node name="Power" parent="StatsSubstract" unique_id=1545531697 instance=ExtResource("7_7cwr7")]
+offset_left = -131.0
+offset_top = -121.0
+offset_right = -31.0
+offset_bottom = -21.0
+selection_mode = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="StatsSubstract/Power" unique_id=1373456452]
+position = Vector2(85, 85)
+scale = Vector2(0.9866667, 1)
+texture = ExtResource("32_djxqx")
 
 [node name="Name" type="Label" parent="StatsSubstract/Power" unique_id=1914237698]
 layout_mode = 0
-offset_left = -102.0
-offset_top = -16.0
-offset_right = 4.0
-offset_bottom = 97.0
+offset_left = 29.0
+offset_top = 105.0
+offset_right = 135.0
+offset_bottom = 218.0
 text = "сила"
 label_settings = SubResource("LabelSettings_t3yaa")
 horizontal_alignment = 1
@@ -579,98 +605,156 @@ vertical_alignment = 1
 
 [node name="Number" type="Label" parent="StatsSubstract/Power" unique_id=590785969]
 layout_mode = 0
-offset_left = -77.0
-offset_top = -96.0
-offset_right = -17.0
-offset_bottom = 17.0
+offset_left = 54.0
+offset_top = 25.0
+offset_right = 114.0
+offset_bottom = 138.0
 text = "0"
-label_settings = SubResource("LabelSettings_7pgvt")
+label_settings = ExtResource("34_pm0x0")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Agility" type="Control" parent="StatsSubstract" unique_id=1997398871]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="LevelProgress" type="TextureProgressBar" parent="StatsSubstract/Power" unique_id=663482146]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 39.0
+offset_right = 131.0
+offset_bottom = 132.0
+value = 22.0
+fill_mode = 4
+texture_progress = ExtResource("33_i6y78")
+
+[node name="Agility" parent="StatsSubstract" unique_id=649513462 instance=ExtResource("7_7cwr7")]
+offset_left = -7.0
+offset_top = -47.0
+offset_right = 93.0
+offset_bottom = 53.0
+selection_mode = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="StatsSubstract/Agility" unique_id=35226548]
+position = Vector2(85, 85)
+scale = Vector2(0.9866667, 1)
+texture = ExtResource("33_v7rdl")
 
 [node name="Name" type="Label" parent="StatsSubstract/Agility" unique_id=474078746]
 layout_mode = 0
-offset_left = 25.0
-offset_top = -104.0
-offset_right = 131.0
-offset_bottom = 9.0
+offset_left = 32.0
+offset_top = -57.0
+offset_right = 138.0
+offset_bottom = 56.0
 text = "ловкость"
 label_settings = SubResource("LabelSettings_t3yaa")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Number" type="Label" parent="StatsSubstract/Agility" unique_id=834191328]
+[node name="Number" type="Label" parent="StatsSubstract/Agility" unique_id=2141010813]
 layout_mode = 0
-offset_left = 47.0
-offset_top = -22.0
-offset_right = 107.0
-offset_bottom = 91.0
+offset_left = 54.0
+offset_top = 25.0
+offset_right = 114.0
+offset_bottom = 138.0
 text = "0"
-label_settings = SubResource("LabelSettings_7pgvt")
+label_settings = ExtResource("34_pm0x0")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Intelligence" type="Control" parent="StatsSubstract" unique_id=1870703080]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="LevelProgress" type="TextureProgressBar" parent="StatsSubstract/Agility" unique_id=1890002332]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 39.0
+offset_right = 129.0
+offset_bottom = 132.0
+value = 22.0
+fill_mode = 4
+texture_progress = ExtResource("35_c81xl")
+
+[node name="Intelligence" parent="StatsSubstract" unique_id=299320690 instance=ExtResource("7_7cwr7")]
+offset_left = 114.0
+offset_top = -122.0
+offset_right = 214.0
+offset_bottom = -22.0
+selection_mode = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="StatsSubstract/Intelligence" unique_id=1336775467]
+position = Vector2(85, 85)
+scale = Vector2(0.9866667, 1)
+texture = ExtResource("34_yt3oh")
 
 [node name="Name" type="Label" parent="StatsSubstract/Intelligence" unique_id=2092310328]
 layout_mode = 0
-offset_left = 148.0
-offset_top = -16.0
-offset_right = 254.0
-offset_bottom = 97.0
+offset_left = 34.0
+offset_top = 106.0
+offset_right = 140.0
+offset_bottom = 219.0
 text = "интеллект"
 label_settings = SubResource("LabelSettings_t3yaa")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Number" type="Label" parent="StatsSubstract/Intelligence" unique_id=2107287346]
+[node name="Number" type="Label" parent="StatsSubstract/Intelligence" unique_id=2147459786]
 layout_mode = 0
-offset_left = 169.0
-offset_top = -96.0
-offset_right = 229.0
-offset_bottom = 17.0
+offset_left = 54.0
+offset_top = 25.0
+offset_right = 114.0
+offset_bottom = 138.0
 text = "0"
-label_settings = SubResource("LabelSettings_7pgvt")
+label_settings = ExtResource("34_pm0x0")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Luck" type="Control" parent="StatsSubstract" unique_id=599311679]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="LevelProgress" type="TextureProgressBar" parent="StatsSubstract/Intelligence" unique_id=416864827]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 40.0
+offset_right = 131.0
+offset_bottom = 133.0
+value = 78.0
+fill_mode = 4
+texture_progress = ExtResource("37_pm0x0")
+
+[node name="Luck" parent="StatsSubstract" unique_id=286897121 instance=ExtResource("7_7cwr7")]
+offset_left = 237.0
+offset_top = -47.0
+offset_right = 337.0
+offset_bottom = 53.0
+selection_mode = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="StatsSubstract/Luck" unique_id=1811088456]
+position = Vector2(85, 85)
+scale = Vector2(0.9866667, 1)
+texture = ExtResource("35_rwb4f")
 
 [node name="Name" type="Label" parent="StatsSubstract/Luck" unique_id=615640461]
 layout_mode = 0
-offset_left = 270.0
-offset_top = -104.0
-offset_right = 376.0
-offset_bottom = 9.0
+offset_left = 33.0
+offset_top = -57.0
+offset_right = 139.0
+offset_bottom = 56.0
 text = "удача"
 label_settings = SubResource("LabelSettings_t3yaa")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Number" type="Label" parent="StatsSubstract/Luck" unique_id=337675566]
+[node name="Number" type="Label" parent="StatsSubstract/Luck" unique_id=687644349]
 layout_mode = 0
-offset_left = 292.0
-offset_top = -22.0
-offset_right = 352.0
-offset_bottom = 91.0
+offset_left = 54.0
+offset_top = 25.0
+offset_right = 114.0
+offset_bottom = 138.0
 text = "0"
-label_settings = SubResource("LabelSettings_7pgvt")
+label_settings = ExtResource("34_pm0x0")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="LevelProgress" type="TextureProgressBar" parent="StatsSubstract/Luck" unique_id=633722014]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 40.0
+offset_right = 130.0
+offset_bottom = 133.0
+value = 66.0
+fill_mode = 4
+texture_progress = ExtResource("39_t4e5p")
 
 [node name="QuickActionsSubsctract" type="Sprite2D" parent="." unique_id=2029453300]
 position = Vector2(876, 875)

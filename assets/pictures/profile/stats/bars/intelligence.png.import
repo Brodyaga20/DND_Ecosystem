@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dam1o845dgcx7"
-path="res://.godot/imported/stats_substract.png-da7ff4f00162ba5904e8d0083b6a3b3e.ctex"
+uid="uid://df4qxfiykwc6i"
+path="res://.godot/imported/intelligence.png-a678fe9a4f008612a6077a5da12f68c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pictures/profile/stats_substract.png"
-dest_files=["res://.godot/imported/stats_substract.png-da7ff4f00162ba5904e8d0083b6a3b3e.ctex"]
+source_file="res://assets/pictures/profile/stats/bars/intelligence.png"
+dest_files=["res://.godot/imported/intelligence.png-a678fe9a4f008612a6077a5da12f68c8.ctex"]
 
 [params]
 

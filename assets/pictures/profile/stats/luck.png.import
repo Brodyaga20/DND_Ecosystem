@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dam1o845dgcx7"
-path="res://.godot/imported/stats_substract.png-da7ff4f00162ba5904e8d0083b6a3b3e.ctex"
+uid="uid://m5v7utokbfwe"
+path="res://.godot/imported/luck.png-76c96521ee1ff6c634aa63624d5b9b23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pictures/profile/stats_substract.png"
-dest_files=["res://.godot/imported/stats_substract.png-da7ff4f00162ba5904e8d0083b6a3b3e.ctex"]
+source_file="res://assets/pictures/profile/stats/luck.png"
+dest_files=["res://.godot/imported/luck.png-76c96521ee1ff6c634aa63624d5b9b23.ctex"]
 
 [params]
 

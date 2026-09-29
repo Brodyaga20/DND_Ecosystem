@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="TooltipStyle" format=3 uid="uid://de52i0mo8wii7"]
+
+[ext_resource type="FontFile" uid="uid://x1w7x5ymdd5l" path="res://assets/fonts/vinque rg.ttf" id="1_6t3sx"]
+[ext_resource type="Script" uid="uid://64oiq85nwq36" path="res://resources/custom/tooltip_styles/tooltip_style.gd" id="2_ov4ws"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_galgx"]
+bg_color = Color(0.21960784, 0.21960784, 0.27058825, 0.8745098)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.48235294, 0.49411765, 0.49019608, 0.627451)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[resource]
+script = ExtResource("2_ov4ws")
+style_box = SubResource("StyleBoxFlat_galgx")
+font = ExtResource("1_6t3sx")
+metadata/_custom_type_script = "uid://64oiq85nwq36"

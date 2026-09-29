@@ -7,6 +7,7 @@ var created_at_unix: int = 0
 var character_name: String = ""
 var hp: HpState
 var stats: StatsData
+var stats_up: StatsData
 var money: MoneyState
 var active_effects: Array[ActiveEffect] = []
 var ability_ids: Array[StringName] = []
@@ -17,6 +18,7 @@ var SAVE_VERSION: int = 1
 func _init() -> void:
 	hp = HpState.new()
 	stats = StatsData.new()
+	stats_up = StatsData.new()
 	money = MoneyState.new()
 	equipment = EquipmentLoadout.new()
 
@@ -72,3 +74,11 @@ func to_dict() -> Dictionary:
 		"inventory": items,
 		"equipment": equipment.to_dict(),
 	}
+
+func stats_percentage() -> StatsData:
+	var s := StatsData.new()
+	s.agility = int(float(stats_up.agility) / (25 + stats.agility * 5))
+	s.intelligence = int(float(stats_up.intelligence) / (25 + stats.intelligence * 5))
+	s.luck = int(float(stats_up.luck) / (25 + stats.luck * 5))
+	s.power = int(float(stats_up.power) / (25 + stats.power * 5))
+	return s

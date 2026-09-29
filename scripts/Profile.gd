@@ -15,6 +15,31 @@ const active_glow_width := 15
 
 enum CardTypes {CLASS, SUBCLASS, ARCHETYPE}
 
+const BASE_STAT_SUM := 6
+const MAX_LEVEL := 100
+
+@onready var level_label: Label = $StatsSubstract/Level
+@onready var total_progress: TextureProgressBar = $StatsSubstract/ProgressBar
+
+# Группируем ноды в словарь для удобного перебора
+@onready var stat_ui_nodes: Dictionary = {
+	"power": {
+		"label": $StatsSubstract/Power/Number,
+		"bar": $StatsSubstract/Power/LevelProgress
+	},
+	"agility": {
+		"label": $StatsSubstract/Agility/Number,
+		"bar": $StatsSubstract/Agility/LevelProgress
+	},
+	"intelligence": {
+		"label": $StatsSubstract/Intelligence/Number,
+		"bar": $StatsSubstract/Intelligence/LevelProgress
+	},
+	"luck": {
+		"label": $StatsSubstract/Luck/Number,
+		"bar": $StatsSubstract/Luck/LevelProgress
+	}
+}
 func _ready():
 	hp_atlas.atlas = load("res://assets/pictures/profile/hp/hp_line.png")
 	$HpSubstrate/HpLine.texture = hp_atlas
@@ -50,15 +75,29 @@ func update_display():
 		#if item:
 			#$VBoxContainer/GearList.add_item(item["name"])
 
-func update_stats():
+func update_stats() -> void:
 	var stats = GameState.player.stats
-	$StatsSubstract/Power/Number.text        = str(stats.power)
-	$StatsSubstract/Agility/Number.text      = str(stats.agility)
-	$StatsSubstract/Intelligence/Number.text = str(stats.intelligence)
-	$StatsSubstract/Luck/Number.text         = str(stats.luck)
-	var sum = stats.agility + stats.power + stats.intelligence + stats.luck
-	$StatsSubstract/Level.text = str(sum - 6)
-	
+	var percentages = GameState.player.stats_percentage()
+
+	var stat_sum: float = 0.0
+	var max_percentage: float = 0.0
+
+	for stat_name in stat_ui_nodes.keys():
+		var value = stats.get(stat_name)
+		var percentage = percentages.get(stat_name)
+
+		stat_ui_nodes[stat_name]["label"].text = str(value)
+		stat_ui_nodes[stat_name]["bar"].value = percentage
+
+		stat_sum += value
+		
+		if percentage > max_percentage:
+			max_percentage = percentage
+
+	var level = clampi(int(stat_sum - BASE_STAT_SUM), 0, MAX_LEVEL)
+	level_label.text = str(level)
+
+	total_progress.value = max_percentage
 
 func update_name():
 	$NameSubstrate/Label.text = str(GameState.player.character_name)
@@ -144,7 +183,7 @@ func configure_unlocked_card(sprite: Sprite2D, type: CardTypes):
 	sprite.texture = load(path)
 	sprite_root.has_tooltip = true
 	var text = " " + role_name + " "
-	sprite_root.hover_text = text
+	sprite_root.tooltip_lines.append(text)
 
 func configure_locked_card(sprite: Sprite2D):
 	var sprite_root : GlowElement

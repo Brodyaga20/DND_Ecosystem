@@ -181,7 +181,7 @@ func distribute_stats_data(data: StatsData):
 	update_main_number()
 
 func _on_random_distribution_button_mouse_entered() -> void:
-	CustomTooltip.show_at(RANDOM_BUTTON_TEXT, Vector2(0, 0))
+	CustomTooltip.show_lines([RANDOM_BUTTON_TEXT], null)
 
 func _on_random_distribution_button_mouse_exited() -> void:
 	CustomTooltip.hide_tooltip()
@@ -197,7 +197,7 @@ func _on_recommended_distribution_button_pressed() -> void:
 	distribute_stats_data(stats)
 
 func _on_recommended_distribution_button_mouse_entered() -> void:
-	CustomTooltip.show_at(RECOMMENDED_BUTTON_TEXT, Vector2(0, 0))
+	CustomTooltip.show_lines([RECOMMENDED_BUTTON_TEXT], null)
 
 func _on_recommended_distribution_button_mouse_exited() -> void:
 	CustomTooltip.hide_tooltip()
