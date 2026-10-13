@@ -122,13 +122,13 @@ func update_stats() -> void:
 		var xp = stats.get(stat_name).xp
 		var percentage =  stats.get(stat_name).get_percentage()
 		var pool = stats.get(stat_name).xp_pool()
-		var tooltip_text = str(xp) + "/" + str(pool)
+		var _tooltip_text = str(xp) + "/" + str(pool)
 		stat_sum += value
 		stat_ui_nodes[stat_name]["label"].text = str(value)
 		stat_ui_nodes[stat_name]["bar"].value = percentage * 100
 		stat_ui_nodes[stat_name]["control"].has_tooltip = true
 		stat_ui_nodes[stat_name]["control"].tooltip_lines.clear()
-		stat_ui_nodes[stat_name]["control"].tooltip_lines.append(tooltip_text)
+		stat_ui_nodes[stat_name]["control"].tooltip_lines.append(_tooltip_text)
 		#stat_sum += value
 		
 		if percentage * 100 > max_percentage:
@@ -136,7 +136,6 @@ func update_stats() -> void:
 
 	var level = clampi(int(stat_sum - BASE_STAT_SUM), 0, MAX_LEVEL)
 	level_label.text = str(level)
-	print(max_percentage)
 	total_progress.value = max_percentage
 	GameState.player.level = level
 
@@ -147,7 +146,7 @@ func update_name():
 func update_hp():
 	hp_label.text = str(GameState.player.hp.current_hp) + "/" + str(GameState.player.hp.max_hp)
 	var percent = GameState.player.hp.get_percentage()
-	var width = int(percent * hp_atlas.get_width()/100)
+	var width = int(float(percent) * hp_atlas.get_width()/100)
 	hp_atlas.region = Rect2(0, 0, width, hp_atlas.get_height())
 	#$HpSubstrate/HpLine.texture = Rect2(0, 0, width, 50)
 	pass
