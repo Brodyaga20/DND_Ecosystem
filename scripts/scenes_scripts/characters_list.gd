@@ -7,28 +7,29 @@ const TEX_HOVER    = preload("res://assets/pictures/buttons/character_list/char_
 const TEX_PRESSED  = preload("res://assets/pictures/buttons/character_list/char_pressed.png")
 var button_group: ButtonGroup
 
+@onready var grid = $VBoxContainer/CharactersGrid
+
 func _ready():
+	GameState.meta_changed.connect(update_characters_grid)
 	update_ui_buttons()
-	if !SaveSystem.can_create_character(GameState.meta):
-		$Create.disabled = true
 	button_group = ButtonGroup.new()
 	button_group.allow_unpress = false   # нельзя "отжать" кликом по той же кнопке
-	update_grid()
+	update_characters_grid()
 
-func update_grid():
-	update_ui_buttons()
-	var grid = $VBoxContainer/CharactersGrid
+func update_characters_grid():
 	for child in grid.get_children():
 		child.queue_free()
-	_populate_character_list()
-
-func _populate_character_list() -> void:
-	var grid = $VBoxContainer/CharactersGrid
-	var ids = SaveSystem.list_character_ids()
+	
+	if GameState.meta == null:
+		return
+		
+	var ids = GameState.meta.character_ids
+	
 	for id in ids:
 		var c = SaveSystem.load_character(id)
 		if c == null:
-			continue
+			continue # Пропускаем, если файл персонажа потерян или поврежден
+			
 		var button := TextureButton.new()
 		configure_char_button(button, id)
 		configure_text(button, c)
@@ -66,7 +67,7 @@ func arrange(text: Label, card: TextureButton) -> Label:
 	return text
 
 func update_ui_buttons():
-	$Create.disabled    = !SaveSystem.can_create_character(GameState.meta)
+	$Create.disabled    = !GameState.can_create_character()
 	$Play.disabled      = (selected_char_id == null)
 	$Delete.disabled    = (selected_char_id == null)
 	$CharSheet.disabled = (selected_char_id == null)
@@ -89,9 +90,10 @@ func _disconnect_from_server():
 		multiplayer.multiplayer_peer = null
 
 func _on_delete_pressed() -> void:
-	SaveSystem.delete_character(selected_char_id)
+	GameState.delete_character(selected_char_id)
 	selected_char_id = null
-	update_grid()
+	update_characters_grid()
+	update_ui_buttons()
 
 func _on_char_sheet_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/profile.tscn")

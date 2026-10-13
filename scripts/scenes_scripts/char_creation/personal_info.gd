@@ -82,6 +82,7 @@ func save_data_to_temp():
 	TempData.char_data.personal.traits = traits
 	TempData.char_data.personal.life_goal = life_goal
 	TempData.char_data.personal.secret = secret
+	TempData.char_data.age = age
 
 func _on_exact_age_edit_text_changed(new_text: String) -> void:
 	validate_change(new_text)

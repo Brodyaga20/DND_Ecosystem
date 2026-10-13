@@ -6,7 +6,7 @@ var id: StringName
 var display_name: String
 var short_description: String
 var long_description: String
-var resource_id: StringName
+var resource_ids: Array[StringName] = []
 var class_id: StringName
 
 static func from_dict(raw: Dictionary, fallback_id: StringName = &"") -> CharacterSubclassData:
@@ -15,6 +15,7 @@ static func from_dict(raw: Dictionary, fallback_id: StringName = &"") -> Charact
 	data.display_name = raw.get("name", "")
 	data.short_description = raw.get("short_description", "")
 	data.long_description = raw.get("long_description", "")
-	data.resource_id = StringName(raw.get("resource_id", ""))
+	for res_id in raw.get("resource_ids", []):
+		data.resource_ids.append(StringName(res_id))
 	data.class_id = StringName(raw.get("class_id", ""))
 	return data

@@ -10,6 +10,7 @@ const CHARACTERS_LIST_SCENE := "res://scenes/characters_list.tscn"
 const LESS_STATS := "Сумма ваших стартовых характеристик меньше 7 - ваш персонаж получится слабее стартового и будет нулевого уровня, пока не достигнет отметки в 7 суммарных очков характеристик. Вы уверены, что хотите создать такого персонажа?"
 const MORE_STATS := "Сумма ваших стартовых характеристик больше 7 - ваш персонаж получится сильнее стартового, и будет выше 1 уровня. Вы уверены, что хотите создать такого персонажа?"
 
+const level_0_stats_sum := 6
 const max_stat := 99
 const min_stat := 0
 
@@ -99,7 +100,7 @@ func save_character() -> bool:
 	set_id()
 	TempData.char_data.money = MoneyState.from_copper(120)
 	var character = TempData.char_data
-	if not SaveSystem.save_character(character):
+	if not GameState.create_character(character):
 		return false
 	return true
 
@@ -118,10 +119,12 @@ func save_stats() -> void:
 	var agility      := int($SmallNumbers/Agility.text)
 	var intelligence := int($SmallNumbers/Intelligence.text)
 	var luck         := int($SmallNumbers/Luck.text)
-	TempData.char_data.stats.power        = power
-	TempData.char_data.stats.agility      = agility
-	TempData.char_data.stats.intelligence = intelligence
-	TempData.char_data.stats.luck         = luck
+	TempData.char_data.stats.power.level        = power
+	TempData.char_data.stats.agility.level      = agility
+	TempData.char_data.stats.intelligence.level = intelligence
+	TempData.char_data.stats.luck.level         = luck
+	var level = clampi(power + agility + intelligence + luck - level_0_stats_sum, 0, 99)
+	TempData.char_data.level = level
 
 func save_hp() -> void:
 	var power := int($SmallNumbers/Power.text)
@@ -174,10 +177,10 @@ func update_selected_stat():
 	pass
 
 func distribute_stats_data(data: StatsData):
-	$SmallNumbers/Power.text = str(data.power)
-	$SmallNumbers/Agility.text = str(data.agility)
-	$SmallNumbers/Intelligence.text = str(data.intelligence)
-	$SmallNumbers/Luck.text = str(data.luck)
+	$SmallNumbers/Power.text = str(data.power.level)
+	$SmallNumbers/Agility.text = str(data.agility.level)
+	$SmallNumbers/Intelligence.text = str(data.intelligence.level)
+	$SmallNumbers/Luck.text = str(data.luck.level)
 	update_main_number()
 
 func _on_random_distribution_button_mouse_entered() -> void:
@@ -193,7 +196,7 @@ func _on_random_distribution_button_pressed() -> void:
 func _on_recommended_distribution_button_pressed() -> void:
 	var class_id = TempData.char_data.class_id
 	var class_data = DataManager.character_classes.get_by_id(class_id)
-	var stats = class_data.recommended_stats_distribution
+	var stats = StatsData.from_recommended(class_data.recommended_stats_distribution)
 	distribute_stats_data(stats)
 
 func _on_recommended_distribution_button_mouse_entered() -> void:

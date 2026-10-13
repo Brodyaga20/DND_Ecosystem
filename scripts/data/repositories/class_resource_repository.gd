@@ -1,4 +1,4 @@
-# character_class_repository.gd
+# class_resource_repository.gd
 class_name ClassResourceRepository
 extends Repository
 

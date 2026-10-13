@@ -95,13 +95,13 @@ func _create_divider(s: TooltipStyle) -> Control:
 	wrapper.add_theme_constant_override("margin_bottom", s.divider_margin)
 
 	if s.divider_texture:
-		var tr := TextureRect.new()
-		tr.texture = s.divider_texture
-		tr.stretch_mode = TextureRect.STRETCH_SCALE
-		tr.custom_minimum_size.y = s.divider_height
-		tr.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		tr.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		wrapper.add_child(tr)
+		var trect := TextureRect.new()
+		trect.texture = s.divider_texture
+		trect.stretch_mode = TextureRect.STRETCH_SCALE
+		trect.custom_minimum_size.y = s.divider_height
+		trect.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		trect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		wrapper.add_child(trect)
 	else:
 		var cr := ColorRect.new()
 		cr.color = s.divider_color

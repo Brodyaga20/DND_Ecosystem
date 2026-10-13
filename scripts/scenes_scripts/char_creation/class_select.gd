@@ -11,7 +11,7 @@ func _ready():
 		if sprite is GlowElement:
 			sprite.id_selected.connect(_on_class_selected)
 
-func _on_class_selected(id: String, is_selected: bool):
+func _on_class_selected(id: String, _is_selected: bool):
 	if id == "":
 		return
 	if id == selected_class_id:

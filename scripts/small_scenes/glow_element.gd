@@ -39,6 +39,9 @@ var is_hovered := false
 var is_selected := false
 
 func _ready() -> void:
+	set_all_settings()
+
+func set_all_settings() -> void:
 	if not target_visual:
 		for child in get_children():
 			if child is CanvasItem:

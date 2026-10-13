@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://dtwrhyg65tqy1"]
+
+[ext_resource type="Texture2D" uid="uid://x1ehjt5eb0ap" path="res://assets/pictures/profile/overlay/background.png" id="1_888iy"]
+[ext_resource type="Shader" uid="uid://b84kr2bu7ux0h" path="res://shaders/back_blur.gdshader" id="1_w6i7s"]
+[ext_resource type="ButtonGroup" uid="uid://di0lpx3ffxiyf" path="res://resources/button_groups/profile_overlay_tabs.tres" id="2_c2p6k"]
+[ext_resource type="Texture2D" uid="uid://dupvpxxxcd5h4" path="res://assets/pictures/profile/overlay/tab_normal.png" id="2_lry7s"]
+[ext_resource type="Texture2D" uid="uid://blstyt1kf0h73" path="res://assets/pictures/profile/overlay/tab_pressed.png" id="3_c2p6k"]
+[ext_resource type="Texture2D" uid="uid://ds6cia5d1f80n" path="res://assets/pictures/profile/overlay/tab_hover.png" id="4_w6i7s"]
+[ext_resource type="Texture2D" uid="uid://cvg0i6je6yyoc" path="res://assets/pictures/profile/overlay/left_corner.png" id="5_18v2w"]
+[ext_resource type="LabelSettings" uid="uid://gfyl5n6f8u6g" path="res://resources/label_settings/profile/overlay_tabs.tres" id="5_lry7s"]
+[ext_resource type="Texture2D" uid="uid://dxs6rpv0n33c1" path="res://assets/pictures/profile/overlay/right_corner.png" id="6_ykg4d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
+shader = ExtResource("1_w6i7s")
+shader_parameter/max_blur_lod = 2.0
+shader_parameter/inner = 0.0
+shader_parameter/outer = 0.8
+shader_parameter/falloff = 0.1
+shader_parameter/tint = Color(0, 0, 0, 0)
+
+[node name="OverlayProfile" type="Control" unique_id=2046930636]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Blur" type="ColorRect" parent="." unique_id=227188141]
+material = SubResource("ShaderMaterial_g4v7s")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.64705884)
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1087182947]
+position = Vector2(960, 540)
+texture = ExtResource("1_888iy")
+
+[node name="TabAbilities" type="TextureButton" parent="." unique_id=913911239]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 146.0
+offset_right = 580.0
+offset_bottom = 288.0
+toggle_mode = true
+button_group = ExtResource("2_c2p6k")
+texture_normal = ExtResource("2_lry7s")
+texture_pressed = ExtResource("3_c2p6k")
+texture_hover = ExtResource("4_w6i7s")
+
+[node name="Label" type="Label" parent="TabAbilities" unique_id=1738439491]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 125.0
+theme_override_font_sizes/font_size = 67
+text = "СПОСОБНОСТИ"
+label_settings = ExtResource("5_lry7s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TabInventory" type="TextureButton" parent="." unique_id=254946355]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 146.0
+offset_right = 950.0
+offset_bottom = 288.0
+toggle_mode = true
+button_group = ExtResource("2_c2p6k")
+texture_normal = ExtResource("2_lry7s")
+texture_pressed = ExtResource("3_c2p6k")
+texture_hover = ExtResource("4_w6i7s")
+
+[node name="Label" type="Label" parent="TabInventory" unique_id=822842667]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 125.0
+theme_override_font_sizes/font_size = 67
+text = "ИНВЕНТАРЬ"
+label_settings = ExtResource("5_lry7s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TabFamiliars" type="TextureButton" parent="." unique_id=2022960601]
+layout_mode = 0
+offset_left = 970.0
+offset_top = 146.0
+offset_right = 1320.0
+offset_bottom = 288.0
+toggle_mode = true
+button_group = ExtResource("2_c2p6k")
+texture_normal = ExtResource("2_lry7s")
+texture_pressed = ExtResource("3_c2p6k")
+texture_hover = ExtResource("4_w6i7s")
+
+[node name="Label" type="Label" parent="TabFamiliars" unique_id=206445220]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 125.0
+theme_override_font_sizes/font_size = 67
+text = "ФАМИЛЬЯРЫ"
+label_settings = ExtResource("5_lry7s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TabEffects" type="TextureButton" parent="." unique_id=567038965]
+layout_mode = 0
+offset_left = 1340.0
+offset_top = 146.0
+offset_right = 1690.0
+offset_bottom = 288.0
+toggle_mode = true
+button_group = ExtResource("2_c2p6k")
+texture_normal = ExtResource("2_lry7s")
+texture_pressed = ExtResource("3_c2p6k")
+texture_hover = ExtResource("4_w6i7s")
+
+[node name="Label" type="Label" parent="TabEffects" unique_id=372118930]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 125.0
+theme_override_font_sizes/font_size = 67
+text = "ЭФФЕКТЫ"
+label_settings = ExtResource("5_lry7s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeftCorner" type="Sprite2D" parent="." unique_id=1211542355]
+position = Vector2(223, 204)
+texture = ExtResource("5_18v2w")
+
+[node name="RightCorner" type="Sprite2D" parent="." unique_id=887949485]
+position = Vector2(1697, 204)
+texture = ExtResource("6_ykg4d")

@@ -2,9 +2,10 @@
 class_name PlayerData
 extends CharacterData
 
+const BASE_STATS_SUM = 6
+
 var current_location_id: StringName = &""
 var current_scene_path: String = ""
-var position: Vector2 = Vector2.ZERO
 var quest_flags: Dictionary = {}
 var playtime_seconds: float = 0.0
 var last_played_unix: int = 0
@@ -14,9 +15,6 @@ func load_from_dict(raw: Dictionary) -> void:
 
 	current_location_id = StringName(raw.get("current_location_id", ""))
 	current_scene_path = raw.get("current_scene_path", "")
-
-	var pos: Dictionary = raw.get("position", {})
-	position = Vector2(pos.get("x", 0.0), pos.get("y", 0.0))
 
 	quest_flags.clear()
 	for key in raw.get("quest_flags", {}):
@@ -29,7 +27,6 @@ func to_dict() -> Dictionary:
 	var d := super()                      # ← ОБЯЗАТЕЛЬНО
 	d["current_location_id"] = String(current_location_id)
 	d["current_scene_path"] = current_scene_path
-	d["position"] = { "x": position.x, "y": position.y }
 
 	var flags := {}
 	for key in quest_flags:
@@ -42,5 +39,8 @@ func to_dict() -> Dictionary:
 
 static func from_dict(raw: Dictionary) -> PlayerData:
 	var p := PlayerData.new()
-	p.load_from_dict(raw)           # ← вот здесь никакого load_character_from_dict
+	p.load_from_dict(raw)
 	return p
+
+func can_unlock_subclass():
+	return (subclass_id == "" and level >= 3)

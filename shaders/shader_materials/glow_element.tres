@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cto4o500ibut8"]
+
+[ext_resource type="Shader" uid="uid://dccmt6i1j7wte" path="res://shaders/select_glow.gdshader" id="1_ue3vo"]
+
+[resource]
+shader = ExtResource("1_ue3vo")
+shader_parameter/glow_color = Color(1, 0.84, 0, 1)
+shader_parameter/glow_width = 14.0
+shader_parameter/glow_intensity = 1.0
+shader_parameter/alpha_threshold = 0.5
+shader_parameter/samples = 8

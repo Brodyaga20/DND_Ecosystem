@@ -8,7 +8,7 @@ const MAX_CHARACTERS := 6
 func _ready() -> void:
 	DirAccess.make_dir_recursive_absolute(CHARACTERS_DIR)
 
-# --- Meta profile ---
+# --- Meta profile (Только сырое чтение/запись) ---
 
 func save_meta_profile(profile: MetaProfile) -> bool:
 	return _write_json(META_PATH, profile.to_dict())
@@ -17,26 +17,15 @@ func load_meta_profile() -> MetaProfile:
 	var raw := _read_json(META_PATH, {})
 	return MetaProfile.from_dict(raw)
 
-# --- Character ---
+# --- Character (Только сырое чтение/запись) ---
 
-func get_character_count(profile: MetaProfile) -> int:
-	return profile.character_ids.size()
-
-func can_create_character(profile: MetaProfile) -> bool:
-	return profile.character_ids.size() < MAX_CHARACTERS
-
-func save_character(c: CharacterData) -> bool:
+func save_character_data(c: CharacterData) -> bool:
 	if c.id <= 0:
 		push_error("Cannot save character without id")
 		return false
 
 	var path := _character_path(c.id)
-	if not _write_json(path, c.to_dict()):
-		return false
-
-	var profile := load_meta_profile()
-	profile.add_character_id(c.id)
-	return save_meta_profile(profile)
+	return _write_json(path, c.to_dict())
 
 func load_character(id: int) -> CharacterData:
 	var path := _character_path(id)
@@ -49,20 +38,12 @@ func load_character(id: int) -> CharacterData:
 	# Пока у нас только CharacterData, но с PlayerData будет ветвление
 	return PlayerData.from_dict(raw)
 
-func delete_character(id: int) -> bool:
+func delete_character_data(id: int) -> bool:
 	var path := _character_path(id)
 	if FileAccess.file_exists(path):
 		DirAccess.remove_absolute(path)
-
-	if GameState.player != null and GameState.player.id == id:
-		GameState.clear_player_character()
-
-	var profile := load_meta_profile()
-	profile.remove_character_id(id)
-	return save_meta_profile(profile)
-
-func list_character_ids() -> Array[int]:
-	return load_meta_profile().character_ids.duplicate()
+		return true
+	return false
 
 # --- Внутреннее ---
 
