@@ -138,6 +138,7 @@ func update_stats() -> void:
 	level_label.text = str(level)
 	print(max_percentage)
 	total_progress.value = max_percentage
+	GameState.player.level = level
 
 
 func update_name():
@@ -301,3 +302,4 @@ func _on_back_pressed() -> void:
 func _on_plus_pressed() -> void:
 	GameState.player.stats.power.add_xp($StatsSubstract/Power/Add.value)
 	update_stats()
+	update_cards()
